@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Automatizacion para Academias y Centros de Formacion | Automarketing Digital</title>
+<meta name="description" content="Sistema completo de automatizacion para academias y centros de formacion. Agente WhatsApp 24/7, seguimiento de leads dias 1/3/7 con becas y financiacion, recordatorios de clases automaticos. Activo en 48h.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#060912;color:#f1f5f9;line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1100px;margin:0 auto;padding:0 5%}
+nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(6,9,18,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(99,102,241,.15);padding:14px 5%;display:flex;align-items:center;justify-content:space-between}
+.nav-logo{font-size:1rem;font-weight:800}.nav-logo span{color:#6366f1}
+.nav-cta{background:#6366f1;color:#fff;padding:9px 20px;border-radius:8px;font-size:.85rem;font-weight:700;cursor:pointer;border:none}
+.hero{padding:120px 5% 80px;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(99,102,241,.13) 0%,transparent 70%)}
+.badge{display:inline-block;background:#1e1b4b;border:1px solid #4338ca;color:#a5b4fc;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px}
+.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.15;margin-bottom:20px}
+.hero h1 em{font-style:normal;color:#6366f1}
+.sub{font-size:1rem;color:#94a3b8;max-width:560px;margin:0 auto 36px}
+.btn{display:inline-block;padding:14px 28px;border-radius:10px;font-size:.95rem;font-weight:700;cursor:pointer;border:none;transition:.2s}
+.btn-p{background:linear-gradient(135deg,#6366f1,#4338ca);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,.4)}
+.btn-p:hover{transform:translateY(-2px)}
+.btn-o{background:transparent;border:1px solid #334155;color:#f1f5f9}
+.btn-o:hover{border-color:#6366f1}
+.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.hstats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:56px;padding-top:40px;border-top:1px solid #1e293b;text-align:center}
+.hstats b{display:block;font-size:1.8rem;font-weight:900;color:#6366f1}
+.hstats small{font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+.section{padding:80px 5%}
+.slabel{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6366f1;margin-bottom:12px}
+.stitle{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:16px;line-height:1.25}
+.sdesc{color:#64748b;font-size:.95rem;max-width:600px;margin-bottom:32px}
+.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
+.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
+.card{background:#0d1117;border:1px solid #1e293b;border-radius:14px;padding:24px;transition:.2s}
+.card:hover{border-color:rgba(99,102,241,.3);transform:translateY(-3px)}
+.prob{border-left:3px solid #ef4444}
+.picon{font-size:1.5rem;margin-bottom:10px}
+.prob h3{font-size:.95rem;font-weight:700;margin-bottom:6px}
+.prob p{font-size:.82rem;color:#64748b;line-height:1.5}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px}
+.mod{background:#0d1117;border:1px solid #1e293b;border-radius:12px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px}
+.modn{background:linear-gradient(135deg,#6366f1,#4338ca);color:#fff;font-size:.7rem;font-weight:800;padding:4px 9px;border-radius:6px;flex-shrink:0;margin-top:2px;white-space:nowrap}
+.mod h4{font-size:.88rem;font-weight:700;margin-bottom:4px}
+.mod p{font-size:.78rem;color:#64748b;line-height:1.45}
+.modnew{border-color:rgba(16,185,129,.3)}
+.modnew .modn{background:linear-gradient(135deg,#10b981,#059669)}
+.res{background:#0d1117;border:1px solid #1e293b;border-radius:14px;padding:28px;text-align:center}
+.resval{font-size:2.4rem;font-weight:900;color:#6366f1;margin-bottom:4px}
+.reslab{font-size:.8rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
+.resdesc{font-size:.82rem;color:#94a3b8;margin-top:10px;line-height:1.45}
+.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:40px}
+.step{text-align:center;padding:24px 16px;position:relative}
+.stepn{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#4338ca);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;margin:0 auto 14px;color:#fff}
+.step h4{font-size:.88rem;font-weight:700;margin-bottom:6px}
+.step p{font-size:.78rem;color:#64748b}
+.pc{background:#0d1117;border:2px solid #1e293b;border-radius:16px;padding:32px;text-align:center;transition:.2s}
+.pc.feat{border-color:#6366f1;background:rgba(99,102,241,.05);position:relative}
+.pc.feat::before{content:'MAS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#6366f1;color:#fff;font-size:.65rem;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:.5px}
+.pname{font-size:.8rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
+.psetup{font-size:.8rem;color:#94a3b8;margin-bottom:4px}
+.pmonth{font-size:2rem;font-weight:900;margin-bottom:4px}
+.pmonth span{font-size:.85rem;font-weight:400;color:#64748b}
+.plist{list-style:none;text-align:left;margin:20px 0 24px;display:flex;flex-direction:column;gap:8px}
+.plist li{font-size:.82rem;color:#94a3b8;display:flex;gap:8px}
+.plist li::before{content:'\2713';color:#10b981;font-weight:700;flex-shrink:0}
+.dbox{background:#0d1117;border:2px solid #6366f1;border-radius:16px;padding:40px;max-width:520px;margin:0 auto}
+.dbox h3{font-size:1.2rem;font-weight:800;margin-bottom:8px}
+.dbox .dp{color:#64748b;font-size:.88rem;margin-bottom:24px}
+.ff{margin-bottom:14px}
+.ff input{width:100%;background:#111827;border:1px solid #1e293b;border-radius:8px;padding:12px 14px;color:#f1f5f9;font-size:.88rem;font-family:'Inter',sans-serif}
+.ff input:focus{outline:none;border-color:#6366f1}
+.dok{display:none;text-align:center;padding:20px 0}
+.dok h4{font-size:1.1rem;font-weight:800;color:#10b981;margin-bottom:8px}
+.faq-item{border-bottom:1px solid #1e293b;padding:18px 0}
+.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:.9rem;font-weight:600;gap:16px}
+.faq-a{font-size:.85rem;color:#64748b;line-height:1.6;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
+.faq-item.open .faq-a{max-height:200px;padding-top:10px}
+.arr{color:#6366f1;font-size:1rem;transition:transform .3s;flex-shrink:0}
+.faq-item.open .arr{transform:rotate(180deg)}
+.ctabox{background:linear-gradient(135deg,#1e1b4b,#2d1b69);border-radius:20px;padding:60px 40px;text-align:center;margin:0 5% 80px}
+.ctabox h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;margin-bottom:14px}
+.ctabox p{color:#94a3b8;margin-bottom:28px;font-size:.95rem}
+footer{border-top:1px solid #1e293b;padding:24px 5%;text-align:center;font-size:.78rem;color:#475569}
+footer a{color:#6366f1}
+/* TIMELINE SEGUIMIENTO */
+.timeline{display:flex;flex-direction:column;gap:0;margin-top:32px;max-width:700px}
+.titem{display:flex;gap:20px;position:relative;padding-bottom:28px}
+.titem:last-child{padding-bottom:0}
+.titem:not(:last-child)::before{content:'';position:absolute;left:19px;top:44px;bottom:0;width:2px;background:linear-gradient(to bottom,#6366f1,rgba(99,102,241,.1))}
+.tball{width:40px;height:40px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#4338ca);display:flex;align-items:center;justify-content:center;flex-shrink:0;font-size:.75rem;font-weight:800;color:#fff}
+.ttext h4{font-size:.9rem;font-weight:700;margin-bottom:4px}
+.ttext p{font-size:.8rem;color:#64748b;line-height:1.5}
+.ttext .ttag{display:inline-block;background:#1e1b4b;color:#a5b4fc;font-size:.65rem;font-weight:700;padding:2px 8px;border-radius:10px;margin-bottom:6px}
+@media(max-width:600px){.ctabox{padding:40px 20px}}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">Automarketing<span>Digital</span></a>
+  <button class="nav-cta" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Demo gratis</button>
+</nav>
+
+<section class="hero">
+  <div class="badge">&#127979; Especifico para academias y centros de formacion</div>
+  <h1>Mas alumnos matriculados.<br><em>Sin leads perdidos.</em><br>Sin seguimiento manual.</h1>
+  <p class="sub">Sistema completo para academias. Agente WhatsApp 24/7 para consultas sobre cursos, secuencia de seguimiento leads dias 1/3/7 con becas y financiacion, recordatorios de clases 24h y 2h antes (online y presencial). Activo en 48h.</p>
+  <div class="btns">
+    <button class="btn btn-p" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Probar demo gratis &rarr;</button>
+    <a href="#modulos" class="btn btn-o">Ver el sistema completo</a>
+  </div>
+  <div class="hstats">
+    <div><b>+45%</b><small>leads matriculados</small></div>
+    <div><b>-70%</b><small>leads sin respuesta</small></div>
+    <div><b>24/7</b><small>consultas activas</small></div>
+    <div><b>48h</b><small>activacion</small></div>
+  </div>
+</section>
+
+<!-- PROBLEMAS -->
+<section class="section" style="background:#060912">
+<div class="wrap">
+  <div class="slabel">El problema</div>
+  <div class="stitle">Lo que te esta costando matriculas ahora mismo</div>
+  <div class="sdesc">El 80% de las matriculas las consigue la academia que responde primero y hace seguimiento. Sin automatizacion, pierdes ante quien si la tiene.</div>
+  <div class="g2">
+    <div class="card prob"><div class="picon">&#128231;</div><h3>Leads que piden info y desaparecen</h3><p>Alguien rellena el formulario de tu web a las 11 de la noche interesado en el curso de marketing digital. Si no recibe respuesta en las primeras horas, ya se matriculo en otra academia.</p></div>
+    <div class="card prob"><div class="picon">&#128202;</div><h3>Sin seguimiento sistematico</h3><p>La mayoria de academias envia un email de info y espera. Sin secuencia de seguimiento (precio, becas, testimonios, urgencia), el lead se enfria. El ciclo de decision en formacion puede durar 2-3 semanas.</p></div>
+    <div class="card prob"><div class="picon">&#128187;</div><h3>No-shows en clases online</h3><p>Sin recordatorio previo, entre el 20-30% de los alumnos no se conectan a tiempo o directamente faltan. Pierden hilo, se frustran y abandonan el curso antes de terminar.</p></div>
+    <div class="card prob"><div class="picon">&#128176;</div><h3>Objeciones de precio sin resolver</h3><p>El precio es la principal barrera en formacion. Sin sistema que presente automaticamente las opciones de financiacion y becas, muchos leads cualificados se pierden por falta de informacion.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- MODULOS -->
+<section class="section" id="modulos" style="background:#0a0e1a">
+<div class="wrap">
+  <div class="slabel">El sistema</div>
+  <div class="stitle">3 modulos. Tu academia matriculando sola.</div>
+  <div class="sdesc">Cada modulo resuelve un problema especifico del sector. Todos conectados sin que toques nada.</div>
+  <div class="mgrid">
+    <div class="mod modnew"><div class="modn">ACA-1</div><div><h4>Agente WhatsApp IA 24/7</h4><p>Responde consultas sobre cursos, duracion, modalidad, precios y salidas profesionales. Presenta opciones de financiacion y becas automaticamente. Guarda historial por alumno y deriva al asesor cuando detecta intencion alta de compra.</p></div></div>
+    <div class="mod modnew"><div class="modn">ACA-2</div><div><h4>Seguimiento leads dias 1/3/7</h4><p>Bienvenida inmediata con info del curso + follow-up personalizado GPT dia 1 (dudas y salidas) + mensaje urgencia dia 3 (plazas limitadas + becas disponibles) + cierre amable dia 7.</p></div></div>
+    <div class="mod modnew"><div class="modn">ACA-3</div><div><h4>Recordatorio clases online y presenciales</h4><p>24h antes y 2h antes de cada clase el alumno recibe recordatorio con enlace de acceso (online) o direccion (presencial). Reduce no-shows al minimo y mejora la tasa de completacion del curso.</p></div></div>
+  </div>
+  <div style="background:#0d1117;border:1px solid rgba(99,102,241,.3);border-radius:12px;padding:20px 24px;margin-top:24px">
+    <p style="font-size:.85rem;color:#a5b4fc;font-weight:600;margin-bottom:6px">&#9733; El diferenciador clave: la objecion del precio resuelta automaticamente</p>
+    <p style="font-size:.82rem;color:#64748b;line-height:1.55">El agente detecta cuando un lead menciona el precio o el coste y automaticamente presenta las opciones: pago fraccionado en cuotas mensuales, becas por desempleo, bonificaciones FUNDAE para empresas, y descuento por inscripcion anticipada. El 40% de los leads que no se matricularian por precio acaban haciendolo cuando reciben la informacion de financiacion en el momento justo.</p>
+  </div>
+</div>
+</section>
+
+<!-- FLUJO SEGUIMIENTO -->
+<section class="section" style="background:#060912">
+<div class="wrap">
+  <div class="slabel">Como funciona</div>
+  <div class="stitle">De lead nuevo a alumno matriculado, automaticamente</div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:start;margin-top:16px">
+    <div>
+      <p style="font-size:.85rem;color:#64748b;margin-bottom:28px;line-height:1.6">Cuando entra un lead (formulario web, redes sociales, portales de formacion...) el sistema activa una secuencia completa sin que hagas nada:</p>
+      <div class="timeline">
+        <div class="titem">
+          <div class="tball">0h</div>
+          <div class="ttext"><div class="ttag">INMEDIATO</div><h4>Info inmediata</h4><p>WA con detalles del curso de interes + opciones de financiacion y becas. Lead registrado en Sheets con curso, modalidad y presupuesto.</p></div>
+        </div>
+        <div class="titem">
+          <div class="tball">+1d</div>
+          <div class="ttext"><div class="ttag">DIA 1</div><h4>Dudas y salidas</h4><p>GPT escribe un mensaje personalizado segun el nivel e interes del lead. Resuelve dudas sobre salidas profesionales y metodologia del curso.</p></div>
+        </div>
+        <div class="titem">
+          <div class="tball">+3d</div>
+          <div class="ttext"><div class="ttag">DIA 3</div><h4>Plazas limitadas</h4><p>Urgencia suave con plazas disponibles + becas activas para ese curso. Ofrece sesion informativa gratuita o llamada de asesoramiento.</p></div>
+        </div>
+        <div class="titem">
+          <div class="tball">+7d</div>
+          <div class="ttext"><div class="ttag">DIA 7</div><h4>Cierre amable</h4><p>Ultima oportunidad sin presion. Si el lead responde en cualquier punto, el agente WA retoma la conversacion con su contexto completo.</p></div>
+        </div>
+      </div>
+    </div>
+    <div>
+      <p style="font-size:.85rem;color:#64748b;margin-bottom:28px;line-height:1.6">Una vez matriculado, el sistema gestiona los recordatorios de clase completamente solo:</p>
+      <div class="timeline">
+        <div class="titem">
+          <div class="tball">-24h</div>
+          <div class="ttext"><div class="ttag">CLASE</div><h4>Recordatorio manana</h4><p>WhatsApp con los detalles de la clase y el enlace de acceso si es online, o la direccion si es presencial.</p></div>
+        </div>
+        <div class="titem">
+          <div class="tball">-2h</div>
+          <div class="ttext"><div class="ttag">CLASE</div><h4>Clase en 2 horas</h4><p>Segundo recordatorio con enlace directo a la videoconferencia o plataforma de acceso. Sin excusas de no encontrarlo.</p></div>
+        </div>
+        <div class="titem" style="padding-bottom:0">
+          <div class="tball" style="background:linear-gradient(135deg,#10b981,#059669)">OK</div>
+          <div class="ttext"><div class="ttag" style="background:rgba(16,185,129,.15);color:#10b981">RESULTADO</div><h4>Tasa completacion +40%</h4><p>Los alumnos que reciben recordatorios completan el curso a una tasa significativamente mayor. Menos abandonos, mas testimonios positivos.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- RESULTADOS -->
+<section class="section" style="background:#0a0e1a">
+<div class="wrap">
+  <div class="slabel">Resultados</div>
+  <div class="stitle">Que consigue el sistema</div>
+  <div class="g3" style="margin-top:32px">
+    <div class="res"><div class="resval">+45%</div><div class="reslab">Leads matriculados</div><div class="resdesc">La respuesta inmediata y el seguimiento con becas y financiacion aumentan la tasa de matriculacion frente a gestion manual.</div></div>
+    <div class="res"><div class="resval">-70%</div><div class="reslab">Leads sin seguimiento perdidos</div><div class="resdesc">La secuencia dias 1/3/7 recupera leads que con gestion manual hubieran desaparecido. Cada lead que entra recibe 3 oportunidades mas de convertir.</div></div>
+    <div class="res"><div class="resval">+40%</div><div class="reslab">Tasa de completacion cursos</div><div class="resdesc">Los recordatorios de clase (24h y 2h) reducen los no-shows y el abandono. Alumnos que terminan = testimonios y recomendaciones.</div></div>
+    <div class="res"><div class="resval">24/7</div><div class="reslab">Consultas automaticas</div><div class="resdesc">El agente WA responde sobre precios, modalidades y becas a las 3 de la madrugada, en domingo, en festivo. Cada lead recibe respuesta en segundos.</div></div>
+    <div class="res"><div class="resval">0</div><div class="reslab">Objeciones precio sin respuesta</div><div class="resdesc">Cuando el lead menciona el precio, el sistema presenta automaticamente todas las opciones: FUNDAE, becas por desempleo, pago fraccionado.</div></div>
+    <div class="res"><div class="resval">48h</div><div class="reslab">Tiempo de activacion</div><div class="resdesc">Desde que nos das acceso hasta el primer lead gestionado. En 48h el sistema esta en marcha captando y haciendo seguimiento.</div></div>
+  </div>
+</div>
+</section>
+
+<!-- PROCESO -->
+<section class="section" style="background:#060912">
+<div class="wrap">
+  <div class="slabel">El proceso</div>
+  <div class="stitle">De cero a sistema activo en 3 pasos</div>
+  <div class="steps">
+    <div class="step"><div class="stepn">1</div><h4>Auditoria gratuita</h4><p>30 min. Vemos catalogo de cursos, precios, modalidades, opciones de financiacion y como gestionais los leads actualmente.</p></div>
+    <div class="step" style="position:relative"><span style="position:absolute;left:-12px;top:50%;transform:translateY(-50%);color:#334155;font-size:1.2rem">&#8594;</span><div class="stepn">2</div><h4>Configuracion en 48h</h4><p>Conectamos vuestro WhatsApp Business, cargamos cursos y precios, configuramos becas y financiacion. Vosotros no tocais nada tecnico.</p></div>
+    <div class="step" style="position:relative"><span style="position:absolute;left:-12px;top:50%;transform:translateY(-50%);color:#334155;font-size:1.2rem">&#8594;</span><div class="stepn">3</div><h4>El sistema trabaja</h4><p>Consultas respondidas, leads en seguimiento automatico, recordatorios de clase enviados solos. Sin que toques nada.</p></div>
+  </div>
+</div>
+</section>
+
+<!-- PRECIOS -->
+<section class="section" id="precios" style="background:#0a0e1a">
+<div class="wrap">
+  <div class="slabel" style="text-align:center">Inversion</div>
+  <div class="stitle" style="text-align:center">Sin permanencia. Sin sorpresas.</div>
+  <p style="color:#64748b;text-align:center;margin-bottom:40px">Pago unico de configuracion + cuota mensual segun los modulos que activeis.</p>
+  <div class="g3">
+    <div class="pc">
+      <div class="pname">Esencial</div>
+      <div class="psetup">350 EUR configuracion</div>
+      <div class="pmonth">107<span> EUR/mes</span></div>
+      <ul class="plist">
+        <li>Agente WhatsApp 24/7 (ACA-1)</li>
+        <li>Info cursos y precios automatica</li>
+        <li>Presentacion financiacion automatica</li>
+        <li>Historial en Google Sheets</li>
+        <li>Soporte por WhatsApp</li>
+      </ul>
+      <button class="btn btn-o" style="width:100%" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Solicitar auditoria</button>
+    </div>
+    <div class="pc feat">
+      <div class="pname">Completo</div>
+      <div class="psetup">600 EUR configuracion</div>
+      <div class="pmonth">197<span> EUR/mes</span></div>
+      <ul class="plist">
+        <li>Todo el plan Esencial</li>
+        <li>Seguimiento leads dias 1/3/7 (ACA-2)</li>
+        <li>Recordatorio clases 24h y 2h (ACA-3)</li>
+        <li>CRM alumnos en Google Sheets</li>
+        <li>Deteccion intencion alta de compra</li>
+      </ul>
+      <button class="btn btn-p" style="width:100%" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Empezar ahora</button>
+    </div>
+    <div class="pc">
+      <div class="pname">Con captacion</div>
+      <div class="psetup">900 EUR configuracion</div>
+      <div class="pmonth">297<span> EUR/mes</span></div>
+      <ul class="plist">
+        <li>Todo el plan Completo</li>
+        <li>Captacion leads desde redes sociales</li>
+        <li>Campanas matricula por temporada</li>
+        <li>Dashboard conversion mensual</li>
+        <li>Secuencia post-matricula bienvenida</li>
+      </ul>
+      <button class="btn btn-o" style="width:100%" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Solicitar auditoria</button>
+    </div>
+  </div>
+  <p style="text-align:center;font-size:.8rem;color:#475569;margin-top:24px">Sin permanencia. Podeis cancelar la suscripcion mensual en cualquier momento con 30 dias de aviso.</p>
+</div>
+</section>
+
+<!-- DEMO -->
+<section class="section" id="demo" style="background:#060912">
+<div class="wrap">
+  <div style="text-align:center;margin-bottom:40px">
+    <div class="slabel">Demo en vivo</div>
+    <div class="stitle">Recibe un WhatsApp ahora mismo</div>
+    <p style="color:#64748b;max-width:520px;margin:0 auto">Introduce tus datos y en menos de 30 segundos recibes un mensaje que demuestra como funciona el agente para academias.</p>
+  </div>
+  <div class="dbox">
+    <h3>&#9889; Prueba el sistema ahora</h3>
+    <p class="dp">Sin compromiso. Solo tu nombre, tu WhatsApp y el nombre de tu academia o centro de formacion.</p>
+    <form id="demoForm" onsubmit="enviarDemo(event)">
+      <div class="ff"><input type="text" id="d_nombre" placeholder="Tu nombre" required></div>
+      <div class="ff"><input type="tel" id="d_tel" placeholder="Tu WhatsApp (ej: 612345678)" required></div>
+      <div class="ff"><input type="text" id="d_negocio" placeholder="Nombre de tu academia o centro de formacion" required></div>
+      <button type="submit" class="btn btn-p" style="width:100%;margin-top:6px">Enviar WhatsApp de prueba &rarr;</button>
+    </form>
+    <div class="dok" id="demoOk">
+      <h4>&#10003; Enviado</h4>
+      <p style="font-size:.85rem;color:#64748b">En menos de 30 segundos recibes el WhatsApp. Si en 2 minutos no llega revisa que el numero sea correcto.</p>
+      <a href="https://wa.me/34622058591?text=Hola%2C%20acabo%20de%20probar%20la%20demo%20de%20academia%20y%20quiero%20saber%20mas" target="_blank" class="btn btn-p" style="margin-top:20px;display:inline-block">Hablar con nosotros &rarr;</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section class="section" style="background:#0a0e1a">
+<div class="wrap" style="max-width:700px">
+  <div class="slabel" style="text-align:center">FAQ</div>
+  <div class="stitle" style="text-align:center;margin-bottom:40px">Preguntas frecuentes</div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Funciona para academias online, presenciales o mixtas?</span><span class="arr">&#8964;</span></div>
+    <div class="faq-a">Si. El agente conoce la modalidad de cada curso y adapta la informacion. Para online incluye los detalles de acceso a la plataforma. Para presencial la direccion y requisitos de material.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>El agente puede gestionar las becas y la financiacion?</span><span class="arr">&#8964;</span></div>
+    <div class="faq-a">Si. Configuramos todas las opciones disponibles: FUNDAE para empresas, becas por desempleo, pago fraccionado. Cuando el lead menciona el precio, el agente presenta las opciones automaticamente.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Como funciona el recordatorio para clases online?</span><span class="arr">&#8964;</span></div>
+    <div class="faq-a">24h antes el alumno recibe el recordatorio con el enlace de acceso a la videoconferencia o plataforma. 2h antes, otro recordatorio con el mismo enlace. Esto reduce los no-shows online del 30% al 5%.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Funciona para academias con varios cursos simultaneos?</span><span class="arr">&#8964;</span></div>
+    <div class="faq-a">Si. Cada alumno tiene su propio hilo en el historial y recibe recordatorios solo de sus clases. El sistema gestiona tantos cursos y alumnos como necesites.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>El seguimiento dias 1/3/7 se puede personalizar por tipo de curso?</span><span class="arr">&#8964;</span></div>
+    <div class="faq-a">Si. El contenido de cada mensaje lo genera GPT con el nombre del alumno y el curso especifico en que esta interesado. No es un mensaje generico, es un mensaje adaptado a cada lead.</div>
+  </div>
+  <div class="faq-item">
+    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Hay permanencia?</span><span class="arr">&#8964;</span></div>
+    <div class="faq-a">No. Podeis cancelar con 30 dias de preaviso. El pago de configuracion no es reembolsable.</div>
+  </div>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<div class="wrap">
+<div class="ctabox">
+  <h2>Tu academia matriculando alumnos sola.<br>Sin seguimiento manual. Sin leads perdidos.</h2>
+  <p>Auditoria gratuita de 30 minutos. Sin compromiso. Os decimos exactamente cuanto podeis automatizar en vuestra academia.</p>
+  <div class="btns">
+    <button class="btn btn-p" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Probar demo gratis</button>
+    <a href="https://wa.me/34622058591?text=Hola%2C%20quiero%20saber%20mas%20sobre%20el%20sistema%20para%20academias" target="_blank" class="btn btn-o">Hablar por WhatsApp</a>
+  </div>
+</div>
+</div>
+
+<footer>
+  <p>&copy; 2026 <a href="index.html">Automarketing Digital</a> &mdash; Sistema de automatizacion para academias y centros de formacion</p>
+</footer>
+
+<script>
+function enviarDemo(e){
+  e.preventDefault();
+  var nombre=document.getElementById('d_nombre').value;
+  var tel=document.getElementById('d_tel').value;
+  var negocio=document.getElementById('d_negocio').value;
+  document.getElementById('demoForm').style.display='none';
+  document.getElementById('demoOk').style.display='block';
+  fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/demo-agencia',{
+    method:'POST',
+    headers:{'Content-Type':'application/json','x-amd-token':'AMD2025xK9mPqR7v'},
+    body:JSON.stringify({nombre:nombre,tel:tel,negocio:negocio+' (landing academia)',sector:'academia'})
+  }).catch(function(){});
+}
+</script>
+
+<a href="https://wa.me/34622058591?text=Hola%2C%20vengo%20desde%20vuestra%20web%20y%20quiero%20saber%20mas%20sobre%20la%20automatizacion%20para%20academias" target="_blank" style="position:fixed;bottom:28px;right:28px;z-index:9999;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s,box-shadow .2s" onmouseover="this.style.transform='scale(1.1)';this.style.boxShadow='0 6px 28px rgba(37,211,102,.7)'" onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 4px 20px rgba(37,211,102,.5)'">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+</body>
+</html>
