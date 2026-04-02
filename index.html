@@ -114,9 +114,9 @@ footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
 .footer-col ul li a:hover{color:#2D7FF9}
 .footer-col p{font-size:.83rem;color:#64748b;line-height:1.7}
 .footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:gap}
-.footer-bottom p{font-size:.8rem;color:#475569}
+.footer-bottom p{font-size:.8rem;color:#94a3b8}
 .footer-legal{display:flex;gap:20px}
-.footer-legal a{font-size:.8rem;color:#475569;transition:color .2s}
+.footer-legal a{font-size:.8rem;color:#94a3b8;transition:color .2s}
 .footer-legal a:hover{color:#2D7FF9}
 /* WA FLOTANTE */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:9998;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s,box-shadow .2s}
@@ -164,6 +164,24 @@ footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
 .sect-grid{grid-template-columns:1fr}
 .footer-grid{grid-template-columns:1fr}
 }
+
+    .section-label{display:inline-block;background:rgba(45,127,249,.08);color:#2D7FF9;border:1px solid rgba(45,127,249,.2);border-radius:20px;padding:5px 16px;font-size:.75rem;font-weight:700;letter-spacing:.8px;text-transform:uppercase;margin-bottom:16px}
+
+    .sector-card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
+    .sector-card:hover{transform:scale(1.02);box-shadow:0 12px 40px rgba(45,127,249,.18);border-color:#2D7FF9}
+
+    @keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,.4)}50%{box-shadow:0 0 0 10px rgba(255,107,53,0)}}
+    .btn-primary,.btn-orange{animation:ctaPulse 2.5s ease-in-out infinite}
+    .btn-primary:hover,.btn-orange:hover{animation:none}
+
+    .testimonial-card{position:relative;padding:32px 28px 28px;background:#fff;border:1px solid #E2E8F0;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .testimonial-card::before{content:'C';position:absolute;top:12px;left:20px;font-size:5rem;line-height:1;color:#2D7FF9;opacity:.15;font-family:Georgia,serif;pointer-events:none}
+    .testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2D7FF9,#1E3A5F);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;color:#fff;flex-shrink:0}
+    .testimonial-author{display:flex;align-items:center;gap:12px;margin-top:20px}
+    .testimonial-name{font-weight:700;font-size:.9rem;color:#1A202C}
+    .testimonial-role{font-size:.78rem;color:#64748B}
+
+    .section-sep{height:1px;background:linear-gradient(90deg,transparent 0%,#2D7FF9 50%,transparent 100%);opacity:.2;margin:0}
 </style>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
@@ -216,6 +234,22 @@ function closeMM(){mm.style.display='none';}
     <div class="hero-ctas">
       <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20pedir%20una%20auditoria%20gratuita" target="_blank" class="btn btn-primary btn-lg btn-pulse">Pedir auditoria gratis</a>
       <a href="como-funciona.html" class="btn btn-outline btn-lg">Ver como funciona &rarr;</a>
+    </div>
+    
+    <!-- Trust badges -->
+    <div style="display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-top:-10px;margin-bottom:40px">
+      <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:7px 16px;font-size:.78rem;color:#e2e8f0;font-weight:500">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2D7FF9" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Compatible con Kit Digital
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:7px 16px;font-size:.78rem;color:#e2e8f0;font-weight:500">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#2D7FF9" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Sin permanencia
+      </span>
+      <span style="display:inline-flex;align-items:center;gap:6px;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:20px;padding:7px 16px;font-size:.78rem;color:#e2e8f0;font-weight:500">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#4ade80" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
+        Activo en 48h
+      </span>
     </div>
     <div class="hero-nums">
       <div><b>+200</b><small>automatizaciones activas</small></div>
@@ -540,5 +574,33 @@ gsap.utils.toArray('section .title').forEach(function(el){
   gsap.from(el,{scrollTrigger:{trigger:el,start:'top 90%',once:true},y:24,duration:0.7,ease:'power2.out'});
 });
 </script>
+
+  <!-- Animated counters -->
+  <script>
+  (function(){
+    function animateCounter(el, target, suffix, duration){
+      var start = 0, step = target / (duration / 16);
+      var timer = setInterval(function(){
+        start = Math.min(start + step, target);
+        el.textContent = Math.floor(start) + suffix;
+        if(start >= target) clearInterval(timer);
+      }, 16);
+    }
+    var io = new IntersectionObserver(function(entries){
+      entries.forEach(function(e){
+        if(e.isIntersecting){
+          e.target.querySelectorAll('[data-count]').forEach(function(el){
+            var target = parseInt(el.getAttribute('data-count'));
+            var suffix = el.getAttribute('data-suffix') || '';
+            animateCounter(el, target, suffix, 1800);
+          });
+          io.unobserve(e.target);
+        }
+      });
+    }, {threshold: 0.3});
+    document.querySelectorAll('.social-proof-numbers,.hero-nums').forEach(function(el){ io.observe(el); });
+  })();
+  </script>
+
 </body>
 </html>
