@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Casos de Exito | Automarketing Digital</title>
+<meta name="description" content="Resultados reales de nuestros clientes. Clinicas, ecommerces, creadores de contenido. Casos de estudio con metricas antes y despues.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#FAFBFC;color:#1A202C}
+a{text-decoration:none;color:inherit}
+.btn{display:inline-block;padding:11px 24px;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s;border:none}
+.btn-primary{background:#FF6B35;color:#fff}
+.btn-primary:hover{background:#E55A2B}
+.btn-outline{border:2px solid #2D7FF9;color:#2D7FF9;background:transparent}
+.btn-outline:hover{background:#2D7FF9;color:#fff}
+.btn-outline-white{border:2px solid #fff;color:#fff;background:transparent}
+.btn-outline-white:hover{background:#fff;color:#0F1729}
+.btn-lg{padding:15px 32px;font-size:1rem}
+section{padding:90px 5%}
+.wrap{max-width:1200px;margin:0 auto}
+.label{font-size:.75rem;font-weight:700;color:#2D7FF9;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+.title{font-size:2.4rem;font-weight:800;letter-spacing:-.5px;line-height:1.2;margin-bottom:16px}
+.sub{font-size:1rem;color:#64748b;line-height:1.75;margin-bottom:48px;max-width:560px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.card{box-shadow:0 2px 8px rgba(0,0,0,.06);background:#FFFFFF;border:1px solid #E2E8F0;border-radius:14px;padding:28px}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);box-shadow:0 1px 3px rgba(0,0,0,.1);border-bottom:1px solid #E2E8F0}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-size:1.05rem;font-weight:800;letter-spacing:-.3px;color:#1A202C}
+.logo span{color:#FF6B35}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.88rem;color:#475569;transition:color .2s}
+.nav-links a:hover{color:#2D7FF9}
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,#0F1729 0%,#1E3A5F 100%);padding:120px 5% 80px;text-align:center}
+.page-hero h1{font-size:3rem;font-weight:800;color:#fff;margin-bottom:20px;letter-spacing:-1px}
+.page-hero p{color:#94a3b8;font-size:1.05rem;max-width:560px;margin:0 auto 36px;line-height:1.75}
+/* STATS BAR */
+.stats-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;margin-bottom:64px}
+.stat-item{padding:32px 24px;text-align:center;border-right:1px solid #E2E8F0}
+.stat-item:last-child{border-right:none}
+.stat-num{font-size:2.4rem;font-weight:900;color:#2D7FF9;line-height:1}
+.stat-suffix{font-size:1.4rem;font-weight:900;color:#2D7FF9}
+.stat-label{font-size:.775rem;color:#64748b;margin-top:6px}
+/* CASO */
+.caso{background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;overflow:hidden;margin-bottom:24px}
+.caso-header{padding:28px 32px;border-bottom:1px solid #E2E8F0;display:flex;align-items:center;gap:16px}
+.caso-icon{width:52px;height:52px;border-radius:12px;background:rgba(45,127,249,.08);display:flex;align-items:center;justify-content:center;font-size:1.5rem;flex-shrink:0}
+.caso-body{display:grid;grid-template-columns:1fr 1fr 1fr;gap:0}
+.caso-col{padding:28px 32px}
+.caso-col:not(:last-child){border-right:1px solid #E2E8F0}
+.caso-col h5{font-size:.7rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#2D7FF9;margin-bottom:14px}
+.caso-col p{font-size:.875rem;color:#64748B;line-height:1.7}
+.caso-metric{display:flex;align-items:baseline;gap:6px;margin-top:12px}
+.caso-metric strong{font-size:2rem;font-weight:800;color:#2D7FF9}
+.caso-metric span{font-size:.8rem;color:#64748b}
+/* TESTIMONIOS */
+.test-card .stars{color:#f59e0b;font-size:.9rem;margin-bottom:12px}
+.test-card .quote{font-size:.9rem;color:#64748B;line-height:1.7;margin-bottom:16px;font-style:italic}
+.test-card .author{font-size:.82rem;font-weight:600;color:#1A202C}
+.test-card .author span{display:block;color:#64748b;font-weight:400}
+/* CTA FINAL */
+.cta-final{background:linear-gradient(135deg,#1E3A5F 0%,#0F1729 100%);text-align:center;padding:90px 5%}
+.cta-final h2{font-size:2.6rem;font-weight:800;color:#fff;margin-bottom:16px}
+.cta-final p{color:#94a3b8;margin-bottom:36px}
+/* FOOTER */
+footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
+.footer-in{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:48px}
+.footer-col h4{font-size:.85rem;font-weight:700;color:#e2e8f0;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{font-size:.83rem;color:#64748b;transition:color .2s}
+.footer-col ul li a:hover{color:#2D7FF9}
+.footer-col p{font-size:.83rem;color:#64748b;line-height:1.7}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.8rem;color:#475569}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{font-size:.8rem;color:#475569}
+.footer-legal a:hover{color:#2D7FF9}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9998;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.nav-ham{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.nav-ham span{display:block;width:24px;height:2px;background:#1A202C;margin:5px 0}
+@media(max-width:768px){
+.g2,.g3{grid-template-columns:1fr}
+.caso-body{grid-template-columns:1fr}
+.caso-col:not(:last-child){border-right:none;border-bottom:1px solid #E2E8F0}
+.stats-bar{grid-template-columns:repeat(2,1fr)}
+.stat-item:nth-child(2){border-right:none}
+.stat-item:nth-child(3){border-top:1px solid #E2E8F0}
+.stat-item:nth-child(4){border-top:1px solid #E2E8F0;border-right:none}
+.nav-links{display:none}.nav-ham{display:block}
+.footer-grid{grid-template-columns:1fr 1fr}
+.page-hero h1{font-size:2rem}
+}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+</style>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<div class="nav-in">
+  <a href="index.html" class="logo">Automarketing<span>Digital</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#sectores">Sectores</a></li>
+    <li><a href="como-funciona.html">Como funciona</a></li>
+    <li><a href="precios.html">Precios</a></li>
+    <li><a href="casos.html" style="color:#2D7FF9;font-weight:700">Casos de exito</a></li>
+  </ul>
+  <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20pedir%20una%20auditoria%20gratuita" target="_blank" class="btn btn-primary" style="font-size:.85rem;padding:9px 20px">Pedir auditoria gratis</a>
+  <button class="nav-ham" id="navHam"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div id="mobileMenu" style="display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #E2E8F0;z-index:99;padding:20px 5%;box-shadow:0 8px 24px rgba(0,0,0,.1)">
+  <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
+    <li><a href="index.html#sectores" style="font-size:1rem;color:#1A202C;font-weight:600">Sectores</a></li>
+    <li><a href="como-funciona.html" style="font-size:1rem;color:#1A202C;font-weight:600">Como funciona</a></li>
+    <li><a href="precios.html" style="font-size:1rem;color:#1A202C;font-weight:600">Precios</a></li>
+    <li><a href="casos.html" style="font-size:1rem;color:#2D7FF9;font-weight:700">Casos de exito</a></li>
+    <li><a href="https://wa.me/34643987371" target="_blank" class="btn btn-primary" style="text-align:center;display:block">Pedir auditoria gratis</a></li>
+  </ul>
+</div>
+<script>var mm=document.getElementById('mobileMenu');document.getElementById('navHam').onclick=function(){mm.style.display=mm.style.display==='none'?'block':'none';};</script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="wrap">
+    <div class="label" style="color:#93c5fd">Casos de exito</div>
+    <h1>Resultados reales<br>con nuestro sistema</h1>
+    <p>Sistemas instalados, funcionando y generando resultados desde el primer dia. Sin promesas vacias.</p>
+    <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20pedir%20una%20auditoria%20gratuita" target="_blank" class="btn btn-primary btn-lg">Quiero estos resultados</a>
+  </div>
+</div>
+
+<!-- STATS BAR -->
+<section style="padding:60px 5%">
+<div class="wrap">
+  <div class="stats-bar">
+    <div class="stat-item"><div class="stat-num"><span id="c1">0</span><span class="stat-suffix">+</span></div><div class="stat-label">negocios con sistema activo</div></div>
+    <div class="stat-item"><div class="stat-num"><span id="c2">0</span><span class="stat-suffix">%</span></div><div class="stat-label">reduccion media de no-shows</div></div>
+    <div class="stat-item"><div class="stat-num"><span id="c3">0</span><span class="stat-suffix">h</span></div><div class="stat-label">ahorradas por cliente a la semana</div></div>
+    <div class="stat-item"><div class="stat-num"><span id="c4">x</span><span id="c4b">0</span></div><div class="stat-label">ROI medio en el primer mes</div></div>
+  </div>
+</div>
+</section>
+
+<!-- CASO ESTRELLA -->
+<section id="casos" style="padding:0 5% 90px">
+<div class="wrap">
+  <p class="label">Caso destacado</p>
+  <div style="background:linear-gradient(135deg,#0f172a 0%,#1E3A5F 100%);border:2px solid #2D7FF9;border-radius:20px;padding:40px;margin-bottom:32px;position:relative;overflow:hidden">
+    <div style="position:absolute;top:16px;right:20px;background:#2D7FF9;color:#fff;font-size:.7rem;font-weight:700;padding:5px 14px;border-radius:20px;letter-spacing:.5px">CASO DESTACADO</div>
+    <div style="display:flex;align-items:center;gap:16px;margin-bottom:28px">
+      <div style="font-size:2.2rem">&#127381;</div>
+      <div>
+        <h3 style="font-size:1.15rem;font-weight:800;color:#fff;margin-bottom:4px">Clinica de fisioterapia &mdash; Madrid</h3>
+        <p style="font-size:.85rem;color:#64748B">Plan Profesional &mdash; instalado en 48 horas</p>
+      </div>
+    </div>
+    <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;margin-bottom:32px" class="caso-det-grid">
+      <div>
+        <h5 style="font-size:.8rem;font-weight:700;color:#2D7FF9;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Situacion inicial</h5>
+        <p style="font-size:.875rem;color:#94a3b8;line-height:1.65">20 no-shows al mes (&euro;40 c/u = &euro;800 perdidos). Respuesta manual a WhatsApp: 4h/dia. Leads sin seguimiento: 70% se enfriaban.</p>
+      </div>
+      <div>
+        <h5 style="font-size:.8rem;font-weight:700;color:#2D7FF9;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Lo que instalamos</h5>
+        <p style="font-size:.875rem;color:#94a3b8;line-height:1.65">Agente WhatsApp 24/7 + recordatorios 24h y 2h + secuencia de seguimiento de 7 dias para leads nuevos + campana de reactivacion mensual.</p>
+      </div>
+      <div>
+        <h5 style="font-size:.8rem;font-weight:700;color:#2D7FF9;text-transform:uppercase;letter-spacing:.5px;margin-bottom:10px">Resultado a los 45 dias</h5>
+        <div style="display:flex;flex-direction:column;gap:8px">
+          <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:.8rem;color:#94a3b8">No-shows</span><strong style="color:#10b981;font-size:1rem">-78%</strong></div>
+          <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:.8rem;color:#94a3b8">Leads convertidos</span><strong style="color:#10b981;font-size:1rem">+52%</strong></div>
+          <div style="background:rgba(255,255,255,.06);border-radius:8px;padding:10px 14px;display:flex;justify-content:space-between;align-items:center"><span style="font-size:.8rem;color:#94a3b8">Tiempo ahorrado</span><strong style="color:#10b981;font-size:1rem">22h/sem</strong></div>
+        </div>
+      </div>
+    </div>
+    <div style="background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:24px">
+      <p style="font-size:.8rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:16px">Calculo ROI &mdash; mes 1</p>
+      <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;text-align:center" class="roi-breakdown-grid">
+        <div><div style="font-size:.75rem;color:#64748b;margin-bottom:6px">Inversion total</div><div style="font-size:1.5rem;font-weight:800;color:#fff">997&euro;</div><div style="font-size:.7rem;color:#475569">setup + 1 mes</div></div>
+        <div style="display:flex;align-items:center;justify-content:center;font-size:1.8rem;color:#475569">+</div>
+        <div><div style="font-size:.75rem;color:#64748b;margin-bottom:6px">Recuperado</div><div style="font-size:1.5rem;font-weight:800;color:#10b981">+3.840&euro;</div><div style="font-size:.7rem;color:#475569">no-shows + leads + reactivados</div></div>
+        <div style="background:#0f2718;border:1px solid #16a34a;border-radius:10px;padding:14px;display:flex;flex-direction:column;justify-content:center"><div style="font-size:.75rem;color:#22c55e;margin-bottom:4px;font-weight:700">ROI primer mes</div><div style="font-size:2rem;font-weight:800;color:#22c55e">x3.85</div><div style="font-size:.7rem;color:#16a34a">cada euro invertido</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Caso 1 -->
+  <div class="caso">
+    <div class="caso-header">
+      <div class="caso-icon">&#127381;</div>
+      <div><h3 style="font-size:1rem;font-weight:700;color:#1A202C;margin-bottom:4px">Centro de estetica en Sevilla</h3><p style="font-size:.825rem;color:#64748b">Sistema de captacion + recordatorios + reactivacion</p></div>
+    </div>
+    <div class="caso-body">
+      <div class="caso-col"><h5>El problema</h5><p>Respondian leads manualmente, perdian el 60% por no contestar a tiempo. Las cancelaciones de citas llegaban al 35% y no habia seguimiento post-visita.</p></div>
+      <div class="caso-col"><h5>Lo que instalamos</h5><p>Sistema de respuesta automatica por WhatsApp en menos de 2 minutos. Recordatorios 24h y 2h antes de la cita. Campana de reactivacion mensual a clientas inactivas.</p></div>
+      <div class="caso-col"><h5>Resultado a los 60 dias</h5>
+        <div class="caso-metric"><strong>-68%</strong><span>cancelaciones</span></div>
+        <div class="caso-metric"><strong>+2.400&euro;</strong><span>ingresos mes adicionales</span></div>
+        <div class="caso-metric"><strong>12h</strong><span>ahorradas por semana</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Caso 2 -->
+  <div class="caso">
+    <div class="caso-header">
+      <div class="caso-icon">&#128722;</div>
+      <div><h3 style="font-size:1rem;font-weight:700;color:#1A202C;margin-bottom:4px">Tienda online de moda</h3><p style="font-size:.825rem;color:#64748b">Recuperacion de carritos + post-venta + upsell automatico</p></div>
+    </div>
+    <div class="caso-body">
+      <div class="caso-col"><h5>El problema</h5><p>El 78% de los carritos se abandonaban sin comprar. No habia seguimiento post-compra ni sistema de upsell. Los clientes compraban una vez y no volvian.</p></div>
+      <div class="caso-col"><h5>Lo que instalamos</h5><p>Secuencia de 3 emails para carrito abandonado con descuento progresivo. Email de seguimiento dia 3, solicitud de resena dia 7, oferta upsell personalizada dia 14.</p></div>
+      <div class="caso-col"><h5>Resultado a los 30 dias</h5>
+        <div class="caso-metric"><strong>+18%</strong><span>ventas recuperadas</span></div>
+        <div class="caso-metric"><strong>+3.100&euro;</strong><span>facturacion mensual extra</span></div>
+        <div class="caso-metric"><strong>x2.4</strong><span>compras repetidas</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Caso 3 -->
+  <div class="caso">
+    <div class="caso-header">
+      <div class="caso-icon">&#127909;</div>
+      <div><h3 style="font-size:1rem;font-weight:700;color:#1A202C;margin-bottom:4px">Creador de contenido con 3 canales</h3><p style="font-size:.825rem;color:#64748b">Publicacion automatica en YouTube + Instagram + TikTok</p></div>
+    </div>
+    <div class="caso-body">
+      <div class="caso-col"><h5>El problema</h5><p>Pasaba 6 horas al dia editando y publicando contenido manualmente. Solo podia publicar en un canal. Queria escalar pero no tenia tiempo ni equipo.</p></div>
+      <div class="caso-col"><h5>Lo que instalamos</h5><p>Sistema completo de generacion de guiones con IA, conversion a audio, montaje de video automatico y publicacion programada en 3 canales simultaneamente.</p></div>
+      <div class="caso-col"><h5>Resultado a los 90 dias</h5>
+        <div class="caso-metric"><strong>27</strong><span>videos publicados/dia</span></div>
+        <div class="caso-metric"><strong>6h</strong><span>ahorradas cada dia</span></div>
+        <div class="caso-metric"><strong>+340%</strong><span>crecimiento de seguidores</span></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:48px">
+    <a href="https://wa.me/34643987371?text=Quiero%20estos%20resultados%20para%20mi%20negocio" target="_blank" class="btn btn-primary btn-lg">Quiero estos resultados para mi negocio</a>
+  </div>
+</div>
+</section>
+
+<!-- TESTIMONIOS -->
+<section id="testimonios" style="background:#F0F2F5">
+<div class="wrap">
+  <div class="label">Testimonios</div>
+  <h2 class="title">Lo que dicen nuestros clientes</h2>
+  <div class="g3" style="margin-bottom:24px">
+    <div class="card test-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="quote">"Antes pasaba 3 horas al dia contestando WhatsApp. Ahora el sistema lo gestiona todo y yo me centro en dar masajes. En el primer mes recupere 8 clientes que habian dejado de venir."</p>
+      <div class="author">Centro de masajes <span>Sistema de citas y agente WA</span></div>
+    </div>
+    <div class="card test-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="quote">"Tenia miedo de que fuera muy tecnico pero en 48 horas estaba todo funcionando. Los recordatorios automaticos han reducido mis ausencias a casi cero. La mejor inversion del ano."</p>
+      <div class="author">Fisioterapeuta <span>Sistema completo de automatizacion</span></div>
+    </div>
+    <div class="card test-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="quote">"El sistema de contenido automatico para redes nos ha permitido publicar cada dia sin dedicarle tiempo. Hemos triplicado los seguidores y los leads han aumentado un 60% en tres meses."</p>
+      <div class="author">Clinica estetica <span>Contenido + captacion automatizada</span></div>
+    </div>
+  </div>
+  <div class="g3" style="margin-bottom:24px">
+    <div class="card test-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="quote">"Recibiamos leads por Instagram pero nadie los seguia. Ahora el sistema les responde en segundos, les manda el catalogo y agenda la visita solo. Cerramos un 40% mas de ventas sin contratar a nadie."</p>
+      <div class="author">Negocio local <span>Seguimiento automatico de leads</span></div>
+    </div>
+    <div class="card test-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="quote">"Llevo una academia de ingles y tenia a alumnos potenciales que preguntaban y desaparecian. Con el seguimiento automatico por WhatsApp, convertimos el doble de consultas en matriculas. Impresionante."</p>
+      <div class="author">Academia <span>Secuencia bienvenida + seguimiento</span></div>
+    </div>
+    <div class="card test-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="quote">"Pense que era solo para grandes empresas. Me equivoque. Tengo una peluqueria y ahora el 80% de mis citas se reservan solas, los recordatorios se envian solos y yo no hago nada. Merece cada euro."</p>
+      <div class="author">Peluqueria <span>Reservas + recordatorios automaticos</span></div>
+    </div>
+  </div>
+  <div class="g3">
+    <div class="card test-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="quote">"Vendemos suplementos online y el carrito abandonado nos mataba. El sistema recupera automaticamente a los que no compran con un WhatsApp personalizado. Recuperamos unos 2.800&euro; extra al mes."</p>
+      <div class="author">Ecommerce <span>Recuperacion carritos abandonados</span></div>
+    </div>
+    <div class="card test-card">
+      <div class="stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+      <p class="quote">"Mi mayor problema era el no-show: clientes que reservaban y no venian. Con los recordatorios de 24h y 2h antes, mis ausencias bajaron un 75%. Solo eso ya pago el sistema en el primer mes."</p>
+      <div class="author">Clinica dental <span>Recordatorios + reduccion no-shows</span></div>
+    </div>
+    <div class="card test-card" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;border:2px dashed #E2E8F0">
+      <div style="font-size:2.2rem;margin-bottom:12px">&#128172;</div>
+      <p style="color:#475569;font-size:.875rem;margin-bottom:20px">Tu testimonio podria estar aqui.<br>Reserva tu auditoria gratuita.</p>
+      <a href="https://wa.me/34643987371" target="_blank" class="btn btn-primary" style="font-size:.85rem">Empezar ahora &rarr;</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+<div class="wrap">
+  <div class="label" style="color:#93c5fd">Empieza hoy</div>
+  <h2>Auditoria gratuita &middot; 30 min &middot; Sin compromiso</h2>
+  <p>Analizamos tu negocio y te decimos exactamente cuanto puedes automatizar.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">
+    <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20pedir%20una%20auditoria%20gratuita" target="_blank" class="btn btn-primary btn-lg">Pedir auditoria gratis</a>
+    <a href="precios.html" class="btn btn-outline-white btn-lg">Ver precios &rarr;</a>
+  </div>
+  <p style="color:#64748b;font-size:.8rem">Te llamamos en 24h &middot; Solo lunes a jueves por la manana</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-in">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Automarketing <span style="color:#FF6B35">Digital</span></h4>
+      <p>Instalamos sistemas de IA para negocios locales. Sofia trabaja 24/7 respondiendo WhatsApp, agendando citas y recuperando clientes.</p>
+      <p style="margin-top:12px"><a href="https://wa.me/34643987371" style="color:#25d366">&#128172; +34 643 987 371</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Sectores</h4>
+      <ul>
+        <li><a href="masajistas.html">Masajes y Fisioterapia</a></li>
+        <li><a href="dental.html">Clinicas Dentales</a></li>
+        <li><a href="peluqueria.html">Peluquerias</a></li>
+        <li><a href="restaurante.html">Restaurantes</a></li>
+        <li><a href="ecommerce.html">Ecommerce</a></li>
+        <li><a href="gimnasio.html">Gimnasios</a></li>
+        <li><a href="academia.html">Academias</a></li>
+        <li><a href="inmobiliaria.html">Inmobiliarias</a></li>
+        <li><a href="veterinaria.html">Veterinarias</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="como-funciona.html">Como funciona</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="casos.html">Casos de exito</a></li>
+        <li><a href="precios.html#faq">Preguntas frecuentes</a></li>
+        <li><a href="precios.html#roi">Calculadora ROI</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/34643987371" target="_blank">WhatsApp: +34 643 987 371</a></li>
+        <li><a href="https://wa.me/34643987371?text=Quiero%20una%20auditoria%20gratuita" target="_blank">Auditoria gratuita</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Automarketing Digital</p>
+    <div class="footer-legal">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
+  </div>
+</div>
+</footer>
+
+<a href="https://wa.me/34643987371?text=Hola%2C%20vengo%20desde%20vuestra%20web%20y%20quiero%20saber%20mas" target="_blank" class="wa-float" title="Hablar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+// COUNTERS
+(function(){
+  var targets={c1:50,c2:70,c3:15};
+  var started=false;
+  function run(){
+    Object.keys(targets).forEach(function(id){
+      var el=document.getElementById(id);if(!el)return;
+      var target=targets[id],cur=0,step=Math.ceil(target/40);
+      var iv=setInterval(function(){cur=Math.min(cur+step,target);el.textContent=cur;if(cur>=target)clearInterval(iv);},35);
+    });
+    // ROI counter
+    var c4b=document.getElementById('c4b');if(c4b){var t=0;var iv2=setInterval(function(){t+=0.1;c4b.textContent=t.toFixed(1);if(t>=3.5){clearInterval(iv2);c4b.textContent='3.5';}},50);}
+  }
+  var obs=new IntersectionObserver(function(entries){if(entries[0].isIntersecting&&!started){started=true;run();obs.disconnect();}},{threshold:0.3});
+  var sb=document.querySelector('.stats-bar');if(sb)obs.observe(sb);
+})();
+// GSAP
+gsap.registerPlugin(ScrollTrigger);
+gsap.utils.toArray('.card,.caso').forEach(function(el,i){gsap.from(el,{scrollTrigger:{trigger:el,start:'top 88%',once:true},y:36,duration:0.6,delay:(i%3)*0.08,ease:'power2.out'});});
+</script>
+<style>
+@media(max-width:768px){
+.caso-det-grid{grid-template-columns:1fr !important}
+.roi-breakdown-grid{grid-template-columns:1fr 1fr !important}
+}
+</style>
+</body>
+</html>

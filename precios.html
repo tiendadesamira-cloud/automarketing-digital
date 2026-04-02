@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Precios | Automarketing Digital</title>
+<meta name="description" content="Planes claros sin letra pequena. Starter desde 497 euros, Pro 997, Full 1.997. Sin permanencia, cancela cuando quieras. Compatible con Kit Digital.">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Inter',sans-serif;background:#FAFBFC;color:#1A202C}
+a{text-decoration:none;color:inherit}
+.btn{display:inline-block;padding:11px 24px;border-radius:8px;font-size:.9rem;font-weight:600;cursor:pointer;transition:all .2s;border:none}
+.btn-primary{background:#FF6B35;color:#fff}
+.btn-primary:hover{background:#E55A2B}
+.btn-outline{border:2px solid #2D7FF9;color:#2D7FF9;background:transparent}
+.btn-outline:hover{background:#2D7FF9;color:#fff}
+.btn-outline-white{border:2px solid #fff;color:#fff;background:transparent}
+.btn-outline-white:hover{background:#fff;color:#0F1729}
+.btn-lg{padding:15px 32px;font-size:1rem}
+section{padding:90px 5%}
+.wrap{max-width:1200px;margin:0 auto}
+.label{font-size:.75rem;font-weight:700;color:#2D7FF9;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+.title{font-size:2.4rem;font-weight:800;letter-spacing:-.5px;line-height:1.2;margin-bottom:16px}
+.sub{font-size:1rem;color:#64748b;line-height:1.75;margin-bottom:48px;max-width:560px}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(255,255,255,.97);backdrop-filter:blur(14px);box-shadow:0 1px 3px rgba(0,0,0,.1);border-bottom:1px solid #E2E8F0}
+.nav-in{max-width:1200px;margin:0 auto;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:68px}
+.logo{font-size:1.05rem;font-weight:800;letter-spacing:-.3px;color:#1A202C}
+.logo span{color:#FF6B35}
+.nav-links{display:flex;gap:28px;list-style:none}
+.nav-links a{font-size:.88rem;color:#475569;transition:color .2s}
+.nav-links a:hover{color:#2D7FF9}
+/* PAGE HERO */
+.page-hero{background:linear-gradient(135deg,#0F1729 0%,#1E3A5F 100%);padding:120px 5% 80px;text-align:center}
+.page-hero h1{font-size:3rem;font-weight:800;color:#fff;margin-bottom:20px;letter-spacing:-1px}
+.page-hero p{color:#94a3b8;font-size:1.05rem;max-width:560px;margin:0 auto 36px;line-height:1.75}
+/* PRECIOS */
+.precios-section{background:#F0F2F5}
+.precio-card{border:1px solid #E2E8F0;border-radius:16px;padding:32px;background:#FFFFFF;position:relative}
+.precio-card.featured{border-color:#2D7FF9;box-shadow:0 0 40px rgba(45,127,249,.2)}
+.precio-card.featured::before{content:'MAS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#2D7FF9;color:#fff;font-size:.7rem;font-weight:700;padding:4px 14px;border-radius:20px;letter-spacing:.5px}
+.precio-name{font-size:.85rem;font-weight:600;color:#64748B;margin-bottom:8px;text-transform:uppercase;letter-spacing:.5px}
+.precio-setup{font-size:2.2rem;font-weight:800;color:#1A202C}
+.precio-setup small{font-size:.9rem;font-weight:400;color:#64748b}
+.precio-mensual{font-size:.9rem;color:#2D7FF9;font-weight:600;margin-top:6px;margin-bottom:24px}
+.precio-features{list-style:none;margin-bottom:28px}
+.precio-features li{font-size:.85rem;color:#64748B;padding:7px 0;border-bottom:1px solid #E2E8F0;display:flex;align-items:center;gap:10px}
+.precio-features li::before{content:'';width:6px;height:6px;border-radius:50%;background:#10b981;flex-shrink:0}
+/* CALCULADORA ROI */
+.roi-grid{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+/* CALCULADORA PERDIDA */
+.perdida-wrap{display:grid;grid-template-columns:1fr 1fr;gap:48px;align-items:start}
+.perdida-inputs{display:flex;flex-direction:column;gap:24px}
+.perdida-field label{display:block;font-size:.8rem;font-weight:600;color:#64748B;margin-bottom:10px}
+.perdida-field input[type=range]{width:100%;accent-color:#2D7FF9;height:6px}
+.perdida-field .val{font-size:1.1rem;font-weight:700;color:#2D7FF9;margin-top:6px}
+.perdida-result{background:#FFFFFF;border:2px solid #dc2626;border-radius:16px;padding:32px;position:sticky;top:100px}
+.perdida-result h3{font-size:1rem;font-weight:700;color:#dc2626;margin-bottom:24px;text-align:center}
+.perdida-item{display:flex;justify-content:space-between;align-items:center;padding:14px 0;border-bottom:1px solid #E2E8F0}
+.perdida-item:last-of-type{border-bottom:none}
+.perdida-item span{font-size:.825rem;color:#64748B}
+.perdida-item strong{font-size:1.1rem;font-weight:800;color:#ef4444}
+.perdida-total{margin-top:20px;padding:20px;background:#fef2f2;border-radius:10px;text-align:center;border:1px solid #fca5a5}
+.perdida-total p{font-size:.8rem;color:#991b1b;margin-bottom:6px}
+.perdida-total .big{font-size:2.4rem;font-weight:900;color:#ef4444}
+/* FAQ */
+.faq-item{border-bottom:1px solid #E2E8F0;padding:20px 0;cursor:pointer}
+.faq-q{display:flex;justify-content:space-between;align-items:center;font-size:.95rem;font-weight:600;color:#1A202C}
+.faq-q .arrow{color:#2D7FF9;font-size:1.2rem;transition:transform .3s}
+.faq-a{font-size:.88rem;color:#64748b;line-height:1.7;margin-top:12px;display:none}
+.faq-item.open .faq-a{display:block}
+.faq-item.open .arrow{transform:rotate(180deg)}
+/* CTA FINAL */
+.cta-final{background:linear-gradient(135deg,#1E3A5F 0%,#0F1729 100%);text-align:center;padding:90px 5%}
+.cta-final h2{font-size:2.6rem;font-weight:800;color:#fff;margin-bottom:16px}
+.cta-final p{color:#94a3b8;margin-bottom:36px}
+/* FOOTER */
+footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
+.footer-in{max-width:1200px;margin:0 auto}
+.footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:48px}
+.footer-col h4{font-size:.85rem;font-weight:700;color:#e2e8f0;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px}
+.footer-col ul{list-style:none}
+.footer-col ul li{margin-bottom:8px}
+.footer-col ul li a{font-size:.83rem;color:#64748b;transition:color .2s}
+.footer-col ul li a:hover{color:#2D7FF9}
+.footer-col p{font-size:.83rem;color:#64748b;line-height:1.7}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.08);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px}
+.footer-bottom p{font-size:.8rem;color:#475569}
+.footer-legal{display:flex;gap:20px}
+.footer-legal a{font-size:.8rem;color:#475569}
+.footer-legal a:hover{color:#2D7FF9}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9998;width:58px;height:58px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.5);transition:transform .2s}
+.wa-float:hover{transform:scale(1.1)}
+.nav-ham{display:none;background:none;border:none;cursor:pointer;padding:4px}
+.nav-ham span{display:block;width:24px;height:2px;background:#1A202C;margin:5px 0}
+@media(max-width:768px){
+.g2,.g3,.roi-grid,.perdida-wrap{grid-template-columns:1fr}
+.nav-links{display:none}.nav-ham{display:block}
+.footer-grid{grid-template-columns:1fr 1fr}
+.page-hero h1{font-size:2rem}
+}
+@media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+<div class="nav-in">
+  <a href="index.html" class="logo">Automarketing<span>Digital</span></a>
+  <ul class="nav-links">
+    <li><a href="index.html#sectores">Sectores</a></li>
+    <li><a href="como-funciona.html">Como funciona</a></li>
+    <li><a href="precios.html" style="color:#2D7FF9;font-weight:700">Precios</a></li>
+    <li><a href="casos.html">Casos de exito</a></li>
+  </ul>
+  <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20pedir%20una%20auditoria%20gratuita" target="_blank" class="btn btn-primary" style="font-size:.85rem;padding:9px 20px">Pedir auditoria gratis</a>
+  <button class="nav-ham" id="navHam"><span></span><span></span><span></span></button>
+</div>
+</nav>
+<div id="mobileMenu" style="display:none;position:fixed;top:68px;left:0;right:0;background:#fff;border-bottom:1px solid #E2E8F0;z-index:99;padding:20px 5%;box-shadow:0 8px 24px rgba(0,0,0,.1)">
+  <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
+    <li><a href="index.html#sectores" style="font-size:1rem;color:#1A202C;font-weight:600">Sectores</a></li>
+    <li><a href="como-funciona.html" style="font-size:1rem;color:#1A202C;font-weight:600">Como funciona</a></li>
+    <li><a href="precios.html" style="font-size:1rem;color:#2D7FF9;font-weight:700">Precios</a></li>
+    <li><a href="casos.html" style="font-size:1rem;color:#1A202C;font-weight:600">Casos de exito</a></li>
+    <li><a href="https://wa.me/34643987371" target="_blank" class="btn btn-primary" style="text-align:center;display:block">Pedir auditoria gratis</a></li>
+  </ul>
+</div>
+<script>var mm=document.getElementById('mobileMenu');document.getElementById('navHam').onclick=function(){mm.style.display=mm.style.display==='none'?'block':'none';};</script>
+
+<!-- PAGE HERO -->
+<div class="page-hero">
+  <div class="wrap">
+    <div class="label" style="color:#93c5fd">Precios</div>
+    <h1>Planes claros,<br>sin letra pequena</h1>
+    <p>Pago unico de configuracion + cuota mensual baja. Sin permanencia. Cancela cuando quieras.</p>
+    <div style="display:flex;gap:12px;flex-wrap:wrap;justify-content:center">
+      <span style="background:rgba(45,127,249,.15);border:1px solid rgba(45,127,249,.3);color:#93c5fd;font-size:.75rem;font-weight:600;padding:6px 14px;border-radius:20px">Compatible con Kit Digital</span>
+      <span style="background:rgba(45,127,249,.15);border:1px solid rgba(45,127,249,.3);color:#93c5fd;font-size:.75rem;font-weight:600;padding:6px 14px;border-radius:20px">20% descuento pago anual</span>
+      <span style="background:rgba(45,127,249,.15);border:1px solid rgba(45,127,249,.3);color:#93c5fd;font-size:.75rem;font-weight:600;padding:6px 14px;border-radius:20px">11 sectores especializados</span>
+    </div>
+  </div>
+</div>
+
+<!-- PLANES -->
+<section class="precios-section" id="precios">
+<div class="wrap">
+  <div style="display:flex;align-items:center;gap:14px;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:16px 24px;margin-bottom:40px;max-width:680px;margin-left:auto;margin-right:auto">
+    <span style="font-size:1.6rem">&#128274;</span>
+    <div>
+      <p style="font-weight:800;font-size:1rem;margin:0 0 2px">Sin permanencia &mdash; cancela cuando quieras</p>
+      <p style="color:#64748B;font-size:.82rem;margin:0">La cuota mensual se puede cancelar en cualquier momento con 30 dias de aviso. El pago de configuracion cubre la instalacion y puesta en marcha.</p>
+    </div>
+  </div>
+  <div class="g3">
+    <div class="precio-card">
+      <div class="precio-name">Starter</div>
+      <div class="precio-setup">497<small> euros setup</small></div>
+      <div class="precio-mensual">+ desde 97 euros/mes</div>
+      <ul class="precio-features">
+        <li>Landing page profesional</li>
+        <li>Captacion de leads automatica</li>
+        <li>Agente WhatsApp basico</li>
+        <li>Notificaciones instantaneas</li>
+        <li>CRM en Google Sheets</li>
+        <li>Soporte por email</li>
+      </ul>
+      <a href="https://wa.me/34643987371?text=Quiero%20el%20plan%20Starter" target="_blank" class="btn btn-outline" style="width:100%;text-align:center;display:block">Reservar llamada</a>
+    </div>
+    <div class="precio-card featured">
+      <div class="precio-name" style="color:#2D7FF9">Pro</div>
+      <div class="precio-setup">997<small> euros setup</small></div>
+      <div class="precio-mensual">+ desde 147 euros/mes</div>
+      <ul class="precio-features">
+        <li>Todo lo del plan Starter</li>
+        <li>Agente WhatsApp con IA 24/7</li>
+        <li>Recordatorios y seguimiento</li>
+        <li>Reactivacion de inactivos</li>
+        <li>Programa de referidos</li>
+        <li>Encuesta NPS automatica</li>
+        <li>Soporte prioritario</li>
+      </ul>
+      <a href="https://wa.me/34643987371?text=Quiero%20el%20plan%20Pro" target="_blank" class="btn btn-primary" style="width:100%;text-align:center;display:block">Reservar llamada</a>
+    </div>
+    <div class="precio-card">
+      <div class="precio-name">Full</div>
+      <div class="precio-setup">1.997<small> euros setup</small></div>
+      <div class="precio-mensual">+ desde 197 euros/mes</div>
+      <ul class="precio-features">
+        <li>Todo lo del plan Pro</li>
+        <li>Contenido automatico para redes</li>
+        <li>Campanas masivas WhatsApp</li>
+        <li>Integraciones a medida</li>
+        <li>Reportes y analytics</li>
+        <li>Gestor de cuenta dedicado</li>
+        <li>Soporte 24/7</li>
+      </ul>
+      <a href="https://wa.me/34643987371?text=Quiero%20el%20plan%20Full" target="_blank" class="btn btn-outline" style="width:100%;text-align:center;display:block">Reservar llamada</a>
+    </div>
+  </div>
+  <div style="text-align:center;margin-top:32px">
+    <p style="color:#64748b;font-size:.875rem">No sabes cual elegir? <a href="https://wa.me/34643987371?text=Ayudame%20a%20elegir%20el%20plan%20correcto" target="_blank" style="color:#2D7FF9;font-weight:700">Hablamos 15 min y lo vemos juntos &rarr;</a></p>
+  </div>
+</div>
+</section>
+
+<!-- CALCULADORA ROI -->
+<section id="roi">
+<div class="wrap">
+  <div class="label">Calculadora ROI</div>
+  <h2 class="title">Cuanto vale automatizar<br>tu negocio</h2>
+  <p class="sub">Mueve los sliders y ve en tiempo real el impacto economico de automatizar tus procesos.</p>
+  <div class="roi-grid">
+    <div>
+      <div style="margin-bottom:28px">
+        <label style="display:flex;justify-content:space-between;font-size:.875rem;font-weight:600;margin-bottom:12px">Horas/semana en tareas repetitivas <span id="v1" style="color:#2D7FF9">15h</span></label>
+        <input type="range" min="1" max="40" value="15" oninput="roi()" id="s1" style="width:100%;accent-color:#2D7FF9">
+      </div>
+      <div style="margin-bottom:28px">
+        <label style="display:block;font-size:.875rem;font-weight:600;margin-bottom:12px">Valor de tu hora (euros)</label>
+        <input type="number" id="n1" value="25" oninput="roi()" style="width:100%;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:8px;padding:11px 14px;color:#1A202C;font-size:.95rem;font-family:inherit">
+      </div>
+      <div style="margin-bottom:28px">
+        <label style="display:flex;justify-content:space-between;font-size:.875rem;font-weight:600;margin-bottom:12px">Leads perdidos al mes <span id="v2" style="color:#2D7FF9">20</span></label>
+        <input type="range" min="0" max="100" value="20" oninput="roi()" id="s2" style="width:100%;accent-color:#2D7FF9">
+      </div>
+      <div style="margin-bottom:28px">
+        <label style="display:block;font-size:.875rem;font-weight:600;margin-bottom:12px">Valor medio de un cliente (euros)</label>
+        <input type="number" id="n2" value="200" oninput="roi()" style="width:100%;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:8px;padding:11px 14px;color:#1A202C;font-size:.95rem;font-family:inherit">
+      </div>
+    </div>
+    <div style="background:#FFFFFF;border:1px solid #E2E8F0;border-radius:16px;padding:32px">
+      <p style="font-size:.88rem;color:#64748b;margin-bottom:24px">Tu potencial mensual automatizando</p>
+      <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #E2E8F0">
+        <span style="font-size:.875rem;color:#64748B">Ahorro en tiempo</span>
+        <strong id="o1" style="color:#10b981">0&euro;</strong>
+      </div>
+      <div style="display:flex;justify-content:space-between;padding:14px 0;border-bottom:1px solid #E2E8F0">
+        <span style="font-size:.875rem;color:#64748B">Leads recuperados</span>
+        <strong id="o2" style="color:#10b981">0&euro;</strong>
+      </div>
+      <div style="background:#F8FAFC;border:1px solid #2D7FF9;border-radius:12px;padding:24px;margin-top:20px;text-align:center">
+        <small style="display:block;font-size:.8rem;color:#64748b;margin-bottom:8px">Impacto mensual estimado</small>
+        <div id="o3" style="font-size:2.6rem;font-weight:800;color:#2D7FF9">0&euro;</div>
+        <p style="font-size:.78rem;color:#475569;margin-top:8px">vs. coste del sistema desde 97 euros/mes</p>
+      </div>
+      <a href="https://wa.me/34643987371?text=Quiero%20este%20resultado%20para%20mi%20negocio" target="_blank" class="btn btn-primary" style="display:block;text-align:center;margin-top:20px;padding:14px;width:100%">Quiero este resultado</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CALCULADORA PERDIDA -->
+<section id="perdida" style="background:#F0F2F5">
+<div class="wrap">
+  <p class="label">Lo que pierdes ahora mismo</p>
+  <h2 class="title">Cuanto estas perdiendo<br>sin automatizar</h2>
+  <p class="sub">Ajusta los datos de tu negocio y descubre el coste real de no tener automatizaciones.</p>
+  <div class="perdida-wrap">
+    <div class="perdida-inputs">
+      <div class="perdida-field">
+        <label>Leads que recibes al mes</label>
+        <input type="range" min="10" max="500" value="80" step="10" oninput="calcPerdida()" id="p_leads">
+        <div class="val"><span id="v_leads">80</span> leads/mes</div>
+      </div>
+      <div class="perdida-field">
+        <label>Horas al dia en tareas manuales repetitivas</label>
+        <input type="range" min="1" max="10" value="4" step="0.5" oninput="calcPerdida()" id="p_horas">
+        <div class="val"><span id="v_horas">4</span> horas/dia</div>
+      </div>
+      <div class="perdida-field">
+        <label>Valor medio de un cliente (euros)</label>
+        <input type="range" min="50" max="5000" value="300" step="50" oninput="calcPerdida()" id="p_valor">
+        <div class="val"><span id="v_valor">300</span> &euro; por cliente</div>
+      </div>
+      <div class="perdida-field">
+        <label>Porcentaje de leads que no respondes a tiempo</label>
+        <input type="range" min="10" max="80" value="40" step="5" oninput="calcPerdida()" id="p_resp">
+        <div class="val"><span id="v_resp">40</span>% sin respuesta rapida</div>
+      </div>
+    </div>
+    <div class="perdida-result">
+      <h3>&#128680; Lo que pierdes cada mes</h3>
+      <div class="perdida-item"><span>Clientes perdidos por respuesta lenta</span><strong id="r_clientes">-</strong></div>
+      <div class="perdida-item"><span>Ingresos perdidos por leads sin respuesta</span><strong id="r_ingresos">-</strong></div>
+      <div class="perdida-item"><span>Coste de horas manuales (a 15&euro;/h)</span><strong id="r_horas">-</strong></div>
+      <div class="perdida-item"><span>Oportunidad de crecimiento no capturada</span><strong id="r_oportunidad">-</strong></div>
+      <div class="perdida-total">
+        <p>Perdida total estimada al mes</p>
+        <div class="big" id="r_total">-</div>
+      </div>
+      <a href="https://wa.me/34643987371?text=Quiero%20recuperar%20ese%20dinero" target="_blank" class="btn btn-primary" style="width:100%;text-align:center;display:block;margin-top:20px">Quiero recuperar ese dinero</a>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section id="faq">
+<div class="wrap">
+  <div class="label">FAQ</div>
+  <h2 class="title">Preguntas frecuentes</h2>
+  <div style="max-width:720px">
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Cuanto tiempo tarda en estar activo el sistema? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">La mayoria de sistemas estan activos en 48 horas desde que recibimos tus datos y accesos. Sistemas mas complejos pueden tardar hasta 5 dias habiles.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Necesito conocimientos tecnicos? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">No. Nosotros instalamos y configuramos todo. Tu solo necesitas darnos acceso a las cuentas necesarias (WhatsApp, Google, etc.) y nosotros hacemos el resto.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Hay contrato de permanencia? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">No. La cuota mensual se puede cancelar en cualquier momento con 30 dias de aviso. Sin permanencia ni penalizaciones.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Que pasa si el sistema falla o tiene un problema? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">Monitorizamos todos los sistemas 24/7 y tenemos alertas automaticas. Si algo falla, lo detectamos y reparamos antes de que afecte a tu negocio. Tiempo de respuesta inferior a 2 horas.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Funciona para cualquier sector? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">Si. Tenemos sistemas probados para negocios locales, ecommerce, creadores de contenido y agencias. Si tienes un caso especifico, pidenos una auditoria gratuita y te lo decimos.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Que incluye la auditoria gratuita? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">30 minutos de videollamada donde analizamos tu negocio, identificamos donde puedes automatizar y calculamos el ROI estimado. Sin compromiso de compra.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Es compatible con Kit Digital? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">Si. Podemos gestionar la documentacion necesaria para solicitar la ayuda Kit Digital y aplicarla al pago de la configuracion del sistema.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Puedo cambiar de plan despues? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">Si. Puedes upgradear a un plan superior en cualquier momento. Solo pagas la diferencia de configuracion. Downgradear tambien es posible en el siguiente ciclo de facturacion.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Hay descuento si pago anual? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">Si. El pago anual tiene un 20% de descuento sobre la cuota mensual. Te ahorras el equivalente a mas de 2 meses al ano.</div>
+    </div>
+    <div class="faq-item" onclick="this.classList.toggle('open')">
+      <div class="faq-q">Que ocurre si cancelo? Pierdo el sistema? <span class="arrow">&#8964;</span></div>
+      <div class="faq-a">Si cancelas la cuota mensual, el sistema deja de funcionar activamente (no envia mensajes ni procesa leads). Los datos de tu CRM son tuyos y te los entregamos. Puedes reactivar en cualquier momento.</div>
+    </div>
+  </div>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="cta-final">
+<div class="wrap">
+  <div class="label" style="color:#93c5fd">Empieza hoy</div>
+  <h2>Auditoria gratuita &middot; 30 min &middot; Sin compromiso</h2>
+  <p>Analizamos tu negocio y te decimos exactamente cuanto puedes automatizar y con que plan.</p>
+  <div style="display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px">
+    <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20pedir%20una%20auditoria%20gratuita" target="_blank" class="btn btn-primary btn-lg">Pedir auditoria gratis</a>
+    <a href="casos.html" class="btn btn-outline-white btn-lg">Ver casos de exito &rarr;</a>
+  </div>
+  <p style="color:#64748b;font-size:.8rem">Te llamamos en 24h &middot; Solo lunes a jueves por la manana</p>
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+<div class="footer-in">
+  <div class="footer-grid">
+    <div class="footer-col">
+      <h4>Automarketing <span style="color:#FF6B35">Digital</span></h4>
+      <p>Instalamos sistemas de IA para negocios locales. Sofia trabaja 24/7 respondiendo WhatsApp, agendando citas y recuperando clientes.</p>
+      <p style="margin-top:12px"><a href="https://wa.me/34643987371" style="color:#25d366">&#128172; +34 643 987 371</a></p>
+    </div>
+    <div class="footer-col">
+      <h4>Sectores</h4>
+      <ul>
+        <li><a href="masajistas.html">Masajes y Fisioterapia</a></li>
+        <li><a href="dental.html">Clinicas Dentales</a></li>
+        <li><a href="peluqueria.html">Peluquerias</a></li>
+        <li><a href="restaurante.html">Restaurantes</a></li>
+        <li><a href="ecommerce.html">Ecommerce</a></li>
+        <li><a href="gimnasio.html">Gimnasios</a></li>
+        <li><a href="academia.html">Academias</a></li>
+        <li><a href="inmobiliaria.html">Inmobiliarias</a></li>
+        <li><a href="veterinaria.html">Veterinarias</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Recursos</h4>
+      <ul>
+        <li><a href="como-funciona.html">Como funciona</a></li>
+        <li><a href="precios.html">Precios</a></li>
+        <li><a href="casos.html">Casos de exito</a></li>
+        <li><a href="#faq">Preguntas frecuentes</a></li>
+        <li><a href="#roi">Calculadora ROI</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contacto</h4>
+      <ul>
+        <li><a href="https://wa.me/34643987371" target="_blank">WhatsApp: +34 643 987 371</a></li>
+        <li><a href="https://wa.me/34643987371?text=Quiero%20una%20auditoria%20gratuita" target="_blank">Auditoria gratuita</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>&copy; 2026 Automarketing Digital</p>
+    <div class="footer-legal">
+      <a href="aviso-legal.html">Aviso legal</a>
+      <a href="privacidad.html">Privacidad</a>
+      <a href="cookies.html">Cookies</a>
+    </div>
+  </div>
+</div>
+</footer>
+
+<a href="https://wa.me/34643987371?text=Hola%2C%20vengo%20desde%20vuestra%20web%20y%20quiero%20saber%20mas" target="_blank" class="wa-float" title="Hablar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
+<script>
+function roi(){
+  var h=+document.getElementById('s1').value,vh=+document.getElementById('n1').value||25;
+  var l=+document.getElementById('s2').value,vc=+document.getElementById('n2').value||200;
+  document.getElementById('v1').textContent=h+'h';
+  document.getElementById('v2').textContent=l;
+  var t=Math.round(h*4.3*vh*0.8),ld=Math.round(l*0.35*vc),tot=t+ld;
+  document.getElementById('o1').textContent=t.toLocaleString('es')+'\u20ac';
+  document.getElementById('o2').textContent=ld.toLocaleString('es')+'\u20ac';
+  document.getElementById('o3').textContent=tot.toLocaleString('es')+'\u20ac';
+}
+roi();
+function calcPerdida(){
+  var leads=parseFloat(document.getElementById('p_leads').value);
+  var horas=parseFloat(document.getElementById('p_horas').value);
+  var valor=parseFloat(document.getElementById('p_valor').value);
+  var resp=parseFloat(document.getElementById('p_resp').value)/100;
+  document.getElementById('v_leads').textContent=leads;
+  document.getElementById('v_horas').textContent=horas;
+  document.getElementById('v_valor').textContent=valor;
+  document.getElementById('v_resp').textContent=Math.round(resp*100);
+  var clientesPerdidos=Math.round(leads*resp*0.3);
+  var ingresosPerdidos=Math.round(clientesPerdidos*valor);
+  var costeHoras=Math.round(horas*22*15);
+  var oportunidad=Math.round(leads*0.15*valor);
+  var total=ingresosPerdidos+costeHoras+oportunidad;
+  document.getElementById('r_clientes').textContent=clientesPerdidos+' clientes';
+  document.getElementById('r_ingresos').textContent=ingresosPerdidos.toLocaleString('es-ES')+'€';
+  document.getElementById('r_horas').textContent=costeHoras.toLocaleString('es-ES')+'€';
+  document.getElementById('r_oportunidad').textContent=oportunidad.toLocaleString('es-ES')+'€';
+  document.getElementById('r_total').textContent=total.toLocaleString('es-ES')+'€';
+}
+calcPerdida();
+</script>
+</body>
+</html>
