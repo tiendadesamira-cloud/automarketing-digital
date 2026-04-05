@@ -132,10 +132,8 @@ footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
 .live-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#86efac;font-size:.7rem;font-weight:700;padding:5px 12px;border-radius:20px;margin-bottom:20px}
 .live-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:livePulse 3s ease-in-out infinite}
 @keyframes livePulse{0%,100%{opacity:0.3;transform:scale(1)}50%{opacity:.5;transform:scale(.8)}}
-/* PULSE BUTTON */
+/* PULSE BUTTON — removed continuous animation */
 .btn-pulse{position:relative}
-.btn-pulse::after{content:'';position:absolute;inset:0;border-radius:8px;background:#FF6B35;animation:btnPulse 4s ease-out infinite;z-index:-1}
-@keyframes btnPulse{0%{opacity:.6;transform:scale(1)}70%{opacity:0;transform:scale(1.15)}100%{opacity:0;transform:scale(1.15)}}
 /* NOTIFICATION POPUP */
 .notif-popup{position:fixed;bottom:100px;left:24px;z-index:998;background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:280px;box-shadow:0 8px 32px rgba(0,0,0,.15);transform:translateX(-120%);transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
 .notif-popup.show{transform:translateX(0)}
@@ -170,9 +168,7 @@ footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
     .sector-card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}
     .sector-card:hover{transform:scale(1.02);box-shadow:0 12px 40px rgba(45,127,249,.18);border-color:#2D7FF9}
 
-    @keyframes ctaPulse{0%,100%{box-shadow:0 0 0 0 rgba(255,107,53,.4)}50%{box-shadow:0 0 0 10px rgba(255,107,53,0)}}
-    .btn-primary,.btn-orange{animation:ctaPulse 2.5s ease-in-out infinite}
-    .btn-primary:hover,.btn-orange:hover{animation:none}
+    .btn-primary:hover,.btn-orange:hover{box-shadow:0 6px 20px rgba(255,107,53,.4)}
 
     .testimonial-card{position:relative;padding:32px 28px 28px;background:#fff;border:1px solid #E2E8F0;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
     .testimonial-card::before{content:'C';position:absolute;top:12px;left:20px;font-size:5rem;line-height:1;color:#2D7FF9;opacity:.15;font-family:Georgia,serif;pointer-events:none}
@@ -252,7 +248,7 @@ function closeMM(){mm.style.display='none';}
       </span>
     </div>
     <div class="hero-nums">
-      <div><b>+200</b><small>automatizaciónes activas</small></div>
+      <div><b>&lt;90s</b><small>tiempo de respuesta</small></div>
       <div><b>11</b><small>sectores disponibles</small></div>
       <div><b>48h</b><small>activación garantizada</small></div>
     </div>
@@ -274,16 +270,46 @@ function closeMM(){mm.style.display='none';}
 </div>
 </section>
 
-<!-- SOCIAL PROOF BAR -->
+<!-- DEMO VIDEO -->
+<section style="background:#0F1729;padding:60px 5%;text-align:center">
+<div class="wrap">
+  <div class="label" style="text-align:center;color:#93c5fd">Demo en vivo</div>
+  <h2 style="font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.3px">Mira como trabaja Sofia en 90 segundos</h2>
+  <p style="color:#94a3b8;font-size:.95rem;margin-bottom:36px">Una conversacion real. Sin editar.</p>
+  <div style="max-width:340px;margin:0 auto;position:relative">
+    <!-- Phone mockup frame -->
+    <div style="background:#1A202C;border:3px solid rgba(255,255,255,.15);border-radius:36px;padding:12px;box-shadow:0 32px 80px rgba(0,0,0,.5)">
+      <div style="background:#000;border-radius:24px;overflow:hidden;aspect-ratio:9/16;display:flex;align-items:center;justify-content:center;position:relative">
+        <div style="position:absolute;inset:0;background:linear-gradient(135deg,#1E3A5F,#0F1729)"></div>
+        <!-- Play button -->
+        <a href="https://wa.me/34643987371?text=Quiero%20ver%20la%20demo%20de%20Sofia" target="_blank" style="position:relative;z-index:2;display:flex;flex-direction:column;align-items:center;gap:16px;text-decoration:none">
+          <div style="width:72px;height:72px;background:#FF6B35;border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 32px rgba(255,107,53,.5);transition:transform .2s" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="white"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+          </div>
+          <span style="color:#fff;font-size:.85rem;font-weight:600">Ver demo &rarr;</span>
+        </a>
+        <!-- WA bubbles decoration -->
+        <div style="position:absolute;bottom:20px;left:12px;right:12px;display:flex;flex-direction:column;gap:6px;opacity:.4">
+          <div style="background:#25d366;border-radius:12px 12px 2px 12px;padding:8px 12px;font-size:.65rem;color:#fff;align-self:flex-end;max-width:75%">Hola, quiero una cita para manana</div>
+          <div style="background:rgba(255,255,255,.1);border-radius:12px 12px 12px 2px;padding:8px 12px;font-size:.65rem;color:#e2e8f0;align-self:flex-start;max-width:80%">Claro, tengo disponibilidad a las 10:00 y 16:30. &iquest;Cual prefieres?</div>
+        </div>
+      </div>
+    </div>
+    <!-- Phone notch -->
+    <div style="position:absolute;top:18px;left:50%;transform:translateX(-50%);width:80px;height:6px;background:rgba(255,255,255,.2);border-radius:3px"></div>
+  </div>
+  <p style="margin-top:24px;font-size:.8rem;color:#475569">Escribe "DEMO" por WhatsApp y te enviamos la grabacion completa</p>
+</div>
+</section>
+
+<!-- TRUST BAR -->
 <div class="social-bar">
-  <p>Compatible con:</p>
   <div class="social-logos">
-    <span>&#128172; WhatsApp Business</span>
-    <span>&#128197; Google Calendar</span>
-    <span>&#128179; Stripe</span>
-    <span>&#128247; Instagram</span>
-    <span>&#129504; OpenAI</span>
-    <span>&#128218; Google Sheets</span>
+    <span style="display:inline-flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7FF9" stroke-width="2.5"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>Cumple RGPD</span>
+    <span style="display:inline-flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7FF9" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>Datos en Europa</span>
+    <span style="display:inline-flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7FF9" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Sin permanencia</span>
+    <span style="display:inline-flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#10b981" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>Activo en 48h</span>
+    <span style="display:inline-flex;align-items:center;gap:8px"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#2D7FF9" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>Compatible con Kit Digital</span>
   </div>
 </div>
 
@@ -346,6 +372,60 @@ function closeMM(){mm.style.display='none';}
   </div>
   <div style="text-align:center;margin-top:8px">
     <a href="como-funciona.html" class="btn btn-outline-blue btn-lg">Ver cómo funciona en detalle &rarr;</a>
+  </div>
+</div>
+</section>
+
+<!-- ANTES VS DESPUES -->
+<section style="background:#fff;padding:90px 5%">
+<div class="wrap">
+  <div style="text-align:center;margin-bottom:48px">
+    <div class="label" style="text-align:center">Transformacion</div>
+    <h2 class="title" style="text-align:center">Antes vs. Despues de Sofia</h2>
+  </div>
+  <div class="g2" style="max-width:900px;margin:0 auto">
+    <div style="background:#fff0f0;border:2px solid #fca5a5;border-radius:16px;padding:32px">
+      <div style="font-size:1rem;font-weight:800;color:#dc2626;margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px">&#10006; Sin automatizar</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+          <span style="color:#ef4444;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10007;</span>
+          <span>40% de mensajes sin responder</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+          <span style="color:#ef4444;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10007;</span>
+          <span>3h/dia confirmando citas por telefono</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+          <span style="color:#ef4444;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10007;</span>
+          <span>Pacientes que no vuelven solos</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+          <span style="color:#ef4444;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10007;</span>
+          <span>2&ndash;3 resenas Google al mes</span>
+        </li>
+      </ul>
+    </div>
+    <div style="background:#f0fdf4;border:2px solid #86efac;border-radius:16px;padding:32px">
+      <div style="font-size:1rem;font-weight:800;color:#16a34a;margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px">&#10003; Con Sofia</div>
+      <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+          <span style="color:#16a34a;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10003;</span>
+          <span>95% respondidos en &lt;90 segundos</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+          <span style="color:#16a34a;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10003;</span>
+          <span>Recordatorios automaticos 24h antes</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+          <span style="color:#16a34a;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10003;</span>
+          <span>Reactivacion automatica a los 90 dias</span>
+        </li>
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+          <span style="color:#16a34a;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10003;</span>
+          <span>+15 resenas Google al mes</span>
+        </li>
+      </ul>
+    </div>
   </div>
 </div>
 </section>
@@ -450,6 +530,51 @@ function closeMM(){mm.style.display='none';}
   </div>
   <div style="text-align:center">
     <a href="casos.html" class="btn btn-outline-blue btn-lg">Ver más casos de éxito &rarr;</a>
+  </div>
+</div>
+</section>
+
+<!-- FAQ -->
+<section style="background:#0F1729;padding:90px 5%">
+<style>
+.faq-item{border:1px solid rgba(255,255,255,.1);border-radius:12px;margin-bottom:12px;overflow:hidden}
+.faq-item summary{list-style:none;padding:20px 24px;font-size:.95rem;font-weight:600;color:#e2e8f0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';font-size:1.4rem;color:#2D7FF9;flex-shrink:0;transition:transform .2s;line-height:1}
+.faq-item[open] summary::after{content:'\2212'}
+.faq-item summary:hover{background:rgba(255,255,255,.04)}
+.faq-item .faq-body{padding:0 24px 20px;font-size:.875rem;color:#94a3b8;line-height:1.75}
+</style>
+<div class="wrap">
+  <div style="text-align:center;margin-bottom:48px">
+    <div class="label" style="text-align:center;color:#93c5fd">Preguntas frecuentes</div>
+    <h2 class="title" style="text-align:center;color:#fff">Lo que siempre nos preguntan</h2>
+  </div>
+  <div style="max-width:720px;margin:0 auto">
+    <details class="faq-item">
+      <summary>&iquest;Cuanto tarda en estar activo?</summary>
+      <div class="faq-body">48 horas desde que nos das los accesos.</div>
+    </details>
+    <details class="faq-item">
+      <summary>&iquest;Necesito conocimientos tecnicos?</summary>
+      <div class="faq-body">No. Nosotros lo configuramos todo. Tu solo usas WhatsApp como siempre.</div>
+    </details>
+    <details class="faq-item">
+      <summary>&iquest;Puedo cancelar cuando quiera?</summary>
+      <div class="faq-body">Si. Sin permanencia. 30 dias de aviso y listo.</div>
+    </details>
+    <details class="faq-item">
+      <summary>&iquest;Funciona con mi software actual?</summary>
+      <div class="faq-body">Si. Nos integramos con Google Calendar, Gesden, Clinic Cloud, Flowww y mas.</div>
+    </details>
+    <details class="faq-item">
+      <summary>&iquest;Es compatible con Kit Digital?</summary>
+      <div class="faq-body">Si. El setup puede salirte subvencionado al 100%.</div>
+    </details>
+    <details class="faq-item">
+      <summary>&iquest;Mis datos estan seguros?</summary>
+      <div class="faq-body">Cumplimos RGPD al 100%. Firmamos contrato de encargado del tratamiento. Los datos nunca salen de Europa.</div>
+    </details>
   </div>
 </div>
 </section>

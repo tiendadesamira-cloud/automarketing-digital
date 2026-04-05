@@ -83,6 +83,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(255,255,255,
 .faq-item.open .faq-a{max-height:200px;padding-top:10px}
 .arr{color:#2D7FF9;font-size:1rem;transition:transform .3s;flex-shrink:0}
 .faq-item.open .arr{transform:rotate(180deg)}
+.faq2{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.faq2 details{background:#FFFFFF;border:1px solid #E2E8F0;border-radius:12px;padding:0;box-shadow:0 2px 6px rgba(0,0,0,.05);transition:.2s}
+.faq2 details[open]{border-color:#2D7FF9;box-shadow:0 4px 16px rgba(45,127,249,.1)}
+.faq2 details summary{font-size:.9rem;font-weight:600;color:#1A202C;padding:18px 20px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq2 details summary::-webkit-details-marker{display:none}
+.faq2 details summary::after{content:'＋';color:#2D7FF9;font-size:1rem;flex-shrink:0;transition:transform .2s}
+.faq2 details[open] summary::after{content:'－';color:#2D7FF9}
+.faq2 details .faq2-body{padding:0 20px 18px;font-size:.85rem;color:#64748B;line-height:1.65}
+.rgpd-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);color:#6ee7b7;font-size:.7rem;font-weight:700;padding:5px 13px;border-radius:20px;margin-top:20px;letter-spacing:.3px}
 .ctabox{background:linear-gradient(135deg,#0F1729,#1E3A5F);border-radius:20px;padding:60px 40px;text-align:center;margin:0 5% 80px;color:#fff}
 .ctabox h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;margin-bottom:14px;color:#fff}
 .ctabox p{color:rgba(255,255,255,.75);margin-bottom:28px;font-size:.95rem}
@@ -111,6 +120,7 @@ footer a{color:#2D7FF9}
     <div><b>48h</b><small>de activación</small></div>
     <div><b>-70%</b><small>no-shows</small></div>
   </div>
+  <div style="text-align:center"><span class="rgpd-badge">&#10003; Cumple RGPD &middot; Datos en Europa</span></div>
 </section>
 
 <!-- PROBLEMAS -->
@@ -262,30 +272,25 @@ footer a{color:#2D7FF9}
 <section class="section" style="background:#FAFBFC">
 <div class="wrap" style="max-width:700px">
   <div class="slabel" style="text-align:center">FAQ</div>
-  <div class="stitle" style="text-align:center;margin-bottom:40px">Preguntas frecuentes</div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Cómo funciona el seguimiento de presupuestos?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">Cuando entregais un presupuesto lo registrais en una hoja de calculo (o lo hace el agente automáticamente). A los 2 dias el sistema envia un primer mensaje. Si no hay respuesta, vuelve a los 5 dias y a los 10. Cada mensaje es diferente y esta generado por IA según el tratamiento y el importe.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Podemos personalizar los mensajes?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">Si. Durante la configuración revisamos juntos el tono y el estilo de vuestra clínica. Los mensajes pueden ser más formales o más cercanos según vuestra marca. Los aprobais vosotros antes de activarlos.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>El agente puede gestiónar citas?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">El agente recoge los datos del paciente (nombre, teléfono, tratamiento de interes) y agenda la primera visita gratuita. Os notifica por WhatsApp y lo registra en vuestra hoja de citas. La confirmacion final siempre la hace una persona de la clínica.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Funciona con nuestro software de gestión?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">El sistema funciona de forma independiente con Google Sheets como CRM ligero. Si teneis un software específico (Gesden, Qdental, etc.) valoramos la integracion en la auditoría inicial.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Hay permanencia?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">No hay permanencia. Podeis cancelar la suscripción mensual en cualquier momento con 30 días de preaviso. El pago de configuración no es reembolsable ya que cubre el trabajo de instalacion y puesta en marcha.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>En cuánto tiempo se activa?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">En 48 horas desde que nos dais acceso al WhatsApp Business. El primer día configuramos el agente con vuestros tratamientos y precios. El segúndo probamos. Desde el tercero funciona solo.</div>
+  <div class="stitle" style="text-align:center;margin-bottom:8px">Preguntas frecuentes</div>
+  <p style="text-align:center;color:#64748B;font-size:.9rem;margin-bottom:0">Todo lo que necesitas saber antes de empezar.</p>
+  <div class="faq2">
+    <details>
+      <summary>¿Cómo funciona el seguimiento de presupuestos?</summary>
+      <div class="faq2-body">El sistema contacta automáticamente al paciente a los 2, 5 y 10 días con mensajes personalizados. Si el presupuesto supera 2.000€, menciona financiación.</div>
+    </details>
+    <details>
+      <summary>¿Podemos personalizar los mensajes?</summary>
+      <div class="faq2-body">Sí. Los mensajes se adaptan al tono de tu clínica. Pueden ser más formales o más cercanos.</div>
+    </details>
+    <details>
+      <summary>¿Funciona con nuestro software de gestión?</summary>
+      <div class="faq2-body">Sí. Nos integramos con Gesden, Clinic Cloud, Dentidesk y cualquier software con API o Google Calendar.</div>
+    </details>
+    <details>
+      <summary>¿Hay permanencia?</summary>
+      <div class="faq2-body">No. Puedes cancelar con 30 días de aviso sin coste adicional.</div>
+    </details>
   </div>
 </div>
 </section>
@@ -309,6 +314,8 @@ footer a{color:#2D7FF9}
 <script>
 function enviarDemo(e){
   e.preventDefault();
+  if (window._formSubmitted) { return; }
+  window._formSubmitted = true;
   var nombre=document.getElementById('d_nombre').value;
   var tel=document.getElementById('d_tel').value;
   var negocio=document.getElementById('d_negocio').value;
@@ -316,7 +323,7 @@ function enviarDemo(e){
   document.getElementById('demoOk').style.display='block';
   fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/demo-agencia',{
     method:'POST',
-    headers:{'Content-Type':'application/json','x-amd-token':'AMD2025xK9mPqR7v'},
+    headers:{'Content-Type':'application/json'},
     body:JSON.stringify({nombre:nombre,tel:tel,negocio:negocio+' (landing dental)',sector:'dental'})
   }).catch(function(){});
 }

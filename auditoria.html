@@ -228,6 +228,7 @@ h1 span { color: #FF6B35; }
           <label>Email o WhatsApp (donde enviamos el informe)</label>
           <input type="text" id="contacto" placeholder="Email o numero de WhatsApp" required>
         </div>
+        <div style="position:absolute;left:-9999px"><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
         <button type="submit" class="btn" id="submitBtn">Recibir mi auditoría gratuita</button>
       </form>
       <p class="privacy">Sin spam. Solo recibiras tu informe personalizado.</p>
@@ -253,6 +254,9 @@ h1 span { color: #FF6B35; }
 <script>
 function enviarAuditoria(e) {
   e.preventDefault();
+  if (document.getElementById('website').value) { return; } // bot detected
+  if (window._formSubmitted) { return; }
+  window._formSubmitted = true;
   var btn = document.getElementById('submitBtn');
   btn.disabled = true;
   btn.textContent = 'Enviando...';

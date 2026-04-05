@@ -82,6 +82,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(6,9,18,.92);
 .faq-item.open .faq-a{max-height:200px;padding-top:10px}
 .arr{color:#6366f1;font-size:1rem;transition:transform .3s;flex-shrink:0}
 .faq-item.open .arr{transform:rotate(180deg)}
+.faq2{display:flex;flex-direction:column;gap:12px;margin-top:32px}
+.faq2 details{background:#0d1117;border:1px solid #1e293b;border-radius:12px;padding:0;transition:.2s}
+.faq2 details[open]{border-color:rgba(99,102,241,.5);box-shadow:0 4px 16px rgba(99,102,241,.1)}
+.faq2 details summary{font-size:.9rem;font-weight:600;color:#f1f5f9;padding:18px 20px;cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:16px}
+.faq2 details summary::-webkit-details-marker{display:none}
+.faq2 details summary::after{content:'＋';color:#6366f1;font-size:1rem;flex-shrink:0}
+.faq2 details[open] summary::after{content:'－';color:#6366f1}
+.faq2 details .faq2-body{padding:0 20px 18px;font-size:.85rem;color:#64748b;line-height:1.65}
+.rgpd-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.3);color:#6ee7b7;font-size:.7rem;font-weight:700;padding:5px 13px;border-radius:20px;margin-top:20px;letter-spacing:.3px}
 .ctabox{background:linear-gradient(135deg,#1e1b4b,#2d1b69);border-radius:20px;padding:60px 40px;text-align:center;margin:0 5% 80px}
 .ctabox h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;margin-bottom:14px}
 .ctabox p{color:#94a3b8;margin-bottom:28px;font-size:.95rem}
@@ -110,6 +119,7 @@ footer a{color:#6366f1}
     <div><b>+30%</b><small>facturación con 4.8&#9733;</small></div>
     <div><b>50K&#8364;</b><small>retoques recuperados/mes</small></div>
   </div>
+  <div style="text-align:center"><span class="rgpd-badge">&#10003; Cumple RGPD &middot; Datos en Europa</span></div>
 </section>
 
 <!-- PROBLEMAS -->
@@ -247,30 +257,25 @@ footer a{color:#6366f1}
 <section class="section" style="background:#060912">
 <div class="wrap" style="max-width:700px">
   <div class="slabel" style="text-align:center">FAQ</div>
-  <div class="stitle" style="text-align:center;margin-bottom:40px">Preguntas frecuentes</div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Cómo funciona el Asesor Virtual de Tratamientos?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">La paciente escribe su consulta por WhatsApp (ej. "tengo arrugas en el contorno de ojos"). La IA analiza la descripcion y recomienda 2-3 tratamientos con explicacion sencilla, beneficios y lo que puede esperar. Al final recoge nombre y teléfono para que vuestro equipo confirme la cita. Todo automático, sin intervenci&#243;n humana.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Como sabe el sistema cuando tocan los retoques?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">Durante la configuración conectamos el sistema con vuestra agenda o con una hoja de registro de tratamientos. Cada vez que se realiza un tratamiento se registra la fecha. El sistema calcula automáticamente el plazo (4-6 meses botox, 9-12 hialuronico) y envia el recordatorio por WhatsApp cuando toca, con el nombre de la paciente y el tratamiento específico.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Como gestióna el seguimiento post-tratamiento?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">El dia 1, dia 3 y dia 7 post-tratamiento el sistema envia un mensaje automático con las indicaciones correspondientes a esa fase de recuperación. La paciente puede responder y enviar fotos. Si la IA detecta una respuesta que requiere atencion (palabras clave de alarma) alerta inmediatamente al equipo medico por WhatsApp.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Los consentimientos digitales tienen validez legal?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">Si. La firma digital por WhatsApp queda registrada con el numero de teléfono de la paciente, la fecha, la hora y el contenido del documento. Se genera un PDF archivado automáticamente. Consultad con vuestro asesor legal la normativa específica de vuestra comunidad autonoma, pero el sistema cumple los requisitos generales de firma electronica.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Podemos personalizar los mensajes con el tono de nuestra clínica?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">Si. Durante la configuración revisamos juntos el tono y el estilo de vuestra clínica. Los mensajes pueden ser más formales o más cercanos. Los aprobais vosotros antes de activar el sistema. Tambien podeis cambiar cualquier mensaje después sin coste adicional.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Hay permanencia?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">No hay permanencia. Podeis cancelar la suscripción mensual en cualquier momento con 30 días de preaviso. El pago de configuración no es reembolsable ya que cubre el trabajo de instalacion y puesta en marcha del sistema.</div>
+  <div class="stitle" style="text-align:center;margin-bottom:8px">Preguntas frecuentes</div>
+  <p style="text-align:center;color:#64748b;font-size:.9rem;margin-bottom:0">Todo lo que necesitas saber antes de empezar.</p>
+  <div class="faq2">
+    <details>
+      <summary>¿Cómo funciona el recordatorio de retoques?</summary>
+      <div class="faq2-body">El sistema detecta cuándo toca el siguiente retoque según el tratamiento (bótox cada 4-6 meses, hialurónico cada 12) y envía recordatorio automático.</div>
+    </details>
+    <details>
+      <summary>¿Pueden responder preguntas sobre tratamientos?</summary>
+      <div class="faq2-body">Sí. El agente conoce tu catálogo de servicios y responde dudas sobre precios, duración, preparación y cuidados post-tratamiento.</div>
+    </details>
+    <details>
+      <summary>¿Funciona con Instagram?</summary>
+      <div class="faq2-body">Sí. El plan Premium incluye respuesta automática a DMs de Instagram con información de servicios y enlace para agendar.</div>
+    </details>
+    <details>
+      <summary>¿Hay permanencia?</summary>
+      <div class="faq2-body">No. Puedes cancelar con 30 días de aviso sin coste adicional.</div>
+    </details>
   </div>
 </div>
 </section>
