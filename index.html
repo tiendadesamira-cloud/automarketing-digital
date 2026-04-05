@@ -26,7 +26,7 @@ a{text-decoration:none;color:inherit}
 .btn-outline-blue{border:2px solid #2D7FF9;color:#2D7FF9;background:transparent}
 .btn-outline-blue:hover{background:#2D7FF9;color:#fff}
 .btn-lg{padding:15px 32px;font-size:1rem}
-section{padding:90px 5%}
+section{padding:90px 5%;position:relative;z-index:1}
 .wrap{max-width:1200px;margin:0 auto}
 .label{font-size:.75rem;font-weight:700;color:#A78BFA;text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
 .title{font-size:2.4rem;font-weight:800;letter-spacing:-.5px;line-height:1.2;margin-bottom:16px;color:#F1F5F9}
@@ -47,8 +47,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,15,26,.95
 .nav-links a{font-size:.88rem;color:#94A3B8;transition:color .2s}
 .nav-links a:hover{color:#A78BFA}
 /* HERO */
-.hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:radial-gradient(ellipse 80% 50% at 50% -10%,#1E3A5F 0%,#1E1B4B 40%,#0F1729 65%)}
+.hero{min-height:100vh;display:flex;align-items:center;padding:100px 5% 60px;position:relative;overflow:hidden;background:transparent}
+.hero-bg{position:absolute;inset:0;background:transparent}
 .hero-in{max-width:1200px;margin:0 auto;position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:center}
 .badge{display:inline-block;background:rgba(45,127,249,.15);border:1px solid rgba(45,127,249,.3);color:#93c5fd;font-size:.75rem;font-weight:700;padding:6px 14px;border-radius:20px;margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px}
 .hero h1{font-size:3.2rem;font-weight:800;line-height:1.12;letter-spacing:-1.5px;margin-bottom:22px;color:#fff}
@@ -68,23 +68,23 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,15,26,.95
 .fn .tag.ok{border-color:#10b981;color:#10b981}
 .farrow{text-align:center;color:#94A3B8;font-size:1.2rem;margin:2px 0}
 /* SOCIAL PROOF BAR */
-.social-bar{background:linear-gradient(180deg,#0D1117,#0F1729);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:24px 5%;text-align:center}
+.social-bar{background:rgba(0,0,0,.3);border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:24px 5%;text-align:center}
 .social-bar p{font-size:.8rem;color:#94A3B8;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
 .social-logos{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;align-items:center}
 .social-logos span{font-size:.85rem;font-weight:600;color:#94A3B8;padding:6px 14px;background:#0D1117;border:1px solid rgba(255,255,255,.08);border-radius:6px}
 /* PROBLEMA */
-.prob-section{background:linear-gradient(180deg,#0B0F1A,#0F1729)}
+.prob-section{background:rgba(0,0,0,.2)}
 .prob-card{border-left:3px solid #ef4444;background:rgba(255,255,255,.03)}
 .prob-card .ic{background:rgba(239,68,68,.15)}
 /* SOLUCION */
-.sol-section{background:linear-gradient(180deg,#0F1729,#111827)}
+.sol-section{background:rgba(0,0,0,.25)}
 .sol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:40px}
 .sol-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:28px}
 .sol-card .sol-icon{font-size:2rem;margin-bottom:12px}
 .sol-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:#F1F5F9}
 .sol-card p{font-size:.875rem;color:#94A3B8;line-height:1.65}
 /* SECTORES GRID */
-.sectores-section{background:linear-gradient(180deg,#111827,#0D1225)}
+.sectores-section{background:rgba(0,0,0,.2)}
 .sect-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 .sect-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);border-radius:14px;padding:24px;transition:.2s;display:block;text-decoration:none}
 .sect-card:hover{border-color:rgba(129,140,248,.4);transform:translateY(-3px);box-shadow:0 8px 24px rgba(129,140,248,.15)}
@@ -98,13 +98,13 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,15,26,.95
 .test-card .author{font-size:.82rem;font-weight:600;color:#E2E8F0}
 .test-card .author span{display:block;color:#94A3B8;font-weight:400}
 /* CTA FINAL */
-.cta-final-home{background:linear-gradient(135deg,#1E1B4B 0%,#312E81 50%,#1E1B4B 100%);text-align:center;padding:90px 5%}
+.cta-final-home{background:rgba(30,27,75,.6);text-align:center;padding:90px 5%}
 .cta-final-home h2{font-size:2.6rem;font-weight:800;letter-spacing:-.5px;margin-bottom:16px;color:#fff}
 .cta-final-home p{font-size:1rem;color:#94a3b8;margin-bottom:36px}
 .cta-final-home .cta-btns{display:flex;gap:16px;justify-content:center;flex-wrap:wrap;margin-bottom:16px}
 .cta-micro{font-size:.8rem;color:#94A3B8}
 /* FOOTER */
-footer{background:#070A12;padding:64px 5% 32px;color:#94a3b8}
+footer{background:rgba(0,0,0,.4);padding:64px 5% 32px;color:#94a3b8}
 .footer-in{max-width:1200px;margin:0 auto}
 .footer-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:40px;margin-bottom:48px}
 .footer-col h4{font-size:.85rem;font-weight:700;color:#e2e8f0;margin-bottom:16px;text-transform:uppercase;letter-spacing:.5px}
@@ -124,10 +124,10 @@ footer{background:#070A12;padding:64px 5% 32px;color:#94a3b8}
 /* SCROLL BAR */
 #scrollBar{position:fixed;top:0;left:0;height:3px;width:0%;background:linear-gradient(90deg,#FF6B35,#2D7FF9);z-index:9999;transition:width .1s linear;pointer-events:none}
 /* AURORA */
-.aurora-bg{position:absolute;inset:0;background:linear-gradient(125deg,#0F1729 0%,#1E3A5F15 30%,#0f172a 50%,#1a0533 70%,#0F1729 100%);background-size:400% 400%;animation:auroraMove 40s ease infinite;z-index:0}
+.aurora-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(125deg,#0F1729 0%,#1E3A5F15 30%,#0f172a 50%,#1a0533 70%,#0F1729 100%);background-size:400% 400%;animation:auroraMove 40s ease infinite;z-index:0}
 @keyframes auroraMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
-.aurora-glow{position:absolute;inset:0;background:radial-gradient(ellipse 60% 40% at 30% 40%,rgba(99,102,241,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 80% 20%,rgba(139,92,246,.12) 0%,transparent 60%);z-index:0;pointer-events:none}
-#particles-canvas{position:absolute;inset:0;z-index:1;pointer-events:none}
+.aurora-glow{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse 60% 40% at 30% 40%,rgba(99,102,241,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 80% 20%,rgba(139,92,246,.12) 0%,transparent 60%);z-index:0;pointer-events:none}
+#particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
 /* LIVE BADGE */
 .live-badge{display:inline-flex;align-items:center;gap:6px;background:rgba(34,197,94,.1);border:1px solid rgba(34,197,94,.3);color:#86efac;font-size:.7rem;font-weight:700;padding:5px 12px;border-radius:20px;margin-bottom:20px}
 .live-dot{width:7px;height:7px;border-radius:50%;background:#22c55e;animation:livePulse 3s ease-in-out infinite}
@@ -177,6 +177,8 @@ footer{background:#070A12;padding:64px 5% 32px;color:#94a3b8}
 <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
 </head>
 <body>
+<canvas id="particles-canvas"></canvas>
+<div class="aurora-bg"></div><div class="aurora-glow"></div>
 <div id="scrollBar"></div>
 
 <!-- NAV -->
@@ -212,8 +214,7 @@ function closeMM(){mm.style.display='none';}
 
 <!-- HERO -->
 <section class="hero">
-<canvas id="particles-canvas"></canvas>
-<div class="aurora-bg"></div><div class="aurora-glow"></div>
+
 <div class="hero-in">
   <div>
     <div class="badge">IA para negocios locales</div>
@@ -263,7 +264,7 @@ function closeMM(){mm.style.display='none';}
 </section>
 
 <!-- DEMO VIDEO -->
-<section style="background:#0F1729;padding:60px 5%;text-align:center">
+<section style="background:rgba(0,0,0,.3);padding:60px 5%;text-align:center">
 <div class="wrap">
   <div class="label" style="text-align:center;color:#93c5fd">Demo en vivo</div>
   <h2 style="font-size:1.8rem;font-weight:800;color:#fff;margin-bottom:8px;letter-spacing:-.3px">Mira como trabaja Sofia en 90 segundos</h2>
@@ -368,7 +369,7 @@ function closeMM(){mm.style.display='none';}
 </section>
 
 <!-- ANTES VS DESPUES -->
-<section style="background:#0D1117;padding:90px 5%">
+<section style="background:rgba(0,0,0,.25);padding:90px 5%">
 <div class="wrap">
   <div style="text-align:center;margin-bottom:48px">
     <div class="label" style="text-align:center">Transformacion</div>
@@ -462,13 +463,13 @@ function closeMM(){mm.style.display='none';}
 <section style="padding:90px 5%">
 <div class="wrap" style="text-align:center;max-width:700px">
   <div class="label">Garantía</div>
-  <h2 class="title">Si en 30 días no ves resultados, te devolvemos el dinero</h2>
-  <p style="color:#94A3B8;font-size:1rem;line-height:1.75;margin-bottom:32px">Sin letra pequeña. Configuramos Sofia para tu negocio, la pruebas durante 30 días, y si no mejora tu atención al cliente ni recupera citas perdidas, te devolvemos la mensualidad íntegra.</p>
+  <h2 class="title">Sin permanencia, sin riesgo, sin letra pequeña</h2>
+  <p style="color:#94A3B8;font-size:1rem;line-height:1.75;margin-bottom:32px">Configuramos Sofia para tu negocio en 48 horas. Sin permanencia — si no te convence, cancelas con 30 días de aviso y no pagas más. Así de simple.</p>
   <div style="display:flex;gap:24px;justify-content:center;flex-wrap:wrap">
     <div style="background:rgba(16,185,129,.1);border:1px solid rgba(16,185,129,.2);border-radius:12px;padding:20px 28px;text-align:center">
       <div style="font-size:2rem;margin-bottom:8px">&#128737;&#65039;</div>
-      <div style="font-size:.85rem;font-weight:700;color:#E2E8F0">30 días de prueba</div>
-      <div style="font-size:.8rem;color:#94A3B8">Si no funciona, no pagas</div>
+      <div style="font-size:.85rem;font-weight:700;color:#E2E8F0">Sin permanencia</div>
+      <div style="font-size:.8rem;color:#94A3B8">Cancela cuando quieras</div>
     </div>
     <div style="background:rgba(45,127,249,.1);border:1px solid rgba(45,127,249,.2);border-radius:12px;padding:20px 28px;text-align:center">
       <div style="font-size:2rem;margin-bottom:8px">&#9889;</div>
@@ -485,7 +486,7 @@ function closeMM(){mm.style.display='none';}
 </section>
 
 <!-- FAQ -->
-<section style="background:#0F1729;padding:90px 5%">
+<section style="background:rgba(0,0,0,.3);padding:90px 5%">
 <style>
 .faq-item{border:1px solid rgba(255,255,255,.1);border-radius:12px;margin-bottom:12px;overflow:hidden}
 .faq-item summary{list-style:none;padding:20px 24px;font-size:.95rem;font-weight:600;color:#e2e8f0;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px}
@@ -600,7 +601,7 @@ function closeMM(){mm.style.display='none';}
 (function(){
   var canvas=document.getElementById('particles-canvas');if(!canvas)return;
   var ctx=canvas.getContext('2d');
-  function resize(){canvas.width=canvas.offsetWidth;canvas.height=canvas.offsetHeight;}
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
   resize();window.addEventListener('resize',resize);
   var pts=[];
   for(var i=0;i<70;i++){pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6,r:Math.random()*1.5+.5,o:Math.random()*.4+.1});}

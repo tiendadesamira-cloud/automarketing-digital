@@ -7,16 +7,18 @@
 <meta name="description" content="Descubre en 2 minutos cuántos pacientes pierde tu clínica por falta de presencia digital. Auditoría gratuita y personalizada.">
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
-body { font-family: 'Segoe UI', -apple-system, sans-serif; color: #1a202c; background: #0F1729; }
+body { font-family: 'Segoe UI', -apple-system, sans-serif; color: #CBD5E1; background: #0B0F1A; }
 
 /* Hero */
 .hero {
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 40px 20px;
-  background: linear-gradient(135deg, #0F1729 0%, #1a2744 50%, #0F1729 100%);
+  background: transparent;
   position: relative;
   overflow: hidden;
 }
@@ -49,7 +51,7 @@ body { font-family: 'Segoe UI', -apple-system, sans-serif; color: #1a202c; backg
 
 /* Card */
 .card {
-  background: white;
+  background: rgba(255,255,255,.05);
   border-radius: 20px;
   padding: 48px 40px;
   box-shadow: 0 20px 80px rgba(0,0,0,0.3);
@@ -58,7 +60,7 @@ body { font-family: 'Segoe UI', -apple-system, sans-serif; color: #1a202c; backg
 h1 {
   font-size: 28px;
   font-weight: 800;
-  color: #0F1729;
+  color: #F1F5F9;
   line-height: 1.2;
   margin-bottom: 12px;
   text-align: center;
@@ -87,17 +89,18 @@ h1 span { color: #FF6B35; }
 .field input, .field select {
   width: 100%;
   padding: 14px 16px;
-  border: 2px solid #e2e8f0;
+  border: 2px solid rgba(255,255,255,.1);
   border-radius: 12px;
   font-size: 15px;
   font-family: inherit;
+  color: #E2E8F0;
   transition: border-color 0.2s;
-  background: #f8fafc;
+  background: rgba(255,255,255,.05);
 }
 .field input:focus, .field select:focus {
   outline: none;
   border-color: #FF6B35;
-  background: white;
+  background: rgba(255,255,255,.08);
 }
 
 .btn {
@@ -133,12 +136,12 @@ h1 span { color: #FF6B35; }
 .benefit {
   flex: 1;
   min-width: 140px;
-  background: #f0fdf4;
+  background: rgba(16,185,129,.08);
   border-radius: 10px;
   padding: 12px;
   text-align: center;
   font-size: 13px;
-  color: #166534;
+  color: #86efac;
   font-weight: 600;
 }
 
@@ -150,7 +153,7 @@ h1 span { color: #FF6B35; }
 }
 .success h2 {
   font-size: 24px;
-  color: #166534;
+  color: #86efac;
   margin-bottom: 12px;
 }
 .success p {
@@ -180,9 +183,17 @@ h1 span { color: #FF6B35; }
   .card { padding: 32px 24px; }
   h1 { font-size: 24px; }
 }
+
+/* GLOBAL ANIMATED BACKGROUND */
+#particles-canvas{position:fixed;top:0;left:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.aurora-bg{position:fixed;top:0;left:0;width:100%;height:100%;background:linear-gradient(125deg,#0F1729 0%,#1E3A5F15 30%,#0f172a 50%,#1a0533 70%,#0F1729 100%);background-size:400% 400%;animation:auroraMove 40s ease infinite;z-index:0;pointer-events:none}
+@keyframes auroraMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
+.aurora-glow{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse 60% 40% at 30% 40%,rgba(99,102,241,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 80% 20%,rgba(139,92,246,.12) 0%,transparent 60%);z-index:0;pointer-events:none}
 </style>
 </head>
 <body>
+<canvas id="particles-canvas"></canvas>
+<div class="aurora-bg"></div><div class="aurora-glow"></div>
 
 <section class="hero">
 <div class="container">
@@ -238,7 +249,7 @@ h1 span { color: #FF6B35; }
     <div id="loadingSection" class="loading">
       <div class="spinner"></div>
       <h2 style="font-size:20px;color:#0F1729;margin-bottom:8px">Analizando tu clínica...</h2>
-      <p style="color:#64748b;font-size:14px">Estamos revisando tu presencia en Google, reseñas y competencia. Tarda menos de 2 minutos.</p>
+      <p style="color:#94a3b8;font-size:14px">Estamos revisando tu presencia en Google, reseñas y competencia. Tarda menos de 2 minutos.</p>
     </div>
 
     <!-- Success -->
@@ -291,5 +302,26 @@ function enviarAuditoria(e) {
 }
 </script>
 
+<script>
+(function(){
+  var canvas=document.getElementById('particles-canvas');if(!canvas)return;
+  var ctx=canvas.getContext('2d');
+  function resize(){canvas.width=window.innerWidth;canvas.height=window.innerHeight;}
+  resize();window.addEventListener('resize',resize);
+  var pts=[];
+  for(var i=0;i<70;i++){pts.push({x:Math.random()*canvas.width,y:Math.random()*canvas.height,vx:(Math.random()-.5)*.6,vy:(Math.random()-.5)*.6,r:Math.random()*1.5+.5,o:Math.random()*.4+.1});}
+  function draw(){
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+    for(var i=0;i<pts.length;i++){
+      var p=pts[i];p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>canvas.width)p.vx*=-1;if(p.y<0||p.y>canvas.height)p.vy*=-1;
+      ctx.fillStyle='rgba(165,180,252,'+p.o+')';ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);ctx.fill();
+      for(var j=i+1;j<pts.length;j++){var q=pts[j];var dx=p.x-q.x,dy=p.y-q.y,dist=Math.sqrt(dx*dx+dy*dy);if(dist<120){ctx.strokeStyle='rgba(99,102,241,'+(0.15*(1-dist/120))+')';ctx.lineWidth=.6;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}}
+    }
+    requestAnimationFrame(draw);
+  }
+  draw();
+})();
+</script>
 </body>
 </html>
