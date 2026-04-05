@@ -66,12 +66,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,15,26,.95
 .dot-b{background:#2D7FF9}.dot-g{background:#10b981}.dot-y{background:#f59e0b}
 .fn .tag{margin-left:auto;background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.15);color:#94a3b8;font-size:.7rem;padding:2px 8px;border-radius:4px}
 .fn .tag.ok{border-color:#10b981;color:#10b981}
-.farrow{text-align:center;color:#475569;font-size:1.2rem;margin:2px 0}
+.farrow{text-align:center;color:#94A3B8;font-size:1.2rem;margin:2px 0}
 /* SOCIAL PROOF BAR */
-.social-bar{background:#0F1729;border-top:1px solid #E2E8F0;border-bottom:1px solid #E2E8F0;padding:24px 5%;text-align:center}
+.social-bar{background:#0F1729;border-top:1px solid rgba(255,255,255,.06);border-bottom:1px solid rgba(255,255,255,.06);padding:24px 5%;text-align:center}
 .social-bar p{font-size:.8rem;color:#64748b;font-weight:600;text-transform:uppercase;letter-spacing:1px;margin-bottom:14px}
 .social-logos{display:flex;gap:32px;justify-content:center;flex-wrap:wrap;align-items:center}
-.social-logos span{font-size:.85rem;font-weight:600;color:#475569;padding:6px 14px;background:#0D1117;border:1px solid #E2E8F0;border-radius:6px}
+.social-logos span{font-size:.85rem;font-weight:600;color:#94A3B8;padding:6px 14px;background:#0D1117;border:1px solid rgba(255,255,255,.08);border-radius:6px}
 /* PROBLEMA */
 .prob-section{background:#0D1117}
 .prob-card{border-left:3px solid #ef4444;background:#111827}
@@ -79,7 +79,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;background:rgba(11,15,26,.95
 /* SOLUCION */
 .sol-section{background:#111827}
 .sol-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:40px}
-.sol-card{background:#0D1117;border:1px solid #E2E8F0;border-radius:14px;padding:28px}
+.sol-card{background:#0D1117;border:1px solid rgba(255,255,255,.08);border-radius:14px;padding:28px}
 .sol-card .sol-icon{font-size:2rem;margin-bottom:12px}
 .sol-card h3{font-size:1rem;font-weight:700;margin-bottom:8px;color:#F1F5F9}
 .sol-card p{font-size:.875rem;color:#64748b;line-height:1.65}
@@ -135,10 +135,10 @@ footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
 /* PULSE BUTTON — removed continuous animation */
 .btn-pulse{position:relative}
 /* NOTIFICATION POPUP */
-.notif-popup{position:fixed;bottom:100px;left:24px;z-index:998;background:#0D1117FFF;border:1px solid #E2E8F0;border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:280px;box-shadow:0 8px 32px rgba(0,0,0,.15);transform:translateX(-120%);transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
+.notif-popup{position:fixed;bottom:100px;left:24px;z-index:998;background:#0D1117FFF;border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px 18px;display:flex;align-items:center;gap:12px;max-width:280px;box-shadow:0 8px 32px rgba(0,0,0,.15);transform:translateX(-120%);transition:transform .5s cubic-bezier(.34,1.56,.64,1)}
 .notif-popup.show{transform:translateX(0)}
 .notif-avatar{width:36px;height:36px;border-radius:50%;background:rgba(45,127,249,.1);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0}
-.notif-text p{font-size:.75rem;font-weight:600;color:#1A202C;margin-bottom:2px}
+.notif-text p{font-size:.75rem;font-weight:600;color:#E2E8F0;margin-bottom:2px}
 .notif-text span{font-size:.68rem;color:#64748b}
 /* MODAL AUDITORIA */
 #audModal{display:none;position:fixed;inset:0;z-index:99999;background:rgba(0,0,0,.7);backdrop-filter:blur(4px);align-items:center;justify-content:center}
@@ -170,11 +170,11 @@ footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
 
     .btn-primary:hover,.btn-orange:hover{box-shadow:0 6px 20px rgba(255,107,53,.4)}
 
-    .testimonial-card{position:relative;padding:32px 28px 28px;background:#0D1117;border:1px solid #E2E8F0;border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+    .testimonial-card{position:relative;padding:32px 28px 28px;background:#0D1117;border:1px solid rgba(255,255,255,.08);border-radius:16px;box-shadow:0 2px 12px rgba(0,0,0,.06)}
     .testimonial-card::before{content:'C';position:absolute;top:12px;left:20px;font-size:5rem;line-height:1;color:#2D7FF9;opacity:.15;font-family:Georgia,serif;pointer-events:none}
     .testimonial-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#2D7FF9,#1E3A5F);display:flex;align-items:center;justify-content:center;font-weight:700;font-size:.95rem;color:#fff;flex-shrink:0}
     .testimonial-author{display:flex;align-items:center;gap:12px;margin-top:20px}
-    .testimonial-name{font-weight:700;font-size:.9rem;color:#1A202C}
+    .testimonial-name{font-weight:700;font-size:.9rem;color:#E2E8F0}
     .testimonial-role{font-size:.78rem;color:#64748B}
 
     .section-sep{height:1px;background:linear-gradient(90deg,transparent 0%,#2D7FF9 50%,transparent 100%);opacity:.2;margin:0}
@@ -203,12 +203,12 @@ footer{background:#0F1729;padding:64px 5% 32px;color:#94a3b8}
 </nav>
 
 <!-- MOBILE MENU -->
-<div id="mobileMenu" style="display:none;position:fixed;top:68px;left:0;right:0;background:#0D1117;border-bottom:1px solid #E2E8F0;z-index:99;padding:20px 5%;box-shadow:0 8px 24px rgba(0,0,0,.1)">
+<div id="mobileMenu" style="display:none;position:fixed;top:68px;left:0;right:0;background:#0D1117;border-bottom:1px solid rgba(255,255,255,.06);z-index:99;padding:20px 5%;box-shadow:0 8px 24px rgba(0,0,0,.1)">
   <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
-    <li><a href="#sectores" style="font-size:1rem;color:#1A202C;font-weight:600" onclick="closeMM()">Sectores</a></li>
-    <li><a href="como-funciona.html" style="font-size:1rem;color:#1A202C;font-weight:600">Cómo funciona</a></li>
-    <li><a href="precios.html" style="font-size:1rem;color:#1A202C;font-weight:600">Precios</a></li>
-    <li><a href="casos.html" style="font-size:1rem;color:#1A202C;font-weight:600">Casos de éxito</a></li>
+    <li><a href="#sectores" style="font-size:1rem;color:#E2E8F0;font-weight:600" onclick="closeMM()">Sectores</a></li>
+    <li><a href="como-funciona.html" style="font-size:1rem;color:#E2E8F0;font-weight:600">Cómo funciona</a></li>
+    <li><a href="precios.html" style="font-size:1rem;color:#E2E8F0;font-weight:600">Precios</a></li>
+    <li><a href="casos.html" style="font-size:1rem;color:#E2E8F0;font-weight:600">Casos de éxito</a></li>
     <li><a href="https://wa.me/34643987371" target="_blank" class="btn btn-primary" style="text-align:center;display:block">Pedir auditoría gratis</a></li>
   </ul>
 </div>
@@ -298,7 +298,7 @@ function closeMM(){mm.style.display='none';}
     <!-- Phone notch -->
     <div style="position:absolute;top:18px;left:50%;transform:translateX(-50%);width:80px;height:6px;background:rgba(255,255,255,.2);border-radius:3px"></div>
   </div>
-  <p style="margin-top:24px;font-size:.8rem;color:#475569">Escribe "DEMO" por WhatsApp y te enviamos la grabacion completa</p>
+  <p style="margin-top:24px;font-size:.8rem;color:#94A3B8">Escribe "DEMO" por WhatsApp y te enviamos la grabacion completa</p>
 </div>
 </section>
 
@@ -387,40 +387,40 @@ function closeMM(){mm.style.display='none';}
     <div style="background:#0D11170f0;border:2px solid #fca5a5;border-radius:16px;padding:32px">
       <div style="font-size:1rem;font-weight:800;color:#dc2626;margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px">&#10006; Sin automatizar</div>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
-        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#E2E8F0;line-height:1.5">
           <span style="color:#ef4444;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10007;</span>
           <span>40% de mensajes sin responder</span>
         </li>
-        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#E2E8F0;line-height:1.5">
           <span style="color:#ef4444;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10007;</span>
           <span>3h/dia confirmando citas por telefono</span>
         </li>
-        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#E2E8F0;line-height:1.5">
           <span style="color:#ef4444;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10007;</span>
           <span>Pacientes que no vuelven solos</span>
         </li>
-        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#E2E8F0;line-height:1.5">
           <span style="color:#ef4444;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10007;</span>
           <span>2&ndash;3 resenas Google al mes</span>
         </li>
       </ul>
     </div>
-    <div style="background:#f0fdf4;border:2px solid #86efac;border-radius:16px;padding:32px">
+    <div style="background:rgba(16,185,129,.08);border:2px solid #86efac;border-radius:16px;padding:32px">
       <div style="font-size:1rem;font-weight:800;color:#16a34a;margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px">&#10003; Con Sofia</div>
       <ul style="list-style:none;display:flex;flex-direction:column;gap:16px">
-        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#E2E8F0;line-height:1.5">
           <span style="color:#16a34a;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10003;</span>
           <span>95% respondidos en &lt;90 segundos</span>
         </li>
-        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#E2E8F0;line-height:1.5">
           <span style="color:#16a34a;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10003;</span>
           <span>Recordatorios automaticos 24h antes</span>
         </li>
-        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#E2E8F0;line-height:1.5">
           <span style="color:#16a34a;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10003;</span>
           <span>Reactivacion automatica a los 90 dias</span>
         </li>
-        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#1A202C;line-height:1.5">
+        <li style="display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#E2E8F0;line-height:1.5">
           <span style="color:#16a34a;font-size:1.1rem;flex-shrink:0;margin-top:1px">&#10003;</span>
           <span>+15 resenas Google al mes</span>
         </li>
