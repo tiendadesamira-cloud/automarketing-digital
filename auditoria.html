@@ -3,8 +3,11 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
 <title>Auditoría Digital Gratuita para tu Clínica | Automarketing Digital</title>
 <meta name="description" content="Descubre en 2 minutos cuántos pacientes pierde tu clínica por falta de presencia digital. Auditoría gratuita y personalizada.">
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <style>
 * { margin: 0; padding: 0; box-sizing: border-box; }
 body { font-family: 'Segoe UI', -apple-system, sans-serif; color: #CBD5E1; background: #0B0F1A; }
@@ -239,7 +242,8 @@ h1 span { color: #FF6B35; }
           <label>Email o WhatsApp (donde enviamos el informe)</label>
           <input type="text" id="contacto" placeholder="Email o numero de WhatsApp" required>
         </div>
-        <div style="position:absolute;left:-9999px"><input type="text" id="website" name="website" tabindex="-1" autocomplete="off"></div>
+        <div style="position:absolute;left:-9999px"><input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off"></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="dark"></div>
         <button type="submit" class="btn" id="submitBtn">Recibir mi auditoría gratuita</button>
       </form>
       <p class="privacy">Sin spam. Solo recibiras tu informe personalizado.</p>
@@ -263,10 +267,16 @@ h1 span { color: #FF6B35; }
 </section>
 
 <script>
+window._formLoadTime = Date.now();
 function enviarAuditoria(e) {
   e.preventDefault();
-  if (document.getElementById('website').value) { return; } // bot detected
+  if (document.getElementById('company_url').value) { return; } // bot detected
+  if (Date.now() - window._formLoadTime < 3000) { return; } // timing check: too fast = bot
   if (window._formSubmitted) { return; }
+
+  var turnstileToken = document.querySelector('[name="cf-turnstile-response"]').value;
+  if (!turnstileToken) { alert('Por favor espera a que se complete la verificacion'); return; }
+
   window._formSubmitted = true;
   var btn = document.getElementById('submitBtn');
   btn.disabled = true;
@@ -277,7 +287,8 @@ function enviarAuditoria(e) {
     ciudad: document.getElementById('ciudad').value,
     sector: document.getElementById('sector').value,
     nombre: document.getElementById('nombre').value,
-    contacto: document.getElementById('contacto').value
+    contacto: document.getElementById('contacto').value,
+    turnstileToken: turnstileToken
   };
 
   // Show loading
@@ -293,11 +304,13 @@ function enviarAuditoria(e) {
   .then(function() {
     document.getElementById('loadingSection').style.display = 'none';
     document.getElementById('successSection').style.display = 'block';
+    if (typeof turnstile !== 'undefined') turnstile.reset();
   })
   .catch(function() {
     // Even if webhook fails, show success (we'll get the data from logs)
     document.getElementById('loadingSection').style.display = 'none';
     document.getElementById('successSection').style.display = 'block';
+    if (typeof turnstile !== 'undefined') turnstile.reset();
   });
 }
 </script>

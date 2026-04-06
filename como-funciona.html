@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
 <title>Cómo funciona | Automarketing Digital</title>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <meta name="description" content="Descubre cómo funciona el sistema de IA de Automarketing Digital. Proceso en 4 pasos, mapa visual, biblioteca de automatizaciónes y demo interactiva.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
@@ -187,8 +190,8 @@ footer{background:rgba(0,0,0,.4);padding:64px 5% 32px;color:#94a3b8;position:rel
 @keyframes auroraMove{0%{background-position:0% 50%}50%{background-position:100% 50%}100%{background-position:0% 50%}}
 .aurora-glow{position:fixed;top:0;left:0;width:100%;height:100%;background:radial-gradient(ellipse 60% 40% at 30% 40%,rgba(99,102,241,.18) 0%,transparent 70%),radial-gradient(ellipse 40% 50% at 80% 20%,rgba(139,92,246,.12) 0%,transparent 60%);z-index:0;pointer-events:none}
 </style>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js" crossorigin="anonymous"></script>
 </head>
 <body>
 <canvas id="particles-canvas"></canvas>
@@ -445,6 +448,7 @@ footer{background:rgba(0,0,0,.4);padding:64px 5% 32px;color:#94a3b8;position:rel
         <div class="demo-field"><label>Tú nombre</label><input type="text" id="d_nombre" placeholder="Ej: Carlos" required></div>
         <div class="demo-field"><label>Tu WhatsApp</label><input type="tel" id="d_email" placeholder="Ej: 612345678" required></div>
         <div class="demo-field"><label>Tipo de negocio</label><input type="text" id="d_negocio" placeholder="Ej: Clínica dental, tienda online..." required></div>
+        <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="dark"></div>
         <button type="submit" class="btn btn-primary" style="width:100%;margin-top:8px">Activar la automatización</button>
       </form>
       <div class="demo-timer" id="demoTimer"><p>El sistema esta procesando tu solicitud...</p><div class="countdown" id="demoCountdown">30</div><p style="font-size:.75rem;margin-top:4px">segúndos hasta recibir la respuesta</p></div>
@@ -534,6 +538,8 @@ function showBib(sector, el){
 // DEMO FORM
 document.getElementById('demoForm').addEventListener('submit', function(e){
   e.preventDefault();
+  var turnstileToken = document.querySelector('[name="cf-turnstile-response"]').value;
+  if (!turnstileToken) { alert('Por favor espera a que se complete la verificacion'); return; }
   var nombre=document.getElementById('d_nombre').value;
   var email=document.getElementById('d_email').value;
   var negocio=document.getElementById('d_negocio').value;
@@ -542,16 +548,17 @@ document.getElementById('demoForm').addEventListener('submit', function(e){
   var secs=30;
   var cd=document.getElementById('demoCountdown');
   var iv=setInterval(function(){secs--;cd.textContent=secs;if(secs<=0)clearInterval(iv);},1000);
-  fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/demo-agencia',{method:'POST',headers:{'Content-Type':'application/json','x-amd-token':'AMD2025xK9mPqR7v'},body:JSON.stringify({nombre:nombre,tel:email,negocio:negocio})})
-  .then(function(){clearInterval(iv);document.getElementById('demoTimer').style.display='none';document.getElementById('demoSuccess').style.display='block';})
-  .catch(function(){clearInterval(iv);document.getElementById('demoTimer').style.display='none';document.getElementById('demoSuccess').style.display='block';});
+  fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/demo-agencia',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:nombre,tel:email,negocio:negocio,turnstileToken:turnstileToken})})
+  .then(function(){clearInterval(iv);document.getElementById('demoTimer').style.display='none';document.getElementById('demoSuccess').style.display='block';if(typeof turnstile!=='undefined')turnstile.reset();})
+  .catch(function(){clearInterval(iv);document.getElementById('demoTimer').style.display='none';document.getElementById('demoSuccess').style.display='block';if(typeof turnstile!=='undefined')turnstile.reset();});
 });
 // LIVE DASHBOARD
 (function(){
+  function esc(s){var d=document.createElement('div');d.textContent=s;return d.innerHTML;}
   var leads=[{name:'Carlos M.',sector:'Restaurante - Barcelona',status:'Procesando...',processing:true},{name:'Sofia R.',sector:'Estética - Madrid',status:'WhatsApp enviado',processing:false},{name:'Pedro G.',sector:'Clínica - Sevilla',status:'Cita agendada',processing:false},{name:'Ana T.',sector:'Ecommerce - Valencia',status:'Email enviado',processing:false}];
   var actions=[{icon:'&#128172;',bg:'#064e3b',title:'WhatsApp enviado',text:'Carlos M. — respuesta en 12s',time:'hace 1min'},{icon:'&#128197;',bg:'rgba(45,127,249,.1)',title:'Cita agendada',text:'Sofia R. — martes 10:00h',time:'hace 3min'},{icon:'&#128140;',bg:'rgba(45,127,249,.05)',title:'CRM actualizado',text:'4 contactos nuevos',time:'hace 5min'},{icon:'&#128231;',bg:'rgba(245,158,11,.1)',title:'Email enviado',text:'Secuencia dia 1 — Pedro G.',time:'hace 8min'},{icon:'&#128172;',bg:'#064e3b',title:'WhatsApp enviado',text:'Ana T. — seguimiento',time:'hace 11min'}];
-  function renderLeads(){var feed=document.getElementById('leadFeed');if(!feed)return;feed.innerHTML='';leads.forEach(function(l,i){var d=document.createElement('div');d.className='lead-card'+(l.processing?' processing':'');d.innerHTML='<div class="lc-name">'+l.name+'</div><div class="lc-sector">'+l.sector+'</div><div class="lc-status">'+l.status+'</div>';feed.appendChild(d);setTimeout(function(){d.classList.add('show');},i*200);});}
-  function renderActions(){var feed=document.getElementById('actionFeed');if(!feed)return;feed.innerHTML='';actions.forEach(function(a,i){var d=document.createElement('div');d.className='action-item';d.innerHTML='<div class="action-icon" style="background:'+a.bg+'">'+a.icon+'</div><div class="action-text"><strong>'+a.title+'</strong>'+a.text+'</div><div class="action-time">'+a.time+'</div>';feed.appendChild(d);setTimeout(function(){d.classList.add('show');},i*180);});}
+  function renderLeads(){var feed=document.getElementById('leadFeed');if(!feed)return;feed.innerHTML='';leads.forEach(function(l,i){var d=document.createElement('div');d.className='lead-card'+(l.processing?' processing':'');d.innerHTML='<div class="lc-name">'+esc(l.name)+'</div><div class="lc-sector">'+esc(l.sector)+'</div><div class="lc-status">'+esc(l.status)+'</div>';feed.appendChild(d);setTimeout(function(){d.classList.add('show');},i*200);});}
+  function renderActions(){var feed=document.getElementById('actionFeed');if(!feed)return;feed.innerHTML='';actions.forEach(function(a,i){var d=document.createElement('div');d.className='action-item';d.innerHTML='<div class="action-icon" style="background:'+esc(a.bg)+'">'+a.icon+'</div><div class="action-text"><strong>'+esc(a.title)+'</strong>'+esc(a.text)+'</div><div class="action-time">'+esc(a.time)+'</div>';feed.appendChild(d);setTimeout(function(){d.classList.add('show');},i*180);});}
   function animatePipeline(){var si=0;function runStep(){var steps=[0,1,2,3];steps.forEach(function(i){var el=document.getElementById('pipe'+i);if(el){el.classList.remove('active','done');el.querySelector('.pipe-fill').style.width='0%';}});var el=document.getElementById('pipe'+si);if(!el){si=0;setTimeout(runStep,600);return;}el.classList.add('active');var fill=el.querySelector('.pipe-fill');var w=0;var iv=setInterval(function(){w+=2;fill.style.width=w+'%';if(w>=100){clearInterval(iv);el.classList.remove('active');el.classList.add('done');si=(si+1)%4;setTimeout(runStep,400);}},30);}runStep();}
   function animateTime(){var el=document.getElementById('pipeTime');if(!el)return;var t=0,target=87;var iv=setInterval(function(){t+=3;el.textContent=t+'s';if(t>=target){clearInterval(iv);el.textContent=target+'s';}},30);}
   function animateCounters(){var els={dLeads:127,dMsgs:341};Object.keys(els).forEach(function(id){var el=document.getElementById(id);if(!el)return;var target=els[id],cur=0,step=Math.ceil(target/40);var iv=setInterval(function(){cur=Math.min(cur+step,target);el.textContent=cur;if(cur>=target)clearInterval(iv);},30);});}

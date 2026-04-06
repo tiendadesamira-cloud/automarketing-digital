@@ -3,7 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
 <title>Automatización para Clínicas Dentales | Automarketing Digital</title>
+<script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 <meta name="description" content="Sistema completo de automatización para clínicas dentales. Agente WhatsApp 24/7, seguimiento de presupuestos, recordatorios con instrucciones pre-operatorias. Activo en 48h.">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -265,6 +268,7 @@ footer a{color:#A78BFA}
       <div class="ff"><input type="text" id="d_nombre" placeholder="Tú nombre" required></div>
       <div class="ff"><input type="tel" id="d_tel" placeholder="Tu WhatsApp (ej: 612345678)" required></div>
       <div class="ff"><input type="text" id="d_negocio" placeholder="Nombre de tu clínica dental" required></div>
+      <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="dark"></div>
       <button type="submit" class="btn btn-p" style="width:100%;margin-top:6px">Enviar WhatsApp de prueba &rarr;</button>
     </form>
     <div class="dok" id="demoOk">
@@ -323,6 +327,8 @@ footer a{color:#A78BFA}
 function enviarDemo(e){
   e.preventDefault();
   if (window._formSubmitted) { return; }
+  var turnstileToken = document.querySelector('[name="cf-turnstile-response"]').value;
+  if (!turnstileToken) { alert('Por favor espera a que se complete la verificacion'); return; }
   window._formSubmitted = true;
   var nombre=document.getElementById('d_nombre').value;
   var tel=document.getElementById('d_tel').value;
@@ -332,8 +338,9 @@ function enviarDemo(e){
   fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/demo-agencia',{
     method:'POST',
     headers:{'Content-Type':'application/json'},
-    body:JSON.stringify({nombre:nombre,tel:tel,negocio:negocio+' (landing dental)',sector:'dental'})
+    body:JSON.stringify({nombre:nombre,tel:tel,negocio:negocio+' (landing dental)',sector:'dental',turnstileToken:turnstileToken})
   }).catch(function(){});
+  if (typeof turnstile !== 'undefined') turnstile.reset();
 }
 </script>
 

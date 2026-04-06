@@ -317,7 +317,7 @@ function enviarDemo(e){
   document.getElementById('demoOk').style.display='block';
   fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/demo-agencia',{
     method:'POST',
-    headers:{'Content-Type':'application/json','x-amd-token':'AMD2025xK9mPqR7v'},
+    headers:{'Content-Type':'application/json'},
     body:JSON.stringify({nombre:nombre,tel:tel,negocio:negocio+' (landing masajistas)'})
   }).catch(function(){});
 }
