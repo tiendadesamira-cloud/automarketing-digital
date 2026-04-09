@@ -220,6 +220,20 @@ body{top:0 !important}
       <a href="precios.html">Precios</a>
       <a href="como-funciona.html">Cómo funciona</a>
       <a href="auditoria.html">Demo</a>
+      <div class="lang-wrap" style="margin-left:4px">
+        <button class="lang-btn" onclick="toggleLangDrop()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+          ES
+        </button>
+        <div class="lang-dropdown" id="langDropNav" style="top:44px;bottom:auto;margin-top:0;margin-bottom:0">
+          <a onclick="changeLang('es')">Espa&ntilde;ol</a>
+          <a onclick="changeLang('en')">English</a>
+          <a onclick="changeLang('fr')">Fran&ccedil;ais</a>
+          <a onclick="changeLang('de')">Deutsch</a>
+          <a onclick="changeLang('it')">Italiano</a>
+          <a onclick="changeLang('ar')">&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629;</a>
+        </div>
+      </div>
     </div>
     <button class="gn-ham" aria-label="Menu" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -624,12 +638,18 @@ function toggleMobile(){
 
 // Language selector
 function toggleLangDrop(){
-  document.getElementById('langDrop').classList.toggle('active');
+  // Close all dropdowns first, then toggle the one clicked
+  var all = document.querySelectorAll('.lang-dropdown');
+  var clicked = event.target.closest('.lang-wrap').querySelector('.lang-dropdown');
+  for(var i=0;i<all.length;i++){
+    if(all[i] !== clicked) all[i].classList.remove('active');
+  }
+  if(clicked) clicked.classList.toggle('active');
 }
 document.addEventListener('click', function(e){
   if(!e.target.closest('.lang-wrap')){
-    var d=document.getElementById('langDrop');
-    if(d) d.classList.remove('active');
+    var all = document.querySelectorAll('.lang-dropdown');
+    for(var i=0;i<all.length;i++) all[i].classList.remove('active');
   }
 });
 function changeLang(lang){
