@@ -36,11 +36,21 @@ ul{list-style:none}
 .gn-links a:hover{color:#1d1d1f}
 .gn-ham{display:none;background:none;border:none;cursor:pointer;padding:6px}
 .gn-ham span{display:block;width:17px;height:1px;background:#1d1d1f;margin:4px 0;transition:all 0.3s}
-/* Google Translate */
-#google_translate_element{display:inline-block}
+/* Google Translate — hidden widget, custom UI */
+#google_translate_element{position:absolute;opacity:0;pointer-events:none;height:0;overflow:hidden}
 .goog-te-banner-frame{display:none !important}
 body{top:0 !important}
-.goog-te-combo{font-family:inherit;font-size:11px;color:#424245;background:#fff;border:1px solid #d2d2d7;border-radius:6px;padding:4px 8px;cursor:pointer}
+.goog-te-gadget{font-size:0 !important}
+/* Custom language button */
+.lang-wrap{position:relative;display:inline-flex;align-items:center}
+.lang-btn{font-size:12px;color:#86868b;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;padding:0;transition:color 0.2s}
+.lang-btn:hover{color:#1d1d1f}
+.lang-btn svg{width:14px;height:14px}
+.lang-dropdown{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d2d2d7;border-radius:12px;padding:6px 0;min-width:150px;opacity:0;pointer-events:none;transition:all 0.2s;box-shadow:0 4px 20px rgba(0,0,0,0.1);margin-bottom:8px}
+.lang-dropdown.active{opacity:1;pointer-events:auto}
+.lang-dropdown a{display:block;padding:8px 16px;font-size:12px;color:#424245;transition:background 0.15s;cursor:pointer}
+.lang-dropdown a:hover{background:#f5f5f7;color:#1d1d1f}
+.lang-dropdown a.current{color:#06c;font-weight:600}
 
 /* ====== MEGA MENU ====== */
 .mega-overlay{position:fixed;top:44px;left:0;right:0;bottom:0;background:rgba(0,0,0,0.3);opacity:0;pointer-events:none;transition:opacity 0.3s;z-index:9997}
@@ -537,7 +547,21 @@ body{top:0 !important}
       <span>|</span>
       <a href="cookies.html">Cookies</a>
       <span>|</span>
-      <div id="google_translate_element" style="display:inline-block;vertical-align:middle"></div>
+      <div class="lang-wrap">
+        <button class="lang-btn" onclick="toggleLangDrop()">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg>
+          Espa&ntilde;ol
+        </button>
+        <div class="lang-dropdown" id="langDrop">
+          <a class="current" onclick="changeLang('es')">Espa&ntilde;ol</a>
+          <a onclick="changeLang('en')">English</a>
+          <a onclick="changeLang('fr')">Fran&ccedil;ais</a>
+          <a onclick="changeLang('de')">Deutsch</a>
+          <a onclick="changeLang('it')">Italiano</a>
+          <a onclick="changeLang('ar')">&#x0627;&#x0644;&#x0639;&#x0631;&#x0628;&#x064A;&#x0629;</a>
+        </div>
+      </div>
+      <div id="google_translate_element"></div>
     </div>
   </div>
 </footer>
@@ -598,14 +622,39 @@ function toggleMobile(){
   nav.classList.toggle('active');
 }
 
-// Google Translate
-function googleTranslateElementInit() {
+// Language selector
+function toggleLangDrop(){
+  document.getElementById('langDrop').classList.toggle('active');
+}
+document.addEventListener('click', function(e){
+  if(!e.target.closest('.lang-wrap')){
+    var d=document.getElementById('langDrop');
+    if(d) d.classList.remove('active');
+  }
+});
+function changeLang(lang){
+  document.getElementById('langDrop').classList.remove('active');
+  // Update button text
+  var names = {es:'Español',en:'English',fr:'Français',de:'Deutsch',it:'Italiano',ar:'العربية'};
+  document.querySelector('.lang-btn').innerHTML = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg> ' + names[lang];
+  // Mark current
+  var links = document.querySelectorAll('.lang-dropdown a');
+  for(var i=0;i<links.length;i++) links[i].classList.remove('current');
+  // Trigger Google Translate
+  var combo = document.querySelector('.goog-te-combo');
+  if(combo){
+    combo.value = lang;
+    combo.dispatchEvent(new Event('change'));
+  }
+}
+// Google Translate init
+function googleTranslateElementInit(){
   new google.translate.TranslateElement({
-    pageLanguage: 'es',
-    includedLanguages: 'en,ar,fr,de,it,es',
-    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-    autoDisplay: false
-  }, 'google_translate_element');
+    pageLanguage:'es',
+    includedLanguages:'en,ar,fr,de,it,es',
+    layout:google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay:false
+  },'google_translate_element');
 }
 </script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
