@@ -6,7 +6,7 @@
 <meta http-equiv="X-Content-Type-Options" content="nosniff">
 <meta http-equiv="X-Frame-Options" content="DENY">
 <title>Automarketing Digital | Sistema de Crecimiento con IA</title>
-<meta name="description" content="Instalamos un sistema de IA que responde WhatsApp, agenda citas y recupera clientes. Automaticamente. 24 horas al dia. Activo en 48 horas.">
+<meta name="description" content="Instalamos un sistema de IA que responde WhatsApp, agenda citas y recupera clientes. Automáticamente. 24 horas al día. Activo en 48 horas.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://automarketingdigital.es/">
 <meta property="og:type" content="website">
@@ -36,6 +36,11 @@ ul{list-style:none}
 .gn-links a:hover{color:#1d1d1f}
 .gn-ham{display:none;background:none;border:none;cursor:pointer;padding:6px}
 .gn-ham span{display:block;width:17px;height:1px;background:#1d1d1f;margin:4px 0;transition:all 0.3s}
+/* Google Translate */
+#google_translate_element{display:inline-block}
+.goog-te-banner-frame{display:none !important}
+body{top:0 !important}
+.goog-te-combo{font-family:inherit;font-size:11px;color:#424245;background:#fff;border:1px solid #d2d2d7;border-radius:6px;padding:4px 8px;cursor:pointer}
 
 /* ====== MEGA MENU ====== */
 .mega-overlay{position:fixed;top:44px;left:0;right:0;bottom:0;background:rgba(0,0,0,0.3);opacity:0;pointer-events:none;transition:opacity 0.3s;z-index:9997}
@@ -91,8 +96,8 @@ ul{list-style:none}
 .card{background:#f5f5f7;border-radius:18px;overflow:hidden;padding:48px 40px 0;text-align:center}
 .card .section-headline{font-size:clamp(28px,4vw,40px)}
 .card .section-sub{font-size:clamp(15px,2vw,19px)}
-.card-img{margin-top:24px;border-radius:8px;overflow:hidden}
-.card-img img{width:100%;height:280px;object-fit:cover}
+.card-img{margin-top:24px;border-radius:8px;overflow:hidden;height:280px}
+.card-img img,.card-img video{width:100%;height:280px;object-fit:cover;display:block}
 
 /* ====== NUMBERS ====== */
 .numbers{display:grid;grid-template-columns:repeat(4,1fr);max-width:980px;margin:0 auto;text-align:center}
@@ -203,8 +208,9 @@ ul{list-style:none}
       <div class="gn-link-wrap" data-mega="soluciones"><a href="#soluciones">Soluciones</a></div>
       <div class="gn-link-wrap" data-mega="sectores"><a href="#sectores">Sectores</a></div>
       <a href="precios.html">Precios</a>
-      <a href="como-funciona.html">Como funciona</a>
+      <a href="como-funciona.html">Cómo funciona</a>
       <a href="auditoria.html">Demo</a>
+      <div id="google_translate_element"></div>
     </div>
     <button class="gn-ham" aria-label="Menu" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -220,21 +226,21 @@ ul{list-style:none}
       <div class="mega-col mega-col-main">
         <h5>Explora Soluciones</h5>
         <a href="#soluciones">WhatsApp 24/7</a>
-        <a href="#soluciones">Agenda Automatica</a>
+        <a href="#soluciones">Agenda Automática</a>
         <a href="#soluciones">Recordatorios</a>
-        <a href="#soluciones">Reactivacion Clientes</a>
-        <a href="#soluciones">Resenas Google</a>
+        <a href="#soluciones">Reactivación Clientes</a>
+        <a href="#soluciones">Reseñas Google</a>
       </div>
       <div class="mega-col mega-col-secondary">
-        <h5>Como funciona</h5>
-        <a href="como-funciona.html">Paso 1: Auditoria</a>
-        <a href="como-funciona.html">Paso 2: Instalacion</a>
+        <h5>Cómo funciona</h5>
+        <a href="como-funciona.html">Paso 1: Auditoría</a>
+        <a href="como-funciona.html">Paso 2: Instalación</a>
         <a href="como-funciona.html">Paso 3: Resultados</a>
       </div>
       <div class="mega-col mega-col-secondary">
         <h5>Recursos</h5>
         <a href="precios.html">Precios</a>
-        <a href="auditoria.html">Auditoria gratuita</a>
+        <a href="auditoria.html">Auditoría gratuita</a>
         <a href="auditoria.html">Demo en vivo</a>
       </div>
     </div>
@@ -251,15 +257,15 @@ ul{list-style:none}
       </div>
       <div class="mega-col mega-col-secondary">
         <h5>Salud</h5>
-        <a href="dental.html">Clinicas Dentales</a>
-        <a href="estetica.html">Clinicas Estetica</a>
+        <a href="dental.html">Clínicas Dentales</a>
+        <a href="estetica.html">Clínicas Estética</a>
         <a href="fisioterapia.html">Fisioterapia</a>
         <a href="veterinaria.html">Veterinarias</a>
         <a href="masajistas.html">Masajistas</a>
       </div>
       <div class="mega-col mega-col-secondary">
         <h5>Servicios</h5>
-        <a href="peluqueria.html">Peluquerias</a>
+        <a href="peluqueria.html">Peluquerías</a>
         <a href="restaurante.html">Restaurantes</a>
         <a href="gimnasio.html">Gimnasios</a>
         <a href="taller.html">Talleres</a>
@@ -269,6 +275,7 @@ ul{list-style:none}
         <a href="inmobiliaria.html">Inmobiliarias</a>
         <a href="academia.html">Academias</a>
         <a href="ecommerce.html">E-commerce</a>
+
       </div>
     </div>
   </div>
@@ -279,7 +286,7 @@ ul{list-style:none}
   <a href="#soluciones">Soluciones</a>
   <a href="#sectores">Sectores</a>
   <a href="precios.html">Precios</a>
-  <a href="como-funciona.html">Como funciona</a>
+  <a href="como-funciona.html">Cómo funciona</a>
   <a href="auditoria.html">Demo</a>
 </div>
 
@@ -289,11 +296,14 @@ ul{list-style:none}
   <h1 class="hero-headline">Tus clientes no esperan.</h1>
   <p class="hero-subheadline">Inteligencia artificial que responde WhatsApp, agenda citas y recupera clientes.</p>
   <div class="hero-cta">
-    <a href="como-funciona.html" class="btn-pill btn-blue">Mas informacion</a>
+    <a href="como-funciona.html" class="btn-pill btn-blue">Más información</a>
     <a href="auditoria.html" class="btn-pill btn-outline">Probar demo</a>
   </div>
   <div class="hero-img">
-    <img src="img/hero.jpeg" alt="Sistema de IA respondiendo WhatsApp automaticamente" loading="eager">
+    <video autoplay muted loop playsinline style="width:100%;height:auto;border-radius:12px">
+      <source src="img/hero-video.mp4" type="video/mp4">
+      <img src="img/hero.jpeg" alt="Sistema de IA respondiendo WhatsApp automáticamente">
+    </video>
   </div>
 </section>
 
@@ -302,13 +312,13 @@ ul{list-style:none}
   <div class="section-inner">
     <p class="eyebrow">Captar</p>
     <h2 class="section-headline">0 mensajes sin responder.</h2>
-    <p class="section-sub">Cada consulta atendida en segundos. Automaticamente.</p>
+    <p class="section-sub">Cada consulta atendida en segundos. Automáticamente.</p>
     <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap">
-      <a href="como-funciona.html" class="link-blue">Mas informacion</a>
+      <a href="como-funciona.html" class="link-blue">Más información</a>
       <a href="auditoria.html" class="link-blue">Solicitar demo</a>
     </div>
     <div class="section-img">
-      <img src="img/captar.jpeg" alt="WhatsApp respondiendo automaticamente en clinica" loading="lazy">
+      <img src="img/captar.jpeg" alt="Recepción de clínica moderna atendiendo con IA" style="width:100%;height:auto;border-radius:12px" loading="lazy">
     </div>
   </div>
 </section>
@@ -318,17 +328,20 @@ ul{list-style:none}
   <div class="card">
     <h2 class="section-headline">+35% reservas.</h2>
     <p class="section-sub">De consulta a cita confirmada.</p>
-    <a href="como-funciona.html" class="link-blue">Mas informacion</a>
+    <a href="como-funciona.html" class="link-blue">Más información</a>
     <div class="card-img">
-      <img src="img/convertir.jpeg" alt="Calendario de citas lleno automaticamente" loading="lazy">
+      <img src="img/convertir.jpeg" alt="Calendario de citas lleno automáticamente" loading="lazy">
     </div>
   </div>
   <div class="card">
     <h2 class="section-headline">x3 recurrentes.</h2>
     <p class="section-sub">Tus clientes vuelven solos.</p>
-    <a href="como-funciona.html" class="link-blue">Mas informacion</a>
+    <a href="como-funciona.html" class="link-blue">Más información</a>
     <div class="card-img">
-      <img src="img/retener.jpeg" alt="Clienta satisfecha con atencion automatica" loading="lazy">
+      <video autoplay muted loop playsinline>
+        <source src="img/retener-video.mp4" type="video/mp4">
+        <img src="img/retener.jpeg" alt="Clienta satisfecha con atención automática">
+      </video>
     </div>
   </div>
 </div>
@@ -359,23 +372,23 @@ ul{list-style:none}
 <!-- ====== COMO FUNCIONA ====== -->
 <section class="section section-alt text-center" id="como-funciona">
   <div class="section-inner">
-    <p class="eyebrow">Como funciona</p>
+    <p class="eyebrow">Cómo funciona</p>
     <h2 class="section-headline">Tres pasos. Cero complicaciones.</h2>
     <div class="steps">
       <div class="step">
         <div class="step-number">1</div>
-        <div class="step-title">Auditoria gratuita</div>
+        <div class="step-title">Auditoría gratuita</div>
         <div class="step-desc">Analizamos tu negocio, canales y oportunidades. Sin compromiso ni coste.</div>
       </div>
       <div class="step">
         <div class="step-number">2</div>
-        <div class="step-title">Instalacion en 48h</div>
+        <div class="step-title">Instalación en 48h</div>
         <div class="step-desc">Configuramos todo el sistema: WhatsApp, agenda, recordatorios y seguimiento.</div>
       </div>
       <div class="step">
         <div class="step-number">3</div>
-        <div class="step-title">Resultados automaticos</div>
-        <div class="step-desc">Tu negocio responde, agenda y retiene clientes mientras tu te concentras en lo importante.</div>
+        <div class="step-title">Resultados automáticos</div>
+        <div class="step-desc">Tu negocio responde, agenda y retiene clientes mientras tú te concentras en lo importante.</div>
       </div>
     </div>
   </div>
@@ -384,8 +397,8 @@ ul{list-style:none}
 <!-- ====== GARANTIAS ====== -->
 <section class="section text-center" id="garantias">
   <div class="section-inner">
-    <p class="eyebrow">Garantias</p>
-    <h2 class="section-headline">Sin riesgo. Sin letra pequena.</h2>
+    <p class="eyebrow">Garantías</p>
+    <h2 class="section-headline">Sin riesgo. Sin letra pequeña.</h2>
     <div class="guarantees">
       <div class="guarantee-item">
         <div class="guarantee-icon">
@@ -399,14 +412,14 @@ ul{list-style:none}
           <svg viewBox="0 0 24 24"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
         </div>
         <div class="guarantee-title">Activo en 48h</div>
-        <div class="guarantee-desc">Tu sistema funcionando en dos dias o menos.</div>
+        <div class="guarantee-desc">Tu sistema funcionando en dos días o menos.</div>
       </div>
       <div class="guarantee-item">
         <div class="guarantee-icon">
           <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
         </div>
         <div class="guarantee-title">Soporte continuo</div>
-        <div class="guarantee-desc">Te acompanamos con ajustes y mejoras. Siempre.</div>
+        <div class="guarantee-desc">Te acompañamos con ajustes y mejoras. Siempre.</div>
       </div>
       <div class="guarantee-item">
         <div class="guarantee-icon">
@@ -426,28 +439,28 @@ ul{list-style:none}
     <h2 class="section-headline">Resolvemos tus dudas.</h2>
     <div class="faq">
       <details>
-        <summary>Necesito conocimientos tecnicos para usarlo?</summary>
-        <div class="faq-answer">No. Nosotros nos encargamos de todo: instalacion, configuracion y mantenimiento. Tu solo ves los resultados en tu movil.</div>
+        <summary>¿¿Necesito conocimientos técnicos para usarlo?</summary>
+        <div class="faq-answer">No. Nosotros nos encargamos de todo: instalación, configuración y mantenimiento. Tú solo ves los resultados en tu móvil.</div>
       </details>
       <details>
-        <summary>Funciona con mi numero de WhatsApp actual?</summary>
-        <div class="faq-answer">Si. Conectamos el sistema a tu numero de WhatsApp Business sin cambiar nada de tu configuracion actual.</div>
+        <summary>¿Funciona con mi número de WhatsApp actual?</summary>
+        <div class="faq-answer">Sí. Conectamos el sistema a tu número de WhatsApp Business sin cambiar nada de tu configuración actual.</div>
       </details>
       <details>
-        <summary>Cuanto tarda en estar activo?</summary>
-        <div class="faq-answer">48 horas desde que nos das acceso. En la mayoria de casos, menos de 24 horas.</div>
+        <summary>¿Cuánto tarda en estar activo?</summary>
+        <div class="faq-answer">48 horas desde que nos das acceso. En la mayoría de casos, menos de 24 horas.</div>
       </details>
       <details>
-        <summary>Puedo cancelar en cualquier momento?</summary>
-        <div class="faq-answer">Si. Sin permanencia, sin penalizaciones, sin letra pequena. Si no estas satisfecho, cancelas y listo.</div>
+        <summary>¿¿Puedo cancelar en cualquier momento?</summary>
+        <div class="faq-answer">Sí. Sin permanencia, sin penalizaciones, sin letra pequeña. Si no estás satisfecho, cancelas y listo.</div>
       </details>
       <details>
-        <summary>Que pasa si ya tengo una agenda o CRM?</summary>
+        <summary>¿Qué pasa si ya tengo una agenda o CRM?</summary>
         <div class="faq-answer">Nos integramos con las herramientas que ya usas: Google Calendar, Calendly, Excel, o cualquier sistema que tengas.</div>
       </details>
       <details>
-        <summary>Es seguro? Mis datos estan protegidos?</summary>
-        <div class="faq-answer">Cumplimos con la RGPD al 100%. Tus datos y los de tus clientes estan cifrados y protegidos en todo momento.</div>
+        <summary>¿Es seguro? ¿Mis datos están protegidos?</summary>
+        <div class="faq-answer">Cumplimos con la RGPD al 100%. Tus datos y los de tus clientes están cifrados y protegidos en todo momento.</div>
       </details>
     </div>
   </div>
@@ -457,9 +470,9 @@ ul{list-style:none}
 <section class="section section-alt cta-final">
   <div class="section-inner">
     <h2 class="section-headline">Empieza hoy. Sin compromiso.</h2>
-    <p class="section-sub">Auditoria gratuita de tu negocio. Descubre cuanto puedes crecer.</p>
+    <p class="section-sub">Auditoría gratuita de tu negocio. Descubre cuánto puedes crecer.</p>
     <div class="hero-cta">
-      <a href="auditoria.html" class="btn-pill btn-blue">Solicitar auditoria gratuita</a>
+      <a href="auditoria.html" class="btn-pill btn-blue">Solicitar auditoría gratuita</a>
       <a href="https://wa.me/34643987371" class="btn-pill btn-outline" target="_blank" rel="noopener noreferrer">Hablar por WhatsApp</a>
     </div>
   </div>
@@ -469,22 +482,22 @@ ul{list-style:none}
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-legal-top">
-      Los precios indicados no incluyen IVA. Las funcionalidades descritas pueden variar segun el sector y la configuracion especifica del sistema. Los resultados dependen del volumen de consultas y la naturaleza de cada negocio.
+      Los precios indicados no incluyen IVA. Las funcionalidades descritas pueden variar según el sector y la configuración específica del sistema. Los resultados dependen del volumen de consultas y la naturaleza de cada negocio.
     </div>
     <div class="footer-cols">
       <div class="footer-col">
         <h4>Soluciones</h4>
         <a href="#soluciones">WhatsApp 24/7</a>
-        <a href="#soluciones">Agenda automatica</a>
+        <a href="#soluciones">Agenda automática</a>
         <a href="#soluciones">Recordatorios</a>
-        <a href="#soluciones">Reactivacion</a>
-        <a href="#soluciones">Resenas Google</a>
+        <a href="#soluciones">Reactivación</a>
+        <a href="#soluciones">Reseñas Google</a>
       </div>
       <div class="footer-col">
         <h4>Sectores</h4>
-        <a href="dental.html">Clinicas Dentales</a>
-        <a href="estetica.html">Estetica</a>
-        <a href="peluqueria.html">Peluquerias</a>
+        <a href="dental.html">Clínicas Dentales</a>
+        <a href="estetica.html">Estética</a>
+        <a href="peluqueria.html">Peluquerías</a>
         <a href="fisioterapia.html">Fisioterapia</a>
         <a href="restaurante.html">Restaurantes</a>
         <a href="gimnasio.html">Gimnasios</a>
@@ -496,9 +509,9 @@ ul{list-style:none}
       </div>
       <div class="footer-col">
         <h4>Recursos</h4>
-        <a href="como-funciona.html">Como funciona</a>
+        <a href="como-funciona.html">Cómo funciona</a>
         <a href="precios.html">Precios</a>
-        <a href="auditoria.html">Auditoria gratuita</a>
+        <a href="auditoria.html">Auditoría gratuita</a>
       </div>
       <div class="footer-col">
         <h4>Empresa</h4>
@@ -510,7 +523,7 @@ ul{list-style:none}
         <h4>Contacto</h4>
         <a href="https://wa.me/34643987371" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <a href="mailto:nabil@automarketingdigital.es">Email</a>
-        <a href="tel:+34643987371">Telefono</a>
+        <a href="tel:+34643987371">Teléfono</a>
       </div>
     </div>
     <div class="footer-contact">
@@ -583,6 +596,17 @@ function toggleMobile(){
   ham.classList.toggle('active');
   nav.classList.toggle('active');
 }
+
+// Google Translate
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({
+    pageLanguage: 'es',
+    includedLanguages: 'en,ar,fr,de,it,es',
+    layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+    autoDisplay: false
+  }, 'google_translate_element');
+}
 </script>
+<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 </body>
 </html>
