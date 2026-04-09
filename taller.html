@@ -3,262 +3,414 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Automatización para Talleres Mecanicos | Automarketing Digital</title>
-<meta name="description" content="Sistema completo de automatización para talleres mecanicos. Presupuestos por WhatsApp, estado de reparacion en tiempo real, recordatorio ITV automático. Activo en 48h.">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800;900&display=swap" rel="stylesheet">
+<meta http-equiv="X-Content-Type-Options" content="nosniff">
+<meta http-equiv="X-Frame-Options" content="DENY">
+<title>Automatizacion para Talleres Mecanicos | Automarketing Digital</title>
+<link rel="canonical" href="https://automarketingdigital.es/taller.html">
+<meta name="description" content="Sistema completo de automatizacion para talleres mecanicos. Presupuestos por WhatsApp, estado de reparacion en tiempo real, recordatorio ITV automatico. Activo en 48h.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Inter',sans-serif;background:#060912;color:#f1f5f9;line-height:1.6}
+body{font-family:'Inter',sans-serif;background:#fff;color:#1d1d1f;line-height:1.6;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:1100px;margin:0 auto;padding:0 5%}
-nav{position:fixed;top:0;left:0;right:0;z-index:999;background:rgba(6,9,18,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(99,102,241,.15);padding:14px 5%;display:flex;align-items:center;justify-content:space-between}
-.nav-logo{font-size:1rem;font-weight:800}.nav-logo span{color:#6366f1}
-.nav-cta{background:#6366f1;color:#fff;padding:9px 20px;border-radius:8px;font-size:.85rem;font-weight:700;cursor:pointer;border:none}
-.hero{padding:120px 5% 80px;text-align:center;background:radial-gradient(ellipse 80% 60% at 50% 0%,rgba(99,102,241,.13) 0%,transparent 70%)}
-.badge{display:inline-block;background:#1e1b4b;border:1px solid #4338ca;color:#a5b4fc;font-size:.72rem;font-weight:700;padding:5px 14px;border-radius:20px;margin-bottom:24px;text-transform:uppercase;letter-spacing:.5px}
-.hero h1{font-size:clamp(2rem,5vw,3.2rem);font-weight:900;line-height:1.15;margin-bottom:20px}
-.hero h1 em{font-style:normal;color:#6366f1}
-.sub{font-size:1rem;color:#94a3b8;max-width:560px;margin:0 auto 36px}
-.btn{display:inline-block;padding:14px 28px;border-radius:10px;font-size:.95rem;font-weight:700;cursor:pointer;border:none;transition:.2s}
-.btn-p{background:linear-gradient(135deg,#6366f1,#4338ca);color:#fff;box-shadow:0 4px 20px rgba(99,102,241,.4)}
-.btn-p:hover{transform:translateY(-2px)}
-.btn-o{background:transparent;border:1px solid #334155;color:#f1f5f9}
-.btn-o:hover{border-color:#6366f1}
-.btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
-.hstats{display:flex;gap:40px;justify-content:center;flex-wrap:wrap;margin-top:56px;padding-top:40px;border-top:1px solid #1e293b;text-align:center}
-.hstats b{display:block;font-size:1.8rem;font-weight:900;color:#6366f1}
-.hstats small{font-size:.75rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
-.section{padding:80px 5%}
-.slabel{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:1.5px;color:#6366f1;margin-bottom:12px}
-.stitle{font-size:clamp(1.5rem,3vw,2.2rem);font-weight:800;margin-bottom:16px;line-height:1.25}
-.sdesc{color:#64748b;font-size:.95rem;max-width:600px;margin-bottom:32px}
-.g2{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:20px}
-.g3{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:20px}
-.card{background:#0d1117;border:1px solid #1e293b;border-radius:14px;padding:24px;transition:.2s}
-.card:hover{border-color:rgba(99,102,241,.3);transform:translateY(-3px)}
-.prob{border-left:3px solid #ef4444}
-.picon{font-size:1.5rem;margin-bottom:10px}
-.prob h3{font-size:.95rem;font-weight:700;margin-bottom:6px}
-.prob p{font-size:.82rem;color:#64748b;line-height:1.5}
-.mgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:16px;margin-top:32px}
-.mod{background:#0d1117;border:1px solid #1e293b;border-radius:12px;padding:20px 22px;display:flex;align-items:flex-start;gap:14px}
-.modn{background:linear-gradient(135deg,#6366f1,#4338ca);color:#fff;font-size:.7rem;font-weight:800;padding:4px 9px;border-radius:6px;flex-shrink:0;margin-top:2px;white-space:nowrap}
-.mod h4{font-size:.88rem;font-weight:700;margin-bottom:4px}
-.mod p{font-size:.78rem;color:#64748b;line-height:1.45}
-.modnew{border-color:rgba(16,185,129,.3)}
-.modnew .modn{background:linear-gradient(135deg,#10b981,#059669)}
-.res{background:#0d1117;border:1px solid #1e293b;border-radius:14px;padding:28px;text-align:center}
-.resval{font-size:2.4rem;font-weight:900;color:#6366f1;margin-bottom:4px}
-.reslab{font-size:.8rem;color:#64748b;text-transform:uppercase;letter-spacing:.5px}
-.resdesc{font-size:.82rem;color:#94a3b8;margin-top:10px;line-height:1.45}
-.steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:0;margin-top:40px}
-.step{text-align:center;padding:24px 16px;position:relative}
-.stepn{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,#6366f1,#4338ca);display:flex;align-items:center;justify-content:center;font-weight:800;font-size:.9rem;margin:0 auto 14px;color:#fff}
-.step h4{font-size:.88rem;font-weight:700;margin-bottom:6px}
-.step p{font-size:.78rem;color:#64748b}
-.pc{background:#0d1117;border:2px solid #1e293b;border-radius:16px;padding:32px;text-align:center;transition:.2s}
-.pc.feat{border-color:#6366f1;background:rgba(99,102,241,.05);position:relative}
-.pc.feat::before{content:'MAS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#6366f1;color:#fff;font-size:.65rem;font-weight:800;padding:4px 14px;border-radius:20px;letter-spacing:.5px}
-.pname{font-size:.8rem;font-weight:700;color:#64748b;text-transform:uppercase;letter-spacing:.5px;margin-bottom:8px}
-.psetup{font-size:.8rem;color:#94a3b8;margin-bottom:4px}
-.pmonth{font-size:2rem;font-weight:900;margin-bottom:4px}
-.pmonth span{font-size:.85rem;font-weight:400;color:#64748b}
-.plist{list-style:none;text-align:left;margin:20px 0 24px;display:flex;flex-direction:column;gap:8px}
-.plist li{font-size:.82rem;color:#94a3b8;display:flex;gap:8px}
-.plist li::before{content:'\2713';color:#10b981;font-weight:700;flex-shrink:0}
-.faq-item{border-bottom:1px solid #1e293b;padding:18px 0}
-.faq-q{display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:.9rem;font-weight:600;gap:16px}
-.faq-a{font-size:.85rem;color:#64748b;line-height:1.6;max-height:0;overflow:hidden;transition:max-height .3s,padding .3s}
-.faq-item.open .faq-a{max-height:200px;padding-top:10px}
-.arr{color:#6366f1;font-size:1rem;transition:transform .3s;flex-shrink:0}
-.faq-item.open .arr{transform:rotate(180deg)}
-.ctabox{background:linear-gradient(135deg,#1e1b4b,#2d1b69);border-radius:20px;padding:60px 40px;text-align:center;margin:0 5% 80px}
-.ctabox h2{font-size:clamp(1.5rem,3vw,2rem);font-weight:900;margin-bottom:14px}
-.ctabox p{color:#94a3b8;margin-bottom:28px;font-size:.95rem}
-footer{border-top:1px solid #1e293b;padding:24px 5%;text-align:center;font-size:.78rem;color:#475569}
-footer a{color:#6366f1}
-@media(max-width:600px){.ctabox{padding:40px 20px}}
+.globalnav{position:fixed;top:0;left:0;right:0;z-index:9000;height:44px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 22px}
+.nav-logo{font-size:.88rem;font-weight:700;color:#1d1d1f;letter-spacing:-.01em}.nav-logo span{color:#FF6B35}
+.nav-links{display:flex;align-items:center;gap:20px}
+.nav-links a{font-size:.8rem;color:#1d1d1f;opacity:.8;white-space:nowrap;transition:opacity .2s}.nav-links a:hover{opacity:1}
+.nav-wrap-item{position:relative}
+.mega-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.12);padding:24px;min-width:520px;display:none;z-index:9100}
+.mega-menu.active{display:block}
+.mega-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.mega-item{display:flex;flex-direction:column;padding:10px 12px;border-radius:10px;transition:background .15s}.mega-item:hover{background:#f5f5f7}
+.mega-item-title{font-size:.82rem;font-weight:600;color:#1d1d1f;margin-bottom:2px}
+.mega-item-desc{font-size:.72rem;color:#6e6e73}
+.mega-overlay{position:fixed;inset:0;z-index:8999;display:none}.mega-overlay.active{display:block}
+.nav-pill{background:#0071e3;color:#fff;padding:6px 14px;border-radius:980px;font-size:.78rem;font-weight:600;transition:background .2s;cursor:pointer;border:none}.nav-pill:hover{background:#0077ed}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{display:block;width:22px;height:2px;background:#1d1d1f;border-radius:2px;transition:.3s}
+.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.active span:nth-child(2){opacity:0}
+.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-nav{display:none;position:fixed;top:44px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,.08);padding:20px;z-index:8998;flex-direction:column;gap:4px;box-shadow:0 8px 30px rgba(0,0,0,.1)}
+.mobile-nav.active{display:flex}
+.mobile-nav a{padding:10px 12px;border-radius:10px;font-size:.9rem;color:#1d1d1f}.mobile-nav a:hover{background:#f5f5f7}
+.mobile-divider{height:1px;background:#e5e5e5;margin:8px 0}
+@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.nav-pill{display:none}}
+.hero{padding:120px 22px 80px;text-align:center;background:#fff}
+.hero-badge{display:inline-block;background:#f5f5f7;border-radius:980px;padding:6px 16px;font-size:.76rem;font-weight:600;color:#6e6e73;margin-bottom:24px;letter-spacing:.02em}
+.hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:#1d1d1f;max-width:780px;margin:0 auto 20px}
+.hero h1 em{font-style:normal;color:#0071e3}
+.hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:#6e6e73;max-width:560px;margin:0 auto 36px;line-height:1.6}
+.btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.btn-blue{display:inline-block;background:#0071e3;color:#fff;padding:13px 26px;border-radius:980px;font-size:.95rem;font-weight:600;transition:background .2s;cursor:pointer;border:none}.btn-blue:hover{background:#0077ed}
+.btn-outline{display:inline-block;border:1px solid #0071e3;color:#0071e3;padding:13px 26px;border-radius:980px;font-size:.95rem;font-weight:600;transition:.2s;cursor:pointer;background:transparent}.btn-outline:hover{background:#f0f6ff}
+.numbers-section{background:#f5f5f7;padding:60px 22px}
+.numbers-grid{display:grid;grid-template-columns:repeat(4,1fr);max-width:900px;margin:0 auto;border:1px solid #d2d2d7;border-radius:18px;overflow:hidden;background:#fff}
+.num-item{padding:32px 24px;text-align:center;border-right:1px solid #d2d2d7}.num-item:last-child{border-right:none}
+.num-val{font-size:2.2rem;font-weight:700;color:#1d1d1f;letter-spacing:-.03em;margin-bottom:4px}
+.num-label{font-size:.8rem;color:#6e6e73;line-height:1.4}
+@media(max-width:600px){.numbers-grid{grid-template-columns:1fr 1fr}.num-item:nth-child(2){border-right:none}.num-item:nth-child(3){border-right:1px solid #d2d2d7;border-top:1px solid #d2d2d7}.num-item:nth-child(4){border-right:none;border-top:1px solid #d2d2d7}}
+.section{padding:80px 22px}
+.section-inner{max-width:980px;margin:0 auto}
+.section-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#0071e3;margin-bottom:10px}
+.section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.025em;color:#1d1d1f;margin-bottom:16px;line-height:1.2}
+.section-desc{font-size:.95rem;color:#6e6e73;max-width:600px;margin-bottom:40px;line-height:1.6}
+.prob-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.prob-card{background:#fff;border:1px solid #d2d2d7;border-radius:18px;padding:24px;border-left:4px solid #ff3b30}
+.prob-icon{font-size:1.4rem;margin-bottom:10px}
+.prob-card h3{font-size:.95rem;font-weight:700;color:#1d1d1f;margin-bottom:6px}
+.prob-card p{font-size:.82rem;color:#6e6e73;line-height:1.55}
+@media(max-width:600px){.prob-grid{grid-template-columns:1fr}}
+.mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
+.mod-card{background:#fff;border:1px solid #d2d2d7;border-radius:14px;padding:18px 20px;display:flex;align-items:flex-start;gap:12px}
+.mod-badge{background:#0071e3;color:#fff;font-size:.66rem;font-weight:700;padding:3px 8px;border-radius:6px;flex-shrink:0;margin-top:2px;white-space:nowrap}
+.mod-card h4{font-size:.88rem;font-weight:700;color:#1d1d1f;margin-bottom:4px}
+.mod-card p{font-size:.78rem;color:#6e6e73;line-height:1.45}
+.mod-highlight{background:#fff;border:2px solid #0071e3;border-radius:18px;padding:22px 26px;margin-top:20px}
+.mod-highlight .mod-hl-title{font-size:.85rem;font-weight:700;color:#0071e3;margin-bottom:6px}
+.mod-highlight p{font-size:.82rem;color:#6e6e73;line-height:1.55}
+.res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.res-card{background:#fff;border:1px solid #d2d2d7;border-radius:18px;padding:28px;text-align:center}
+.res-val{font-size:2.2rem;font-weight:700;color:#0071e3;letter-spacing:-.03em;margin-bottom:4px}
+.res-label{font-size:.76rem;font-weight:700;color:#1d1d1f;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
+.res-desc{font-size:.8rem;color:#6e6e73;line-height:1.5}
+@media(max-width:700px){.res-grid{grid-template-columns:1fr 1fr}}
+@media(max-width:480px){.res-grid{grid-template-columns:1fr}}
+.steps-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:40px}
+.step-item{text-align:center;padding:24px 16px;position:relative}
+.step-num{width:44px;height:44px;border-radius:50%;background:#06c;color:#fff;display:flex;align-items:center;justify-content:center;font-size:.9rem;font-weight:700;margin:0 auto 14px}
+.step-item h4{font-size:.92rem;font-weight:700;color:#1d1d1f;margin-bottom:6px}
+.step-item p{font-size:.8rem;color:#6e6e73;line-height:1.5}
+@media(max-width:600px){.steps-grid{grid-template-columns:1fr;gap:16px}.step-item{border-bottom:1px solid #f0f0f0;padding-bottom:20px}}
+.pricing-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;max-width:680px;margin:0 auto}
+.pricing-card{background:#fff;border:1px solid #d2d2d7;border-radius:18px;padding:30px;display:flex;flex-direction:column}
+.pricing-card.featured{border:2px solid #0071e3;box-shadow:0 8px 40px rgba(0,113,227,.12);position:relative}
+.pricing-card.featured::before{content:'MAS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#0071e3;color:#fff;font-size:.65rem;font-weight:700;padding:4px 14px;border-radius:980px;letter-spacing:.05em;white-space:nowrap}
+.pricing-name{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#6e6e73;margin-bottom:6px}
+.pricing-setup{font-size:.8rem;color:#6e6e73;margin-bottom:4px}
+.pricing-price{font-size:2rem;font-weight:700;color:#1d1d1f;letter-spacing:-.03em;margin-bottom:4px}
+.pricing-price span{font-size:.85rem;font-weight:400;color:#6e6e73}
+.pricing-list{list-style:none;margin:18px 0 24px;display:flex;flex-direction:column;gap:8px;flex:1}
+.pricing-list li{font-size:.82rem;color:#1d1d1f;display:flex;gap:8px;align-items:flex-start}
+.pricing-list li::before{content:'&#10003;';color:#34c759;font-weight:700;flex-shrink:0;margin-top:1px}
+.pricing-note{font-size:.76rem;color:#6e6e73;text-align:center;margin-top:20px}
+@media(max-width:600px){.pricing-grid{grid-template-columns:1fr;max-width:480px}}
+.faq-list{max-width:680px;margin:0 auto}
+.faq-item{border-bottom:1px solid #e5e5ea}
+.faq-item summary{padding:18px 0;cursor:pointer;font-size:.92rem;font-weight:600;color:#1d1d1f;display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none}
+.faq-item summary::-webkit-details-marker{display:none}
+.faq-item summary::after{content:'+';color:#0071e3;font-size:1.2rem;font-weight:300;flex-shrink:0;transition:transform .2s}
+.faq-item[open] summary::after{transform:rotate(45deg)}
+.faq-body{font-size:.85rem;color:#6e6e73;line-height:1.6;padding-bottom:18px}
+.cta-box{background:#f5f5f7;border-radius:24px;padding:64px 40px;text-align:center;margin:0 auto 80px;max-width:900px}
+.cta-box h2{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.025em;color:#1d1d1f;margin-bottom:14px}
+.cta-box p{font-size:.95rem;color:#6e6e73;margin-bottom:28px;max-width:520px;margin-left:auto;margin-right:auto}
+.footer{background:#f5f5f7;border-top:1px solid #d2d2d7;padding:48px 22px 32px}
+.footer-inner{max-width:980px;margin:0 auto}
+.footer-legal-top{font-size:.76rem;color:#6e6e73;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid #d2d2d7;line-height:1.6}
+.footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
+.footer-col-title{font-size:.78rem;font-weight:700;color:#1d1d1f;margin-bottom:14px;text-transform:uppercase;letter-spacing:.04em}
+.footer-col a{display:block;font-size:.78rem;color:#6e6e73;margin-bottom:8px;transition:color .2s}.footer-col a:hover{color:#0071e3}
+.footer-contact{font-size:.78rem;color:#6e6e73;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #d2d2d7}
+.footer-contact a{color:#0071e3}
+.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.74rem;color:#6e6e73}
+.footer-bottom a{color:#6e6e73}.footer-bottom a:hover{color:#0071e3}
+@media(max-width:768px){.footer-cols{grid-template-columns:1fr 1fr;gap:24px}}
+@media(max-width:480px){.footer-cols{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}}
+.wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:.2s}
+.wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.65)}
 </style>
 </head>
 <body>
-<nav>
-  <a href="index.html" class="nav-logo">Automarketing<span>Digital</span></a>
-  <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20sistema%20para%20talleres%20mec%C3%A1nicos" target="_blank"><button class="nav-cta">Hablar por WhatsApp</button></a>
-</nav>
 
-<section class="hero">
-  <div class="badge">&#9889; Específico para talleres mecanicos</div>
-  <h1>El cliente confía.<br><em>El coche avanza.</em><br>Sin llamadas.</h1>
-  <p class="sub">Sistema completo de automatización para talleres mecanicos. Presupuestos por WhatsApp, estado de reparacion en tiempo real, recordatorio ITV automático. Activo en 48h.</p>
-  <div class="btns">
-    <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20una%20demo%20del%20sistema%20para%20talleres%20mec%C3%A1nicos" target="_blank" class="btn btn-p">Pedir demo por WhatsApp &rarr;</a>
-    <a href="#módulos" class="btn btn-o">Ver el sistema completo</a>
+<nav class="globalnav">
+  <a href="index.html" class="nav-logo">Automarketing<span>Digital</span></a>
+  <div class="nav-links">
+    <div class="nav-wrap-item" id="wrap-soluciones">
+      <a href="#">Soluciones</a>
+      <div class="mega-menu" id="mega-soluciones">
+        <div class="mega-cols">
+          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Agente WhatsApp IA</span><span class="mega-item-desc">Atiende y capta 24/7</span></a>
+          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Recordatorios automaticos</span><span class="mega-item-desc">-80% no-shows</span></a>
+          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Seguimiento de leads</span><span class="mega-item-desc">Dias 1, 3 y 7</span></a>
+          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Publicacion en redes</span><span class="mega-item-desc">3 posts/dia con IA</span></a>
+          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Captacion de leads</span><span class="mega-item-desc">Formularios + WA</span></a>
+          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Reactivacion de clientes</span><span class="mega-item-desc">Bases de datos dormidas</span></a>
+        </div>
+      </div>
+    </div>
+    <div class="nav-wrap-item" id="wrap-sectores">
+      <a href="#">Sectores</a>
+      <div class="mega-menu" id="mega-sectores">
+        <div class="mega-cols">
+          <a class="mega-item" href="dental.html"><span class="mega-item-title">Clinicas Dentales</span><span class="mega-item-desc">Recordatorios + presupuestos</span></a>
+          <a class="mega-item" href="estetica.html"><span class="mega-item-title">Estetica y Belleza</span><span class="mega-item-desc">Agenda llena automatica</span></a>
+          <a class="mega-item" href="peluqueria.html"><span class="mega-item-title">Peluqueria</span><span class="mega-item-desc">Fidelizacion sin esfuerzo</span></a>
+          <a class="mega-item" href="fisioterapia.html"><span class="mega-item-title">Fisioterapia</span><span class="mega-item-desc">Adherencia al tratamiento</span></a>
+          <a class="mega-item" href="masajistas.html"><span class="mega-item-title">Masajes</span><span class="mega-item-desc">Sin no-shows ni WA manual</span></a>
+          <a class="mega-item" href="gimnasio.html"><span class="mega-item-title">Gimnasios</span><span class="mega-item-desc">Captacion y retencion</span></a>
+          <a class="mega-item" href="veterinaria.html"><span class="mega-item-title">Veterinaria</span><span class="mega-item-desc">Citas y vacunas automaticas</span></a>
+          <a class="mega-item" href="restaurante.html"><span class="mega-item-title">Restaurantes</span><span class="mega-item-desc">Sala llena, cero no-shows</span></a>
+          <a class="mega-item" href="inmobiliaria.html"><span class="mega-item-title">Inmobiliarias</span><span class="mega-item-desc">Leads que no se enfrian</span></a>
+          <a class="mega-item" href="academia.html"><span class="mega-item-title">Academias</span><span class="mega-item-desc">Matriculas automatizadas</span></a>
+          <a class="mega-item" href="taller.html"><span class="mega-item-title">Talleres</span><span class="mega-item-desc">Presupuestos interactivos</span></a>
+          <a class="mega-item" href="ecommerce.html"><span class="mega-item-title">Ecommerce</span><span class="mega-item-desc">Carritos recuperados</span></a>
+        </div>
+      </div>
+    </div>
+    <a href="index.html#casos">Casos reales</a>
+    <a href="index.html#precios">Precios</a>
   </div>
-  <div class="hstats">
-    <div><b>+40%</b><small>presupuestos aceptados</small></div>
-    <div><b>0</b><small>llamadas "¿ya esta mi coche?"</small></div>
-    <div><b>50.000</b><small>talleres en Espana sin esto</small></div>
-    <div><b>48h</b><small>de activación</small></div>
+  <div style="display:flex;align-items:center;gap:12px">
+    <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20saber%20mas%20sobre%20el%20sistema%20para%20talleres" target="_blank" rel="noopener noreferrer" class="nav-pill">Hablar por WA</a>
+    <div class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+<div class="mega-overlay" id="mega-overlay"></div>
+<div class="mobile-nav" id="mobile-nav">
+  <a href="index.html">Inicio</a>
+  <a href="index.html#soluciones">Soluciones</a>
+  <div class="mobile-divider"></div>
+  <a href="dental.html">Clinicas Dentales</a>
+  <a href="estetica.html">Estetica</a>
+  <a href="peluqueria.html">Peluqueria</a>
+  <a href="fisioterapia.html">Fisioterapia</a>
+  <a href="masajistas.html">Masajes</a>
+  <a href="gimnasio.html">Gimnasios</a>
+  <a href="veterinaria.html">Veterinaria</a>
+  <a href="restaurante.html">Restaurantes</a>
+  <a href="inmobiliaria.html">Inmobiliarias</a>
+  <a href="academia.html">Academias</a>
+  <a href="taller.html">Talleres</a>
+  <a href="ecommerce.html">Ecommerce</a>
+  <div class="mobile-divider"></div>
+  <a href="index.html#precios">Precios</a>
+</div>
+
+<!-- HERO -->
+<section class="hero" style="padding-top:100px">
+  <div class="hero-badge">Especifico para talleres mecanicos</div>
+  <h1>El cliente confia.<br><em>El coche avanza.</em><br>Sin llamadas.</h1>
+  <p class="hero-sub">Sistema completo de automatizacion para talleres mecanicos. Presupuestos por WhatsApp, estado de reparacion en tiempo real, recordatorio ITV automatico. Activo en 48h.</p>
+  <div class="btns">
+    <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20una%20demo%20del%20sistema%20para%20talleres%20mecanicos" target="_blank" rel="noopener noreferrer" class="btn-blue">Pedir demo por WhatsApp &rarr;</a>
+    <a href="#modulos" class="btn-outline">Ver el sistema completo</a>
+  </div>
+</section>
+
+<!-- NUMBERS -->
+<section class="numbers-section">
+  <div class="numbers-grid">
+    <div class="num-item"><div class="num-val">+40%</div><div class="num-label">presupuestos aceptados</div></div>
+    <div class="num-item"><div class="num-val">0</div><div class="num-label">llamadas "ya esta mi coche?"</div></div>
+    <div class="num-item"><div class="num-val">50.000</div><div class="num-label">talleres en Espana sin esto</div></div>
+    <div class="num-item"><div class="num-val">48h</div><div class="num-label">de activacion</div></div>
   </div>
 </section>
 
 <!-- PROBLEMAS -->
-<section class="section" style="background:#060912">
-<div class="wrap">
-  <div class="slabel">El problema</div>
-  <div class="stitle">Lo que te esta costando clientes y dinero ahora mismo</div>
-  <div class="sdesc">Cada problema tiene una solución automática ya construida.</div>
-  <div class="g2">
-    <div class="card prob"><div class="picon">&#128196;</div><h3>Presupuestos que se enfrían</h3><p>El cliente recibe el presupuesto, dice "lo pienso" y llama al taller de enfrente. Sin seguimiento automático ese dinero se va. El 80% de talleres no hace nada después de entregar el presupuesto.</p></div>
-    <div class="card prob"><div class="picon">&#128172;</div><h3>"¿De verdad necesito esa reparacion?"</h3><p>La desconfianza es el mayor freno. Si el cliente no entiende el diagnostico rechaza el presupuesto o busca segúnda opinion. Sin explicacion clara pierdes la reparacion.</p></div>
-    <div class="card prob"><div class="picon">&#128222;</div><h3>Llamadas constantes de seguimiento</h3><p>5-10 llamadas al día de clientes preguntando "¿ya esta mi coche?". Interrumpen el trabajo, saturan la recepcion y hacen perder tiempo a los mecanicos.</p></div>
-    <div class="card prob"><div class="picon">&#128683;</div><h3>Multas por ITV que el cliente olvida</h3><p>El cliente paga la multa, culpa al taller y no vuelve. Sin recordatorio automático 45 dias antes pierdes la pre-ITV, la ITV y la confianza del cliente de una sola vez.</p></div>
+<section class="section" style="background:#fff">
+  <div class="section-inner">
+    <div class="section-label">El problema</div>
+    <h2 class="section-title">Lo que te esta costando clientes y dinero ahora mismo</h2>
+    <p class="section-desc">Cada problema tiene una solucion automatica ya construida.</p>
+    <div class="prob-grid">
+      <div class="prob-card"><div class="prob-icon">&#128196;</div><h3>Presupuestos que se enfrian</h3><p>El cliente recibe el presupuesto, dice "lo pienso" y llama al taller de enfrente. Sin seguimiento automatico ese dinero se va. El 80% de talleres no hace nada despues de entregar el presupuesto.</p></div>
+      <div class="prob-card"><div class="prob-icon">&#128172;</div><h3>"De verdad necesito esa reparacion?"</h3><p>La desconfianza es el mayor freno. Si el cliente no entiende el diagnostico rechaza el presupuesto o busca segunda opinion. Sin explicacion clara pierdes la reparacion.</p></div>
+      <div class="prob-card"><div class="prob-icon">&#128222;</div><h3>Llamadas constantes de seguimiento</h3><p>5-10 llamadas al dia de clientes preguntando "ya esta mi coche?". Interrumpen el trabajo, saturan la recepcion y hacen perder tiempo a los mecanicos.</p></div>
+      <div class="prob-card"><div class="prob-icon">&#128683;</div><h3>Multas por ITV que el cliente olvida</h3><p>El cliente paga la multa, culpa al taller y no vuelve. Sin recordatorio automatico 45 dias antes pierdes la pre-ITV, la ITV y la confianza del cliente de una sola vez.</p></div>
+    </div>
   </div>
-</div>
 </section>
 
 <!-- MODULOS -->
-<section class="section" id="módulos" style="background:#0a0e1a">
-<div class="wrap">
-  <div class="slabel">El sistema</div>
-  <div class="stitle">6 módulos que trabajan juntos.</div>
-  <div class="sdesc">Cada módulo resuelve un problema específico del taller. Todos conectados entre si.</div>
-  <div class="mgrid">
-    <div class="mod modnew"><div class="modn">TAL-1 &#11088;</div><div><h4>Presupuesto Interactivo</h4><p>Desglose detallado por WhatsApp: pieza, mano de obra, tiempo estimado. El cliente aprueba con 1 click desde el movil. Sin llamadas, sin papeles, sin esperas.</p></div></div>
-    <div class="mod modnew"><div class="modn">TAL-2</div><div><h4>Foto-Diagnostico</h4><p>El cliente manda la foto del problema. La IA explica en lenguaje llano que le pasa al coche y por que se necesita la reparacion. Elimina la desconfianza antes de que llegue al taller.</p></div></div>
-    <div class="mod modnew"><div class="modn">TAL-3</div><div><h4>Estado de Reparacion</h4><p>"¿Como va mi coche?" → el cliente pregunta por WhatsApp y recibe el estado en tiempo real: en espera, en reparacion, listo para recoger. Cero llamadas al taller.</p></div></div>
-    <div class="mod modnew"><div class="modn">TAL-4</div><div><h4>Recordatorio ITV</h4><p>Aviso automático 45, 15 y 5 dias antes del vencimiento. Incluye oferta pre-ITV específica para ese vehiculo. El cliente llega al taller antes de la multa, no después.</p></div></div>
-    <div class="mod"><div class="modn">TAL-5</div><div><h4>Recepcion Digital</h4><p>Checklist de entrada con fotos del vehiculo al llegar y al salir. Protege al taller de reclamaciones y genera confianza desde el primer momento.</p></div></div>
-    <div class="mod"><div class="modn">TAL-6</div><div><h4>Programa de Referidos</h4><p>Codigo único por cliente. El referido trae un amigo y ambos reciben 20EUR de descuento. El taller crece por recomendacion sin invertir en publicidad.</p></div></div>
+<section class="section" id="modulos" style="background:#f5f5f7">
+  <div class="section-inner">
+    <div class="section-label">El sistema</div>
+    <h2 class="section-title">6 modulos que trabajan juntos.</h2>
+    <p class="section-desc">Cada modulo resuelve un problema especifico del taller. Todos conectados entre si.</p>
+    <div class="mod-grid">
+      <div class="mod-card"><div class="mod-badge">TAL-1 &#11088;</div><div><h4>Presupuesto Interactivo</h4><p>Desglose detallado por WhatsApp: pieza, mano de obra, tiempo estimado. El cliente aprueba con 1 click desde el movil. Sin llamadas, sin papeles, sin esperas.</p></div></div>
+      <div class="mod-card"><div class="mod-badge">TAL-2</div><div><h4>Foto-Diagnostico</h4><p>El cliente manda la foto del problema. La IA explica en lenguaje llano que le pasa al coche y por que se necesita la reparacion. Elimina la desconfianza antes de que llegue al taller.</p></div></div>
+      <div class="mod-card"><div class="mod-badge">TAL-3</div><div><h4>Estado de Reparacion</h4><p>"Como va mi coche?" el cliente pregunta por WhatsApp y recibe el estado en tiempo real: en espera, en reparacion, listo para recoger. Cero llamadas al taller.</p></div></div>
+      <div class="mod-card"><div class="mod-badge">TAL-4</div><div><h4>Recordatorio ITV</h4><p>Aviso automatico 45, 15 y 5 dias antes del vencimiento. Incluye oferta pre-ITV especifica para ese vehiculo. El cliente llega al taller antes de la multa, no despues.</p></div></div>
+      <div class="mod-card"><div class="mod-badge">TAL-5</div><div><h4>Recepcion Digital</h4><p>Checklist de entrada con fotos del vehiculo al llegar y al salir. Protege al taller de reclamaciones y genera confianza desde el primer momento.</p></div></div>
+      <div class="mod-card"><div class="mod-badge">TAL-6</div><div><h4>Programa de Referidos</h4><p>Codigo unico por cliente. El referido trae un amigo y ambos reciben 20EUR de descuento. El taller crece por recomendacion sin invertir en publicidad.</p></div></div>
+    </div>
+    <div class="mod-highlight">
+      <p class="mod-hl-title">El diferenciador clave: TAL-1 Presupuesto Interactivo</p>
+      <p>La mayoria de talleres dan el presupuesto de viva voz o en papel y esperan. Tu sistema envia el desglose completo por WhatsApp con foto de la pieza, explicacion del problema y boton de aprobacion. El cliente lo ve en su sofa, lo entiende y aprueba con 1 click. El resultado: +40% de aceptacion frente al metodo tradicional.</p>
+    </div>
   </div>
-  <div style="background:#0d1117;border:1px solid rgba(99,102,241,.3);border-radius:12px;padding:20px 24px;margin-top:24px">
-    <p style="font-size:.85rem;color:#a5b4fc;font-weight:600;margin-bottom:6px">&#9733; El diferenciador clave: TAL-1 Presupuesto Interactivo</p>
-    <p style="font-size:.82rem;color:#64748b;line-height:1.55">La mayoría de talleres dan el presupuesto de viva voz o en papel y esperan. Tu sistema envia el desglose completo por WhatsApp con foto de la pieza, explicacion del problema y boton de aprobacion. El cliente lo ve en su sofa, lo entiende y aprueba con 1 click. El resultado: +40% de aceptacion frente al metodo tradicional.</p>
-  </div>
-</div>
 </section>
 
 <!-- RESULTADOS -->
-<section class="section" style="background:#060912">
-<div class="wrap">
-  <div class="slabel">Resultados</div>
-  <div class="stitle">Que consigue el sistema</div>
-  <div class="g3" style="margin-top:32px">
-    <div class="res"><div class="resval">+40%</div><div class="reslab">Presupuestos aceptados</div><div class="resdesc">El presupuesto interactivo por WhatsApp con desglose claro y boton de aprobacion elimina la friccion y la desconfianza de golpe.</div></div>
-    <div class="res"><div class="resval">-90%</div><div class="reslab">Llamadas de seguimiento</div><div class="resdesc">El estado de reparacion en tiempo real responde la pregunta "¿ya esta mi coche?" antes de que el cliente la haga. El taller trabaja sin interrupciones.</div></div>
-    <div class="res"><div class="resval">0</div><div class="reslab">Multas ITV del cliente</div><div class="resdesc">El recordatorio 45+15+5 dias antes con oferta pre-ITV hace que el cliente nunca llegue tarde a la inspeccion. El taller se convierte en aliado, no en culapble.</div></div>
-    <div class="res"><div class="resval">+35%</div><div class="reslab">Confianza del cliente</div><div class="resdesc">Foto-diagnostico con explicacion en lenguaje llano elimina el "¿de verdad necesito esto?". El cliente entiende, confía y aprueba la reparacion.</div></div>
-    <div class="res"><div class="resval">20EUR</div><div class="reslab">Incentivo referidos</div><div class="resdesc">El programa de referidos con codigo único genera nuevos clientes a coste cero. Cada cliente satisfecho trae otro sin que el taller invierta en publicidad.</div></div>
-    <div class="res"><div class="resval">48h</div><div class="reslab">Tiempo de activación</div><div class="resdesc">Desde que nos das acceso hasta el primer presupuesto automático enviado. En 48h el sistema esta en produccion funcionando solo.</div></div>
+<section class="section" style="background:#fff">
+  <div class="section-inner">
+    <div class="section-label">Resultados</div>
+    <h2 class="section-title">Que consigue el sistema</h2>
+    <div class="res-grid" style="margin-top:32px">
+      <div class="res-card"><div class="res-val">+40%</div><div class="res-label">Presupuestos aceptados</div><div class="res-desc">El presupuesto interactivo por WhatsApp con desglose claro y boton de aprobacion elimina la friccion y la desconfianza de golpe.</div></div>
+      <div class="res-card"><div class="res-val">-90%</div><div class="res-label">Llamadas de seguimiento</div><div class="res-desc">El estado de reparacion en tiempo real responde la pregunta "ya esta mi coche?" antes de que el cliente la haga. El taller trabaja sin interrupciones.</div></div>
+      <div class="res-card"><div class="res-val">0</div><div class="res-label">Multas ITV del cliente</div><div class="res-desc">El recordatorio 45+15+5 dias antes con oferta pre-ITV hace que el cliente nunca llegue tarde a la inspeccion. El taller se convierte en aliado.</div></div>
+      <div class="res-card"><div class="res-val">+35%</div><div class="res-label">Confianza del cliente</div><div class="res-desc">Foto-diagnostico con explicacion en lenguaje llano elimina el "de verdad necesito esto?". El cliente entiende, confia y aprueba la reparacion.</div></div>
+      <div class="res-card"><div class="res-val">20EUR</div><div class="res-label">Incentivo referidos</div><div class="res-desc">El programa de referidos con codigo unico genera nuevos clientes a coste cero. Cada cliente satisfecho trae otro sin que el taller invierta en publicidad.</div></div>
+      <div class="res-card"><div class="res-val">48h</div><div class="res-label">Tiempo de activacion</div><div class="res-desc">Desde que nos dais acceso hasta el primer presupuesto automatico enviado. En 48h el sistema esta en produccion funcionando solo.</div></div>
+    </div>
   </div>
-</div>
 </section>
 
 <!-- PROCESO -->
-<section class="section" style="background:#0a0e1a">
-<div class="wrap">
-  <div class="slabel">El proceso</div>
-  <div class="stitle">De cero a sistema activo en 3 pasos</div>
-  <div class="steps">
-    <div class="step"><div class="stepn">1</div><h4>Auditoría gratuita</h4><p>30 min por videollamada. Vemos como gestiónais presupuestos, cuantas llamadas recibis al día y que módulos os dan más retorno.</p></div>
-    <div class="step" style="position:relative"><span style="position:absolute;left:-12px;top:50%;transform:translateY(-50%);color:#334155;font-size:1.2rem">&#8594;</span><div class="stepn">2</div><h4>Configuración en 48h</h4><p>Conectamos vuestro WhatsApp Business y configuramos los servicios, precios y mensajes automáticos. Vosotros no tocais nada técnico.</p></div>
-    <div class="step" style="position:relative"><span style="position:absolute;left:-12px;top:50%;transform:translateY(-50%);color:#334155;font-size:1.2rem">&#8594;</span><div class="stepn">3</div><h4>El sistema trabaja</h4><p>Desde el dia 1 los presupuestos salen solos, el cliente consulta el estado en tiempo real y los recordatorios ITV llegan automáticamente.</p></div>
+<section class="section" style="background:#f5f5f7">
+  <div class="section-inner">
+    <div class="section-label">El proceso</div>
+    <h2 class="section-title">De cero a sistema activo en 3 pasos</h2>
+    <div class="steps-grid">
+      <div class="step-item"><div class="step-num">1</div><h4>Auditoria gratuita</h4><p>30 min por videollamada. Vemos como gestionais presupuestos, cuantas llamadas recibis al dia y que modulos os dan mas retorno.</p></div>
+      <div class="step-item"><div class="step-num">2</div><h4>Configuracion en 48h</h4><p>Conectamos vuestro WhatsApp Business y configuramos los servicios, precios y mensajes automaticos. Vosotros no tocais nada tecnico.</p></div>
+      <div class="step-item"><div class="step-num">3</div><h4>El sistema trabaja</h4><p>Desde el dia 1 los presupuestos salen solos, el cliente consulta el estado en tiempo real y los recordatorios ITV llegan automaticamente.</p></div>
+    </div>
   </div>
-</div>
 </section>
 
 <!-- PRECIOS -->
-<section class="section" id="precios" style="background:#060912">
-<div class="wrap">
-  <div class="slabel" style="text-align:center">Inversión</div>
-  <div class="stitle" style="text-align:center">Sin permanencia. Sin sorpresas.</div>
-  <p style="color:#64748b;text-align:center;margin-bottom:40px">Pago único de configuración + cuota mensual según los módulos que activeis.</p>
-  <div class="g2" style="max-width:720px;margin:0 auto">
-    <div class="pc">
-      <div class="pname">Esencial</div>
-      <div class="psetup">497 EUR configuración</div>
-      <div class="pmonth">97<span> EUR/mes</span></div>
-      <ul class="plist">
-        <li>Presupuesto Interactivo (TAL-1)</li>
-        <li>Estado de Reparacion en tiempo real (TAL-3)</li>
-        <li>Recordatorio ITV 45/15/5 dias (TAL-4)</li>
-        <li>Soporte por WhatsApp</li>
-      </ul>
-      <a href="https://wa.me/34643987371?text=Hola%2C%20me%20interesa%20el%20plan%20Esencial%20para%20mi%20taller" target="_blank"><button class="btn btn-o" style="width:100%">Solicitar auditoría</button></a>
+<section class="section" id="precios" style="background:#fff">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="section-label">Inversion</div>
+      <h2 class="section-title">Sin permanencia. Sin sorpresas.</h2>
+      <p style="color:#6e6e73;font-size:.95rem">Pago unico de configuracion + cuota mensual segun los modulos que activeis.</p>
     </div>
-    <div class="pc feat">
-      <div class="pname">Profesional</div>
-      <div class="psetup">797 EUR configuración</div>
-      <div class="pmonth">197<span> EUR/mes</span></div>
-      <ul class="plist">
-        <li>Todo el plan Esencial</li>
-        <li>Foto-Diagnostico con IA (TAL-2)</li>
-        <li>Recepcion Digital con fotos (TAL-5)</li>
-        <li>Programa de Referidos 20EUR (TAL-6)</li>
-        <li>CRM ligero en Google Sheets</li>
-        <li>Notificación al equipo en cada aprobacion</li>
-      </ul>
-      <a href="https://wa.me/34643987371?text=Hola%2C%20me%20interesa%20el%20plan%20Pro%20para%20mi%20taller" target="_blank"><button class="btn btn-p" style="width:100%">Empezar ahora</button></a>
+    <div class="pricing-grid">
+      <div class="pricing-card">
+        <div class="pricing-name">Esencial</div>
+        <div class="pricing-setup">497 EUR configuracion</div>
+        <div class="pricing-price">97<span> EUR/mes</span></div>
+        <ul class="pricing-list">
+          <li>Presupuesto Interactivo (TAL-1)</li>
+          <li>Estado de Reparacion en tiempo real (TAL-3)</li>
+          <li>Recordatorio ITV 45/15/5 dias (TAL-4)</li>
+          <li>Soporte por WhatsApp</li>
+        </ul>
+        <a href="https://wa.me/34643987371?text=Hola%2C%20me%20interesa%20el%20plan%20Esencial%20para%20mi%20taller" target="_blank" rel="noopener noreferrer"><button class="btn-outline" style="width:100%">Solicitar auditoria</button></a>
+      </div>
+      <div class="pricing-card featured">
+        <div class="pricing-name">Profesional</div>
+        <div class="pricing-setup">797 EUR configuracion</div>
+        <div class="pricing-price">197<span> EUR/mes</span></div>
+        <ul class="pricing-list">
+          <li>Todo el plan Esencial</li>
+          <li>Foto-Diagnostico con IA (TAL-2)</li>
+          <li>Recepcion Digital con fotos (TAL-5)</li>
+          <li>Programa de Referidos 20EUR (TAL-6)</li>
+          <li>CRM ligero en Google Sheets</li>
+          <li>Notificacion al equipo en cada aprobacion</li>
+        </ul>
+        <a href="https://wa.me/34643987371?text=Hola%2C%20me%20interesa%20el%20plan%20Pro%20para%20mi%20taller" target="_blank" rel="noopener noreferrer"><button class="btn-blue" style="width:100%">Empezar ahora</button></a>
+      </div>
     </div>
+    <p class="pricing-note">Sin permanencia. Podeis cancelar la suscripcion mensual en cualquier momento con 30 dias de aviso.</p>
   </div>
-  <p style="text-align:center;font-size:.8rem;color:#475569;margin-top:24px">Sin permanencia. Podeis cancelar la suscripción mensual en cualquier momento con 30 días de aviso.</p>
-</div>
 </section>
 
 <!-- FAQ -->
-<section class="section" style="background:#0a0e1a">
-<div class="wrap" style="max-width:700px">
-  <div class="slabel" style="text-align:center">FAQ</div>
-  <div class="stitle" style="text-align:center;margin-bottom:40px">Preguntas frecuentes</div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Cómo funciona el Presupuesto Interactivo?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">Cuando haceis el diagnostico, introducis la reparacion en una hoja de calculo (o lo hace el sistema automáticamente). El cliente recibe un WhatsApp con el desglose: pieza, mano de obra, tiempo estimado y boton de aprobacion. Aprueba con 1 click y el taller recibe notificación al instante.</div>
+<section class="section" style="background:#f5f5f7">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:40px">
+      <div class="section-label">FAQ</div>
+      <h2 class="section-title">Preguntas frecuentes</h2>
+    </div>
+    <div class="faq-list">
+      <details class="faq-item"><summary>Como funciona el Presupuesto Interactivo?<span></span></summary><div class="faq-body">Cuando haceis el diagnostico, introducis la reparacion en una hoja de calculo (o lo hace el sistema automaticamente). El cliente recibe un WhatsApp con el desglose: pieza, mano de obra, tiempo estimado y boton de aprobacion. Aprueba con 1 click y el taller recibe notificacion al instante.</div></details>
+      <details class="faq-item"><summary>Como sabe el cliente el estado de su coche?<span></span></summary><div class="faq-body">El cliente escribe "como va mi coche?" por WhatsApp y el sistema responde automaticamente con el estado actual: en espera, en reparacion, listo para recoger. Vosotros actualizais el estado desde una hoja o desde el movil. El cliente no necesita llamar.</div></details>
+      <details class="faq-item"><summary>Como funciona el recordatorio de ITV?<span></span></summary><div class="faq-body">Al registrar el vehiculo del cliente anotais la fecha de caducidad de la ITV. El sistema envia automaticamente un aviso 45 dias antes, otro a los 15 dias con oferta pre-ITV y un ultimo aviso urgente 5 dias antes. El cliente llega al taller antes de la multa.</div></details>
+      <details class="faq-item"><summary>Necesito saber de tecnologia para usarlo?<span></span></summary><div class="faq-body">No. El sistema funciona con WhatsApp Business que ya teneis instalado y una hoja de Google Sheets para registrar trabajos. Nosotros configuramos todo. Vosotros solo usais el movil como siempre.</div></details>
+      <details class="faq-item"><summary>Funciona con nuestro software de gestion?<span></span></summary><div class="faq-body">El sistema funciona de forma independiente con Google Sheets como CRM ligero. Si teneis un software especifico (AutoGest, WinGest, TecDoc, etc.) valoramos la integracion en la auditoria inicial sin coste extra.</div></details>
+      <details class="faq-item"><summary>Hay permanencia?<span></span></summary><div class="faq-body">No hay permanencia. Podeis cancelar la suscripcion mensual en cualquier momento con 30 dias de preaviso. El pago de configuracion no es reembolsable ya que cubre el trabajo de instalacion y puesta en marcha.</div></details>
+    </div>
   </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Como sabe el cliente el estado de su coche?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">El cliente escribe "¿como va mi coche?" por WhatsApp y el sistema responde automáticamente con el estado actual: en espera, en reparacion, listo para recoger. Vosotros actualizais el estado desde una hoja o desde el movil. El cliente no necesita llamar.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Cómo funciona el recordatorio de ITV?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">Al registrar el vehiculo del cliente anotais la fecha de caducidad de la ITV. El sistema envia automáticamente un aviso 45 dias antes ("tu ITV caduca el 15 de mayo"), otro a los 15 dias con oferta pre-ITV y un último aviso urgente 5 dias antes. El cliente llega al taller antes de la multa.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Necesito saber de tecnologia para usarlo?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">No. El sistema funciona con WhatsApp Business que ya teneis instalado y una hoja de Google Sheets para registrar trabajos. Nosotros configuramos todo. Vosotros solo usais el movil como siempre.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Funciona con nuestro software de gestión?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">El sistema funciona de forma independiente con Google Sheets como CRM ligero. Si teneis un software específico (AutoGest, WinGest, TecDoc, etc.) valoramos la integracion en la auditoría inicial sin coste extra.</div>
-  </div>
-  <div class="faq-item">
-    <div class="faq-q" onclick="this.parentElement.classList.toggle('open')"><span>Hay permanencia?</span><span class="arr">&#8964;</span></div>
-    <div class="faq-a">No hay permanencia. Podeis cancelar la suscripción mensual en cualquier momento con 30 días de preaviso. El pago de configuración no es reembolsable ya que cubre el trabajo de instalacion y puesta en marcha.</div>
-  </div>
-</div>
 </section>
 
 <!-- CTA FINAL -->
-<div class="wrap">
-<div class="ctabox">
-  <h2>Mas presupuestos aprobados.<br>Cero llamadas de seguimiento.</h2>
-  <p>50.000 talleres en Espana. Casi ninguno hace esto todavia. El primero en tu zona gana.</p>
-  <div class="btns">
-    <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20saber%20m%C3%A1s%20sobre%20el%20sistema%20para%20talleres%20mec%C3%A1nicos" target="_blank" class="btn btn-p">Hablar por WhatsApp &rarr;</a>
-    <a href="#precios" class="btn btn-o">Ver precios</a>
+<div style="padding:0 22px">
+  <div class="cta-box">
+    <h2>Mas presupuestos aprobados.<br>Cero llamadas de seguimiento.</h2>
+    <p>50.000 talleres en Espana. Casi ninguno hace esto todavia. El primero en tu zona gana.</p>
+    <div class="btns">
+      <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20saber%20mas%20sobre%20el%20sistema%20para%20talleres%20mecanicos" target="_blank" rel="noopener noreferrer" class="btn-blue">Hablar por WhatsApp &rarr;</a>
+      <a href="#precios" class="btn-outline">Ver precios</a>
+    </div>
   </div>
 </div>
-</div>
 
-<footer>
-  <p>&copy; 2026 <a href="index.html">Automarketing Digital</a> &mdash; Sistema de automatización para talleres mecanicos</p>
+<!-- FOOTER -->
+<footer class="footer">
+  <div class="footer-inner">
+    <div class="footer-legal-top">Automarketing Digital es un servicio de automatizacion y marketing digital para pequenas y medianas empresas. No somos una agencia de publicidad tradicional. Todos los resultados mencionados son estimaciones basadas en casos reales; los resultados individuales pueden variar.</div>
+    <div class="footer-cols">
+      <div class="footer-col">
+        <div class="footer-col-title">Automarketing Digital</div>
+        <p style="font-size:.78rem;color:#6e6e73;line-height:1.6">Automatizacion con IA para negocios locales. Resultados en 48h.</p>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Sectores</div>
+        <a href="dental.html">Dentales</a>
+        <a href="estetica.html">Estetica</a>
+        <a href="peluqueria.html">Peluqueria</a>
+        <a href="fisioterapia.html">Fisioterapia</a>
+        <a href="masajistas.html">Masajes</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Mas sectores</div>
+        <a href="gimnasio.html">Gimnasios</a>
+        <a href="veterinaria.html">Veterinaria</a>
+        <a href="restaurante.html">Restaurantes</a>
+        <a href="inmobiliaria.html">Inmobiliarias</a>
+        <a href="academia.html">Academias</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Empresa</div>
+        <a href="taller.html">Talleres</a>
+        <a href="ecommerce.html">Ecommerce</a>
+        <a href="index.html#casos">Casos reales</a>
+        <a href="index.html#precios">Precios</a>
+      </div>
+      <div class="footer-col">
+        <div class="footer-col-title">Legal</div>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="cookies.html">Cookies</a>
+      </div>
+    </div>
+    <div class="footer-contact">Contacto: <a href="mailto:hola@automarketingdigital.es">hola@automarketingdigital.es</a> &nbsp;|&nbsp; <a href="https://wa.me/34643987371" target="_blank" rel="noopener noreferrer">WhatsApp +34 643 987 371</a></div>
+    <div class="footer-bottom">
+      <span>&copy; 2026 Automarketing Digital. Todos los derechos reservados.</span>
+      <span><a href="aviso-legal.html">Aviso legal</a> &nbsp;&middot;&nbsp; <a href="privacidad.html">Privacidad</a></span>
+    </div>
+  </div>
 </footer>
 
+<a href="https://wa.me/34643987371?text=Hola%2C%20vengo%20desde%20la%20pagina%20de%20talleres%20y%20quiero%20saber%20mas" target="_blank" rel="noopener noreferrer" class="wa-float" title="Hablar por WhatsApp">
+  <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+</a>
+
 <script>
-document.querySelectorAll('.faq-q').forEach(function(q){
-  q.addEventListener('click',function(){
-    this.parentElement.classList.toggle('open');
-  });
-});
+const menus={soluciones:document.getElementById('mega-soluciones'),sectores:document.getElementById('mega-sectores')};
+const overlay=document.getElementById('mega-overlay');
+let active=null,timer=null;
+function showMenu(k){if(timer)clearTimeout(timer);if(active&&active!==k){menus[active].classList.remove('active')}menus[k].classList.add('active');overlay.classList.add('active');active=k}
+function hideMenu(){timer=setTimeout(function(){if(active){menus[active].classList.remove('active');overlay.classList.remove('active');active=null}},200)}
+document.getElementById('wrap-soluciones').addEventListener('mouseenter',function(){showMenu('soluciones')});
+document.getElementById('wrap-soluciones').addEventListener('mouseleave',hideMenu);
+document.getElementById('mega-soluciones').addEventListener('mouseenter',function(){if(timer)clearTimeout(timer)});
+document.getElementById('mega-soluciones').addEventListener('mouseleave',hideMenu);
+document.getElementById('wrap-sectores').addEventListener('mouseenter',function(){showMenu('sectores')});
+document.getElementById('wrap-sectores').addEventListener('mouseleave',hideMenu);
+document.getElementById('mega-sectores').addEventListener('mouseenter',function(){if(timer)clearTimeout(timer)});
+document.getElementById('mega-sectores').addEventListener('mouseleave',hideMenu);
+overlay.addEventListener('mouseenter',function(){menus[active].classList.remove('active');overlay.classList.remove('active');active=null});
+function toggleMobile(){document.getElementById('hamburger').classList.toggle('active');document.getElementById('mobile-nav').classList.toggle('active')}
 </script>
 </body>
 </html>
