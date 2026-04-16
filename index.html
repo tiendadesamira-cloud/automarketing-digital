@@ -183,6 +183,11 @@ body{top:0 !important}
 .sectors-text{max-width:700px;margin:0 auto}
 
 /* ====== RESPONSIVE ====== */
+@media(max-width:700px){
+  .nabil-wrap{grid-template-columns:1fr !important;text-align:center !important;gap:24px !important}
+  .nabil-wrap > div:first-child{margin:0 auto;max-width:160px}
+  .sector-grid{grid-template-columns:repeat(2,1fr) !important}
+}
 @media(max-width:768px){
   .gn-links{display:none}
   .gn-ham{display:block}
@@ -358,12 +363,13 @@ body{top:0 !important}
 <!-- ====== HERO ====== -->
 <section class="hero">
   <p class="hero-eyebrow">Digitalizaci&oacute;n inteligente para negocios en Jerez, C&aacute;diz y Andaluc&iacute;a</p>
-  <h1 class="hero-headline">Tu negocio merece estar donde est&aacute;n tus clientes.</h1>
-  <p class="hero-subheadline">Analizamos tu presencia digital, detectamos lo que te falta y lo construimos contigo. Desde tu primera web hasta la automatizaci&oacute;n completa.</p>
+  <h1 class="hero-headline">Tus clientes te buscan online. &iquest;Te encuentran?</h1>
+  <p class="hero-subheadline">Analizamos tu negocio en 30 minutos y te decimos exactamente cu&aacute;ntos clientes est&aacute;s perdiendo y c&oacute;mo recuperarlos. Gratis y sin compromiso.</p>
   <div class="hero-cta">
     <a href="auditoria.html" class="btn-pill btn-blue">Descubrir qu&eacute; le falta a mi negocio</a>
-    <a href="como-funciona.html" class="btn-pill btn-outline">Ver c&oacute;mo funciona</a>
+    <a href="https://wa.me/34643987371?text=Hola%20Nabil,%20vengo%20de%20la%20web%20y%20quiero%20hablar%20sobre%20mi%20negocio." class="btn-pill btn-outline" target="_blank" rel="noopener noreferrer">Hablar ahora por WhatsApp</a>
   </div>
+  <p style="font-size:13px;color:#6e6e73;margin-top:12px"><a href="como-funciona.html" style="color:#6e6e73;text-decoration:underline">O ver c&oacute;mo funciona primero</a></p>
 </section>
 
 <!-- ====== EN QUE PUNTO ESTA TU NEGOCIO (4 cards 2x2) ====== -->
@@ -503,10 +509,24 @@ body{top:0 !important}
 
 <!-- ====== SECTORES ====== -->
 <section class="section section-alt text-center" id="sectores">
-  <div class="section-inner sectors-text">
+  <div class="section-inner">
     <p class="eyebrow">Sectores</p>
-    <h2 class="section-headline">Trabajamos con cl&iacute;nicas, restaurantes, peluquer&iacute;as, talleres y cualquier negocio local que quiera crecer online.</h2>
-    <a href="#sectores" class="link-blue" style="margin-top:12px;display:inline-flex">Ver todos los sectores</a>
+    <h2 class="section-headline">Tu sector tiene su p&aacute;gina dedicada.</h2>
+    <p class="section-sub" style="max-width:680px;margin:0 auto 32px">Entra en la tuya y ver&aacute;s exactamente qu&eacute; hacemos para negocios como el tuyo.</p>
+    <div class="sector-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:12px;max-width:900px;margin:0 auto">
+      <a href="peluqueria.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Peluquer&iacute;a</a>
+      <a href="dental.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Cl&iacute;nica dental</a>
+      <a href="restaurante.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Restaurante</a>
+      <a href="estetica.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Est&eacute;tica</a>
+      <a href="taller.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Taller mec&aacute;nico</a>
+      <a href="veterinaria.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Veterinaria</a>
+      <a href="fisioterapia.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Fisioterapia</a>
+      <a href="gimnasio.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Gimnasio</a>
+      <a href="inmobiliaria.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Inmobiliaria</a>
+      <a href="academia.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Academia</a>
+      <a href="ecommerce.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Ecommerce</a>
+      <a href="masajistas.html" style="padding:20px;background:#f5f5f7;border-radius:12px;color:#1d1d1f;font-size:15px;font-weight:500;transition:all 0.2s" onmouseover="this.style.background='#e5e5e7'" onmouseout="this.style.background='#f5f5f7'">Masajistas</a>
+    </div>
   </div>
 </section>
 
@@ -567,6 +587,29 @@ body{top:0 !important}
         </div>
         <div class="guarantee-title">Garant&iacute;a de resultado o no pagas</div>
         <div class="guarantee-desc">Si en 30 d&iacute;as no ves mejora real en tu negocio, te devolvemos el dinero. Sin preguntas.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ====== QUIEN HAY DETRAS ====== -->
+<section class="section section-alt text-center" id="quien">
+  <div class="section-inner">
+    <p class="eyebrow">Qui&eacute;n hay detr&aacute;s</p>
+    <h2 class="section-headline">Soy Nabil. Y te hablo de t&uacute; a t&uacute;.</h2>
+    <div class="nabil-wrap" style="max-width:760px;margin:40px auto 0;display:grid;grid-template-columns:200px 1fr;gap:40px;align-items:center;text-align:left">
+      <div style="aspect-ratio:1/1;background:#e5e5e7;border-radius:50%;overflow:hidden;display:flex;align-items:center;justify-content:center;border:1px solid #d2d2d7">
+        <!-- PENDIENTE: Reemplazar la placeholder "N" con foto real. Subir foto a img/nabil.jpg y cambiar el div por <img src="img/nabil.jpg" alt="Nabil, fundador de Automarketing Digital" style="width:100%;height:100%;object-fit:cover"> -->
+        <span style="font-size:48px;font-weight:700;color:#86868b">N</span>
+      </div>
+      <div>
+        <p style="font-size:17px;color:#1d1d1f;line-height:1.5;margin-bottom:12px">
+          Llevo a&ntilde;os ayudando a negocios locales en Jerez, C&aacute;diz y Andaluc&iacute;a a no perder clientes por no estar donde los buscan.
+        </p>
+        <p style="font-size:15px;color:#6e6e73;line-height:1.5;margin-bottom:16px">
+          He analizado m&aacute;s de 31.000 negocios para entender qu&eacute; les falta. Lo que hago no es teor&iacute;a: es lo mismo que aplico a cada uno de mis clientes.
+        </p>
+        <a href="https://wa.me/34643987371" class="link-blue">Hablar conmigo por WhatsApp</a>
       </div>
     </div>
   </div>
