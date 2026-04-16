@@ -205,13 +205,18 @@ a.legal-link:hover{text-decoration:underline}
   <h1 class="page-title">Aviso Legal</h1>
   <p class="page-date">Última actualización: marzo 2025 &mdash; Conforme a la Ley 34/2002 LSSI-CE</p>
 
+  <!-- PENDIENTE: Sustituir placeholders [NOMBRE], [NIF] y [DOMICILIO] con datos reales del titular. Obligatorio por Art. 10 LSSI-CE. -->
   <div class="legal-section">
     <h2>1. Datos identificativos del titular</h2>
     <div class="legal-box">
+      <p><strong>Titular:</strong> [NOMBRE COMPLETO DE NABIL - RELLENAR]</p>
+      <p><strong>NIF:</strong> [NIF - RELLENAR]</p>
       <p><strong>Denominación comercial:</strong> Automarketing Digital</p>
-      <p><strong>Actividad:</strong> Agencia de automatización de marketing y procesos empresariales</p>
-      <p><strong>Domicilio:</strong> España</p>
-      <p><strong>Contacto:</strong> A través del formulario de contacto disponible en la web</p>
+      <p><strong>Domicilio fiscal:</strong> [DIRECCIÓN COMPLETA CON CP Y MUNICIPIO - RELLENAR]</p>
+      <p><strong>Municipio:</strong> Jerez de la Frontera, Cádiz, España</p>
+      <p><strong>Email:</strong> nabil@automarketingdigital.es</p>
+      <p><strong>Teléfono:</strong> +34 663 113 898</p>
+      <p><strong>Actividad:</strong> Consultoría y servicios de automatización digital para negocios locales</p>
     </div>
     <p>En cumplimiento del artículo 10 de la Ley 34/2002, de 11 de julio, de Servicios de la Sociedad de la Información y Comercio Electrónico (LSSI-CE), se ponen a disposicion de los usuarios los datos identificativos del titular del sitio web.</p>
   </div>
@@ -350,8 +355,14 @@ function toggleMobile(){
 </script>
 <script>function toggleLangDrop(){document.getElementById("langDrop").classList.toggle("active")}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.getElementById("langDrop");if(d)d.classList.remove("active")}});function changeLang(l){var ds=document.querySelectorAll(".lang-dropdown");for(var i=0;i<ds.length;i++)ds[i].classList.remove("active");if(l==="es"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.automarketingdigital.es";location.reload()}else{document.cookie="googtrans=/es/"+l+"; path=/;";document.cookie="googtrans=/es/"+l+"; path=/; domain=.automarketingdigital.es";location.reload()}}}function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,ar,fr,de,it,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}</script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- Google Analytics 4 - configurar measurement ID en el futuro -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<!-- IMPORTANTE: Reemplazar G-XXXXXXXXXX con tu Measurement ID real de Google Analytics 4. Crear cuenta en https://analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
 </body>
 </html>

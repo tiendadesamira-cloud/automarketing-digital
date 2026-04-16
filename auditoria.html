@@ -278,6 +278,13 @@ ul{list-style:none}
           </div>
           <div style="position:absolute;left:-9999px"><input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off"></div>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="light"></div>
+          <div class="consent-group" style="margin: 16px 0; font-size: 13px; color: #6e6e73; display: flex; align-items: flex-start; gap: 8px;">
+            <input type="checkbox" id="privacidad" name="privacidad" required style="margin-top: 3px; cursor: pointer;">
+            <label for="privacidad" style="cursor: pointer; line-height: 1.4;">
+              He leído y acepto la <a href="privacidad.html" target="_blank" style="color: #0071e3; text-decoration: underline;">política de privacidad</a>.
+              Automarketing Digital tratará mis datos para enviarme el análisis solicitado y podré solicitar su baja en cualquier momento.
+            </label>
+          </div>
           <button type="submit" class="form-submit" id="submitBtn">Recibir mi análisis gratuito</button>
         </form>
         <p class="form-privacy">Sin spam. Solo recibirás tu informe personalizado.</p>
@@ -439,19 +446,37 @@ function enviarAuditoria(e) {
   .then(function() {
     document.getElementById('loadingSection').style.display = 'none';
     document.getElementById('successSection').style.display = 'block';
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        'event_category': 'auditoria',
+        'event_label': 'formulario_completado'
+      });
+    }
     if (typeof turnstile !== 'undefined') turnstile.reset();
   })
   .catch(function() {
     document.getElementById('loadingSection').style.display = 'none';
     document.getElementById('successSection').style.display = 'block';
+    if (typeof gtag !== 'undefined') {
+      gtag('event', 'generate_lead', {
+        'event_category': 'auditoria',
+        'event_label': 'formulario_completado'
+      });
+    }
     if (typeof turnstile !== 'undefined') turnstile.reset();
   });
 }
 </script>
 <script>function toggleLangDrop(){document.getElementById("langDrop").classList.toggle("active")}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.getElementById("langDrop");if(d)d.classList.remove("active")}});function changeLang(l){var ds=document.querySelectorAll(".lang-dropdown");for(var i=0;i<ds.length;i++)ds[i].classList.remove("active");if(l==="es"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.automarketingdigital.es";location.reload()}else{document.cookie="googtrans=/es/"+l+"; path=/;";document.cookie="googtrans=/es/"+l+"; path=/; domain=.automarketingdigital.es";location.reload()}}}function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,ar,fr,de,it,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}</script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- Google Analytics 4 - configurar measurement ID en el futuro -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<!-- IMPORTANTE: Reemplazar G-XXXXXXXXXX con tu Measurement ID real de Google Analytics 4. Crear cuenta en https://analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
 </body>
 </html>

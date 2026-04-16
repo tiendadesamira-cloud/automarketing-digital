@@ -374,7 +374,7 @@ ul{list-style:none}
   <div class="section-inner">
     <div class="text-center" style="margin-bottom:48px">
       <p class="eyebrow" style="font-size:17px">Calculadora ROI</p>
-      <h2 class="section-headline">¿Cuánto vale automatizar tu negocio</h2>
+      <h2 class="section-headline">¿Cuánto vale automatizar tu negocio?</h2>
       <p class="section-sub">Mueve los sliders y ve en tiempo real el impacto económico de automatizar tus procesos.</p>
     </div>
     <div class="roi-grid">
@@ -422,7 +422,7 @@ ul{list-style:none}
   <div class="section-inner">
     <div class="text-center" style="margin-bottom:48px">
       <p class="eyebrow" style="font-size:17px">Lo que pierdes ahora mismo</p>
-      <h2 class="section-headline">¿Cuánto estas perdiendo sin automatizar</h2>
+      <h2 class="section-headline">¿Cuánto estás perdiendo sin automatizar?</h2>
       <p class="section-sub">Ajusta los datos de tu negocio y descubre el coste real de no tener automatizaciones.</p>
     </div>
     <div class="perdida-grid">
@@ -664,8 +664,14 @@ calcPerdida();
 </script>
 <script>function toggleLangDrop(){document.getElementById("langDrop").classList.toggle("active")}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.getElementById("langDrop");if(d)d.classList.remove("active")}});function changeLang(l){var ds=document.querySelectorAll(".lang-dropdown");for(var i=0;i<ds.length;i++)ds[i].classList.remove("active");if(l==="es"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.automarketingdigital.es";location.reload()}else{document.cookie="googtrans=/es/"+l+"; path=/;";document.cookie="googtrans=/es/"+l+"; path=/; domain=.automarketingdigital.es";location.reload()}}}function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,ar,fr,de,it,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}</script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- Google Analytics 4 - configurar measurement ID en el futuro -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<!-- IMPORTANTE: Reemplazar G-XXXXXXXXXX con tu Measurement ID real de Google Analytics 4. Crear cuenta en https://analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
 </body>
 </html>

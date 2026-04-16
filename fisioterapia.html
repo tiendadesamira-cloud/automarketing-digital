@@ -9,7 +9,7 @@
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="canonical" href="https://automarketingdigital.es/fisioterapia.html">
 <meta property="og:type" content="website">
-<meta name="description" content="Automatizacion para centros de fisioterapia en Jerez, Cadiz y Andalucia. Reservas online, recordatorios y reactivacion de pacientes. Sistema activo en 48 horas."">
+<meta name="description" content="Automatizacion para centros de fisioterapia en Jerez, Cadiz y Andalucia. Reservas online, recordatorios y reactivacion de pacientes. Sistema activo en 48 horas.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <style>
@@ -311,8 +311,14 @@ function toggleMobile(){const h=document.getElementById('hamburger');const m=doc
 </script>
 <script>function toggleLangDrop(){document.getElementById("langDrop").classList.toggle("active")}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.getElementById("langDrop");if(d)d.classList.remove("active")}});function changeLang(l){var ds=document.querySelectorAll(".lang-dropdown");for(var i=0;i<ds.length;i++)ds[i].classList.remove("active");if(l==="es"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.automarketingdigital.es";location.reload()}else{document.cookie="googtrans=/es/"+l+"; path=/;";document.cookie="googtrans=/es/"+l+"; path=/; domain=.automarketingdigital.es";location.reload()}}}function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,ar,fr,de,it,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}</script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- Google Analytics 4 - configurar measurement ID en el futuro -->
-<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
-<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
+<!-- IMPORTANTE: Reemplazar G-XXXXXXXXXX con tu Measurement ID real de Google Analytics 4. Crear cuenta en https://analytics.google.com -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+</head>
 </body>
 </html>
