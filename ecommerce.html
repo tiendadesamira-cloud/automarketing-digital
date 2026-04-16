@@ -8,7 +8,8 @@
 <title>Digitalización para Tiendas Online | Automarketing Digital</title>
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 <link rel="canonical" href="https://automarketingdigital.es/ecommerce.html">
-<meta name="description" content="Recupera el 15-20% de carritos abandonados, secuencia post-compra con upsell y reactivación de clientes inactivos. Sistema de automatizacion para ecommerce activo en 48h.">
+<meta property="og:type" content="website">
+<meta name="description" content="Digitalizacion para tiendas online en Jerez, Cadiz y Andalucia. Atencion al cliente automatica, recuperacion de carritos y reactivacion de compradores por WhatsApp."">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
 <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
@@ -80,10 +81,10 @@ a{color:inherit;text-decoration:none}
 .flujo-step{padding-bottom:14px;border-left:2px solid #0071e3;margin-left:10px;padding-left:16px;position:relative}
 .flujo-step:last-child{border-left-color:transparent;padding-bottom:0}
 .flujo-dot{width:16px;height:16px;border-radius:50%;background:#0071e3;position:absolute;left:-9px;top:0}
-.flujo-dot.green{background:#34c759}
+.flujo-dot.green{background:#1d1d1f}
 .flujo-step-title{font-size:.82rem;font-weight:600;color:#1d1d1f}
 .flujo-step-desc{font-size:.75rem;color:#6e6e73}
-.flujo-step-result{font-size:.82rem;font-weight:600;color:#34c759}
+.flujo-step-result{font-size:.82rem;font-weight:600;color:#1d1d1f}
 @media(max-width:600px){.flujo-grid{grid-template-columns:1fr}}
 .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .res-card{background:#fff;border:1px solid #d2d2d7;border-radius:18px;padding:28px;text-align:center}
@@ -108,7 +109,7 @@ a{color:inherit;text-decoration:none}
 .pricing-price span{font-size:.85rem;font-weight:400;color:#6e6e73}
 .pricing-list{list-style:none;margin:18px 0 24px;display:flex;flex-direction:column;gap:8px;flex:1}
 .pricing-list li{font-size:.82rem;color:#1d1d1f;display:flex;gap:8px;align-items:flex-start}
-.pricing-list li::before{content:'✓';color:#34c759;font-weight:700;flex-shrink:0;margin-top:1px}
+.pricing-list li::before{content:'✓';color:#1d1d1f;font-weight:700;flex-shrink:0;margin-top:1px}
 .pricing-note{font-size:.76rem;color:#6e6e73;text-align:center;margin-top:20px}
 @media(max-width:768px){.pricing-grid{grid-template-columns:1fr;max-width:480px}}
 .demo-box{background:#fff;border:2px solid #0071e3;border-radius:18px;padding:40px;max-width:500px;margin:0 auto;box-shadow:0 8px 40px rgba(0,113,227,.1)}
@@ -119,7 +120,7 @@ a{color:inherit;text-decoration:none}
 .form-field input:focus,.form-field select:focus{border-color:#0071e3;background:#fff}
 .form-field input::placeholder{color:#8e8e93}
 .demo-ok{display:none;text-align:center;padding:20px 0}
-.demo-ok h4{font-size:1.1rem;font-weight:700;color:#34c759;margin-bottom:8px}
+.demo-ok h4{font-size:1.1rem;font-weight:700;color:#1d1d1f;margin-bottom:8px}
 .demo-ok p{font-size:.85rem;color:#6e6e73}
 .faq-list{max-width:680px;margin:0 auto}
 .faq-item{border-bottom:1px solid #e5e5ea}
@@ -441,6 +442,7 @@ a{color:inherit;text-decoration:none}
       <button class="btn-blue" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver cómo funciona</button>
       <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20saber%20mas%20sobre%20el%20sistema%20para%20tiendas%20online" target="_blank" rel="noopener noreferrer" class="btn-outline">Hablar por WhatsApp</a>
     </div>
+    <p style="margin-top:16px;font-size:14px;color:#6e6e73">o si prefieres: <a href="auditoria.html" style="color:#1d1d1f;font-weight:600;text-decoration:underline">Ver diagnostico gratuito de tu negocio</a></p>
   </div>
 </div>
 
@@ -526,5 +528,8 @@ function enviarDemo(e){
 </script>
 <script>function toggleLangDrop(){document.getElementById("langDrop").classList.toggle("active")}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.getElementById("langDrop");if(d)d.classList.remove("active")}});function changeLang(l){var ds=document.querySelectorAll(".lang-dropdown");for(var i=0;i<ds.length;i++)ds[i].classList.remove("active");if(l==="es"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.automarketingdigital.es";location.reload()}else{document.cookie="googtrans=/es/"+l+"; path=/;";document.cookie="googtrans=/es/"+l+"; path=/; domain=.automarketingdigital.es";location.reload()}}}function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,ar,fr,de,it,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}</script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Google Analytics 4 - configurar measurement ID en el futuro -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 </body>
 </html>

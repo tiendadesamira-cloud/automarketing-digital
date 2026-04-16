@@ -125,7 +125,8 @@ ul{list-style:none}
 }
 #google_translate_element{position:fixed;left:-9999px;top:-9999px;opacity:0.01;width:1px;height:1px}.goog-te-banner-frame{display:none !important}body{top:0 !important}.lang-wrap{position:relative;display:inline-flex;align-items:center}.lang-btn{font-size:12px;color:#86868b;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;padding:0;transition:color .2s}.lang-btn:hover{color:#1d1d1f}.lang-btn svg{width:14px;height:14px}.lang-dropdown{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d2d2d7;border-radius:12px;padding:6px 0;min-width:150px;opacity:0;pointer-events:none;transition:all .2s;box-shadow:0 4px 20px rgba(0,0,0,.1);margin-bottom:8px}.lang-dropdown.active{opacity:1;pointer-events:auto}.lang-dropdown a{display:block;padding:8px 16px;font-size:12px;color:#424245;transition:background .15s;cursor:pointer}.lang-dropdown a:hover{background:#f5f5f7;color:#1d1d1f}
 </style>
-  <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
+  <meta property="og:type" content="website">
+<meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
 
@@ -236,10 +237,10 @@ ul{list-style:none}
           <div class="benefit">Oportunidades de mejora</div>
           <div class="benefit">Plan personalizado</div>
         </div>
-        <form id="auditForm" onsubmit="enviarAuditoría(event)">
+        <form id="auditForm" onsubmit="enviarAuditoria(event)">
           <div class="form-field">
-            <label for="clínica">Nombre de tu negocio</label>
-            <input type="text" id="clínica" placeholder="Ej: Peluqueria Lopez, Taller Garcia..." required>
+            <label for="clinica">Nombre de tu negocio</label>
+            <input type="text" id="clinica" placeholder="Ej: Peluqueria Lopez, Taller Garcia..." required>
           </div>
           <div class="form-field">
             <label for="ciudad">Ciudad</label>
@@ -249,11 +250,17 @@ ul{list-style:none}
             <label for="sector">Sector</label>
             <select id="sector" required>
               <option value="">Selecciona...</option>
-              <option value="clínica dental">Clínica dental</option>
-              <option value="clínica estética">Clínica estética</option>
+              <option value="clinica dental">Clinica dental</option>
+              <option value="clinica estetica">Clinica estetica</option>
               <option value="fisioterapia">Fisioterapia</option>
               <option value="peluqueria">Peluqueria</option>
               <option value="veterinaria">Veterinaria</option>
+              <option value="restaurante">Restaurante</option>
+              <option value="gimnasio">Gimnasio</option>
+              <option value="taller mecanico">Taller mecanico</option>
+              <option value="academia">Academia</option>
+              <option value="inmobiliaria">Inmobiliaria</option>
+              <option value="ecommerce">E-commerce</option>
               <option value="otro">Otro</option>
             </select>
           </div>
@@ -262,8 +269,12 @@ ul{list-style:none}
             <input type="text" id="nombre" placeholder="Tu nombre" required>
           </div>
           <div class="form-field">
-            <label for="contacto">Email o WhatsApp (donde enviamos el informe)</label>
-            <input type="text" id="contacto" placeholder="Email o número de WhatsApp" required>
+            <label for="email">Tu email (donde enviamos el informe)</label>
+            <input type="email" id="email" name="email" placeholder="tu@email.com">
+          </div>
+          <div class="form-field">
+            <label for="telefono">WhatsApp (alternativo al email)</label>
+            <input type="tel" id="telefono" name="telefono" placeholder="+34 600 000 000" pattern="[0-9\s\+]{9,15}">
           </div>
           <div style="position:absolute;left:-9999px"><input type="text" id="company_url" name="company_url" tabindex="-1" autocomplete="off"></div>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="light"></div>
@@ -386,14 +397,21 @@ function toggleMobile(){
 
 // Form
 window._formLoadTime = Date.now();
-function enviarAuditoría(e) {
+function enviarAuditoria(e) {
   e.preventDefault();
   if (document.getElementById('company_url').value) { return; }
   if (Date.now() - window._formLoadTime < 3000) { return; }
   if (window._formSubmitted) { return; }
 
+  var emailVal = document.getElementById('email').value.trim();
+  var telefonoVal = document.getElementById('telefono').value.trim();
+  if (!emailVal && !telefonoVal) {
+    alert('Por favor introduce tu email o tu numero de WhatsApp para enviarte el informe.');
+    return;
+  }
+
   var turnstileToken = document.querySelector('[name="cf-turnstile-response"]').value;
-  if (!turnstileToken) { alert('Por favor espera a que se complete la verificación'); return; }
+  if (!turnstileToken) { alert('Por favor espera a que se complete la verificacion'); return; }
 
   window._formSubmitted = true;
   var btn = document.getElementById('submitBtn');
@@ -401,18 +419,19 @@ function enviarAuditoría(e) {
   btn.textContent = 'Enviando...';
 
   var data = {
-    clínica: document.getElementById('clínica').value,
+    clinica: document.getElementById('clinica').value,
     ciudad: document.getElementById('ciudad').value,
     sector: document.getElementById('sector').value,
     nombre: document.getElementById('nombre').value,
-    contacto: document.getElementById('contacto').value,
+    email: emailVal,
+    telefono: telefonoVal,
     turnstileToken: turnstileToken
   };
 
   document.getElementById('formSection').style.display = 'none';
   document.getElementById('loadingSection').style.display = 'block';
 
-  fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/auditoría-digital', {
+  fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/auditoria-digital', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(data)
@@ -431,5 +450,8 @@ function enviarAuditoría(e) {
 </script>
 <script>function toggleLangDrop(){document.getElementById("langDrop").classList.toggle("active")}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.getElementById("langDrop");if(d)d.classList.remove("active")}});function changeLang(l){var ds=document.querySelectorAll(".lang-dropdown");for(var i=0;i<ds.length;i++)ds[i].classList.remove("active");if(l==="es"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.automarketingdigital.es";location.reload()}else{document.cookie="googtrans=/es/"+l+"; path=/;";document.cookie="googtrans=/es/"+l+"; path=/; domain=.automarketingdigital.es";location.reload()}}}function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,ar,fr,de,it,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}</script>
 <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+<!-- Google Analytics 4 - configurar measurement ID en el futuro -->
+<!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-XXXXXXXXXX');</script> -->
 </body>
 </html>
