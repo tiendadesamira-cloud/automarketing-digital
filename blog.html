@@ -57,14 +57,6 @@ img{max-width:100%;display:block}
 .footer a{color:#1d1d1f;font-weight:500}
 .footer-links{margin-bottom:20px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
 </style>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wct2uh9bru");
-</script>
 </head>
 <body>
 
@@ -102,7 +94,7 @@ img{max-width:100%;display:block}
   <div class="footer-inner">
     <div class="footer-links">
       <a href="/">Inicio</a>
-      <a href="/auditoria.html">Auditor&iacute;a gratuita</a>
+      <a href="precios.html">Auditor&iacute;a gratuita</a>
       <a href="/precios.html">Precios</a>
       <a href="/como-funciona.html">C&oacute;mo funciona</a>
     </div>
@@ -110,5 +102,30 @@ img{max-width:100%;display:block}
   </div>
 </footer>
 
+<!-- ====== BANNER COOKIES RGPD ====== -->
+<div id="ck-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1d1d1f;color:#fff;padding:20px 22px;z-index:99999;box-shadow:0 -4px 20px rgba(0,0,0,.25)">
+  <div style="max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+    <div style="flex:1;min-width:260px;font-size:13px;line-height:1.5">
+      Usamos cookies propias y de terceros (Google Analytics) para analizar el uso de la web y mejorar tu experiencia. Puedes aceptar, rechazar o leer m&aacute;s en nuestra <a href="/cookies.html" style="color:#FF6B35;text-decoration:underline">pol&iacute;tica de cookies</a>.
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button onclick="ckReject()" style="background:transparent;color:#fff;border:1px solid #fff;border-radius:980px;padding:8px 18px;font-size:13px;cursor:pointer;font-family:inherit">Rechazar</button>
+      <button onclick="ckAccept()" style="background:#FF6B35;color:#fff;border:none;border-radius:980px;padding:8px 18px;font-size:13px;cursor:pointer;font-family:inherit">Aceptar</button>
+    </div>
+  </div>
+</div>
+<script>
+(function(){
+  function loadAnalytics(){
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-SCKDEDF4WX';document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-SCKDEDF4WX',{anonymize_ip:true});
+  }
+  window.ckAccept=function(){try{localStorage.setItem('ck_consent','accept');}catch(e){}document.getElementById('ck-banner').style.display='none';loadAnalytics();};
+  window.ckReject=function(){try{localStorage.setItem('ck_consent','reject');}catch(e){}document.getElementById('ck-banner').style.display='none';};
+  var c=null;try{c=localStorage.getItem('ck_consent');}catch(e){}
+  if(c==='accept'){loadAnalytics();}
+  else if(c!=='reject'){document.getElementById('ck-banner').style.display='block';}
+})();
+</script>
 </body>
 </html>

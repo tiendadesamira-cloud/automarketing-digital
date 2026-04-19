@@ -24,14 +24,8 @@ a{color:inherit;text-decoration:none}
 .nav-links{display:flex;align-items:center;gap:20px}
 .nav-links a{font-size:.8rem;color:#1d1d1f;opacity:.8;white-space:nowrap;transition:opacity .2s}.nav-links a:hover{opacity:1}
 .nav-wrap-item{position:relative}
-.mega-menu{position:absolute;top:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid rgba(0,0,0,.1);border-radius:16px;box-shadow:0 20px 60px rgba(0,0,0,.12);padding:24px;min-width:520px;display:none;z-index:9100}
-.mega-menu.active{display:block}
-.mega-cols{display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.mega-item{display:flex;flex-direction:column;padding:10px 12px;border-radius:10px;transition:background .15s}.mega-item:hover{background:#f5f5f7}
-.mega-item-title{font-size:.82rem;font-weight:600;color:#1d1d1f;margin-bottom:2px}
-.mega-item-desc{font-size:.72rem;color:#6e6e73}
-.mega-overlay{position:fixed;inset:0;z-index:8999;display:none}.mega-overlay.active{display:block}
-.nav-pill{background:#0071e3;color:#fff;padding:6px 14px;border-radius:980px;font-size:.78rem;font-weight:600;transition:background .2s;cursor:pointer;border:none}.nav-pill:hover{background:#0077ed}
+
+.nav-pill{background:#FF6B35;color:#fff;padding:6px 14px;border-radius:980px;font-size:.78rem;font-weight:600;transition:background .2s;cursor:pointer;border:none}.nav-pill:hover{background:#0077ed}
 .hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
 .hamburger span{display:block;width:22px;height:2px;background:#1d1d1f;border-radius:2px;transition:.3s}
 .hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
@@ -47,11 +41,11 @@ a{color:inherit;text-decoration:none}
 .hero{padding:120px 22px 80px;text-align:center;background:#fff}
 .hero-badge{display:inline-block;background:#f5f5f7;border-radius:980px;padding:6px 16px;font-size:.76rem;font-weight:600;color:#6e6e73;margin-bottom:24px;letter-spacing:.02em}
 .hero h1{font-size:clamp(2.2rem,5.5vw,3.8rem);font-weight:800;line-height:1.1;letter-spacing:-.03em;color:#1d1d1f;max-width:780px;margin:0 auto 20px}
-.hero h1 em{font-style:normal;color:#0071e3}
+.hero h1 em{font-style:normal;color:#FF6B35}
 .hero-sub{font-size:clamp(.95rem,2vw,1.15rem);color:#6e6e73;max-width:560px;margin:0 auto 36px;line-height:1.6}
 .btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-blue{display:inline-block;background:#0071e3;color:#fff;padding:13px 26px;border-radius:980px;font-size:.95rem;font-weight:600;transition:background .2s;cursor:pointer;border:none}.btn-blue:hover{background:#0077ed}
-.btn-outline{display:inline-block;border:1px solid #0071e3;color:#0071e3;padding:13px 26px;border-radius:980px;font-size:.95rem;font-weight:600;transition:.2s;cursor:pointer;background:transparent}.btn-outline:hover{background:#f0f6ff}
+.btn-blue{display:inline-block;background:#FF6B35;color:#fff;padding:13px 26px;border-radius:980px;font-size:.95rem;font-weight:600;transition:background .2s;cursor:pointer;border:none}.btn-blue:hover{background:#0077ed}
+.btn-outline{display:inline-block;border:1px solid #FF6B35;color:#FF6B35;padding:13px 26px;border-radius:980px;font-size:.95rem;font-weight:600;transition:.2s;cursor:pointer;background:transparent}.btn-outline:hover{background:#f0f6ff}
 
 /* NUMBERS */
 .numbers-section{background:#f5f5f7;padding:60px 22px}
@@ -64,7 +58,7 @@ a{color:inherit;text-decoration:none}
 /* SECTIONS */
 .section{padding:80px 22px}
 .section-inner{max-width:980px;margin:0 auto}
-.section-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#0071e3;margin-bottom:10px}
+.section-label{font-size:.72rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:#FF6B35;margin-bottom:10px}
 .section-title{font-size:clamp(1.6rem,3.5vw,2.4rem);font-weight:700;letter-spacing:-.025em;color:#1d1d1f;margin-bottom:16px;line-height:1.2}
 .section-desc{font-size:.95rem;color:#6e6e73;max-width:600px;margin-bottom:40px;line-height:1.6}
 
@@ -79,18 +73,18 @@ a{color:inherit;text-decoration:none}
 /* MOD GRID */
 .mod-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px}
 .mod-card{background:#fff;border:1px solid #d2d2d7;border-radius:14px;padding:18px 20px;display:flex;align-items:flex-start;gap:12px}
-.mod-badge{background:#0071e3;color:#fff;font-size:.66rem;font-weight:700;padding:3px 8px;border-radius:6px;flex-shrink:0;margin-top:2px;white-space:nowrap}
+.mod-badge{background:#FF6B35;color:#fff;font-size:.66rem;font-weight:700;padding:3px 8px;border-radius:6px;flex-shrink:0;margin-top:2px;white-space:nowrap}
 .mod-badge.new{background:#1d1d1f}
 .mod-card h4{font-size:.88rem;font-weight:700;color:#1d1d1f;margin-bottom:4px}
 .mod-card p{font-size:.78rem;color:#6e6e73;line-height:1.45}
-.mod-highlight{background:#fff;border:2px solid #0071e3;border-radius:18px;padding:22px 26px;margin-top:20px}
-.mod-highlight p.mod-hl-title{font-size:.85rem;font-weight:700;color:#0071e3;margin-bottom:6px}
+.mod-highlight{background:#fff;border:2px solid #FF6B35;border-radius:18px;padding:22px 26px;margin-top:20px}
+.mod-highlight p.mod-hl-title{font-size:.85rem;font-weight:700;color:#FF6B35;margin-bottom:6px}
 .mod-highlight p{font-size:.82rem;color:#6e6e73;line-height:1.55}
 
 /* RES GRID */
 .res-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .res-card{background:#fff;border:1px solid #d2d2d7;border-radius:18px;padding:28px;text-align:center}
-.res-val{font-size:2.2rem;font-weight:700;color:#0071e3;letter-spacing:-.03em;margin-bottom:4px}
+.res-val{font-size:2.2rem;font-weight:700;color:#FF6B35;letter-spacing:-.03em;margin-bottom:4px}
 .res-label{font-size:.76rem;font-weight:700;color:#1d1d1f;text-transform:uppercase;letter-spacing:.04em;margin-bottom:8px}
 .res-desc{font-size:.8rem;color:#6e6e73;line-height:1.5}
 @media(max-width:700px){.res-grid{grid-template-columns:1fr 1fr}}
@@ -107,8 +101,8 @@ a{color:inherit;text-decoration:none}
 /* PRICING */
 .pricing-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;max-width:900px;margin:0 auto}
 .pricing-card{background:#fff;border:1px solid #d2d2d7;border-radius:18px;padding:30px;display:flex;flex-direction:column}
-.pricing-card.featured{border:2px solid #0071e3;box-shadow:0 8px 40px rgba(0,113,227,.12);position:relative}
-.pricing-card.featured::before{content:'MÁS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#0071e3;color:#fff;font-size:.65rem;font-weight:700;padding:4px 14px;border-radius:980px;letter-spacing:.05em;white-space:nowrap}
+.pricing-card.featured{border:2px solid #FF6B35;box-shadow:0 8px 40px rgba(0,113,227,.12);position:relative}
+.pricing-card.featured::before{content:'MÁS POPULAR';position:absolute;top:-12px;left:50%;transform:translateX(-50%);background:#FF6B35;color:#fff;font-size:.65rem;font-weight:700;padding:4px 14px;border-radius:980px;letter-spacing:.05em;white-space:nowrap}
 .pricing-name{font-size:.78rem;font-weight:700;text-transform:uppercase;letter-spacing:.06em;color:#6e6e73;margin-bottom:6px}
 .pricing-setup{font-size:.8rem;color:#6e6e73;margin-bottom:4px}
 .pricing-price{font-size:2rem;font-weight:700;color:#1d1d1f;letter-spacing:-.03em;margin-bottom:4px}
@@ -120,12 +114,12 @@ a{color:inherit;text-decoration:none}
 @media(max-width:768px){.pricing-grid{grid-template-columns:1fr;max-width:480px}}
 
 /* DEMO */
-.demo-box{background:#fff;border:2px solid #0071e3;border-radius:18px;padding:40px;max-width:500px;margin:0 auto;box-shadow:0 8px 40px rgba(0,113,227,.1)}
+.demo-box{background:#fff;border:2px solid #FF6B35;border-radius:18px;padding:40px;max-width:500px;margin:0 auto;box-shadow:0 8px 40px rgba(0,113,227,.1)}
 .demo-box h3{font-size:1.2rem;font-weight:700;color:#1d1d1f;margin-bottom:8px}
 .demo-box p{color:#6e6e73;font-size:.88rem;margin-bottom:24px}
 .form-field{margin-bottom:14px}
 .form-field input{width:100%;background:#f5f5f7;border:1px solid #d2d2d7;border-radius:10px;padding:12px 14px;color:#1d1d1f;font-size:.88rem;font-family:'Inter',sans-serif;outline:none;transition:border-color .2s}
-.form-field input:focus{border-color:#0071e3;background:#fff}
+.form-field input:focus{border-color:#FF6B35;background:#fff}
 .form-field input::placeholder{color:#8e8e93}
 .demo-ok{display:none;text-align:center;padding:20px 0}
 .demo-ok h4{font-size:1.1rem;font-weight:700;color:#1d1d1f;margin-bottom:8px}
@@ -136,7 +130,7 @@ a{color:inherit;text-decoration:none}
 .faq-item{border-bottom:1px solid #e5e5ea}
 .faq-item summary{padding:18px 0;cursor:pointer;font-size:.92rem;font-weight:600;color:#1d1d1f;display:flex;justify-content:space-between;align-items:center;gap:16px;list-style:none}
 .faq-item summary::-webkit-details-marker{display:none}
-.faq-item summary::after{content:'+';color:#0071e3;font-size:1.2rem;font-weight:300;flex-shrink:0;transition:transform .2s}
+.faq-item summary::after{content:'+';color:#FF6B35;font-size:1.2rem;font-weight:300;flex-shrink:0;transition:transform .2s}
 .faq-item[open] summary::after{transform:rotate(45deg)}
 .faq-body{font-size:.85rem;color:#6e6e73;line-height:1.6;padding-bottom:18px}
 
@@ -151,18 +145,17 @@ a{color:inherit;text-decoration:none}
 .footer-legal-top{font-size:.76rem;color:#6e6e73;margin-bottom:32px;padding-bottom:24px;border-bottom:1px solid #d2d2d7;line-height:1.6}
 .footer-cols{display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px;margin-bottom:32px}
 .footer-col-title{font-size:.78rem;font-weight:700;color:#1d1d1f;margin-bottom:14px;text-transform:uppercase;letter-spacing:.04em}
-.footer-col a{display:block;font-size:.78rem;color:#6e6e73;margin-bottom:8px;transition:color .2s}.footer-col a:hover{color:#0071e3}
+.footer-col a{display:block;font-size:.78rem;color:#6e6e73;margin-bottom:8px;transition:color .2s}.footer-col a:hover{color:#FF6B35}
 .footer-contact{font-size:.78rem;color:#6e6e73;margin-bottom:24px;padding-bottom:24px;border-bottom:1px solid #d2d2d7}
-.footer-contact a{color:#0071e3}
+.footer-contact a{color:#FF6B35}
 .footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;font-size:.74rem;color:#6e6e73}
-.footer-bottom a{color:#6e6e73}.footer-bottom a:hover{color:#0071e3}
+.footer-bottom a{color:#6e6e73}.footer-bottom a:hover{color:#FF6B35}
 @media(max-width:768px){.footer-cols{grid-template-columns:1fr 1fr;gap:24px}}
 @media(max-width:480px){.footer-cols{grid-template-columns:1fr}.footer-bottom{flex-direction:column;align-items:flex-start}}
 
 /* WA FLOAT */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:.2s}
 .wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.65)}
-#google_translate_element{position:fixed;left:-9999px;top:-9999px;opacity:0.01;width:1px;height:1px}.goog-te-banner-frame{display:none !important}body{top:0 !important}.lang-wrap{position:relative;display:inline-flex;align-items:center}.lang-btn{font-size:12px;color:#86868b;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;padding:0;transition:color .2s}.lang-btn:hover{color:#1d1d1f}.lang-btn svg{width:14px;height:14px}.lang-dropdown{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d2d2d7;border-radius:12px;padding:6px 0;min-width:150px;opacity:0;pointer-events:none;transition:all .2s;box-shadow:0 4px 20px rgba(0,0,0,.1);margin-bottom:8px}.lang-dropdown.active{opacity:1;pointer-events:auto}.lang-dropdown a{display:block;padding:8px 16px;font-size:12px;color:#424245;transition:background .15s;cursor:pointer}.lang-dropdown a:hover{background:#f5f5f7;color:#1d1d1f}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
@@ -172,38 +165,8 @@ a{color:inherit;text-decoration:none}
 <nav class="globalnav">
   <a href="index.html" class="nav-logo">Automarketing<span>Digital</span></a>
   <div class="nav-links">
-    <div class="nav-wrap-item" id="wrap-soluciones">
-      <a href="#" style="font-size:.8rem;opacity:.8">Soluciones</a>
-      <div class="mega-menu" id="mega-soluciones">
-        <div class="mega-cols">
-          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Agente WhatsApp IA</span><span class="mega-item-desc">Atiende y capta 24/7</span></a>
-          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Recordatorios automáticos</span><span class="mega-item-desc">-80% no-shows</span></a>
-          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Seguimiento de leads</span><span class="mega-item-desc">Dias 1, 3 y 7</span></a>
-          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Publicación en redes</span><span class="mega-item-desc">3 posts/dia con IA</span></a>
-          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Captación de leads</span><span class="mega-item-desc">Formularios + WA</span></a>
-          <a class="mega-item" href="index.html#soluciones"><span class="mega-item-title">Reactivación de clientes</span><span class="mega-item-desc">Bases de datos dormidas</span></a>
-        </div>
-      </div>
-    </div>
-    <div class="nav-wrap-item" id="wrap-sectores">
-      <a href="#" style="font-size:.8rem;opacity:.8">Sectores</a>
-      <div class="mega-menu" id="mega-sectores">
-        <div class="mega-cols">
-          <a class="mega-item" href="dental.html"><span class="mega-item-title">Clínicas Dentales</span><span class="mega-item-desc">Recordatorios + presupuestos</span></a>
-          <a class="mega-item" href="estetica.html"><span class="mega-item-title">Estética y Belleza</span><span class="mega-item-desc">Agenda llena automática</span></a>
-          <a class="mega-item" href="peluqueria.html"><span class="mega-item-title">Peluqueria</span><span class="mega-item-desc">Fidelizacion sin esfuerzo</span></a>
-          <a class="mega-item" href="fisioterapia.html"><span class="mega-item-title">Fisioterapia</span><span class="mega-item-desc">Adherencia al tratamiento</span></a>
-          <a class="mega-item" href="masajistas.html"><span class="mega-item-title">Masajes</span><span class="mega-item-desc">Sin no-shows ni WhatsApp manual</span></a>
-          <a class="mega-item" href="gimnasio.html"><span class="mega-item-title">Gimnasios</span><span class="mega-item-desc">Captación y retencion</span></a>
-          <a class="mega-item" href="veterinaria.html"><span class="mega-item-title">Veterinaria</span><span class="mega-item-desc">Citas y vacunas automáticas</span></a>
-          <a class="mega-item" href="restaurante.html"><span class="mega-item-title">Restaurantes</span><span class="mega-item-desc">Sala llena, cero no-shows</span></a>
-          <a class="mega-item" href="inmobiliaria.html"><span class="mega-item-title">Inmobiliarias</span><span class="mega-item-desc">Leads que no se enfrían</span></a>
-          <a class="mega-item" href="academia.html"><span class="mega-item-title">Academias</span><span class="mega-item-desc">Matriculas automatizadas</span></a>
-          <a class="mega-item" href="taller.html"><span class="mega-item-title">Talleres</span><span class="mega-item-desc">Presupuestos interactivos</span></a>
-          <a class="mega-item" href="ecommerce.html"><span class="mega-item-title">Ecommerce</span><span class="mega-item-desc">Carritos recuperados</span></a>
-        </div>
-      </div>
-    </div>
+
+
     <a href="index.html#casos" style="font-size:.8rem;opacity:.8">Casos reales</a>
     <a href="index.html#precios" style="font-size:.8rem;opacity:.8">Precios</a>
   </div>
@@ -212,11 +175,12 @@ a{color:inherit;text-decoration:none}
     <div class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
   </div>
 </nav>
-<div class="mega-overlay" id="mega-overlay"></div>
-<div class="mobile-nav" id="mobile-nav">
-  <a href="index.html">Inicio</a>
-  <a href="index.html#soluciones">Soluciones</a>
-  <div class="mobile-divider"></div>
+<div class="mobile-nav" id="mobileNav">
+  <a href="/">Inicio</a>
+  <a href="precios.html">Webs y precios</a>
+  <a href="como-funciona.html">Cómo funciona</a>
+  <a href="https://wa.me/34622058591?text=Hola%20Nabil" target="_blank">Hablar conmigo</a>
+</div>
   <a href="dental.html">Clínicas Dentales</a>
   <a href="estetica.html">Estética</a>
   <a href="peluqueria.html">Peluqueria</a>
@@ -224,11 +188,6 @@ a{color:inherit;text-decoration:none}
   <a href="masajistas.html">Masajes</a>
   <a href="gimnasio.html">Gimnasios</a>
   <a href="veterinaria.html">Veterinaria</a>
-  <a href="restaurante.html">Restaurantes</a>
-  <a href="inmobiliaria.html">Inmobiliarias</a>
-  <a href="academia.html">Academias</a>
-  <a href="taller.html">Talleres</a>
-  <a href="ecommerce.html">Ecommerce</a>
   <div class="mobile-divider"></div>
   <a href="index.html#precios">Precios</a>
 </div>
@@ -400,7 +359,7 @@ a{color:inherit;text-decoration:none}
       <div class="demo-ok" id="demoOk">
         <h4>&#10003; Enviado</h4>
         <p>En menos de 30 segundos recibes el WhatsApp. Si en 2 minutos no llega revisa que el número sea correcto.</p>
-        <a href="https://wa.me/34643987371?text=Hola%2C%20acabo%20de%20probar%20la%20demo%20y%20quiero%20saber%20mas" target="_blank" rel="noopener noreferrer" class="btn-blue" style="margin-top:20px;display:inline-block">Hablar con nosotros &rarr;</a>
+        <a href="https://wa.me/34622058591?text=Hola%2C%20acabo%20de%20probar%20la%20demo%20y%20quiero%20saber%20mas" target="_blank" rel="noopener noreferrer" class="btn-blue" style="margin-top:20px;display:inline-block">Hablar con nosotros &rarr;</a>
       </div>
     </div>
   </div>
@@ -431,9 +390,9 @@ a{color:inherit;text-decoration:none}
     <p>Auditoría gratuita de 30 minutos. Sin compromiso. Te decimos exactamente cuánto puedes automatizar.</p>
     <div class="btns">
       <button class="btn-blue" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Ver cómo funciona</button>
-      <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20saber%20mas%20sobre%20el%20sistema%20para%20masajistas" target="_blank" rel="noopener noreferrer" class="btn-outline">Hablar por WhatsApp</a>
+      <a href="https://wa.me/34622058591?text=Hola%2C%20quiero%20saber%20mas%20sobre%20el%20sistema%20para%20masajistas" target="_blank" rel="noopener noreferrer" class="btn-outline">Hablar por WhatsApp</a>
     </div>
-    <p style="margin-top:16px;font-size:14px;color:#6e6e73">o si prefieres: <a href="auditoria.html" style="color:#1d1d1f;font-weight:600;text-decoration:underline">Ver diagnostico gratuito de tu negocio</a></p>
+    <p style="margin-top:16px;font-size:14px;color:#6e6e73">o si prefieres: <a href="precios.html" style="color:#1d1d1f;font-weight:600;text-decoration:underline">Ver diagnostico gratuito de tu negocio</a></p>
   </div>
 </div>
 
@@ -458,14 +417,9 @@ a{color:inherit;text-decoration:none}
         <div class="footer-col-title">Más sectores</div>
         <a href="gimnasio.html">Gimnasios</a>
         <a href="veterinaria.html">Veterinaria</a>
-        <a href="restaurante.html">Restaurantes</a>
-        <a href="inmobiliaria.html">Inmobiliarias</a>
-        <a href="academia.html">Academias</a>
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Empresa</div>
-        <a href="taller.html">Talleres</a>
-        <a href="ecommerce.html">Ecommerce</a>
         <a href="index.html#casos">Casos reales</a>
         <a href="index.html#precios">Precios</a>
       </div>
@@ -476,36 +430,21 @@ a{color:inherit;text-decoration:none}
         <a href="#">Cookies</a>
       </div>
     </div>
-    <div class="footer-contact">Contacto: <a href="mailto:hola@automarketingdigital.es">hola@automarketingdigital.es</a> &nbsp;|&nbsp; <a href="https://wa.me/34643987371" target="_blank" rel="noopener noreferrer">WhatsApp +34 643 987 371</a></div>
+    <div class="footer-contact">Contacto: <a href="mailto:hola@automarketingdigital.es">hola@automarketingdigital.es</a> &nbsp;|&nbsp; <a href="https://wa.me/34622058591" target="_blank" rel="noopener noreferrer">WhatsApp +34 622 058 591</a></div>
     <div class="footer-bottom">
       <span>&copy; 2026 Automarketing Digital. Todos los derechos reservados.</span>
       <span><a href="#">Aviso legal</a> &nbsp;&middot;&nbsp; <a href="#">Privacidad</a></span>
     </div>
   </div>
-<div style="text-align:center;padding:12px 0;border-top:1px solid #d2d2d7;margin-top:8px"><div class="lang-wrap" style="display:inline-flex"><button class="lang-btn" onclick="toggleLangDrop()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg> Español</button><div class="lang-dropdown" id="langDrop"><a onclick="changeLang('es')">Español</a><a onclick="changeLang('en')">English</a><a onclick="changeLang('fr')">Français</a><a onclick="changeLang('de')">Deutsch</a><a onclick="changeLang('it')">Italiano</a><a onclick="changeLang('ar')">العربية</a></div></div></div>
-<div id="google_translate_element"></div>
+
 </footer>
 
 <!-- WA FLOTANTE -->
-<a href="https://wa.me/34643987371?text=Hola%2C%20vengo%20desde%20la%20pagina%20de%20masajistas%20y%20quiero%20saber%20mas" target="_blank" rel="noopener noreferrer" class="wa-float" title="Hablar por WhatsApp">
+<a href="https://wa.me/34622058591?text=Hola%2C%20vengo%20desde%20la%20pagina%20de%20masajistas%20y%20quiero%20saber%20mas" target="_blank" rel="noopener noreferrer" class="wa-float" title="Hablar por WhatsApp">
   <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="white"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-const menus={soluciones:document.getElementById('mega-soluciones'),sectores:document.getElementById('mega-sectores')};
-const overlay=document.getElementById('mega-overlay');
-let active=null,timer=null;
-function showMenu(k){if(timer)clearTimeout(timer);if(active&&active!==k){menus[active].classList.remove('active')}menus[k].classList.add('active');overlay.classList.add('active');active=k}
-function hideMenu(){timer=setTimeout(function(){if(active){menus[active].classList.remove('active');overlay.classList.remove('active');active=null}},200)}
-document.getElementById('wrap-soluciones').addEventListener('mouseenter',function(){showMenu('soluciones')});
-document.getElementById('wrap-soluciones').addEventListener('mouseleave',hideMenu);
-document.getElementById('mega-soluciones').addEventListener('mouseenter',function(){if(timer)clearTimeout(timer)});
-document.getElementById('mega-soluciones').addEventListener('mouseleave',hideMenu);
-document.getElementById('wrap-sectores').addEventListener('mouseenter',function(){showMenu('sectores')});
-document.getElementById('wrap-sectores').addEventListener('mouseleave',hideMenu);
-document.getElementById('mega-sectores').addEventListener('mouseenter',function(){if(timer)clearTimeout(timer)});
-document.getElementById('mega-sectores').addEventListener('mouseleave',hideMenu);
-overlay.addEventListener('mouseenter',function(){menus[active].classList.remove('active');overlay.classList.remove('active');active=null});
 function toggleMobile(){document.getElementById('hamburger').classList.toggle('active');document.getElementById('mobile-nav').classList.toggle('active')}
 function enviarDemo(e){
   e.preventDefault();
@@ -517,24 +456,30 @@ function enviarDemo(e){
   fetch('https://tiendadesamira-n8n.zoxqsl.easypanel.host/webhook/demo-agencia',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({nombre:nombre,tel:tel,negocio:negocio+' (landing masajistas)',sector:'masajistas','cf-turnstile-response':document.querySelector('[name="cf-turnstile-response"]')?document.querySelector('[name="cf-turnstile-response"]').value:''})}).catch(function(){});
 }
 </script>
-<script>function toggleLangDrop(){document.getElementById("langDrop").classList.toggle("active")}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.getElementById("langDrop");if(d)d.classList.remove("active")}});function changeLang(l){var ds=document.querySelectorAll(".lang-dropdown");for(var i=0;i<ds.length;i++)ds[i].classList.remove("active");if(l==="es"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.automarketingdigital.es";location.reload()}else{document.cookie="googtrans=/es/"+l+"; path=/;";document.cookie="googtrans=/es/"+l+"; path=/; domain=.automarketingdigital.es";location.reload()}}}function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,ar,fr,de,it,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- IMPORTANTE: Reemplazar G-SCKDEDF4WX con tu Measurement ID real de Google Analytics 4. Crear cuenta en https://analytics.google.com -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SCKDEDF4WX"></script>
+<!-- ====== BANNER COOKIES RGPD ====== -->
+<div id="ck-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1d1d1f;color:#fff;padding:20px 22px;z-index:99999;box-shadow:0 -4px 20px rgba(0,0,0,.25)">
+  <div style="max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+    <div style="flex:1;min-width:260px;font-size:13px;line-height:1.5">
+      Usamos cookies propias y de terceros (Google Analytics) para analizar el uso de la web y mejorar tu experiencia. Puedes aceptar, rechazar o leer m&aacute;s en nuestra <a href="/cookies.html" style="color:#FF6B35;text-decoration:underline">pol&iacute;tica de cookies</a>.
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button onclick="ckReject()" style="background:transparent;color:#fff;border:1px solid #fff;border-radius:980px;padding:8px 18px;font-size:13px;cursor:pointer;font-family:inherit">Rechazar</button>
+      <button onclick="ckAccept()" style="background:#FF6B35;color:#fff;border:none;border-radius:980px;padding:8px 18px;font-size:13px;cursor:pointer;font-family:inherit">Aceptar</button>
+    </div>
+  </div>
+</div>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-SCKDEDF4WX');
+(function(){
+  function loadAnalytics(){
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-SCKDEDF4WX';document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-SCKDEDF4WX',{anonymize_ip:true});
+  }
+  window.ckAccept=function(){try{localStorage.setItem('ck_consent','accept');}catch(e){}document.getElementById('ck-banner').style.display='none';loadAnalytics();};
+  window.ckReject=function(){try{localStorage.setItem('ck_consent','reject');}catch(e){}document.getElementById('ck-banner').style.display='none';};
+  var c=null;try{c=localStorage.getItem('ck_consent');}catch(e){}
+  if(c==='accept'){loadAnalytics();}
+  else if(c!=='reject'){document.getElementById('ck-banner').style.display='block';}
+})();
 </script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wct2uh9bru");
-</script>
-</head>
 </body>
 </html>

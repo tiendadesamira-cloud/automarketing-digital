@@ -36,20 +36,6 @@ ul{list-style:none}
 .gn-ham{display:none;background:none;border:none;cursor:pointer;padding:6px}
 .gn-ham span{display:block;width:17px;height:1px;background:#1d1d1f;margin:4px 0;transition:all 0.3s}
 
-/* MEGA MENU */
-.mega-overlay{position:fixed;top:44px;left:0;right:0;bottom:0;background:rgba(0,0,0,0.3);opacity:0;pointer-events:none;transition:opacity 0.3s;z-index:9997}
-.mega-overlay.active{opacity:1;pointer-events:auto}
-.mega-menu{position:fixed;top:44px;left:0;right:0;background:#fff;border-bottom:1px solid #d2d2d7;z-index:9998;opacity:0;transform:translateY(-8px);pointer-events:none;transition:opacity 0.25s ease,transform 0.25s ease}
-.mega-menu.active{opacity:1;transform:translateY(0);pointer-events:auto}
-.mega-menu-inner{max-width:980px;margin:0 auto;padding:40px 22px 52px}
-.mega-menu-cols{display:grid;gap:40px}
-.mega-soluciones .mega-menu-cols{grid-template-columns:1fr 1fr 1fr}
-.mega-sectores .mega-menu-cols{grid-template-columns:1fr 1fr 1fr 1fr}
-.mega-col h5{font-size:12px;color:#86868b;font-weight:400;margin-bottom:16px}
-.mega-col-main a{display:block;font-size:24px;color:#424245;font-weight:600;line-height:1.3;margin-bottom:10px;transition:color 0.2s}
-.mega-col-main a:hover{color:#1d1d1f}
-.mega-col-secondary a{display:block;font-size:12px;color:#424245;line-height:1.4;margin-bottom:8px;transition:color 0.2s}
-.mega-col-secondary a:hover{color:#1d1d1f}
 
 /* MOBILE NAV */
 .mobile-nav{display:none;position:fixed;top:44px;left:0;right:0;bottom:0;background:#fff;z-index:9998;padding:20px 22px;overflow-y:auto}
@@ -63,8 +49,8 @@ ul{list-style:none}
 .page-hero h1{font-size:clamp(36px,6vw,56px);font-weight:700;letter-spacing:-0.03em;line-height:1.06;color:#1d1d1f;margin-bottom:10px}
 .page-hero-sub{font-size:clamp(17px,2.5vw,21px);color:#6e6e73;line-height:1.3;margin-bottom:28px;max-width:560px;margin-left:auto;margin-right:auto}
 .btn-pill{font-size:17px;display:inline-flex;align-items:center;gap:4px;padding:11px 24px;border-radius:980px;font-weight:400;transition:all 0.3s;cursor:pointer;border:none;text-decoration:none}
-.btn-blue{background:#0071e3;color:#fff}
-.btn-blue:hover{background:#0077ED}
+.btn-blue{background:#FF6B35;color:#fff}
+.btn-blue:hover{background:#FF8555}
 .btn-outline{background:transparent;color:#1d1d1f;border:1px solid #1d1d1f}
 .btn-outline:hover{background:#1d1d1f;color:#fff}
 .link-blue{font-size:17px;color:#06c;display:inline-flex;align-items:center;gap:4px;transition:text-decoration 0.2s}
@@ -91,7 +77,7 @@ ul{list-style:none}
 .steps-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:0;max-width:980px;margin:40px auto 0;border:1px solid #d2d2d7;border-radius:18px;overflow:hidden}
 .step-item{padding:32px 24px;border-right:1px solid #d2d2d7}
 .step-item:last-child{border-right:none}
-.step-num{font-size:clamp(40px,5vw,56px);font-weight:700;color:#0071e3;letter-spacing:-0.03em;line-height:1}
+.step-num{font-size:clamp(40px,5vw,56px);font-weight:700;color:#FF6B35;letter-spacing:-0.03em;line-height:1}
 .step-title{font-size:17px;font-weight:600;color:#1d1d1f;margin:10px 0 8px}
 .step-desc{font-size:13px;color:#6e6e73;line-height:1.55}
 
@@ -107,7 +93,7 @@ ul{list-style:none}
 /* FLOW MAP */
 .flow-map{max-width:720px;margin:40px auto 0;display:flex;flex-direction:column;align-items:center;gap:0}
 .flow-node{background:#f5f5f7;border:1px solid #d2d2d7;border-radius:14px;padding:14px 22px;display:flex;align-items:center;gap:12px;width:100%;max-width:360px;transition:border-color 0.3s}
-.flow-node.lit{border-color:#0071e3;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.08)}
+.flow-node.lit{border-color:#FF6B35;background:#fff;box-shadow:0 0 0 3px rgba(0,113,227,0.08)}
 .flow-node-icon{width:32px;height:32px;background:#fff;border:1px solid #d2d2d7;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:14px;flex-shrink:0}
 .flow-node h4{font-size:14px;font-weight:600;color:#1d1d1f;margin-bottom:1px}
 .flow-node p{font-size:11px;color:#6e6e73}
@@ -117,20 +103,20 @@ ul{list-style:none}
 .flow-branch-line{width:1px;height:20px;background:#d2d2d7}
 .flow-time-box{background:#f5f5f7;border:1px solid #d2d2d7;border-radius:14px;padding:20px 32px;text-align:center;margin-top:16px;width:100%;max-width:360px}
 .flow-time-box p{font-size:12px;color:#6e6e73;margin-bottom:4px}
-.flow-time-big{font-size:clamp(28px,4vw,40px);font-weight:700;color:#0071e3;letter-spacing:-0.02em}
+.flow-time-big{font-size:clamp(28px,4vw,40px);font-weight:700;color:#FF6B35;letter-spacing:-0.02em}
 .flow-time-box small{font-size:12px;color:#86868b}
 
 /* BIBLIOTECA */
 .bib-tabs{display:flex;gap:8px;margin-bottom:32px;flex-wrap:wrap}
 .bib-tab{padding:8px 18px;border-radius:980px;border:1px solid #d2d2d7;background:#fff;color:#6e6e73;font-size:14px;font-weight:500;cursor:pointer;transition:all 0.2s;font-family:inherit}
-.bib-tab.active,.bib-tab:hover{border-color:#0071e3;color:#0071e3;background:#f0f7ff}
+.bib-tab.active,.bib-tab:hover{border-color:#FF6B35;color:#FF6B35;background:#f0f7ff}
 .bib-panel{display:none}
 .bib-panel.active{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .flow-card{background:#f5f5f7;border:1px solid #d2d2d7;border-radius:18px;padding:28px}
 .flow-card h4{font-size:17px;font-weight:600;color:#1d1d1f;margin-bottom:16px}
 .flow-steps-list{display:flex;flex-direction:column;gap:8px}
 .flow-step{display:flex;align-items:center;gap:10px;font-size:13px;color:#6e6e73}
-.flow-dot{width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid #0071e3;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#0071e3;flex-shrink:0}
+.flow-dot{width:24px;height:24px;border-radius:50%;background:#fff;border:1px solid #FF6B35;display:flex;align-items:center;justify-content:center;font-size:11px;font-weight:700;color:#FF6B35;flex-shrink:0}
 .flow-arrow-sm{color:#86868b;font-size:12px;margin-left:12px}
 .flow-tag{display:inline-block;background:#fff;border:1px solid #d2d2d7;color:#1d1d1f;font-size:12px;font-weight:500;padding:4px 12px;border-radius:980px;margin-top:16px}
 
@@ -140,24 +126,24 @@ ul{list-style:none}
 .demo-left p{font-size:15px;color:#6e6e73;line-height:1.6;margin-bottom:24px}
 .demo-steps-list{display:flex;flex-direction:column;gap:14px}
 .demo-step-item{display:flex;align-items:flex-start;gap:14px}
-.demo-step-num{width:28px;height:28px;border-radius:50%;background:#0071e3;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
+.demo-step-num{width:28px;height:28px;border-radius:50%;background:#FF6B35;color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:1px}
 .demo-step-txt h5{font-size:14px;font-weight:600;color:#1d1d1f;margin-bottom:2px}
 .demo-step-txt p{font-size:13px;color:#6e6e73;line-height:1.4}
 .demo-form-card{background:#f5f5f7;border:1px solid #d2d2d7;border-radius:18px;padding:36px;position:relative}
-.demo-badge{position:absolute;top:16px;right:16px;background:#0071e3;color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:980px;letter-spacing:0.06em}
+.demo-badge{position:absolute;top:16px;right:16px;background:#FF6B35;color:#fff;font-size:10px;font-weight:700;padding:4px 10px;border-radius:980px;letter-spacing:0.06em}
 .demo-form-card h3{font-size:19px;font-weight:600;color:#1d1d1f;margin-bottom:6px}
 .demo-form-card p{font-size:14px;color:#6e6e73;margin-bottom:20px}
 .demo-field{margin-bottom:14px}
 .demo-field label{display:block;font-size:12px;font-weight:600;color:#1d1d1f;margin-bottom:5px}
 .demo-field input{width:100%;background:#fff;border:1px solid #d2d2d7;border-radius:10px;padding:10px 13px;color:#1d1d1f;font-size:14px;outline:none;transition:border-color 0.2s;font-family:inherit}
-.demo-field input:focus{border-color:#0071e3}
-.demo-submit{width:100%;padding:11px;background:#0071e3;color:#fff;border:none;border-radius:980px;font-size:15px;font-weight:400;cursor:pointer;margin-top:8px;font-family:inherit;transition:background 0.2s}
-.demo-submit:hover{background:#0077ED}
+.demo-field input:focus{border-color:#FF6B35}
+.demo-submit{width:100%;padding:11px;background:#FF6B35;color:#fff;border:none;border-radius:980px;font-size:15px;font-weight:400;cursor:pointer;margin-top:8px;font-family:inherit;transition:background 0.2s}
+.demo-submit:hover{background:#FF8555}
 .demo-timer{display:none;text-align:center;padding:20px;background:#fff;border-radius:12px;margin-top:16px;border:1px solid #d2d2d7}
 .demo-timer p{font-size:13px;color:#6e6e73;margin-bottom:6px}
-.demo-countdown{font-size:clamp(28px,4vw,40px);font-weight:700;color:#0071e3}
+.demo-countdown{font-size:clamp(28px,4vw,40px);font-weight:700;color:#FF6B35}
 .demo-success{display:none;text-align:center;padding:20px}
-.demo-success .check{font-size:36px;margin-bottom:10px;display:block;color:#0071e3}
+.demo-success .check{font-size:36px;margin-bottom:10px;display:block;color:#FF6B35}
 .demo-success p{color:#6e6e73;font-size:14px;margin-bottom:4px}
 
 /* CTA FINAL */
@@ -201,7 +187,6 @@ ul{list-style:none}
   .bib-panel.active{grid-template-columns:1fr}
   .demo-grid{grid-template-columns:1fr}
   .footer-cols{grid-template-columns:repeat(2,1fr)}
-  .mega-menu,.mega-overlay{display:none!important}
 }
 @media(max-width:480px){
   .section{padding:48px 16px}
@@ -213,7 +198,6 @@ ul{list-style:none}
   .metric-item:last-child{border-bottom:none}
   .footer-cols{grid-template-columns:1fr}
 }
-#google_translate_element{position:fixed;left:-9999px;top:-9999px;opacity:0.01;width:1px;height:1px}.goog-te-banner-frame{display:none !important}body{top:0 !important}.lang-wrap{position:relative;display:inline-flex;align-items:center}.lang-btn{font-size:12px;color:#86868b;background:none;border:none;cursor:pointer;display:inline-flex;align-items:center;gap:4px;padding:0;transition:color .2s}.lang-btn:hover{color:#1d1d1f}.lang-btn svg{width:14px;height:14px}.lang-dropdown{position:absolute;bottom:100%;left:50%;transform:translateX(-50%);background:#fff;border:1px solid #d2d2d7;border-radius:12px;padding:6px 0;min-width:150px;opacity:0;pointer-events:none;transition:all .2s;box-shadow:0 4px 20px rgba(0,0,0,.1);margin-bottom:8px}.lang-dropdown.active{opacity:1;pointer-events:auto}.lang-dropdown a{display:block;padding:8px 16px;font-size:12px;color:#424245;transition:background .15s;cursor:pointer}.lang-dropdown a:hover{background:#f5f5f7;color:#1d1d1f}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
@@ -226,12 +210,11 @@ ul{list-style:none}
       <div class="gn-logo-icon">A</div>
       <span class="gn-logo-text">Automarketing Digital</span>
     </a>
-    <div class="gn-links">
-      <div class="gn-link-wrap" data-mega="soluciones"><a href="index.html#soluciones">Soluciones</a></div>
-      <div class="gn-link-wrap" data-mega="sectores"><a href="index.html#sectores">Sectores</a></div>
-      <a href="precios.html">Precios</a>
+        <div class="gn-links">
+      <a href="/">Inicio</a>
+      <a href="precios.html">Webs y precios</a>
       <a href="como-funciona.html" class="gn-active">Cómo funciona</a>
-      <a href="auditoria.html">Análisis gratuito</a>
+      <a href="https://wa.me/34622058591?text=Hola%20Nabil" target="_blank">Hablar conmigo</a>
     </div>
     <button class="gn-ham" aria-label="Menu" onclick="toggleMobile()">
       <span></span><span></span><span></span>
@@ -239,83 +222,21 @@ ul{list-style:none}
   </div>
 </nav>
 
-<!-- MEGA MENU: SOLUCIONES -->
-<div class="mega-overlay" id="megaOverlay"></div>
-<div class="mega-menu mega-soluciones" id="megaSoluciones">
-  <div class="mega-menu-inner">
-    <div class="mega-menu-cols">
-      <div class="mega-col mega-col-main">
-        <h5>Explora Soluciones</h5>
-        <a href="index.html#soluciones">WhatsApp 24/7</a>
-        <a href="index.html#soluciones">Agenda Automática</a>
-        <a href="index.html#soluciones">Recordatorios</a>
-        <a href="index.html#soluciones">Reactivación Clientes</a>
-        <a href="index.html#soluciones">Reseñas Google</a>
-      </div>
-      <div class="mega-col mega-col-secondary">
-        <h5>Cómo funciona</h5>
-        <a href="como-funciona.html">Paso 1: Auditoría</a>
-        <a href="como-funciona.html">Paso 2: Instalación</a>
-        <a href="como-funciona.html">Paso 3: Resultados</a>
-      </div>
-      <div class="mega-col mega-col-secondary">
-        <h5>Recursos</h5>
-        <a href="precios.html">Precios</a>
-        <a href="auditoria.html">Auditoría gratuita</a>
-      </div>
-    </div>
-  </div>
-</div>
-
-<!-- MEGA MENU: SECTORES -->
-<div class="mega-menu mega-sectores" id="megaSectores">
-  <div class="mega-menu-inner">
-    <div class="mega-menu-cols">
-      <div class="mega-col mega-col-main">
-        <h5>Explora Sectores</h5>
-        <a href="index.html#sectores">Ver todos</a>
-      </div>
-      <div class="mega-col mega-col-secondary">
-        <h5>Salud</h5>
-        <a href="dental.html">Clínicas Dentales</a>
-        <a href="estetica.html">Clínicas Estética</a>
-        <a href="fisioterapia.html">Fisioterapia</a>
-        <a href="veterinaria.html">Veterinarias</a>
-        <a href="masajistas.html">Masajistas</a>
-      </div>
-      <div class="mega-col mega-col-secondary">
-        <h5>Servicios</h5>
-        <a href="peluqueria.html">Peluquerías</a>
-        <a href="restaurante.html">Restaurantes</a>
-        <a href="gimnasio.html">Gimnasios</a>
-        <a href="taller.html">Talleres</a>
-      </div>
-      <div class="mega-col mega-col-secondary">
-        <h5>Otros</h5>
-        <a href="inmobiliaria.html">Inmobiliarias</a>
-        <a href="academia.html">Academias</a>
-        <a href="ecommerce.html">E-commerce</a>
-      </div>
-    </div>
-  </div>
-</div>
-
 <!-- MOBILE NAV -->
 <div class="mobile-nav" id="mobileNav">
-  <a href="index.html#soluciones">Soluciones</a>
-  <a href="index.html#sectores">Sectores</a>
-  <a href="precios.html">Precios</a>
+  <a href="/">Inicio</a>
+  <a href="precios.html">Webs y precios</a>
   <a href="como-funciona.html">Cómo funciona</a>
-  <a href="auditoria.html">Análisis gratuito</a>
+  <a href="https://wa.me/34622058591?text=Hola%20Nabil" target="_blank">Hablar conmigo</a>
 </div>
 
 <!-- PAGE HERO -->
 <div class="page-hero">
   <div class="page-hero-inner">
     <p class="eyebrow">Cómo funciona</p>
-    <h1>Un proceso claro<br>adaptado a tu negocio</h1>
-    <p class="page-hero-sub">Empezamos por entender donde estas. Luego te proponemos solo lo que necesitas. Sin tecnicismos, sin sorpresas.</p>
-    <a href="auditoria.html" class="btn-pill btn-blue">Pedir análisis gratuito</a>
+    <h1>Así de sencillo.<br>Sin tecnicismos.</h1>
+    <p class="page-hero-sub">Cinco pasos. Sin reuniones eternas. Sin presupuestos que luego cambian. Si la web no te gusta, no pagas.</p>
+    <a href="https://wa.me/34622058591?text=Hola%20Nabil%2C%20quiero%20hablar%20de%20mi%20web" target="_blank" class="btn-pill btn-blue">Hablamos por WhatsApp</a>
   </div>
 </div>
 
@@ -343,35 +264,43 @@ ul{list-style:none}
   </div>
 </section>
 
-<!-- 4 PASOS -->
+<!-- 5 PASOS -->
 <section class="section section-alt section-border" id="proceso">
   <div class="section-inner">
     <div class="text-center" style="margin-bottom:48px">
-      <p class="eyebrow" style="font-size:17px">Nuestro proceso</p>
-      <h2 class="section-headline">4 pasos para digitalizar tu negocio</h2>
-      <p class="section-sub" style="margin-left:auto;margin-right:auto;text-align:center">Un proceso claro y sin sorpresas, adaptado al nivel de digitalización de tu negocio.</p>
+      <p class="eyebrow" style="font-size:17px">El proceso</p>
+      <h2 class="section-headline">Cinco pasos. Eso es todo.</h2>
+      <p class="section-sub" style="margin-left:auto;margin-right:auto;text-align:center">Sin contratos largos. Sin letra pequeña. Sin sorpresas.</p>
     </div>
-    <div class="steps-grid">
+    <div class="steps-grid" style="grid-template-columns:repeat(5,1fr)">
       <div class="step-item">
         <div class="step-num">1</div>
-        <div class="step-title">Análisis gratuito</div>
-        <div class="step-desc">Evaluamos tu nivel actual de digitalización: web, Google, redes, procesos. 30 minutos de videollamada. Sin compromiso.</div>
+        <div class="step-title">Hablamos 15 min</div>
+        <div class="step-desc">Me cuentas tu negocio por WhatsApp o teléfono. Yo te pregunto lo justo para entender qué necesitas.</div>
       </div>
       <div class="step-item">
         <div class="step-num">2</div>
-        <div class="step-title">Plan personalizado</div>
-        <div class="step-desc">Te proponemos solo lo que necesitas, en el orden correcto. Nada más. Cada negocio es diferente y tu plan lo refleja.</div>
+        <div class="step-title">Te presento la web</div>
+        <div class="step-desc">Diseño una propuesta real. La ves antes de pagar nada. Sin compromiso todavía.</div>
       </div>
       <div class="step-item">
         <div class="step-num">3</div>
-        <div class="step-title">Implementación</div>
-        <div class="step-desc">Instalamos y configuramos todo. Según la complejidad, entre 48 horas y 2 semanas. Tú solo nos das acceso a las cuentas.</div>
+        <div class="step-title">Pagas el 50% y empiezo</div>
+        <div class="step-desc">Solo si te gusta lo que ves. Pago inicial del 50% y arranco con el desarrollo completo.</div>
       </div>
       <div class="step-item">
-        <div class="step-num" style="color:#1d1d1f">4</div>
-        <div class="step-title">Soporte continuo</div>
-        <div class="step-desc">Monitorizamos, ajustamos y mejoramos cada mes. Cuando tu negocio crece, el sistema crece contigo. Siempre tienes a alguien.</div>
+        <div class="step-num">4</div>
+        <div class="step-title">Te la enseño terminada</div>
+        <div class="step-desc">Te muestro la web acabada antes de publicarla. Si algo no te convence, lo ajustamos.</div>
       </div>
+      <div class="step-item">
+        <div class="step-num" style="color:#1d1d1f">5</div>
+        <div class="step-title">Solo pagas el resto si te gusta</div>
+        <div class="step-desc">El 50% final solo si estás contento con el resultado. Si no, no pagas. Así de claro.</div>
+      </div>
+    </div>
+    <div class="text-center" style="margin-top:40px">
+      <a href="https://wa.me/34622058591?text=Hola%20Nabil%2C%20quiero%20empezar" target="_blank" class="btn-pill btn-blue">Empezamos &rsaquo;</a>
     </div>
   </div>
 </section>
@@ -729,7 +658,7 @@ ul{list-style:none}
       </div>
     </div>
     <div class="text-center" style="margin-top:40px">
-      <a href="https://wa.me/34643987371?text=Quiero%20una%20de%20estas%20automatizaciones" target="_blank" rel="noopener noreferrer" class="btn-pill btn-blue">Quiero una de estas automatizaciones</a>
+      <a href="https://wa.me/34622058591?text=Quiero%20una%20de%20estas%20automatizaciones" target="_blank" rel="noopener noreferrer" class="btn-pill btn-blue">Quiero una de estas automatizaciones</a>
     </div>
   </div>
 </section>
@@ -800,9 +729,9 @@ ul{list-style:none}
         </div>
         <div class="demo-success" id="demoSuccess">
           <span class="check">&#10003;</span>
-          <p style="font-weight:700;color:#0071e3;font-size:15px;margin-bottom:8px">Automatizacion ejecutada</p>
+          <p style="font-weight:700;color:#FF6B35;font-size:15px;margin-bottom:8px">Automatizacion ejecutada</p>
           <p>El sistema ha procesado tu solicitud y te esta enviando un WhatsApp ahora mismo. Todo automático, sin que nadie lo haya hecho manualmente.</p>
-          <a href="https://wa.me/34643987371" target="_blank" rel="noopener noreferrer" class="btn-pill btn-blue" style="margin-top:16px;display:inline-flex">Quiero esto en mi negocio</a>
+          <a href="https://wa.me/34622058591" target="_blank" rel="noopener noreferrer" class="btn-pill btn-blue" style="margin-top:16px;display:inline-flex">Quiero esto en mi negocio</a>
         </div>
       </div>
     </div>
@@ -816,7 +745,7 @@ ul{list-style:none}
     <h2 class="section-headline">Análisis gratuito &middot; 30 min &middot; Sin compromiso</h2>
     <p class="section-sub" style="margin-left:auto;margin-right:auto;text-align:center">Evaluamos tu nivel de digitalización y te decimos exactamente qué necesitas y qué no.</p>
     <div class="cta-btns">
-      <a href="auditoria.html" class="btn-pill btn-blue">Pedir análisis gratuito</a>
+      <a href="precios.html" class="btn-pill btn-blue">Pedir análisis gratuito</a>
       <a href="precios.html" class="btn-pill btn-outline">Ver precios</a>
     </div>
   </div>
@@ -843,19 +772,14 @@ ul{list-style:none}
         <a href="estetica.html">Estética</a>
         <a href="peluqueria.html">Peluquerías</a>
         <a href="fisioterapia.html">Fisioterapia</a>
-        <a href="restaurante.html">Restaurantes</a>
         <a href="gimnasio.html">Gimnasios</a>
         <a href="veterinaria.html">Veterinarias</a>
-        <a href="inmobiliaria.html">Inmobiliarias</a>
-        <a href="academia.html">Academias</a>
-        <a href="taller.html">Talleres</a>
-        <a href="ecommerce.html">E-commerce</a>
       </div>
       <div class="footer-col">
         <h4>Recursos</h4>
         <a href="como-funciona.html">Cómo funciona</a>
         <a href="precios.html">Precios</a>
-        <a href="auditoria.html">Análisis gratuito</a>
+        <a href="precios.html">Análisis gratuito</a>
         <a href="precios.html#faq">Preguntas frecuentes</a>
         <a href="precios.html#roi">Calculadora ROI</a>
       </div>
@@ -867,13 +791,13 @@ ul{list-style:none}
       </div>
       <div class="footer-col">
         <h4>Contacto</h4>
-        <a href="https://wa.me/34643987371" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+        <a href="https://wa.me/34622058591" target="_blank" rel="noopener noreferrer">WhatsApp</a>
         <a href="mailto:nabil@automarketingdigital.es">Email</a>
-        <a href="tel:+34643987371">Teléfono</a>
+        <a href="tel:+34622058591">Teléfono</a>
       </div>
     </div>
     <div class="footer-contact">
-      Contacta con Automarketing Digital: <a href="mailto:nabil@automarketingdigital.es" style="color:#424245">nabil@automarketingdigital.es</a> | <a href="tel:+34643987371" style="color:#424245">+34 643 987 371</a>
+      Contacta con Automarketing Digital: <a href="mailto:nabil@automarketingdigital.es" style="color:#424245">nabil@automarketingdigital.es</a> | <a href="tel:+34622058591" style="color:#424245">+34 622 058 591</a>
     </div>
     <div class="footer-bottom">
       <span>Copyright &copy; 2026 Automarketing Digital. Todos los derechos reservados.</span>
@@ -885,32 +809,15 @@ ul{list-style:none}
       <a href="cookies.html">Cookies</a>
     </div>
   </div>
-<div style="text-align:center;padding:12px 0;border-top:1px solid #d2d2d7;margin-top:8px"><div class="lang-wrap" style="display:inline-flex"><button class="lang-btn" onclick="toggleLangDrop()"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10A15.3 15.3 0 0 1 12 2z"/></svg> Español</button><div class="lang-dropdown" id="langDrop"><a onclick="changeLang('es')">Español</a><a onclick="changeLang('en')">English</a><a onclick="changeLang('fr')">Français</a><a onclick="changeLang('de')">Deutsch</a><a onclick="changeLang('it')">Italiano</a><a onclick="changeLang('ar')">العربية</a></div></div></div>
-<div id="google_translate_element"></div>
+
 </footer>
 
-<a href="https://wa.me/34643987371" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
+<a href="https://wa.me/34622058591" class="wa-float" target="_blank" rel="noopener noreferrer" aria-label="WhatsApp">
   <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
 </a>
 
 <script>
-// Mega menu
-(function(){
-  var solWrap=document.querySelector('[data-mega="soluciones"]');
-  var secWrap=document.querySelector('[data-mega="sectores"]');
-  var megaSol=document.getElementById('megaSoluciones');
-  var megaSec=document.getElementById('megaSectores');
-  var overlay=document.getElementById('megaOverlay');
-  var timer=null;
-  function showMega(menu){clearTimeout(timer);megaSol.classList.remove('active');megaSec.classList.remove('active');menu.classList.add('active');overlay.classList.add('active');}
-  function hideAll(){timer=setTimeout(function(){megaSol.classList.remove('active');megaSec.classList.remove('active');overlay.classList.remove('active');},150);}
-  function cancelHide(){clearTimeout(timer);}
-  if(solWrap){solWrap.addEventListener('mouseenter',function(){showMega(megaSol);});solWrap.addEventListener('mouseleave',hideAll);}
-  if(secWrap){secWrap.addEventListener('mouseenter',function(){showMega(megaSec);});secWrap.addEventListener('mouseleave',hideAll);}
-  megaSol.addEventListener('mouseenter',cancelHide);megaSol.addEventListener('mouseleave',hideAll);
-  megaSec.addEventListener('mouseenter',cancelHide);megaSec.addEventListener('mouseleave',hideAll);
-  overlay.addEventListener('mouseenter',hideAll);
-})();
+// Mega menu removed
 function toggleMobile(){
   var ham=document.querySelector('.gn-ham');
   var nav=document.getElementById('mobileNav');
@@ -969,24 +876,30 @@ document.getElementById('demoForm').addEventListener('submit', function(e){
   setTimeout(lightNext,1000);
 })();
 </script>
-<script>function toggleLangDrop(){document.getElementById("langDrop").classList.toggle("active")}document.addEventListener("click",function(e){if(!e.target.closest(".lang-wrap")){var d=document.getElementById("langDrop");if(d)d.classList.remove("active")}});function changeLang(l){var ds=document.querySelectorAll(".lang-dropdown");for(var i=0;i<ds.length;i++)ds[i].classList.remove("active");if(l==="es"){document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;";document.cookie="googtrans=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/; domain=.automarketingdigital.es";location.reload()}else{document.cookie="googtrans=/es/"+l+"; path=/;";document.cookie="googtrans=/es/"+l+"; path=/; domain=.automarketingdigital.es";location.reload()}}}function googleTranslateElementInit(){new google.translate.TranslateElement({pageLanguage:"es",includedLanguages:"en,ar,fr,de,it,es",layout:google.translate.TranslateElement.InlineLayout.SIMPLE,autoDisplay:false},"google_translate_element")}</script>
-<script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
-<!-- IMPORTANTE: Reemplazar G-SCKDEDF4WX con tu Measurement ID real de Google Analytics 4. Crear cuenta en https://analytics.google.com -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-SCKDEDF4WX"></script>
+<!-- ====== BANNER COOKIES RGPD ====== -->
+<div id="ck-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;background:#1d1d1f;color:#fff;padding:20px 22px;z-index:99999;box-shadow:0 -4px 20px rgba(0,0,0,.25)">
+  <div style="max-width:980px;margin:0 auto;display:flex;flex-wrap:wrap;gap:16px;align-items:center;justify-content:space-between">
+    <div style="flex:1;min-width:260px;font-size:13px;line-height:1.5">
+      Usamos cookies propias y de terceros (Google Analytics) para analizar el uso de la web y mejorar tu experiencia. Puedes aceptar, rechazar o leer m&aacute;s en nuestra <a href="/cookies.html" style="color:#FF6B35;text-decoration:underline">pol&iacute;tica de cookies</a>.
+    </div>
+    <div style="display:flex;gap:10px;flex-wrap:wrap">
+      <button onclick="ckReject()" style="background:transparent;color:#fff;border:1px solid #fff;border-radius:980px;padding:8px 18px;font-size:13px;cursor:pointer;font-family:inherit">Rechazar</button>
+      <button onclick="ckAccept()" style="background:#FF6B35;color:#fff;border:none;border-radius:980px;padding:8px 18px;font-size:13px;cursor:pointer;font-family:inherit">Aceptar</button>
+    </div>
+  </div>
+</div>
 <script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-  gtag('config', 'G-SCKDEDF4WX');
+(function(){
+  function loadAnalytics(){
+    var s=document.createElement('script');s.async=true;s.src='https://www.googletagmanager.com/gtag/js?id=G-SCKDEDF4WX';document.head.appendChild(s);
+    window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}window.gtag=gtag;gtag('js',new Date());gtag('config','G-SCKDEDF4WX',{anonymize_ip:true});
+  }
+  window.ckAccept=function(){try{localStorage.setItem('ck_consent','accept');}catch(e){}document.getElementById('ck-banner').style.display='none';loadAnalytics();};
+  window.ckReject=function(){try{localStorage.setItem('ck_consent','reject');}catch(e){}document.getElementById('ck-banner').style.display='none';};
+  var c=null;try{c=localStorage.getItem('ck_consent');}catch(e){}
+  if(c==='accept'){loadAnalytics();}
+  else if(c!=='reject'){document.getElementById('ck-banner').style.display='block';}
+})();
 </script>
-<!-- Microsoft Clarity -->
-<script type="text/javascript">
-    (function(c,l,a,r,i,t,y){
-        c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-        t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
-        y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-    })(window, document, "clarity", "script", "wct2uh9bru");
-</script>
-</head>
 </body>
 </html>
