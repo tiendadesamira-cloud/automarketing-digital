@@ -56,9 +56,28 @@ img{max-width:100%;display:block}
 .footer-inner{max-width:720px;margin:0 auto;font-size:13px;color:#6e6e73;line-height:1.6}
 .footer a{color:#1d1d1f;font-weight:500}
 .footer-links{margin-bottom:20px;display:flex;gap:20px;justify-content:center;flex-wrap:wrap}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <nav class="globalnav">
   <div class="globalnav-inner">
@@ -70,6 +89,7 @@ img{max-width:100%;display:block}
   </div>
 </nav>
 
+<main id="contenido">
 <section class="hero-blog">
   <p class="eyebrow">Blog</p>
   <h1>Estudios reales. Datos propios. Lo que nadie mas publica.</h1>
@@ -90,6 +110,7 @@ img{max-width:100%;display:block}
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-links">

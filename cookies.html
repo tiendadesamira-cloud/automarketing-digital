@@ -90,10 +90,29 @@ a.legal-link:hover{text-decoration:underline}
   .footer-cols{grid-template-columns:1fr}
   .page-wrap{padding:80px 16px 60px}
 }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <!-- GLOBALNAV -->
 <nav class="globalnav">
@@ -126,7 +145,7 @@ a.legal-link:hover{text-decoration:underline}
 <div class="page-wrap">
   <p class="page-eyebrow">Legal</p>
   <h1 class="page-title">Política de Cookies</h1>
-  <p class="page-date">Última actualización: marzo 2025 &mdash; Conforme a la LSSI-CE, RGPD y directrices AEPD 2024</p>
+  <p class="page-date">Última actualización: 20 de abril de 2026 &mdash; Conforme a la LSSI-CE, RGPD y directrices AEPD 2024</p>
 
   <div class="legal-section">
     <h2>1. Que son las cookies</h2>
@@ -140,8 +159,10 @@ a.legal-link:hover{text-decoration:underline}
       <tr><td>Calendly</td><td>Terceros (funcional)</td><td>Funcionamiento del widget de reserva de citas</td><td>Sesión</td></tr>
       <tr><td>Google Fonts</td><td>Terceros (funcional)</td><td>Carga de tipografias</td><td>1 ano</td></tr>
       <tr><td>AOS Library</td><td>Técnica</td><td>Animaciones de scroll (local, sin seguimiento)</td><td>Sesión</td></tr>
+      <tr><td>_ga</td><td>Analítica (Google Analytics)</td><td>Identificar usuarios y medir sesiones de forma anónima</td><td>2 años. Transferencia EE.UU. cubierta por Data Privacy Framework UE-EE.UU.</td></tr>
+      <tr><td>_ga_SCKDEDF4WX</td><td>Analítica (Google Analytics)</td><td>Mantener estado de sesión para el sitio específico</td><td>1 año. Transferencia EE.UU. cubierta por Data Privacy Framework UE-EE.UU.</td></tr>
     </table>
-    <p>Este sitio web <strong>no útiliza cookies de analisis ni publicitarias</strong>. No realizamos seguimiento del comportamiento del usuario ni compartimos datos con redes publicitarias.</p>
+    <p>Este sitio web utiliza Google Analytics (cookies de analisis) previo consentimiento del usuario. Los datos de uso son anonimizados (IP anonimizada) y se transfieren a Google LLC (EE.UU.) bajo el Data Privacy Framework UE-EE.UU.</p>
   </div>
 
   <div class="legal-section">

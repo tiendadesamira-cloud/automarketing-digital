@@ -93,10 +93,29 @@ a.legal-link:hover{text-decoration:underline}
   .footer-cols{grid-template-columns:1fr}
   .page-wrap{padding:80px 16px 60px}
 }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <!-- GLOBALNAV -->
 <nav class="globalnav">
@@ -129,7 +148,7 @@ a.legal-link:hover{text-decoration:underline}
 <div class="page-wrap">
   <p class="page-eyebrow">Legal</p>
   <h1 class="page-title">Política de Privacidad</h1>
-  <p class="page-date">Última actualización: marzo 2025 &mdash; Conforme al RGPD (UE) 2016/679 y la LOPDGDD</p>
+  <p class="page-date">Última actualización: 20 de abril de 2026 &mdash; Conforme al RGPD (UE) 2016/679 y la LOPDGDD</p>
 
   <div class="legal-section">
     <h2>1. Responsable del tratamiento</h2>
@@ -170,6 +189,8 @@ a.legal-link:hover{text-decoration:underline}
       <li><strong>Google LLC</strong> (Google Sheets, Gmail) &mdash; almacenamiento y comunicación. Transferencia internacional cubierta por Cláusulas Contractuales Tipo.</li>
       <li><strong>OpenAI Inc.</strong> &mdash; generación de contenido con IA. Transferencia internacional cubierta por Cláusulas Contractuales Tipo.</li>
       <li><strong>Netlify Inc.</strong> &mdash; alojamiento del sitio web.</li>
+      <li><strong>Evolution API</strong> &mdash; proveedor de mensajería WhatsApp. Transferencia internacional al servidor del proveedor, cubierta por Cláusulas Contractuales Tipo (SCC).</li>
+      <li><strong>EasyPanel</strong> &mdash; hosting de workflows de automatización (n8n). Transferencia internacional, cubierta por Cláusulas Contractuales Tipo (SCC).</li>
     </ul>
   </div>
 

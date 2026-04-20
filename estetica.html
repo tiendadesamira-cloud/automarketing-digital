@@ -136,10 +136,29 @@ ul{list-style:none}
   .number-item+.number-item{border-left:none;border-top:1px solid #d2d2d7}
   .demo-box{padding:32px 20px}.footer-cols{grid-template-columns:1fr}
 }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <nav class="globalnav">
   <div class="globalnav-inner">
     <a href="/" class="gn-logo"><div class="gn-logo-icon">A</div><span class="gn-logo-text">Automarketing Digital</span></a>
@@ -160,6 +179,7 @@ ul{list-style:none}
   <a href="https://wa.me/34622058591?text=Hola%20Nabil" target="_blank">Hablar conmigo</a>
 </div>
 
+<main id="contenido">
 <section class="hero">
   <p class="hero-eyebrow">Digitalización completa para clínicas de estética</p>
   <h1 class="hero-headline">Tu clínica de estética online,<br>desde cero hasta el máximo.</h1>
@@ -320,6 +340,7 @@ ul{list-style:none}
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-legal-top">Los precios indicados no incluyen IVA. Las funcionalidades descritas pueden variar según el sector y la configuración específica del sistema.</div>

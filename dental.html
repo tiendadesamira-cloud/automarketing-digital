@@ -166,10 +166,29 @@ ul{list-style:none}
   .demo-box{padding:32px 20px}
   .footer-cols{grid-template-columns:1fr}
 }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <nav class="globalnav">
   <div class="globalnav-inner">
@@ -198,6 +217,7 @@ ul{list-style:none}
 </div>
 
 <!-- HERO -->
+<main id="contenido">
 <section class="hero">
   <p class="hero-eyebrow">Digitalización completa para clínicas dentales</p>
   <h1 class="hero-headline">Tu clínica dental online,<br>desde cero hasta el máximo.</h1>
@@ -429,6 +449,10 @@ ul{list-style:none}
       <div class="ff"><input type="tel" id="d_tel" placeholder="Tu WhatsApp (ej: 612345678)" required></div>
       <div class="ff"><input type="text" id="d_negocio" placeholder="Nombre de tu clínica dental" required></div>
       <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="light"></div>
+      <label style="display:flex;gap:8px;font-size:13px;margin:10px 0;align-items:flex-start;">
+  <input type="checkbox" name="rgpd" required style="margin-top:3px;flex-shrink:0;">
+  <span>He leído y acepto la <a href="privacidad.html" style="color:#06c;">política de privacidad</a> y autorizo el tratamiento de mis datos para recibir información comercial. Responsable: Nabil Zanou &mdash; Automarketing Digital. Finalidad: contacto comercial. Base: consentimiento. Derechos: nabil@automarketingdigital.es.</span>
+</label>
       <a href="#" onclick="document.getElementById('demoForm').dispatchEvent(new Event('submit'));return false;" class="btn-pill btn-blue" style="width:100%;justify-content:center;margin-top:12px">Enviar WhatsApp de prueba</a>
       <button type="submit" style="display:none">Enviar</button>
     </form>
@@ -485,6 +509,7 @@ ul{list-style:none}
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-legal-top">

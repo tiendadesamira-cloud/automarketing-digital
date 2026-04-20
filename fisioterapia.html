@@ -40,10 +40,29 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
 .wa-float{position:fixed;bottom:24px;right:24px;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:transform 0.2s}.wa-float:hover{transform:scale(1.08)}.wa-float svg{width:28px;height:28px;fill:#fff}
 @media(max-width:768px){.gn-links{display:none}.gn-ham{display:block}.gn-ham.active span:nth-child(1){transform:rotate(45deg) translate(3px,3px)}.gn-ham.active span:nth-child(2){opacity:0}.gn-ham.active span:nth-child(3){transform:rotate(-45deg) translate(3px,-3px)}.prob-grid,.mod-grid,.res-grid,.steps,.pricing-grid{grid-template-columns:1fr}.numbers{grid-template-columns:repeat(2,1fr)}.number-item:nth-child(3){border-left:none}.number-item:nth-child(3),.number-item:nth-child(4){border-top:1px solid #d2d2d7}.footer-cols{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.hero{padding-top:80px}.section{padding:48px 16px}.numbers{grid-template-columns:1fr}.number-item+.number-item{border-left:none;border-top:1px solid #d2d2d7}.wa-contact{padding:32px 20px}.footer-cols{grid-template-columns:1fr}}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <!-- NAV -->
 <nav class="globalnav">
@@ -68,6 +87,7 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
 </div>
 
 <!-- HERO -->
+<main id="contenido">
 <section class="hero">
   <p class="hero-eyebrow">Digitalización completa para clínicas de fisioterapia</p>
   <h1 class="hero-headline">Tu clínica de fisio online,<br>desde cero hasta el máximo.</h1>
@@ -237,18 +257,19 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer class="footer">
   <div class="footer-inner">
-    <div class="footer-legal-top">Automarketing Digital es un servicio de automatizacion de marketing para negocios locales. Los resultados mostrados son medías obtenidas en clientes reales y pueden variar según el sector, tamaño del negocio y condiciones del mercado local.</div>
+    <div class="footer-legal-top">Automarketing Digital es un servicio de automatizacion de marketing para negocios locales. Los resultados mostrados son medias obtenidas en clientes reales y pueden variar según el sector, tamaño del negocio y condiciones del mercado local.</div>
     <div class="footer-cols">
-      <div class="footer-col"><h4>Soluciones</h4><a href="#">Agente WhatsApp IA</a><a href="#">Captación de leads</a><a href="#">Recordatorios</a><a href="#">CRM automático</a></div>
+      <div class="footer-col"><h4>Soluciones</h4><a href="como-funciona.html">Agente WhatsApp IA</a><a href="como-funciona.html">Captación de leads</a><a href="como-funciona.html">Recordatorios</a><a href="como-funciona.html">CRM automático</a></div>
       <div class="footer-col"><h4>Sectores</h4><a href="dental.html">Dental</a><a href="fisioterapia.html">Fisioterapia</a><a href="estetica.html">Estética</a><a href="gimnasio.html">Gimnasios</a></div>
       <div class="footer-col"><h4>Más sectores</h4><a href="peluqueria.html">Peluquerías</a><a href="veterinaria.html">Veterinarias</a></div>
       <div class="footer-col"><h4>Empresa</h4><a href="index.html">Casos de exito</a><a href="index.html#precios">Precios</a><a href="index.html#demo">Análisis gratuito</a></div>
-      <div class="footer-col"><h4>Legal</h4><a href="privacidad.html">Política de privacidad</a><a href="aviso-legal.html">Terminos de servicio</a><a href="cookies.html">Politica de cookies</a></div>
+      <div class="footer-col"><h4>Legal</h4><a href="privacidad.html">Política de privacidad</a><a href="aviso-legal.html">Términos de servicio</a><a href="cookies.html">Politica de cookies</a></div>
     </div>
     <div class="footer-contact">Contacto: <a href="mailto:nabil@automarketingdigital.es" style="color:#06c">nabil@automarketingdigital.es</a> &nbsp;|&nbsp; WhatsApp: <a href="https://wa.me/34622058591" style="color:#06c">+34 622 058 591</a></div>
-    <div class="footer-bottom">Copyright &copy; 2026 Automarketing Digital. Todos los derechos reservados. &nbsp;<a href="privacidad.html">Privacidad</a> &nbsp;<a href="aviso-legal.html">Terminos</a> &nbsp;<a href="cookies.html">Cookies</a></div>
+    <div class="footer-bottom">Copyright &copy; 2026 Automarketing Digital. Todos los derechos reservados. &nbsp;<a href="privacidad.html">Privacidad</a> &nbsp;<a href="aviso-legal.html">Términos</a> &nbsp;<a href="cookies.html">Cookies</a></div>
   </div>
 
 </footer>

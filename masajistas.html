@@ -156,10 +156,29 @@ a{color:inherit;text-decoration:none}
 /* WA FLOAT */
 .wa-float{position:fixed;bottom:28px;right:28px;z-index:9999;width:56px;height:56px;border-radius:50%;background:#25d366;display:flex;align-items:center;justify-content:center;box-shadow:0 4px 20px rgba(37,211,102,.45);transition:.2s}
 .wa-float:hover{transform:scale(1.08);box-shadow:0 6px 28px rgba(37,211,102,.65)}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <!-- NAV -->
 <nav class="globalnav">
@@ -193,6 +212,7 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <!-- HERO -->
+<main id="contenido">
 <section class="hero" style="padding-top:100px">
   <div class="hero-badge">Digitalización completa para masajistas y terapeutas</div>
   <h1>Tu centro de masajes online,<br><em>desde cero hasta el máximo.</em></h1>
@@ -354,7 +374,11 @@ a{color:inherit;text-decoration:none}
         <div class="form-field"><input type="tel" id="d_tel" placeholder="Tu WhatsApp (ej: 612345678)" required></div>
         <div class="form-field"><input type="text" id="d_negocio" placeholder="Nombre de tu centro" required></div>
         <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="light"></div>
-        <button type="submit" class="btn-blue" style="width:100%;margin-top:6px">Enviar WhatsApp de prueba &rarr;</button>
+        <label style="display:flex;gap:8px;font-size:13px;margin:10px 0;align-items:flex-start;">
+  <input type="checkbox" name="rgpd" required style="margin-top:3px;flex-shrink:0;">
+  <span>He leído y acepto la <a href="privacidad.html" style="color:#06c;">política de privacidad</a> y autorizo el tratamiento de mis datos para recibir información comercial. Responsable: Nabil Zanou &mdash; Automarketing Digital. Finalidad: contacto comercial. Base: consentimiento. Derechos: nabil@automarketingdigital.es.</span>
+</label>
+          <button type="submit" class="btn-blue" style="width:100%;margin-top:6px">Enviar WhatsApp de prueba &rarr;</button>
       </form>
       <div class="demo-ok" id="demoOk">
         <h4>&#10003; Enviado</h4>
@@ -397,6 +421,7 @@ a{color:inherit;text-decoration:none}
 </div>
 
 <!-- FOOTER -->
+</main>
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-legal-top">Automarketing Digital es un servicio de automatizacion y marketing digital para pequeñas y medianas empresas. No somos una agencia de publicidad tradicional. Todos los resultados mencionados son estimaciones basadas en casos reales; los resultados individuales pueden variar.</div>
@@ -425,15 +450,15 @@ a{color:inherit;text-decoration:none}
       </div>
       <div class="footer-col">
         <div class="footer-col-title">Legal</div>
-        <a href="#">Aviso legal</a>
-        <a href="#">Privacidad</a>
-        <a href="#">Cookies</a>
+        <a href="aviso-legal.html">Aviso legal</a>
+        <a href="privacidad.html">Privacidad</a>
+        <a href="cookies.html">Cookies</a>
       </div>
     </div>
     <div class="footer-contact">Contacto: <a href="mailto:hola@automarketingdigital.es">hola@automarketingdigital.es</a> &nbsp;|&nbsp; <a href="https://wa.me/34622058591" target="_blank" rel="noopener noreferrer">WhatsApp +34 622 058 591</a></div>
     <div class="footer-bottom">
       <span>&copy; 2026 Automarketing Digital. Todos los derechos reservados.</span>
-      <span><a href="#">Aviso legal</a> &nbsp;&middot;&nbsp; <a href="#">Privacidad</a></span>
+      <span><a href="aviso-legal.html">Aviso legal</a> &nbsp;&middot;&nbsp; <a href="privacidad.html">Privacidad</a></span>
     </div>
   </div>
 

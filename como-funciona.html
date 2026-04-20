@@ -198,10 +198,29 @@ ul{list-style:none}
   .metric-item:last-child{border-bottom:none}
   .footer-cols{grid-template-columns:1fr}
 }
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 
 <!-- GLOBALNAV -->
 <nav class="globalnav">
@@ -241,6 +260,7 @@ ul{list-style:none}
 </div>
 
 <!-- METRICAS -->
+<main id="contenido">
 <section class="section section-border">
   <div class="section-inner">
     <div class="metrics-grid">
@@ -311,6 +331,7 @@ ul{list-style:none}
     <p class="eyebrow" style="font-size:17px">El sistema por dentro</p>
     <h2 class="section-headline">Tu sistema automatizado en tiempo real</h2>
     <p class="section-sub" style="margin-left:auto;margin-right:auto">Asi funciona el sistema que instalamos en tu negocio. Cada paso ocurre solo, sin que tengas que hacer nada.</p>
+    <p style="font-size:13px;color:#6e6e73;margin:16px auto 0;max-width:640px;padding:12px 16px;background:#f5f5f7;border-radius:8px;border-left:3px solid #06c;text-align:left"><strong>Aviso AI Act (UE 2024/1689):</strong> El agente conversacional de WhatsApp es un sistema de inteligencia artificial. Cuando responde a tus clientes, el mensaje inicial les informa explícitamente de que están interactuando con un asistente automatizado.</p>
     <div class="flow-map">
       <div class="flow-node lit" id="mn1">
         <div class="flow-node-icon">&#127760;</div>
@@ -720,6 +741,10 @@ ul{list-style:none}
             <input type="text" id="d_negocio" placeholder="Ej: Clínica dental, tienda online..." required>
           </div>
           <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="light"></div>
+          <label style="display:flex;gap:8px;font-size:13px;margin:10px 0;align-items:flex-start;">
+  <input type="checkbox" name="rgpd" required style="margin-top:3px;flex-shrink:0;">
+  <span>He leído y acepto la <a href="privacidad.html" style="color:#06c;">política de privacidad</a> y autorizo el tratamiento de mis datos para recibir información comercial. Responsable: Nabil Zanou &mdash; Automarketing Digital. Finalidad: contacto comercial. Base: consentimiento. Derechos: nabil@automarketingdigital.es.</span>
+</label>
           <button type="submit" class="demo-submit">Activar la automatizacion</button>
         </form>
         <div class="demo-timer" id="demoTimer">
@@ -752,6 +777,7 @@ ul{list-style:none}
 </section>
 
 <!-- FOOTER -->
+</main>
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-legal-top">

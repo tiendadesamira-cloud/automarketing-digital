@@ -1,1 +1,13 @@
 .bak
+
+# Archivos internos - no deployar
+*.html.bak
+fix_text_overlay.py
+gen_gbp_covers.py
+gen_gbp_covers_v2.py
+gbp_cover_*.png
+linkedin-banner-bw.png
+linkedin-banner-web.png
+rediseno_propuesta_20260418.md
+backup_pre_redesign_20260418/
+

@@ -44,10 +44,29 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
 .wa-float{position:fixed;bottom:24px;right:24px;width:52px;height:52px;background:#25d366;border-radius:50%;display:flex;align-items:center;justify-content:center;z-index:9999;box-shadow:0 4px 12px rgba(0,0,0,0.15);transition:transform 0.2s}.wa-float:hover{transform:scale(1.08)}.wa-float svg{width:28px;height:28px;fill:#fff}
 @media(max-width:768px){.gn-links{display:none}.gn-ham{display:block}.gn-ham.active span:nth-child(1){transform:rotate(45deg) translate(3px,3px)}.gn-ham.active span:nth-child(2){opacity:0}.gn-ham.active span:nth-child(3){transform:rotate(-45deg) translate(3px,-3px)}.prob-grid,.mod-grid,.res-grid,.steps,.pricing-grid{grid-template-columns:1fr}.numbers{grid-template-columns:repeat(2,1fr)}.number-item:nth-child(3){border-left:none}.number-item:nth-child(3),.number-item:nth-child(4){border-top:1px solid #d2d2d7}.footer-cols{grid-template-columns:repeat(2,1fr)}}
 @media(max-width:480px){.hero{padding-top:80px}.section{padding:48px 16px}.numbers{grid-template-columns:1fr}.number-item+.number-item{border-left:none;border-top:1px solid #d2d2d7}.demo-box{padding:32px 20px}.footer-cols{grid-template-columns:1fr}}
+
+.skip-link {
+  position: absolute;
+  left: -9999px;
+  top: 10px;
+  background: #06c;
+  color: #fff;
+  padding: 0.75rem 1.25rem;
+  text-decoration: none;
+  font-weight: 700;
+  border-radius: 8px;
+  z-index: 10000;
+}
+.skip-link:focus {
+  left: 10px;
+  outline: 3px solid #fff;
+  outline-offset: 2px;
+}
 </style>
   <meta property="og:image" content="https://automarketingdigital.es/og-image.png">
 </head>
 <body>
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
 <nav class="globalnav">
   <div class="globalnav-inner">
     <a href="/" class="gn-logo"><div class="gn-logo-icon">A</div><span class="gn-logo-text">Automarketing Digital</span></a>
@@ -67,6 +86,7 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
   <a href="https://wa.me/34622058591?text=Hola%20Nabil" target="_blank">Hablar conmigo</a>
 </div>
 
+<main id="contenido">
 <section class="hero">
   <p class="hero-eyebrow">Digitalización completa para peluquerías y salones</p>
   <h1 class="hero-headline">Tu salón online,<br>desde cero hasta el máximo.</h1>
@@ -188,7 +208,11 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
       <div class="ff"><input type="tel" id="d_tel" placeholder="Tu WhatsApp (ej: 612345678)" required></div>
       <div class="ff"><input type="text" id="d_negocio" placeholder="Nombre de tu peluqueria o salon" required></div>
       <div class="cf-turnstile" data-sitekey="0x4AAAAAAC1atrqlbAapGsuA" data-theme="light"></div>
-      <button type="submit" class="btn-pill btn-blue" style="width:100%;justify-content:center;margin-top:6px">Enviar WhatsApp de prueba</button>
+      <label style="display:flex;gap:8px;font-size:13px;margin:10px 0;align-items:flex-start;">
+  <input type="checkbox" name="rgpd" required style="margin-top:3px;flex-shrink:0;">
+  <span>He leído y acepto la <a href="privacidad.html" style="color:#06c;">política de privacidad</a> y autorizo el tratamiento de mis datos para recibir información comercial. Responsable: Nabil Zanou &mdash; Automarketing Digital. Finalidad: contacto comercial. Base: consentimiento. Derechos: nabil@automarketingdigital.es.</span>
+</label>
+          <button type="submit" class="btn-pill btn-blue" style="width:100%;justify-content:center;margin-top:6px">Enviar WhatsApp de prueba</button>
     </form>
     <div class="dok" id="demoOk">
       <h4>Enviado</h4>
@@ -225,6 +249,7 @@ a{text-decoration:none;color:inherit}ul{list-style:none}
   </div>
 </section>
 
+</main>
 <footer class="footer">
   <div class="footer-inner">
     <div class="footer-legal-top">Los precios indicados no incluyen IVA. Las funcionalidades descritas pueden variar según el sector y la configuración específica del sistema.</div>
