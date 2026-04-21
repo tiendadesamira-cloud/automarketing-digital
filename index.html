@@ -697,5 +697,54 @@ function toggleMobile(){
   else if(c!=='reject'){document.getElementById('ck-banner').style.display='block';}
 })();
 </script>
+
+<!-- ═══════════ Tracking de eventos GA4 ═══════════ -->
+<script>
+(function() {
+  // Click tracking: WhatsApp, precios (proxy de intencion auditoria), telefono
+  document.addEventListener('click', function(e) {
+    var t = e.target.closest('a');
+    if (!t || typeof gtag !== 'function') return;
+    var href = t.getAttribute('href') || '';
+    if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+      gtag('event', 'click_whatsapp', { 'page': location.pathname });
+    } else if (href.indexOf('precios.html') !== -1) {
+      gtag('event', 'click_precios', { 'page': location.pathname, 'source_button': t.textContent.trim().substring(0, 40) });
+    } else if (href.indexOf('tel:') === 0) {
+      gtag('event', 'click_telefono', { 'page': location.pathname });
+    } else if (href.indexOf('linkedin.com') !== -1) {
+      gtag('event', 'click_linkedin', { 'page': location.pathname });
+    }
+  });
+
+  // Scroll depth 50/75/100
+  var scrollFired = { 50: false, 75: false, 100: false };
+  window.addEventListener('scroll', function() {
+    if (typeof gtag !== 'function') return;
+    var h = document.documentElement;
+    var reached = ((window.scrollY + window.innerHeight) / h.scrollHeight) * 100;
+    [50, 75, 100].forEach(function(pct) {
+      if (!scrollFired[pct] && reached >= pct) {
+        scrollFired[pct] = true;
+        gtag('event', 'scroll_depth', { 'depth': pct, 'page': location.pathname });
+      }
+    });
+  }, { passive: true });
+
+  // Tiempo en seccion "casos de exito" (caso Samira con KPIs)
+  var casosSection = document.getElementById('casos');
+  if (casosSection && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && typeof gtag === 'function') {
+          gtag('event', 'casos_visible', { 'page': location.pathname });
+          observer.unobserve(casosSection);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(casosSection);
+  }
+})();
+</script>
 </body>
 </html>

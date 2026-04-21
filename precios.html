@@ -648,5 +648,53 @@ calcPerdida();
   else if(c!=='reject'){document.getElementById('ck-banner').style.display='block';}
 })();
 </script>
+
+<!-- ═══════════ Tracking de eventos GA4 ═══════════ -->
+<script>
+(function() {
+  // Click WhatsApp, auditoria, telefono
+  document.addEventListener('click', function(e) {
+    var t = e.target.closest('a');
+    if (!t || typeof gtag !== 'function') return;
+    var href = t.getAttribute('href') || '';
+    var text = (t.textContent || '').trim().toLowerCase();
+    if (href.indexOf('wa.me') !== -1 || href.indexOf('whatsapp') !== -1) {
+      gtag('event', 'click_whatsapp', { 'page': location.pathname });
+    } else if (href.indexOf('tel:') === 0) {
+      gtag('event', 'click_telefono', { 'page': location.pathname });
+    } else if (text.indexOf('auditor') !== -1 || text.indexOf('anális') !== -1 || text.indexOf('analis') !== -1) {
+      gtag('event', 'click_auditoria', { 'page': location.pathname, 'source_button': text.substring(0, 40) });
+    }
+  });
+
+  // Scroll depth 50/75/100
+  var scrollFired = { 50: false, 75: false, 100: false };
+  window.addEventListener('scroll', function() {
+    if (typeof gtag !== 'function') return;
+    var h = document.documentElement;
+    var reached = ((window.scrollY + window.innerHeight) / h.scrollHeight) * 100;
+    [50, 75, 100].forEach(function(pct) {
+      if (!scrollFired[pct] && reached >= pct) {
+        scrollFired[pct] = true;
+        gtag('event', 'scroll_depth', { 'depth': pct, 'page': location.pathname });
+      }
+    });
+  }, { passive: true });
+
+  // Tiempo sobre seccion precios (momento critico de decision)
+  var preciosSection = document.getElementById('precios');
+  if (preciosSection && 'IntersectionObserver' in window) {
+    var observer = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        if (entry.isIntersecting && typeof gtag === 'function') {
+          gtag('event', 'precios_visible', { 'page': location.pathname });
+          observer.unobserve(preciosSection);
+        }
+      });
+    }, { threshold: 0.5 });
+    observer.observe(preciosSection);
+  }
+})();
+</script>
 </body>
 </html>
