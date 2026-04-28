@@ -19,23 +19,21 @@ body{font-family:'Inter',sans-serif;background:#fff;color:#1d1d1f;line-height:1.
 a{color:inherit;text-decoration:none}
 
 /* NAV */
-.globalnav{position:fixed;top:0;left:0;right:0;z-index:9000;height:44px;background:rgba(255,255,255,.85);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,.08);display:flex;align-items:center;justify-content:space-between;padding:0 22px}
-.nav-logo{font-size:.88rem;font-weight:700;color:#1d1d1f;letter-spacing:-.01em}.nav-logo span{color:#1d1d1f}
-.nav-links{display:flex;align-items:center;gap:20px}
-.nav-links a{font-size:.8rem;color:#1d1d1f;opacity:.8;white-space:nowrap;transition:opacity .2s}.nav-links a:hover{opacity:1}
-.nav-wrap-item{position:relative}
-
-.nav-pill{background:#FF6B35;color:#fff;padding:6px 14px;border-radius:980px;font-size:.78rem;font-weight:600;transition:background .2s;cursor:pointer;border:none}.nav-pill:hover{background:#0077ed}
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
-.hamburger span{display:block;width:22px;height:2px;background:#1d1d1f;border-radius:2px;transition:.3s}
-.hamburger.active span:nth-child(1){transform:translateY(7px) rotate(45deg)}
-.hamburger.active span:nth-child(2){opacity:0}
-.hamburger.active span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
-.mobile-nav{display:none;position:fixed;top:44px;left:0;right:0;background:#fff;border-bottom:1px solid rgba(0,0,0,.08);padding:20px;z-index:8998;flex-direction:column;gap:4px;box-shadow:0 8px 30px rgba(0,0,0,.1)}
-.mobile-nav.active{display:flex}
-.mobile-nav a{padding:10px 12px;border-radius:10px;font-size:.9rem;color:#1d1d1f}.mobile-nav a:hover{background:#f5f5f7}
-.mobile-divider{height:1px;background:#e5e5e5;margin:8px 0}
-@media(max-width:768px){.nav-links{display:none}.hamburger{display:flex}.nav-pill{display:none}}
+.globalnav{position:fixed;top:0;left:0;right:0;z-index:9999;height:44px;background:rgba(255,255,255,0.8);backdrop-filter:saturate(180%) blur(20px);-webkit-backdrop-filter:saturate(180%) blur(20px);border-bottom:1px solid rgba(0,0,0,0.06)}
+.globalnav-inner{max-width:980px;margin:0 auto;padding:0 22px;display:flex;align-items:center;justify-content:space-between;height:44px}
+.gn-logo{display:flex;align-items:center;gap:6px}
+.gn-logo-icon{width:24px;height:24px;background:#1d1d1f;border-radius:6px;display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:800;color:#fff;line-height:1}
+.gn-logo-text{font-size:12px;font-weight:600;color:#1d1d1f;letter-spacing:-0.01em}
+.gn-links{display:flex;gap:24px;align-items:center;height:44px}
+.gn-links a{font-size:12px;color:#424245;letter-spacing:0.008em;transition:color 0.3s}
+.gn-links a:hover{color:#1d1d1f}
+.gn-ham{display:none;background:none;border:none;cursor:pointer;padding:6px}
+.gn-ham span{display:block;width:17px;height:1px;background:#1d1d1f;margin:4px 0;transition:all 0.3s}
+.mobile-nav{display:none;position:fixed;top:44px;left:0;right:0;bottom:0;background:#fff;z-index:9998;padding:20px 22px;overflow-y:auto}
+.mobile-nav.active{display:block}
+.mobile-nav a{display:block;font-size:17px;color:#1d1d1f;padding:12px 0;border-bottom:1px solid #d2d2d7}
+.mobile-divider{height:1px;background:#d2d2d7;margin:8px 0}
+@media(max-width:768px){.gn-links{display:none}.gn-ham{display:block}}
 
 /* HERO */
 .hero{padding:120px 22px 80px;text-align:center;background:#fff}
@@ -189,16 +187,20 @@ gtag('js',new Date());
 
 <!-- NAV -->
 <nav class="globalnav">
-  <a href="index.html" class="nav-logo">Automarketing<span>Digital</span></a>
-  <div class="nav-links">
-
-
-    <a href="index.html#casos" style="font-size:.8rem;opacity:.8">Casos reales</a>
-    <a href="index.html#precios" style="font-size:.8rem;opacity:.8">Precios</a>
-  </div>
-  <div style="display:flex;align-items:center;gap:12px">
-    <button class="nav-pill" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Demo gratis</button>
-    <div class="hamburger" id="hamburger" onclick="toggleMobile()"><span></span><span></span><span></span></div>
+  <div class="globalnav-inner">
+    <a href="/" class="gn-logo">
+      <div class="gn-logo-icon">A</div>
+      <span class="gn-logo-text">Automarketing Digital</span>
+    </a>
+        <div class="gn-links">
+      <a href="/">Inicio</a>
+      <a href="precios.html">Webs y precios</a>
+      <a href="como-funciona.html">Cómo funciona</a>
+      <a href="https://wa.me/34622058591?text=Hola%20Nabil" target="_blank">Hablar conmigo</a>
+    </div>
+    <button class="gn-ham" aria-label="Menu" onclick="toggleMobile()">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </nav>
 <div class="mobile-nav" id="mobileNav">
@@ -206,7 +208,6 @@ gtag('js',new Date());
   <a href="precios.html">Webs y precios</a>
   <a href="como-funciona.html">Cómo funciona</a>
   <a href="https://wa.me/34622058591?text=Hola%20Nabil" target="_blank">Hablar conmigo</a>
-</div>
   <a href="dental.html">Clínicas Dentales</a>
   <a href="estetica.html">Estética</a>
   <a href="peluqueria.html">Peluqueria</a>
@@ -264,7 +265,7 @@ gtag('js',new Date());
     <div class="mod-grid">
       <div class="mod-card"><div class="mod-badge">MA-1</div><div><h4>Captación de leads</h4><p>Recibe leads de tu web o redes y envia bienvenida por WA en segundos.</p></div></div>
       <div class="mod-card"><div class="mod-badge">MA-2</div><div><h4>Recordatorios de cita</h4><p>4 recordatorios automáticos: 48h, día anterior, manana y 2h antes. No-shows reducidos hasta un 80%.</p></div></div>
-      <div class="mod-card"><div class="mod-badge">MA-3</div><div><h4>Comúnicación post-sesión</h4><p>Upsell automático, cumpleaños y solicitud de resena en Google tras cada cita.</p></div></div>
+      <div class="mod-card"><div class="mod-badge">MA-3</div><div><h4>Comunicación post-sesión</h4><p>Upsell automático, cumpleaños y solicitud de resena en Google tras cada cita.</p></div></div>
       <div class="mod-card"><div class="mod-badge">MA-4</div><div><h4>Reportes y retencion</h4><p>Dashboard diario, informe semanal y reactivación automática de clientes inactivos más de 30 días.</p></div></div>
       <div class="mod-card"><div class="mod-badge">MA-5</div><div><h4>Agente WhatsApp IA 24/7</h4><p>Responde preguntas, gestiona cancelaciones y recoge reservas a cualquier hora sin que intervengas.</p></div></div>
       <div class="mod-card"><div class="mod-badge">MA-6</div><div><h4>Reservas en Calendar</h4><p>El cliente reserva por WA y la cita aparece directamente en tu Google Calendar.</p></div></div>
@@ -337,7 +338,7 @@ gtag('js',new Date());
         <div class="pricing-price">147<span> EUR/mes</span></div>
         <ul class="pricing-list">
           <li>Todo el plan Esencial</li>
-          <li>Comúnicación post-sesión (MA-3)</li>
+          <li>Comunicación post-sesión (MA-3)</li>
           <li>Reportes y retencion (MA-4)</li>
           <li>Encuesta VIP (MA-8)</li>
           <li>Secuencia bienvenida (MA-9)</li>
@@ -355,7 +356,7 @@ gtag('js',new Date());
           <li>Todo el plan Completo</li>
           <li>3 posts/dia en Instagram con IA</li>
           <li>Campañas masivas por WhatsApp</li>
-          <li>Maquína de captación de leads</li>
+          <li>Máquina de captación de leads</li>
           <li>Dashboard de metricas avanzado</li>
         </ul>
         <button class="btn-outline" style="width:100%" onclick="document.getElementById('demo').scrollIntoView({behavior:'smooth'})">Solicitar auditoría</button>
@@ -404,10 +405,10 @@ gtag('js',new Date());
       <h2 class="section-title">Preguntas frecuentes</h2>
     </div>
     <div class="faq-list">
-      <details class="faq-item"><summary>¿¿Necesito conocimientos técnicos?<span></span></summary><div class="faq-body">No. Tú solo usas tu WhatsApp y tu calendario como siempre. Nosotros configuramos todo y te explicamos como funciona en una llamada de 30 min.</div></details>
+      <details class="faq-item"><summary>¿Necesito conocimientos técnicos?<span></span></summary><div class="faq-body">No. Tú solo usas tu WhatsApp y tu calendario como siempre. Nosotros configuramos todo y te explicamos como funciona en una llamada de 30 min.</div></details>
       <details class="faq-item"><summary>Funciona con mi WhatsApp Business?<span></span></summary><div class="faq-body">Sí. Conectamos tu número de WhatsApp Business al sistema. No necesitas cambiar de número ni de app. Los mensajes siguen apareciendo en tu WhatsApp normal.</div></details>
       <details class="faq-item"><summary>¿Qué pasa si falla algo?<span></span></summary><div class="faq-body">Monitorizamos el sistema 24/7. Si algo falla lo detectamos antes de que te afecte y lo reparamos. Tiempo de respuesta inferior a 2h en días laborables.</div></details>
-      <details class="faq-item"><summary>¿¿Hay permanencia?<span></span></summary><div class="faq-body">No hay permanencia. Puedes cancelar la suscripcion mensual en cualquier momento con 30 días de preaviso. El pago de configuración no es reembolsable ya que cubre el trabajo de instalación y puesta en marcha.</div></details>
+      <details class="faq-item"><summary>¿Hay permanencia?<span></span></summary><div class="faq-body">No hay permanencia. Puedes cancelar la suscripcion mensual en cualquier momento con 30 días de preaviso. El pago de configuración no es reembolsable ya que cubre el trabajo de instalación y puesta en marcha.</div></details>
       <details class="faq-item"><summary>¿En cuánto tiempo se activa?<span></span></summary><div class="faq-body">En 48 horas desde que nos das acceso. El primer día conectamos tu WhatsApp y Calendar. El segundo día probamos y arrancamos. Desde el tercero el sistema funciona solo.</div></details>
       <details class="faq-item"><summary>¿Puedo ver lo que envia el sistema?<span></span></summary><div class="faq-body">Si. Todos los mensajes los apruebas tú antes de activarlos. Además recibes un resumen diario por WhatsApp con todo lo que ha hecho el sistema.</div></details>
     </div>
@@ -462,7 +463,7 @@ gtag('js',new Date());
         <a href="cookies.html">Cookies</a>
       </div>
     </div>
-    <div class="footer-contact">Contacto: <a href="mailto:hola@automarketingdigital.es">hola@automarketingdigital.es</a> &nbsp;|&nbsp; <a href="https://wa.me/34622058591" target="_blank" rel="noopener noreferrer">WhatsApp +34 622 058 591</a></div>
+    <div class="footer-contact">Contacto: <a href="mailto:nabil@automarketingdigital.es">nabil@automarketingdigital.es</a> &nbsp;|&nbsp; <a href="https://wa.me/34622058591" target="_blank" rel="noopener noreferrer">WhatsApp +34 622 058 591</a></div>
     <div class="footer-bottom">
       <span>&copy; 2026 Automarketing Digital. Todos los derechos reservados.</span>
       <span><a href="aviso-legal.html">Aviso legal</a> &nbsp;&middot;&nbsp; <a href="privacidad.html">Privacidad</a></span>
@@ -477,7 +478,7 @@ gtag('js',new Date());
 </a>
 
 <script>
-function toggleMobile(){document.getElementById('hamburger').classList.toggle('active');document.getElementById('mobile-nav').classList.toggle('active')}
+function toggleMobile(){const h=document.querySelector('.gn-ham');const m=document.getElementById('mobileNav');if(h)h.classList.toggle('active');if(m)m.classList.toggle('active')}
 function enviarDemo(e){
   e.preventDefault();
   var nombre=document.getElementById('d_nombre').value;
