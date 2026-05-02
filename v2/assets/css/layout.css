@@ -299,6 +299,56 @@
           mask: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'><path d='M13.5 4.5l-7 7-3-3' fill='none' stroke='white' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'/></svg>") center/contain no-repeat;
 }
 .price__note { font-size: var(--fs-xs); color: var(--c-muted); margin-top: var(--s-1); }
+.pricing__legal { text-align: center; margin-top: var(--s-3); }
+.price__features li small {
+  display: block;
+  font-size: 0.75rem;
+  color: var(--c-muted);
+  font-weight: 500;
+  margin-top: 2px;
+}
+
+/* Add-on block (servicio adicional bajo las 3 tarifas) */
+.addon {
+  margin-top: var(--s-5);
+  background: #fff;
+  border: 1px solid var(--c-line);
+  border-radius: var(--radius-lg);
+  padding: var(--s-3);
+  display: grid;
+  gap: var(--s-3);
+  grid-template-columns: 1fr;
+  align-items: center;
+}
+.addon__copy h3 { font-size: var(--fs-lg); margin-bottom: var(--s-1); }
+.addon__copy p { font-size: var(--fs-sm); margin-bottom: 0; }
+.addon__tag {
+  display: inline-block;
+  font-size: var(--fs-xs);
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--c-accent);
+  margin-bottom: var(--s-1);
+}
+.addon__price {
+  background: var(--c-bg-soft);
+  border-radius: var(--radius);
+  padding: var(--s-3);
+  text-align: center;
+}
+.addon__price .price__amount { justify-content: center; margin-bottom: var(--s-2); }
+.addon__price .btn { width: 100%; }
+
+@media (min-width: 900px) {
+  .addon {
+    grid-template-columns: 1.6fr 1fr;
+    padding: var(--s-4);
+  }
+  .addon__price { text-align: left; }
+  .addon__price .price__amount { justify-content: flex-start; }
+  .addon__price .btn { width: auto; }
+}
 
 /* --- Proceso (4 pasos) --- */
 .process { display: grid; gap: var(--s-3); grid-template-columns: 1fr; counter-reset: step; }
@@ -342,6 +392,11 @@
   display: flex; gap: var(--s-2);
   flex-wrap: wrap; justify-content: center;
   position: relative; z-index: 1;
+}
+.cta-final__actions .btn { min-height: 48px; }
+@media (max-width: 559px) {
+  .cta-final__actions { flex-direction: column; align-items: stretch; }
+  .cta-final__actions .btn { width: 100%; }
 }
 .cta-final .btn { position: relative; z-index: 1; }
 
