@@ -1,0 +1,1545 @@
+/* =============================================================
+   Automarketing Digital v5 — COMPONENTS
+   Componentes Apple-inspired basados en research de 5 páginas.
+   REGLA: Solo tokens de tokens.css. Sin hex directos. Sin 2px+.
+   Mobile-first. Tap targets ≥44px.
+   ============================================================= */
+
+/* ─────────────────────────────────────────────
+   1. NAV STICKY
+   50px alto, blur backdrop, logo + links + CTA.
+   Referencia: patrón universal Apple 5/5 páginas.
+   ───────────────────────────────────────────── */
+
+.nav {
+  position: sticky;
+  top: 0;
+  z-index: 900;
+  height: var(--nav-h-mobile);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--s-5);
+  background: rgba(255, 255, 255, 0.82);
+  -webkit-backdrop-filter: blur(20px) saturate(180%);
+  backdrop-filter: blur(20px) saturate(180%);
+  border-bottom: 1px solid var(--c-line-soft);
+  transition: background var(--t-base), box-shadow var(--t-base);
+}
+
+.nav.is-scrolled {
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Logo */
+.nav__logo {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  gap: var(--s-2);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-bold);
+  color: var(--c-text);
+  letter-spacing: var(--tk-tight);
+  min-height: 44px;
+}
+
+.nav__logo-accent {
+  color: var(--c-orange);
+}
+
+/* Links — ocultos en mobile, visibles en desktop */
+.nav__links {
+  display: none;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: var(--s-6);
+}
+
+.nav__links a {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-medium);
+  color: var(--c-text-soft);
+  letter-spacing: var(--tk-normal);
+  padding: var(--s-2) 0;
+  position: relative;
+  transition: color var(--t-fast);
+}
+
+.nav__links a:hover {
+  color: var(--c-text);
+}
+
+.nav__links a[aria-current="page"] {
+  color: var(--c-text);
+}
+
+/* CTA derecha */
+.nav__cta {
+  flex-shrink: 0;
+  margin-left: auto;
+}
+
+/* Burger mobile */
+.nav__burger {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  margin-left: auto;
+  padding: var(--s-2);
+  cursor: pointer;
+}
+
+.nav__burger span {
+  display: block;
+  height: 1.5px;
+  background: var(--c-text);
+  border-radius: 2px;
+  transition: transform var(--t-base), opacity var(--t-fast);
+}
+
+.nav__burger[aria-expanded="true"] span:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.nav__burger[aria-expanded="true"] span:nth-child(2) {
+  opacity: 0;
+}
+.nav__burger[aria-expanded="true"] span:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* Menú mobile desplegable */
+.nav__mobile-menu {
+  display: none;
+  position: fixed;
+  inset: var(--nav-h-mobile) 0 0 0;
+  background: rgba(255, 255, 255, 0.96);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+  padding: var(--s-7) var(--s-5);
+  flex-direction: column;
+  gap: var(--s-5);
+  z-index: 899;
+  overflow-y: auto;
+}
+
+.nav__mobile-menu.is-open {
+  display: flex;
+}
+
+.nav__mobile-menu a {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-semi);
+  color: var(--c-text);
+  padding: var(--s-3) 0;
+  border-bottom: 1px solid var(--c-line-soft);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+  transition: color var(--t-fast);
+}
+
+.nav__mobile-menu a:hover {
+  color: var(--c-orange);
+}
+
+@media (min-width: 700px) {
+  .nav {
+    height: var(--nav-h);
+    padding: 0 var(--s-7);
+  }
+
+  .nav__burger {
+    display: none;
+  }
+
+  .nav__links {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .nav__cta {
+    margin-left: auto;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   2. HERO BASE
+   Centrado, headline display, eyebrow naranja,
+   subheadline lead, 2 CTAs. Variantes dark/split.
+   Referencia: patrones hero Apple 5/5 páginas.
+   ───────────────────────────────────────────── */
+
+.hero {
+  padding-top: calc(var(--nav-h-mobile) + var(--s-section-lg));
+  padding-bottom: var(--s-section-lg);
+  padding-inline: var(--s-5);
+  background: var(--c-bg);
+  text-align: center;
+}
+
+.hero__inner {
+  max-width: var(--container-xs);
+  margin-inline: auto;
+}
+
+.hero__eyebrow {
+  display: block;
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-semi);
+  letter-spacing: var(--tk-loose);
+  text-transform: uppercase;
+  color: var(--c-orange);
+  margin-bottom: var(--s-4);
+}
+
+.hero__headline {
+  font-size: var(--fs-display);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tk-tightest);
+  line-height: var(--lh-tight);
+  color: var(--c-text);
+  margin-bottom: var(--s-5);
+  /* Fix #3 R2 — optical sizing para Inter a tamaños display (Art Director P0) */
+  font-optical-sizing: auto;
+  font-variation-settings: "opsz" 32;
+}
+
+/* Fix #4 R2 — span naranja dentro del headline display (Art Director P0)
+   Evita que "siempre visible." parta entre líneas; mantiene el bloque como unidad visual. */
+.hero__title-accent {
+  white-space: nowrap;
+  color: var(--c-orange);
+}
+
+.hero__sub {
+  font-size: var(--fs-lead);
+  font-weight: var(--fw-regular);
+  line-height: var(--lh-relaxed);
+  color: var(--c-text-soft);
+  max-width: 680px;
+  margin-inline: auto;
+  margin-bottom: var(--s-7);
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  justify-content: center;
+  align-items: center;
+}
+
+/* Variante dark (fondo navy para hero de página) */
+.hero--dark {
+  background: var(--c-navy);
+}
+
+.hero--dark .hero__headline {
+  color: #ffffff;
+}
+
+.hero--dark .hero__sub {
+  color: var(--c-text-muted);
+}
+
+/* Variante 50/50 con visual */
+.hero--with-visual {
+  text-align: left;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-8);
+  align-items: center;
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-inline: var(--s-5);
+}
+
+.hero--with-visual .hero__inner {
+  max-width: none;
+}
+
+.hero--with-visual .hero__actions {
+  justify-content: flex-start;
+}
+
+.hero__visual {
+  width: 100%;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+}
+
+@media (min-width: 700px) {
+  .hero {
+    padding-top: calc(var(--nav-h) + var(--s-section-lg));
+  }
+
+  .hero--with-visual {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+
+  .hero--with-visual .hero__actions {
+    justify-content: flex-start;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   3. FEATURE BLOCKS (whitespace-first)
+   Alternancia imagen/texto. Fondo blanco/soft.
+   Referencia: apple.com/services + /iphone-16-pro
+   ───────────────────────────────────────────── */
+
+.feature-block {
+  padding-block: var(--s-section);
+  padding-inline: var(--s-5);
+}
+
+.feature-block__inner {
+  max-width: var(--container);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--s-8);
+  align-items: center;
+}
+
+.feature-block__media {
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  background: var(--c-bg-soft);
+  aspect-ratio: 4 / 3;
+}
+
+.feature-block__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.feature-block__body {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-5);
+}
+
+.feature-block__eyebrow {
+  display: block;
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-semi);
+  letter-spacing: var(--tk-loose);
+  text-transform: uppercase;
+  color: var(--c-orange);
+}
+
+.feature-block__headline {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tk-tighter);
+  line-height: var(--lh-snug);
+  color: var(--c-text);
+}
+
+.feature-block__body p {
+  font-size: var(--fs-body-lg);
+  color: var(--c-text-soft);
+  line-height: var(--lh-relaxed);
+}
+
+/* Alternancia: imagen derecha (par) */
+@media (min-width: 700px) {
+  .feature-block__inner {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--s-10);
+  }
+
+  /* Imagen derecha: invierte orden */
+  .feature-block:nth-child(even) .feature-block__media {
+    order: 2;
+  }
+  .feature-block:nth-child(even) .feature-block__body {
+    order: 1;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   4. SERVICE CARDS
+   Franja tinte superior 4px, icono tintado,
+   h3 + tagline + 2 CTAs. 6 modificadores.
+   Referencia: apple.com/services grid bloques.
+   ───────────────────────────────────────────── */
+
+.service-card {
+  --card-tint: var(--c-orange);  /* fallback, se sobreescribe en modificadores */
+  background: var(--c-bg);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: box-shadow var(--t-base), transform var(--t-base);
+  box-shadow: var(--shadow-xs);
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* Franja de tinte superior 4px */
+.service-card::before {
+  content: '';
+  display: block;
+  height: 4px;
+  background: var(--card-tint);
+  flex-shrink: 0;
+}
+
+.service-card__body {
+  padding: var(--s-6) var(--s-6) var(--s-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+  flex: 1;
+}
+
+/* Icono SVG 48px tintado */
+.service-card__icon {
+  width: 48px;
+  height: 48px;
+  color: var(--card-tint);
+  flex-shrink: 0;
+}
+
+.service-card__title {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tk-tight);
+  color: var(--c-text);
+}
+
+.service-card__tagline {
+  font-size: var(--fs-sm);
+  color: var(--c-text-soft);
+  line-height: var(--lh-normal);
+  flex: 1;
+}
+
+.service-card__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  align-items: center;
+  margin-top: var(--s-2);
+}
+
+/* Modificadores: cada servicio con su tinte */
+.service-card--web       { --card-tint: var(--t-webs); }
+.service-card--seo       { --card-tint: var(--t-seo); }
+.service-card--automatiza{ --card-tint: var(--t-automatiza); }
+.service-card--whatsapp  { --card-tint: var(--t-whatsapp); }
+.service-card--video     { --card-tint: var(--t-video); }
+.service-card--captacion { --card-tint: var(--t-captacion); }
+
+
+/* ─────────────────────────────────────────────
+   5. COMPARISON TABLE
+   3 cols max desktop, scroll horizontal mobile.
+   Texto directo sin checkmarks. Badge "Más popular".
+   Referencia: apple.com/mac/compare
+   ───────────────────────────────────────────── */
+
+.comparison-wrap {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin-inline: calc(var(--s-5) * -1);
+  padding-inline: var(--s-5);
+  /* scrollbar discreta */
+  scrollbar-width: thin;
+  scrollbar-color: var(--c-line) transparent;
+}
+
+.comparison-wrap::-webkit-scrollbar {
+  height: 4px;
+}
+.comparison-wrap::-webkit-scrollbar-track {
+  background: transparent;
+}
+.comparison-wrap::-webkit-scrollbar-thumb {
+  background: var(--c-line);
+  border-radius: 4px;
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 600px;
+  border-collapse: collapse;
+  font-size: var(--fs-sm);
+}
+
+/* Header columna: badge + nombre + precio */
+.comparison-table th {
+  padding: var(--s-5) var(--s-5) var(--s-4);
+  text-align: center;
+  vertical-align: top;
+  border-bottom: 1px solid var(--c-line);
+  font-weight: var(--fw-regular);
+  position: relative;
+}
+
+.comparison-table th:first-child {
+  text-align: left;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  color: var(--c-text-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tk-loose);
+}
+
+.comparison-table__name {
+  display: block;
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  color: var(--c-text);
+  margin-bottom: var(--s-2);
+}
+
+.comparison-table__price {
+  display: block;
+  font-size: var(--fs-body-lg);
+  font-weight: var(--fw-semi);
+  color: var(--c-text-soft);
+  margin-bottom: var(--s-4);
+}
+
+/* CTA por columna bajo el precio */
+.comparison-table__col-cta {
+  display: block;
+  margin-bottom: var(--s-3);
+}
+
+/* Filas */
+.comparison-table td {
+  padding: var(--s-4) var(--s-5);
+  text-align: center;
+  border-bottom: 1px solid var(--c-line-soft);
+  color: var(--c-text-soft);
+  vertical-align: middle;
+  line-height: var(--lh-normal);
+}
+
+.comparison-table td:first-child {
+  text-align: left;
+  font-weight: var(--fw-medium);
+  color: var(--c-text);
+  min-width: 160px;
+}
+
+/* Alternancia fila */
+.comparison-table tbody tr:nth-child(even) td {
+  background: var(--c-bg-soft);
+}
+
+/* Columna destacada ("Más popular") */
+.comparison-table__col--popular {
+  background: rgba(197, 168, 75, 0.04);
+  border-left: 1px solid var(--c-line);
+  border-right: 1px solid var(--c-line);
+}
+
+.comparison-table__col--popular th {
+  background: rgba(197, 168, 75, 0.04);
+}
+
+
+/* ─────────────────────────────────────────────
+   6. SUCCESS STORY / TESTIMONIAL CARD
+   Headline narrativo, nombre + sector + métricas.
+   Referencia: apple.com/business Foncia pattern.
+   ───────────────────────────────────────────── */
+
+.story-card {
+  background: var(--c-bg);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+  transition: box-shadow var(--t-base);
+}
+
+.story-card:hover {
+  box-shadow: var(--shadow);
+}
+
+.story-card__media {
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+  background: var(--c-bg-soft);
+}
+
+.story-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--t-slow);
+}
+
+.story-card:hover .story-card__media img {
+  transform: scale(1.03);
+}
+
+.story-card__body {
+  padding: var(--s-6) var(--s-6) var(--s-7);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-4);
+}
+
+/* Headline narrativo — NO entrecomillado */
+.story-card__headline {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tk-tight);
+  line-height: var(--lh-snug);
+  color: var(--c-text);
+}
+
+.story-card__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-2) var(--s-4);
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+}
+
+.story-card__meta strong {
+  color: var(--c-text-soft);
+  font-weight: var(--fw-semi);
+}
+
+/* Métricas reales pequeñas */
+.story-card__metrics {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  padding-top: var(--s-3);
+  border-top: 1px solid var(--c-line-soft);
+}
+
+.story-card__metric {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.story-card__metric-value {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  color: var(--c-orange);
+  letter-spacing: var(--tk-tighter);
+}
+
+.story-card__metric-label {
+  font-size: var(--fs-xs);
+  color: var(--c-text-muted);
+}
+
+@media (min-width: 700px) {
+  .story-card--featured {
+    grid-template-columns: 3fr 2fr;
+  }
+
+  .story-card--featured .story-card__media {
+    aspect-ratio: auto;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   7. CTA SECTION DARK
+   Fondo navy, headline 40-48px blanco,
+   2 CTAs: naranja pill + outline blanco.
+   Referencia: apple.com/business "Da el siguiente paso"
+   ───────────────────────────────────────────── */
+
+.cta-dark {
+  background: var(--c-navy);
+  padding-block: clamp(5rem, 10vw, 7rem);
+  padding-inline: var(--s-5);
+  text-align: center;
+}
+
+.cta-dark__inner {
+  max-width: var(--container-xs);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  align-items: center;
+}
+
+.cta-dark__eyebrow {
+  display: block;
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-semi);
+  letter-spacing: var(--tk-loose);
+  text-transform: uppercase;
+  color: var(--c-orange);
+}
+
+.cta-dark__headline {
+  font-size: clamp(2.25rem, 5vw, 3rem);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tk-tighter);
+  line-height: var(--lh-snug);
+  color: #ffffff;
+}
+
+.cta-dark__sub {
+  font-size: var(--fs-body-lg);
+  color: var(--c-text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: 560px;
+}
+
+.cta-dark__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3);
+  justify-content: center;
+  align-items: center;
+}
+
+
+/* ─────────────────────────────────────────────
+   8. FOOTER MEGA (4 columnas)
+   Servicios / empresa / legal / contacto.
+   Barra inferior copyright. Fondo soft.
+   Referencia: patrón footer Apple 5/5 páginas.
+   ───────────────────────────────────────────── */
+
+.footer {
+  background: var(--c-navy);
+  border-top: 1px solid rgba(255,255,255,0.07);
+  padding-top: var(--s-10);
+  padding-bottom: var(--s-6);
+  padding-inline: var(--s-5);
+  color: var(--c-text-muted);
+  font-size: var(--fs-xs);
+}
+
+.footer__grid {
+  max-width: var(--container);
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--s-8) var(--s-6);
+  padding-bottom: var(--s-8);
+  border-bottom: 1px solid rgba(255,255,255,0.07);
+}
+
+.footer__col-brand {
+  grid-column: 1 / -1;
+}
+
+.footer__logo {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-bold);
+  color: #ffffff;
+  letter-spacing: var(--tk-tight);
+  margin-bottom: var(--s-3);
+}
+
+.footer__logo-accent {
+  color: var(--c-orange);
+}
+
+.footer__brand-text {
+  color: var(--c-text-muted);
+  line-height: var(--lh-relaxed);
+  max-width: 280px;
+}
+
+.footer__col-title {
+  display: block;
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  letter-spacing: var(--tk-loose);
+  text-transform: uppercase;
+  color: rgba(255,255,255,0.5);
+  margin-bottom: var(--s-4);
+}
+
+.footer__links {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+}
+
+.footer__links a {
+  color: var(--c-text-muted);
+  font-size: var(--fs-xs);
+  line-height: var(--lh-normal);
+  transition: color var(--t-fast);
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+.footer__links a:hover {
+  color: #ffffff;
+}
+
+/* Barra inferior */
+.footer__bottom {
+  max-width: var(--container);
+  margin-inline: auto;
+  padding-top: var(--s-5);
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-3) var(--s-5);
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer__copyright {
+  color: var(--c-text-faint);
+  font-size: var(--fs-xs);
+}
+
+.footer__legal-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--s-4);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.footer__legal-links a {
+  color: var(--c-text-faint);
+  font-size: var(--fs-xs);
+  transition: color var(--t-fast);
+}
+
+.footer__legal-links a:hover {
+  color: var(--c-text-muted);
+}
+
+@media (min-width: 700px) {
+  .footer__grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+
+  .footer__col-brand {
+    grid-column: auto;
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   9. BUTTONS
+   Pill primario naranja, secundario link-arrow,
+   outline-light para fondos dark, size lg.
+   ───────────────────────────────────────────── */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--s-2);
+  min-height: 44px;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-semi);
+  letter-spacing: var(--tk-normal);
+  line-height: 1;
+  white-space: nowrap;
+  transition: background var(--t-base), color var(--t-base),
+              box-shadow var(--t-base), transform var(--t-base),
+              opacity var(--t-fast);
+  cursor: pointer;
+  text-decoration: none;
+  border: 0;
+}
+
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Primario naranja */
+.btn--primary {
+  background: var(--c-orange);
+  color: #ffffff;
+}
+
+.btn--primary:hover {
+  background: var(--c-orange-dark);
+  box-shadow: 0 4px 16px var(--c-orange-glow);
+}
+
+/* Secundario: link con arrow */
+.btn--secondary {
+  background: transparent;
+  color: var(--c-orange);
+  padding-inline: var(--s-2);
+  border-radius: var(--radius-sm);
+}
+
+.btn--secondary::after {
+  content: ' →';
+  transition: transform var(--t-base);
+  display: inline-block;
+}
+
+.btn--secondary:hover::after {
+  transform: translateX(4px);
+}
+
+.btn--secondary:hover {
+  color: var(--c-orange-dark);
+}
+
+/* Outline claro para fondos dark */
+.btn--outline-light {
+  background: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+}
+
+.btn--outline-light:hover {
+  background: rgba(255, 255, 255, 0.1);
+  border-color: rgba(255, 255, 255, 0.6);
+}
+
+/* Outline dark para fondos claros */
+.btn--outline {
+  background: transparent;
+  color: var(--c-text);
+  border: 1px solid var(--c-line);
+}
+
+.btn--outline:hover {
+  border-color: var(--c-text-soft);
+}
+
+/* Tamaño grande */
+.btn--lg {
+  min-height: 52px;
+  padding: 1rem 2rem;
+  font-size: var(--fs-body);
+}
+
+
+/* ─────────────────────────────────────────────
+   10. EYEBROW
+   Texto pequeño uppercase naranja.
+   Usado antes de cada headline de sección.
+   Referencia: patrón eyebrow Apple 4/5 páginas.
+   ───────────────────────────────────────────── */
+
+.eyebrow {
+  display: block;
+  font-size: var(--fs-micro);
+  font-weight: var(--fw-semi);
+  letter-spacing: var(--tk-loose);
+  text-transform: uppercase;
+  color: var(--c-orange);
+  margin-bottom: var(--s-4);
+}
+
+/* Variante mono: microcopy técnico */
+.eyebrow--mono {
+  font-family: var(--f-mono);
+  letter-spacing: 0.04em;
+}
+
+/* Variante muted: eyebrow sobre dark */
+.eyebrow--light {
+  color: rgba(197, 168, 75, 0.85);
+}
+
+
+/* ─────────────────────────────────────────────
+   11. PILLS / BADGES
+   "Más popular", "Nuevo", "Lab interno".
+   ───────────────────────────────────────────── */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--s-2);
+  padding: var(--s-1) var(--s-3);
+  border-radius: var(--radius-pill);
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-semi);
+  letter-spacing: 0.01em;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+/* Badge "Más popular" — naranja */
+.badge--popular {
+  background: var(--c-orange);
+  color: #ffffff;
+}
+
+/* Badge "Nuevo" — navy */
+.badge--new {
+  background: var(--c-navy);
+  color: #ffffff;
+}
+
+/* Badge "Lab" — gris */
+.badge--lab {
+  background: var(--c-bg-soft);
+  color: var(--c-text-soft);
+  border: 1px solid var(--c-line);
+}
+
+/* Badge "Demo" */
+.badge--demo {
+  background: rgba(197, 168, 75, 0.1);
+  color: var(--c-orange-dark);
+  border: 1px solid rgba(197, 168, 75, 0.25);
+  cursor: pointer;
+  transition: background var(--t-fast);
+}
+
+.badge--demo:hover {
+  background: rgba(197, 168, 75, 0.18);
+}
+
+/* Badge de tinte de servicio (auto via custom property) */
+.badge--tint {
+  background: color-mix(in srgb, var(--card-tint) 12%, transparent);
+  color: var(--card-tint);
+}
+
+
+/* ─────────────────────────────────────────────
+   12. TABS / ACCORDION
+   Tabs horizontal scrollable desktop.
+   Accordion en mobile. Para /servicios.
+   ───────────────────────────────────────────── */
+
+/* Tabs */
+.tabs {
+  width: 100%;
+}
+
+/* Fix #5 R2 — indicador de overflow en mobile para que usuario descubra tabs ocultas (UX/UI P0) */
+.tabs__nav {
+  display: flex;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  border-bottom: 1px solid var(--c-line);
+  gap: 0;
+  margin-bottom: var(--s-7);
+  position: relative;
+}
+
+.tabs__nav::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 48px;
+  background: linear-gradient(to right, transparent, var(--c-bg) 80%);
+  pointer-events: none;
+}
+
+@media (min-width: 900px) {
+  .tabs__nav::after { display: none; }
+}
+
+.tabs__nav::-webkit-scrollbar {
+  display: none;
+}
+
+.tab-btn {
+  flex-shrink: 0;
+  padding: var(--s-4) var(--s-5);
+  font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
+  color: var(--c-text-soft);
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  margin-bottom: -1px;
+  cursor: pointer;
+  white-space: nowrap;
+  min-height: 44px;
+  transition: color var(--t-fast), border-color var(--t-fast);
+}
+
+.tab-btn:hover {
+  color: var(--c-text);
+}
+
+.tab-btn[aria-selected="true"] {
+  color: var(--c-orange);
+  border-bottom-color: var(--c-orange);
+  font-weight: var(--fw-semi);
+}
+
+.tab-panel {
+  display: none;
+}
+
+.tab-panel.is-active {
+  display: block;
+}
+
+/* Accordion (mobile-first, reemplaza tabs en mobile) */
+.accordion {
+  border-top: 1px solid var(--c-line);
+}
+
+.accordion__item {
+  border-bottom: 1px solid var(--c-line);
+}
+
+.accordion__trigger {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--s-4);
+  padding: var(--s-5) 0;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-semi);
+  color: var(--c-text);
+  background: transparent;
+  border: 0;
+  cursor: pointer;
+  text-align: left;
+  min-height: 56px;
+  transition: color var(--t-fast);
+}
+
+.accordion__trigger:hover {
+  color: var(--c-orange);
+}
+
+.accordion__icon {
+  flex-shrink: 0;
+  width: 20px;
+  height: 20px;
+  color: var(--c-text-muted);
+  transition: transform var(--t-base), color var(--t-fast);
+}
+
+.accordion__item.is-open .accordion__icon {
+  transform: rotate(45deg);
+  color: var(--c-orange);
+}
+
+.accordion__panel {
+  display: none;
+  padding-bottom: var(--s-6);
+  color: var(--c-text-soft);
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+}
+
+.accordion__item.is-open .accordion__panel {
+  display: block;
+}
+
+
+/* ─────────────────────────────────────────────
+   13. CAROUSEL / VITRINA HORIZONTAL
+   Scroll-snap, scrollbar oculta, padding lateral.
+   Para paquetes, casos, servicios grid.
+   Referencia: apple.com/iphone vitrina de modelos.
+   ───────────────────────────────────────────── */
+
+.carousel {
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+
+.carousel__track {
+  display: flex;
+  gap: var(--s-4);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  padding-inline: var(--s-5);
+  padding-bottom: var(--s-4);   /* espacio para sombra card */
+}
+
+.carousel__track::-webkit-scrollbar {
+  display: none;
+}
+
+.carousel__item {
+  flex: 0 0 calc(85vw - var(--s-5));
+  max-width: 320px;
+  scroll-snap-align: start;
+}
+
+/* Indicadores dots */
+.carousel__dots {
+  display: flex;
+  justify-content: center;
+  gap: var(--s-2);
+  padding-top: var(--s-4);
+}
+
+.carousel__dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--c-line);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  transition: background var(--t-fast), transform var(--t-fast);
+}
+
+.carousel__dot.is-active {
+  background: var(--c-orange);
+  transform: scale(1.4);
+}
+
+@media (min-width: 700px) {
+  .carousel__item {
+    flex: 0 0 calc(50% - var(--s-4));
+    max-width: none;
+  }
+}
+
+@media (min-width: 1024px) {
+  .carousel__item {
+    flex: 0 0 calc(33.333% - var(--s-4));
+  }
+}
+
+
+/* ─────────────────────────────────────────────
+   14. PAQUETE CARD (vitrina de paquetes)
+   Dentro del carousel. Imagen/icono tintado +
+   nombre + tagline + precio + 2 botones.
+   Referencia: apple.com/iphone vitrina gama.
+   ───────────────────────────────────────────── */
+
+.package-card {
+  --card-tint: var(--c-orange);
+  background: var(--c-bg);
+  border: 1px solid var(--c-line-soft);
+  border-radius: var(--radius-xl);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: box-shadow var(--t-base), transform var(--t-base);
+}
+
+.package-card:hover {
+  box-shadow: var(--shadow);
+  transform: translateY(-2px);
+}
+
+.package-card--popular {
+  border-color: var(--c-orange);
+  box-shadow: 0 0 0 1px var(--c-orange);
+}
+
+.package-card__hero {
+  background: color-mix(in srgb, var(--card-tint) 8%, var(--c-bg-soft));
+  padding: var(--s-7) var(--s-6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 140px;
+  position: relative;
+}
+
+.package-card__icon {
+  width: 64px;
+  height: 64px;
+  color: var(--card-tint);
+}
+
+.package-card__popular-badge {
+  position: absolute;
+  top: var(--s-3);
+  right: var(--s-3);
+}
+
+.package-card__body {
+  padding: var(--s-5) var(--s-5) var(--s-6);
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-3);
+  flex: 1;
+}
+
+.package-card__name {
+  font-size: var(--fs-h4);
+  font-weight: var(--fw-bold);
+  color: var(--c-text);
+  letter-spacing: var(--tk-tight);
+}
+
+.package-card__tagline {
+  font-size: var(--fs-sm);
+  color: var(--c-text-soft);
+  line-height: var(--lh-normal);
+  flex: 1;
+}
+
+.package-card__price {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-bold);
+  color: var(--c-text);
+  letter-spacing: var(--tk-tighter);
+}
+
+.package-card__price-detail {
+  font-size: var(--fs-xs);
+  font-weight: var(--fw-regular);
+  color: var(--c-text-muted);
+}
+
+.package-card__actions {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-2);
+  margin-top: var(--s-2);
+}
+
+
+/* ─────────────────────────────────────────────
+   15. SECCIÓN INTRO / OVERVIEW SERVICIO
+   Tinte del servicio en micro-acento.
+   Solo para bloques dentro de /servicios.
+   ───────────────────────────────────────────── */
+
+.service-intro {
+  --section-tint: var(--c-orange);
+  padding-block: var(--s-section);
+  padding-inline: var(--s-5);
+  border-top: 1px solid var(--c-line-soft);
+}
+
+.service-intro:first-of-type {
+  border-top: 0;
+}
+
+.service-intro__inner {
+  max-width: var(--container-sm);
+  margin-inline: auto;
+}
+
+.service-intro__accent {
+  display: inline-block;
+  width: 32px;
+  height: 3px;
+  background: var(--section-tint);
+  border-radius: 2px;
+  margin-bottom: var(--s-5);
+}
+
+.service-intro__title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-bold);
+  letter-spacing: var(--tk-tightest);
+  line-height: var(--lh-tight);
+  color: var(--c-text);
+  margin-bottom: var(--s-5);
+}
+
+.service-intro__lead {
+  font-size: var(--fs-body-lg);
+  color: var(--c-text-soft);
+  line-height: var(--lh-relaxed);
+  max-width: 680px;
+}
+
+/* Modificadores de tinte (SOLO en /servicios) */
+.service-intro--web       { --section-tint: var(--t-webs); }
+.service-intro--seo       { --section-tint: var(--t-seo); }
+.service-intro--automatiza{ --section-tint: var(--t-automatiza); }
+.service-intro--whatsapp  { --section-tint: var(--t-whatsapp); }
+.service-intro--video     { --section-tint: var(--t-video); }
+.service-intro--captacion { --section-tint: var(--t-captacion); }
+
+
+/* ============================================================
+   R1 PANEL FIXES (4-may-2026)
+   ============================================================ */
+
+/* P0-1 — Caso disclaimer (Carlos en home) */
+.case-disclaimer {
+  margin-top: var(--s-3);
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+  font-style: italic;
+}
+
+/* P0-2 — Cookies banner (mobile fullwidth bottom / desktop esquina inferior derecha) */
+.cookies-banner {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--c-navy);
+  color: #fff;
+  padding: var(--s-4) var(--s-5);
+  z-index: 9999;
+  box-shadow: var(--shadow-lg);
+  font-size: var(--fs-sm);
+  line-height: var(--lh-normal);
+  border-top: 1px solid rgba(255,255,255,0.10);
+  align-items: center;
+  gap: var(--s-3);
+  flex-wrap: wrap;
+}
+.cookies-banner.is-visible { display: flex; }
+.cookies-banner p { margin: 0; color: rgba(255,255,255,0.86); flex: 1; min-width: 220px; }
+.cookies-banner .btn { white-space: nowrap; }
+@media (min-width: 700px) {
+  .cookies-banner {
+    bottom: 24px;
+    right: 24px;
+    left: auto;
+    max-width: 440px;
+    border-radius: var(--radius-lg);
+    border-top: none;
+    box-shadow: 0 0 0 1px rgba(255,255,255,0.06), var(--shadow-xl);
+  }
+}
+
+/* P0-4 — Sub-nav fade-right indicador overflow mobile */
+.service-subnav,
+.subnav-sticky,
+.tabs__nav {
+  position: relative;
+}
+.service-subnav::after,
+.subnav-sticky::after,
+.tabs__nav::after {
+  content: "";
+  position: absolute;
+  top: 0; right: 0; bottom: 0;
+  width: 48px;
+  background: linear-gradient(to right, transparent, var(--c-bg) 80%);
+  pointer-events: none;
+  z-index: 1;
+}
+@media (min-width: 900px) {
+  .service-subnav::after,
+  .subnav-sticky::after,
+  .tabs__nav::after { display: none; }
+}
+
+/* P1-5a — Service stat (variación visual /servicios sección Diseño web) */
+.service-stat {
+  text-align: center;
+  padding: var(--s-6) 0;
+  margin: var(--s-5) auto;
+  max-width: 32ch;
+}
+.service-stat__num {
+  display: block;
+  font-size: clamp(4rem, 10vw, 6.5rem);
+  font-weight: 800;
+  color: var(--t-webs);
+  letter-spacing: -0.04em;
+  line-height: 1;
+  font-optical-sizing: auto;
+}
+.service-stat__label {
+  display: block;
+  margin-top: var(--s-3);
+  font-size: var(--fs-lead);
+  color: var(--c-text-soft);
+  line-height: 1.3;
+}
+
+/* P1-5b — Service quote (variación visual /servicios sección Automatizaciones) */
+.service-quote {
+  margin: var(--s-6) auto;
+  max-width: 36ch;
+  padding: var(--s-5);
+  border-left: 3px solid var(--t-automatiza);
+  background: var(--c-bg-soft);
+  border-radius: var(--radius);
+}
+.service-quote p {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  letter-spacing: -0.018em;
+  line-height: 1.3;
+  margin: 0 0 var(--s-3);
+  color: var(--c-text);
+}
+.service-quote cite {
+  font-size: var(--fs-sm);
+  font-style: normal;
+  color: var(--c-text-muted);
+}
+
+/* P1-6 — Value list editorial numerada (/sobre-nabil reemplaza grid 2x2) */
+.value-list {
+  display: flex;
+  flex-direction: column;
+  gap: var(--s-6);
+  max-width: 720px;
+  margin-inline: auto;
+}
+.value-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: var(--s-4);
+  align-items: start;
+  padding-bottom: var(--s-5);
+  border-bottom: 1px solid var(--c-line);
+}
+.value-item:last-child { border-bottom: none; }
+.value-item__num {
+  font-family: var(--f-mono);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  font-weight: 500;
+  color: var(--c-orange);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  opacity: 0.85;
+}
+.value-item__title {
+  font-size: var(--fs-h4);
+  margin-bottom: var(--s-2);
+  color: var(--c-text);
+}
+.value-item__desc {
+  color: var(--c-text-soft);
+}
+
+/* P1-7 — Hero price hint /servicios */
+.hero__price-hint {
+  margin-top: var(--s-3);
+  font-size: var(--fs-sm);
+  color: var(--c-text-muted);
+}
+.hero__price-hint strong { color: var(--c-text); }
+.hero__price-hint a { color: var(--c-orange); text-decoration: underline; }
