@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sobre Nabil · Automarketing Digital · Jerez de la Frontera</title>
+  <meta name="description" content="Los negocios de Jerez no necesitan más tecnología. Necesitan que alguien entienda cómo funciona su negocio. Conoce a Nabil, fundador de Automarketing Digital.">
+  <meta name="theme-color" content="#FFFFFF">
+  <link rel="canonical" href="https://automarketingdigital.es/sobre-nabil">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="profile">
+  <meta property="og:url" content="https://automarketingdigital.es/sobre-nabil">
+  <meta property="og:title" content="Sobre Nabil · Automarketing Digital">
+  <meta property="og:description" content="Los negocios de Jerez no necesitan más tecnología. Necesitan que alguien entienda cómo funciona su negocio.">
+  <meta property="og:image" content="https://automarketingdigital.es/assets/img/og-sobre-nabil.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Preconnect Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+  <!-- CSS: tokens → components → utilities -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
+  <!-- Schema.org JSON-LD -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://automarketingdigital.es/sobre-nabil#nabil",
+        "name": "Nabil",
+        "jobTitle": "Fundador",
+        "worksFor": {
+          "@type": "Organization",
+          "@id": "https://automarketingdigital.es#org",
+          "name": "Automarketing Digital",
+          "url": "https://automarketingdigital.es",
+          "email": "nabil@automarketingdigital.es",
+          "address": {
+            "@type": "PostalAddress",
+            "addressLocality": "Jerez de la Frontera",
+            "addressCountry": "ES"
+          },
+          "foundingDate": "2026",
+          "description": "Agencia digital para negocios locales en Jerez de la Frontera y la provincia de Cádiz."
+        },
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jerez de la Frontera",
+          "addressCountry": "ES"
+        },
+        "owns": [
+          {
+            "@type": "LocalBusiness",
+            "name": "La Tienda de Samira",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Jerez de la Frontera",
+              "addressCountry": "ES"
+            },
+            "url": "https://latiendadesamira.cloud"
+          },
+          {
+            "@type": "LocalBusiness",
+            "name": "Asador Sandeman",
+            "alternateName": "jerezparallevar.es",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Jerez de la Frontera",
+              "addressCountry": "ES"
+            }
+          }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://automarketingdigital.es#org",
+        "name": "Automarketing Digital",
+        "url": "https://automarketingdigital.es",
+        "email": "nabil@automarketingdigital.es",
+        "foundingDate": "2026",
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Jerez de la Frontera",
+          "addressCountry": "ES"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {"@type": "ListItem", "position": 1, "name": "Inicio", "item": "https://automarketingdigital.es"},
+          {"@type": "ListItem", "position": 2, "name": "Sobre Nabil", "item": "https://automarketingdigital.es/sobre-nabil"}
+        ]
+      }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ── Estilos de página: sobre-nabil ────────────────────────────── */
+
+    /* Hero manifiesto — altura media (~60vh desktop) */
+    .hero--sobre-nabil {
+      padding-top:    calc(var(--nav-h-mobile) + clamp(4rem, 9vw, 7rem));
+      padding-bottom: clamp(4rem, 9vw, 7rem);
+      text-align: center;
+    }
+
+    @media (min-width: 700px) {
+      .hero--sobre-nabil {
+        padding-top: calc(var(--nav-h) + clamp(4rem, 9vw, 7rem));
+      }
+    }
+
+    /* Cita monumento — el visual principal de la página */
+    .hero--sobre-nabil .hero__headline {
+      font-size: clamp(2.25rem, 5.5vw, 3.75rem);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tightest);
+      line-height: var(--lh-tight);
+      color: #ffffff;
+      /* Comillas tipográficas son parte del diseño — Inter las renderiza bien */
+    }
+
+    .hero__autoria {
+      display: block;
+      font-size: var(--fs-sm);
+      font-weight: var(--fw-regular);
+      color: var(--c-text-muted);
+      margin-top: var(--s-6);
+      letter-spacing: var(--tk-normal);
+    }
+
+    /* Grid de fondo: líneas finas 1px blanco 3% */
+    .hero--sobre-nabil {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero--sobre-nabil::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .hero--sobre-nabil .hero__inner {
+      position: relative;
+      z-index: 1;
+      max-width: var(--container-xs);
+    }
+
+    /* Historia — sección prosa */
+    .story-block {
+      padding-block: var(--s-section);
+      padding-inline: var(--s-5);
+      background: var(--c-bg);
+    }
+
+    .story-block__inner {
+      max-width: 720px;
+      margin-inline: auto;
+    }
+
+    .story-block__title {
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tighter);
+      line-height: var(--lh-snug);
+      color: var(--c-navy);
+      margin-bottom: var(--s-7);
+    }
+
+    .story-block__text {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-6);
+    }
+
+    .story-block__text p {
+      font-size: var(--fs-body-lg);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Grid de valores — 2×2 */
+    .values-section {
+      padding-block: var(--s-section);
+      padding-inline: var(--s-5);
+      background: var(--c-bg-soft);
+    }
+
+    .values-section__header {
+      max-width: var(--container-sm);
+      margin-inline: auto;
+      text-align: center;
+      margin-bottom: var(--s-8);
+    }
+
+    .values-section__headline {
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tighter);
+      line-height: var(--lh-snug);
+      color: var(--c-navy);
+      margin-bottom: var(--s-4);
+    }
+
+    .values-section__sub {
+      font-size: var(--fs-body);
+      color: var(--c-text-muted);
+      line-height: var(--lh-relaxed);
+    }
+
+    .values-grid {
+      max-width: var(--container-sm);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-5);
+    }
+
+    @media (min-width: 700px) {
+      .values-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--s-6);
+      }
+    }
+
+    .value-card {
+      background: var(--c-bg);
+      border: 1px solid var(--c-line-soft);
+      border-radius: var(--radius-lg);
+      padding: var(--s-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+      transition: box-shadow var(--t-base);
+    }
+
+    .value-card:hover {
+      box-shadow: var(--shadow-sm);
+    }
+
+    .value-card__icon {
+      width: 32px;
+      height: 32px;
+      color: var(--c-navy);
+      flex-shrink: 0;
+    }
+
+    .value-card__title {
+      font-size: var(--fs-body);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tight);
+      color: var(--c-navy);
+    }
+
+    .value-card__body {
+      font-size: var(--fs-sm);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Sección credenciales */
+    .credentials {
+      padding-block: var(--s-section-sm);
+      padding-inline: var(--s-5);
+      background: var(--c-bg);
+    }
+
+    .credentials__inner {
+      max-width: 600px;
+      margin-inline: auto;
+    }
+
+    .credentials__title {
+      font-size: var(--fs-h4);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tight);
+      color: var(--c-navy);
+      margin-bottom: var(--s-5);
+    }
+
+    .credentials__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+    }
+
+    .credentials__list li {
+      display: flex;
+      align-items: flex-start;
+      gap: var(--s-3);
+      font-size: var(--fs-sm);
+      color: var(--c-text-soft);
+      line-height: var(--lh-normal);
+    }
+
+    .credentials__icon {
+      flex-shrink: 0;
+      width: 16px;
+      height: 16px;
+      color: var(--c-navy);
+      margin-top: 2px;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ══════════════════════════════════════════
+       NAV STICKY GLOBAL
+  ══════════════════════════════════════════ -->
+  <header>
+    <nav class="nav" role="navigation" aria-label="Navegación principal" id="nav">
+      <!-- Logo -->
+      <a href="index.html" class="nav__logo" aria-label="Automarketing Digital — volver al inicio">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+          <rect width="28" height="28" rx="7" fill="#FF6B35"/>
+          <text x="14" y="20" text-anchor="middle" font-family="Inter,Arial,sans-serif" font-size="16" font-weight="800" fill="#ffffff">A</text>
+        </svg>
+        <span>Automarketing <span class="nav__logo-accent">Digital</span></span>
+      </a>
+
+      <!-- Links desktop -->
+      <ul class="nav__links" role="list">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="servicios.html">Servicios</a></li>
+        <li><a href="casos.html">Casos</a></li>
+        <li><a href="sobre-nabil.html" aria-current="page">Sobre Nabil</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+      </ul>
+
+      <!-- CTA desktop -->
+      <div class="nav__cta hide-mobile">
+        <a href="contacto.html" class="btn btn--primary">Hablar con nosotros</a>
+      </div>
+
+      <!-- Burger mobile -->
+      <button class="nav__burger show-mobile" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-mobile" id="burger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Menú mobile -->
+    <nav class="nav__mobile-menu" id="nav-mobile" aria-label="Menú mobile">
+      <a href="index.html">Inicio</a>
+      <a href="servicios.html">Servicios</a>
+      <a href="casos.html">Casos</a>
+      <a href="sobre-nabil.html" aria-current="page">Sobre Nabil</a>
+      <a href="contacto.html">Contacto</a>
+      <a href="contacto.html" class="btn btn--primary mt-4" style="align-self:flex-start;">Hablar con nosotros</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 2 — HERO MANIFIESTO EDITORIAL
+         Sin foto. Tipografía monumento como visual.
+    ══════════════════════════════════════════ -->
+    <section class="hero hero--dark hero--sobre-nabil" aria-labelledby="hero-cita">
+      <div class="hero__inner">
+        <span class="hero__eyebrow reveal">Sobre Nabil</span>
+        <h1 class="hero__headline reveal" id="hero-cita">
+          &#8220;Los negocios de Jerez no necesitan más tecnología. Necesitan que alguien entienda cómo funciona su negocio.&#8221;
+        </h1>
+        <span class="hero__autoria reveal">
+          &mdash; Nabil &middot; Fundador de Automarketing Digital &middot; Jerez de la Frontera
+        </span>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 3 — HISTORIA CORTA
+    ══════════════════════════════════════════ -->
+    <section class="story-block section--bordered" aria-labelledby="historia-titulo">
+      <div class="story-block__inner">
+        <h2 class="story-block__title reveal" id="historia-titulo">Por qué monté esto.</h2>
+        <div class="story-block__text">
+          <p class="reveal">
+            Soy de Jerez. Tengo La Tienda de Samira y el Asador Sandeman — dos negocios físicos que gestiono
+            además de la agencia. Eso significa que cuando propongo algo a un cliente, lo he probado primero
+            en mis propios negocios y sé lo que cuesta implementarlo en la realidad de un autónomo.
+          </p>
+          <p class="reveal">
+            La mayoría de agencias digitales trabajan con empresas medianas o grandes. Los negocios pequeños
+            de Jerez y Cádiz — la peluquería, el taller, la clínica, el restaurante — reciben el mismo paquete
+            estándar que a nadie termina de funcionar. Lo sé porque lo comprobé buscando ayuda para mis propios negocios.
+          </p>
+          <p class="reveal">
+            Automarketing Digital trabaja con negocios locales de la zona. Pocos a la vez, para poder hacerlo bien.
+            No somos una agencia remota que nunca ha entrado en un local de Jerez. Somos parte del mismo
+            ecosistema de negocios.
+          </p>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 4 — CÓMO TRABAJAMOS (4 valores)
+    ══════════════════════════════════════════ -->
+    <section class="values-section" aria-labelledby="valores-titulo">
+      <div class="values-section__header reveal">
+        <h2 class="values-section__headline" id="valores-titulo">Cómo trabajamos.</h2>
+        <p class="values-section__sub">Cuatro cosas que no cambian de proyecto en proyecto.</p>
+      </div>
+
+      <div class="value-list" role="list">
+
+        <article class="value-item reveal" role="listitem">
+          <span class="value-item__num">01</span>
+          <div class="value-item__body">
+            <h3 class="value-item__title">El precio lo acordamos antes de empezar</h3>
+            <p class="value-item__desc">Sin sorpresas en factura. Lo que se firma es lo que se cobra. Si hay algo extra, te lo digo antes de hacerlo.</p>
+          </div>
+        </article>
+
+        <article class="value-item reveal" role="listitem">
+          <span class="value-item__num">02</span>
+          <div class="value-item__body">
+            <h3 class="value-item__title">Solo cobro si hay trabajo real</h3>
+            <p class="value-item__desc">No facturo horas de reunión ni de "estrategia". Facturo lo que se ha hecho y lo que ha cambiado en tu negocio.</p>
+          </div>
+        </article>
+
+        <article class="value-item reveal" role="listitem">
+          <span class="value-item__num">03</span>
+          <div class="value-item__body">
+            <h3 class="value-item__title">Hablas conmigo, no con un account</h3>
+            <p class="value-item__desc">Hay una sola persona responsable de tu proyecto. Soy yo. No delegas en alguien que luego delega en alguien más.</p>
+          </div>
+        </article>
+
+        <article class="value-item reveal" role="listitem">
+          <span class="value-item__num">04</span>
+          <div class="value-item__body">
+            <h3 class="value-item__title">Selección limitada de proyectos activos</h3>
+            <p class="value-item__desc">Cuando tengo suficientes proyectos en marcha, no acepto nuevos. Cada cliente recibe dedicación real.</p>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 5 — CREDENCIALES (solo datos verificables)
+    ══════════════════════════════════════════ -->
+    <section class="credentials section--bordered" aria-labelledby="credenciales-titulo">
+      <div class="credentials__inner">
+        <h2 class="credentials__title reveal" id="credenciales-titulo">En datos.</h2>
+        <ul class="credentials__list reveal" role="list">
+          <li>
+            <svg class="credentials__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>La Tienda de Samira — negocio propio en Jerez, operativo</span>
+          </li>
+          <li>
+            <svg class="credentials__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Asador Sandeman (jerezparallevar.es) — negocio propio en Jerez, operativo</span>
+          </li>
+          <li>
+            <svg class="credentials__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Primer cliente externo Automarketing Digital — abril 2026, Carlos Harto Tours</span>
+          </li>
+          <li>
+            <svg class="credentials__icon" viewBox="0 0 16 16" fill="none" aria-hidden="true">
+              <circle cx="8" cy="8" r="7" stroke="currentColor" stroke-width="1.25"/>
+              <path d="M5 8l2 2 4-4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <span>Operativos desde 2026 &middot; Selección limitada de proyectos</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+
+    <!-- ══════════════════════════════════════════
+         SECCIÓN 6 — CTA FINAL (primera persona, WA directo)
+    ══════════════════════════════════════════ -->
+    <section class="cta-dark" aria-labelledby="cta-headline">
+      <div class="cta-dark__inner">
+        <h2 class="cta-dark__headline reveal" id="cta-headline">Si quieres hablarlo, escríbeme.</h2>
+        <p class="cta-dark__sub reveal">
+          Sin formulario de 15 campos. Sin esperar 48 horas a que un account te llame.
+        </p>
+        <div class="cta-dark__actions reveal">
+          <a
+            href="https://wa.me/34643987371?text=Hola%20Nabil%2C%20vi%20tu%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20mi%20negocio."
+            class="btn btn--primary btn--lg"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Hablemos por WhatsApp con Nabil (abre en nueva pestaña)"
+          >Hablemos por WhatsApp</a>
+          <a
+            href="mailto:nabil@automarketingdigital.es"
+            class="btn btn--outline-light"
+            aria-label="Enviar un email a nabil@automarketingdigital.es"
+          >Enviar un email</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ══════════════════════════════════════════
+       FOOTER MEGA — 4 COLUMNAS
+  ══════════════════════════════════════════ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__grid">
+
+      <!-- Columna 1 — Brand -->
+      <div class="footer__col-brand">
+        <div class="footer__logo" aria-label="Automarketing Digital">
+          Automarketing <span class="footer__logo-accent">Digital</span>
+        </div>
+        <p class="footer__brand-text">
+          Agencia digital en Jerez de la Frontera. Presencia web, SEO local y automatizaciones
+          para negocios que quieren crecer sin complicaciones.
+        </p>
+      </div>
+
+      <!-- Columna 2 — Servicios -->
+      <div>
+        <span class="footer__col-title">Servicios</span>
+        <ul class="footer__links" role="list">
+          <li><a href="servicios.html#web">Diseño web</a></li>
+          <li><a href="servicios.html#seo">SEO y Google Business</a></li>
+          <li><a href="servicios.html#automatizaciones">Automatizaciones</a></li>
+          <li><a href="servicios.html#whatsapp">Bot de WhatsApp</a></li>
+          <li><a href="servicios.html#video">Contenido en vídeo</a></li>
+          <li><a href="servicios.html#captacion">Captación de clientes</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 3 — Empresa -->
+      <div>
+        <span class="footer__col-title">Empresa</span>
+        <ul class="footer__links" role="list">
+          <li><a href="index.html">Inicio</a></li>
+          <li><a href="casos.html">Casos</a></li>
+          <li><a href="sobre-nabil.html" aria-current="page">Sobre Nabil</a></li>
+          <li><a href="contacto.html">Contacto</a></li>
+        </ul>
+      </div>
+
+      <!-- Columna 4 — Contacto -->
+      <div>
+        <span class="footer__col-title">Contacto · Jerez</span>
+        <ul class="footer__links" role="list">
+          <li>
+            <a href="mailto:nabil@automarketingdigital.es" aria-label="Email: nabil@automarketingdigital.es">
+              nabil@automarketingdigital.es
+            </a>
+          </li>
+          <li>
+            <a
+              href="https://wa.me/34643987371?text=Hola%20Nabil%2C%20vi%20tu%20web%20y%20me%20gustar%C3%ADa%20hablar%20sobre%20mi%20negocio."
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="WhatsApp con Nabil (abre en nueva pestaña)"
+            >WhatsApp directo</a>
+          </li>
+          <li><a href="contacto.html">Reservar revisión gratuita</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="footer__bottom">
+      <p class="footer__copyright">© 2026 Automarketing Digital · Jerez de la Frontera</p>
+      <ul class="footer__legal-links" role="list">
+        <li><a href="aviso-legal.html">Aviso legal</a></li>
+        <li><a href="privacidad.html">Política de privacidad</a></li>
+        <li><a href="cookies.html">Cookies</a></li>
+      </ul>
+    </div>
+  </footer>
+
+
+  <!-- ══════════════════════════════════════════
+       JAVASCRIPT
+  ══════════════════════════════════════════ -->
+  <script>
+    (function () {
+      'use strict';
+
+      /* ── Nav sticky scrolled state ───────────────── */
+      var nav = document.getElementById('nav');
+      function onScroll() {
+        if (window.scrollY > 80) {
+          nav.classList.add('is-scrolled');
+        } else {
+          nav.classList.remove('is-scrolled');
+        }
+      }
+      window.addEventListener('scroll', onScroll, { passive: true });
+
+      /* ── Nav burger mobile ───────────────────────── */
+      var burger = document.getElementById('burger');
+      var mobileMenu = document.getElementById('nav-mobile');
+      if (burger && mobileMenu) {
+        burger.addEventListener('click', function () {
+          var isOpen = mobileMenu.classList.toggle('is-open');
+          burger.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+          burger.setAttribute('aria-label', isOpen ? 'Cerrar menú' : 'Abrir menú');
+          document.body.style.overflow = isOpen ? 'hidden' : '';
+        });
+
+        mobileMenu.querySelectorAll('a').forEach(function (link) {
+          link.addEventListener('click', function () {
+            mobileMenu.classList.remove('is-open');
+            burger.setAttribute('aria-expanded', 'false');
+            burger.setAttribute('aria-label', 'Abrir menú');
+            document.body.style.overflow = '';
+          });
+        });
+      }
+
+      /* ── Reveal on scroll (IntersectionObserver) ── */
+      if ('IntersectionObserver' in window) {
+        var reveals = document.querySelectorAll('.reveal');
+        var io = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('is-visible');
+              io.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+
+        reveals.forEach(function (el) { io.observe(el); });
+      } else {
+        document.querySelectorAll('.reveal').forEach(function (el) {
+          el.classList.add('is-visible');
+        });
+      }
+
+    }());
+  </script>
+
+</body>
+</html>

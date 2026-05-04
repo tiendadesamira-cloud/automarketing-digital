@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Servicios — Automarketing Digital · Jerez de la Frontera</title>
+  <meta name="description" content="Diseño web, SEO local, automatizaciones, bot WhatsApp, contenido en vídeo y captación de clientes. Seis servicios digitales para negocios locales en Jerez. Desde 300€.">
+  <link rel="canonical" href="https://automarketingdigital.es/servicios.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://automarketingdigital.es/servicios.html">
+  <meta property="og:title" content="Servicios — Automarketing Digital">
+  <meta property="og:description" content="Seis áreas de trabajo para tu negocio local. Desde 300€, sin permanencia.">
+  <meta property="og:image" content="https://automarketingdigital.es/assets/img/og-servicios.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
+  <!-- Page styles -->
+  <style>
+    /* Hero anchor pills */
+    .hero-anchors {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-2);
+      justify-content: center;
+      margin-top: var(--s-7);
+    }
+    .hero-anchor-pill {
+      display: inline-flex;
+      align-items: center;
+      min-height: 36px;
+      padding: 0.4rem 1rem;
+      border: 1px solid rgba(255,255,255,0.25);
+      border-radius: var(--radius-pill);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-medium);
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      transition: background var(--t-fast), border-color var(--t-fast), color var(--t-fast);
+    }
+    .hero-anchor-pill:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.5);
+      color: #fff;
+    }
+
+    /* Sub-nav sticky de servicios */
+    .service-subnav {
+      position: sticky;
+      top: var(--nav-h-mobile);
+      z-index: 800;
+      background: var(--c-bg);
+      border-bottom: 1px solid var(--c-line-soft);
+      display: flex;
+      overflow-x: auto;
+      scrollbar-width: none;
+      -webkit-overflow-scrolling: touch;
+    }
+    .service-subnav::-webkit-scrollbar { display: none; }
+    .service-subnav__link {
+      flex-shrink: 0;
+      padding: var(--s-3) var(--s-5);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-medium);
+      color: var(--c-text-soft);
+      text-decoration: none;
+      border-bottom: 2px solid transparent;
+      white-space: nowrap;
+      min-height: 44px;
+      display: flex;
+      align-items: center;
+      transition: color var(--t-fast), border-color var(--t-fast);
+    }
+    .service-subnav__link:hover {
+      color: var(--c-text);
+    }
+    .service-subnav__link.is-active,
+    .service-subnav__link[aria-current="true"] {
+      color: var(--c-orange);
+      border-bottom-color: var(--c-orange);
+      font-weight: var(--fw-semi);
+    }
+
+    @media (min-width: 700px) {
+      .service-subnav {
+        top: var(--nav-h);
+        justify-content: center;
+      }
+    }
+
+    /* Service section con tinte */
+    .service-section {
+      padding-block: var(--s-section);
+      padding-inline: var(--s-5);
+      position: relative;
+      overflow: hidden;
+    }
+    .service-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 3px;
+      background: var(--section-tint, var(--c-orange));
+    }
+    .service-section__inner {
+      max-width: var(--container-sm);
+      margin-inline: auto;
+    }
+    .service-section__header {
+      margin-bottom: var(--s-8);
+    }
+    .service-section__title {
+      font-size: var(--fs-h1);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tightest);
+      line-height: var(--lh-tight);
+      color: var(--c-text);
+      margin-bottom: var(--s-4);
+    }
+    .service-section__lead {
+      font-size: var(--fs-body-lg);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+    .service-section__tint-bg {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(ellipse 70% 60% at 80% 20%, var(--section-tint-alpha, rgba(255,107,53,0.06)) 0%, transparent 70%);
+    }
+
+    /* Feature sub-blocks de servicio */
+    .service-features {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-7);
+      margin-bottom: var(--s-8);
+    }
+    @media (min-width: 700px) {
+      .service-features { grid-template-columns: 1fr 1fr 1fr; gap: var(--s-6); }
+    }
+    .service-feature {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+    }
+    .service-feature__icon {
+      width: 48px;
+      height: 48px;
+      flex-shrink: 0;
+      color: var(--section-tint, var(--c-orange));
+    }
+    .service-feature__title {
+      font-size: var(--fs-h4);
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+      letter-spacing: var(--tk-tight);
+    }
+    .service-feature__body {
+      font-size: var(--fs-sm);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Placeholder imagen servicio (SVG inline) */
+    .service-placeholder {
+      border-radius: var(--radius-lg);
+      background: var(--c-bg-soft);
+      border: 1px solid var(--c-line-soft);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 200px;
+      color: var(--c-text-muted);
+      font-size: var(--fs-xs);
+      font-style: italic;
+    }
+
+    /* CTA de servicio */
+    .service-cta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      align-items: center;
+      margin-top: var(--s-6);
+    }
+    .service-footnote {
+      font-size: 0.6875rem;
+      color: var(--c-text-muted);
+      margin-top: var(--s-3);
+    }
+
+    /* Tintes específicos por servicio */
+    .service-section--web {
+      --section-tint: var(--t-webs);
+      --section-tint-alpha: rgba(255,107,53,0.06);
+    }
+    .service-section--seo {
+      --section-tint: var(--t-seo);
+      --section-tint-alpha: rgba(16,185,129,0.05);
+      background: var(--c-bg-soft);
+    }
+    .service-section--automatizaciones {
+      --section-tint: var(--t-automatiza);
+      --section-tint-alpha: rgba(6,182,212,0.05);
+    }
+    .service-section--whatsapp {
+      --section-tint: var(--t-whatsapp);
+      --section-tint-alpha: rgba(34,197,94,0.05);
+      background: var(--c-bg-soft);
+    }
+    .service-section--video {
+      --section-tint: var(--t-video);
+      --section-tint-alpha: rgba(168,85,247,0.05);
+    }
+    .service-section--captacion {
+      --section-tint: var(--t-captacion);
+      --section-tint-alpha: rgba(245,158,11,0.05);
+      background: var(--c-bg-soft);
+    }
+
+    /* Tarifas section */
+    .tarifas-section {
+      padding-block: var(--s-section-lg);
+      padding-inline: var(--s-5);
+      background: var(--c-bg);
+    }
+    .tarifas-section__header {
+      text-align: center;
+      margin-bottom: var(--s-8);
+    }
+    .tarifas-footnote {
+      font-size: var(--fs-xs);
+      color: var(--c-text-muted);
+      text-align: center;
+      margin-top: var(--s-5);
+      max-width: 600px;
+      margin-inline: auto;
+      line-height: var(--lh-relaxed);
+    }
+    .tarifas-cta {
+      text-align: center;
+      margin-top: var(--s-7);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: var(--s-3);
+    }
+  </style>
+
+  <!-- Schema.org ProfessionalService -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Automarketing Digital",
+    "url": "https://automarketingdigital.es",
+    "description": "Agencia digital en Jerez de la Frontera. Diseño web, SEO local, automatizaciones, bot WhatsApp, contenido en vídeo y captación de clientes.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jerez de la Frontera",
+      "addressRegion": "Cádiz",
+      "addressCountry": "ES"
+    },
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "Servicios digitales para negocios locales",
+      "itemListElement": [
+        { "@type": "Offer", "name": "Diseño web", "price": "300", "priceCurrency": "EUR" },
+        { "@type": "Offer", "name": "SEO local y Google Business", "price": "97", "priceCurrency": "EUR" },
+        { "@type": "Offer", "name": "Automatizaciones", "price": "297", "priceCurrency": "EUR" }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header>
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+      <a href="/" class="nav__logo" aria-label="Automarketing Digital — Inicio">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+          <rect width="28" height="28" rx="7" fill="#FF6B35"/>
+          <text x="14" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="16" fill="#fff">A</text>
+        </svg>
+        <span>Automarketing <span class="nav__logo-accent">Digital</span></span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="/servicios.html" aria-current="page">Servicios</a></li>
+        <li><a href="/casos.html">Casos</a></li>
+        <li><a href="/sobre-nabil.html">Sobre Nabil</a></li>
+        <li><a href="/contacto.html">Contacto</a></li>
+      </ul>
+      <div class="nav__cta hide-mobile">
+        <a href="/contacto.html" class="btn btn--primary">Hablar con nosotros</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+      <a href="/servicios.html" aria-current="page">Servicios</a>
+      <a href="/casos.html">Casos</a>
+      <a href="/sobre-nabil.html">Sobre Nabil</a>
+      <a href="/contacto.html">Contacto</a>
+      <a href="/contacto.html" class="btn btn--primary mt-4">Hablar con nosotros</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== HERO SERVICIOS ===== -->
+    <section class="hero hero--dark" aria-labelledby="servicios-headline">
+      <div class="hero__inner">
+        <span class="hero__eyebrow reveal">Servicios</span>
+        <h1 class="hero__headline reveal reveal-d1" id="servicios-headline">Lo que hacemos.</h1>
+        <p class="hero__sub reveal reveal-d2">
+          Seis áreas de trabajo. Cada una con un objetivo concreto para tu negocio.
+        </p>
+        <!-- Anchor pills -->
+        <nav class="hero-anchors reveal reveal-d3" aria-label="Ir a cada servicio">
+          <a href="#web" class="hero-anchor-pill">Diseño web</a>
+          <a href="#seo" class="hero-anchor-pill">SEO</a>
+          <a href="#automatizaciones" class="hero-anchor-pill">Automatizaciones</a>
+          <a href="#whatsapp" class="hero-anchor-pill">WhatsApp</a>
+          <a href="#video" class="hero-anchor-pill">Vídeo</a>
+          <a href="#captacion" class="hero-anchor-pill">Captación</a>
+        </nav>
+      </div>
+    
+        <p class="hero__price-hint" style="margin-top:var(--s-3);font-size:var(--fs-sm);color:var(--c-text-muted);">Desde <strong style="color:var(--c-text);">300&nbsp;€</strong>. Sin permanencia. <a href="#tarifas" style="color:var(--c-orange);text-decoration:underline;">Ver tarifas →</a></p>
+      </section>
+
+    <!-- ===== SUB-NAV STICKY ===== -->
+    <nav class="service-subnav" id="service-subnav" aria-label="Servicios — navegación rápida">
+      <a href="#web" class="service-subnav__link" data-section="web">Diseño web</a>
+      <a href="#seo" class="service-subnav__link" data-section="seo">SEO local</a>
+      <a href="#automatizaciones" class="service-subnav__link" data-section="automatizaciones">Automatizaciones</a>
+      <a href="#whatsapp" class="service-subnav__link" data-section="whatsapp">WhatsApp</a>
+      <a href="#video" class="service-subnav__link" data-section="video">Vídeo</a>
+      <a href="#captacion" class="service-subnav__link" data-section="captacion">Captación</a>
+    </nav>
+
+    <!-- ========================================
+         SERVICIO 1 — DISEÑO WEB
+    ========================================= -->
+    <section id="web" class="service-section service-section--web" aria-labelledby="web-title">
+      <div class="service-section__tint-bg" aria-hidden="true"></div>
+      <div class="service-section__inner">
+        <div class="service-section__header reveal">
+          <span class="eyebrow eyebrow--mono">01</span>
+          <h2 class="service-section__title" id="web-title">Diseño web.</h2>
+          <p class="service-section__lead">Una web que aparece, convence y hace actuar.</p>
+        </div>
+        <div class="service-stat reveal">
+          <span class="service-stat__num">95+</span>
+          <span class="service-stat__label">de Lighthouse Performance en cada web que entregamos.</span>
+        </div>
+
+
+        <div class="service-features">
+          <!-- Feature 1 -->
+          <article class="service-feature reveal" aria-labelledby="web-f1-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Móvil con pantalla -->
+              <rect x="14" y="4" width="20" height="40" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <line x1="14" y1="12" x2="34" y2="12" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="14" y1="36" x2="34" y2="36" stroke="currentColor" stroke-width="1.5"/>
+              <circle cx="24" cy="40" r="1.5" fill="currentColor"/>
+              <!-- Cursor -->
+              <path d="M21 20L25 30L22.8 29L22 32L20.5 29L18 30Z" fill="currentColor"/>
+            </svg>
+            <h3 class="service-feature__title" id="web-f1-title">Diseñada para móvil</h3>
+            <p class="service-feature__body">
+              El 85% de tus clientes te buscan desde el teléfono. Hacemos que la web cargue rápido, se vea bien en cualquier pantalla y sea fácil de navegar sin explicaciones.
+            </p>
+          </article>
+
+          <!-- Feature 2 -->
+          <article class="service-feature reveal reveal-d1" aria-labelledby="web-f2-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Engranaje + estrella -->
+              <path d="M24 14C18.477 14 14 18.477 14 24C14 29.523 18.477 34 24 34C29.523 34 34 29.523 34 24C34 18.477 29.523 14 24 14Z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="24" cy="24" r="4" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M24 8V12M24 36V40M8 24H12M36 24H40M11.515 11.515L14.343 14.343M33.657 33.657L36.485 36.485M36.485 11.515L33.657 14.343M14.343 33.657L11.515 36.485" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <!-- estrella pequeña -->
+              <path d="M38 6L39 8.5L41.8 8.5L39.6 10.2L40.5 13L38 11.5L35.5 13L36.4 10.2L34.2 8.5L37 8.5Z" fill="currentColor"/>
+            </svg>
+            <h3 class="service-feature__title" id="web-f2-title">Lista para Google</h3>
+            <p class="service-feature__body">
+              No sirve tener web si no aparece en búsquedas. La estructuramos para que los buscadores la entiendan desde el primer día.
+            </p>
+          </article>
+
+          <!-- Feature 3 -->
+          <article class="service-feature reveal reveal-d2" aria-labelledby="web-f3-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Llave/herramienta -->
+              <path d="M36 8C33.791 8 32 9.791 32 12C32 12.848 32.271 13.633 32.734 14.266L20 27L18 25L10 33L15 38L23 30L21 28L33.734 15.266C34.367 15.729 35.152 16 36 16C38.209 16 40 14.209 40 12C40 11.152 39.729 10.367 39.266 9.734L36 13L35 12L34 11L37.266 7.734C36.633 7.271 35.848 7 35 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <h3 class="service-feature__title" id="web-f3-title">Actualizaciones sin llamar al informático</h3>
+            <p class="service-feature__body">
+              Incluimos un panel sencillo para que puedas cambiar precios, fotos o texto tú mismo. O nos lo pides a nosotros — dos horas al mes incluidas.
+            </p>
+          </article>
+        </div>
+
+        <div class="service-cta reveal">
+          <a href="/contacto.html" class="btn btn--primary">Hablar sobre mi web</a>
+          <a href="#tarifas" class="btn btn--secondary">Ver tarifas</a>
+        </div>
+        <p class="service-footnote">Sin IVA · Sin permanencia</p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SERVICIO 2 — SEO LOCAL
+    ========================================= -->
+    <section id="seo" class="service-section service-section--seo" aria-labelledby="seo-title">
+      <div class="service-section__tint-bg" aria-hidden="true"></div>
+      <div class="service-section__inner">
+        <div class="service-section__header reveal">
+          <span class="eyebrow eyebrow--mono">02</span>
+          <h2 class="service-section__title" id="seo-title">SEO local.</h2>
+          <p class="service-section__lead">Aparecer cuando alguien busca lo que tú vendes, en tu ciudad.</p>
+        </div>
+        <div class="service-features">
+          <article class="service-feature reveal" aria-labelledby="seo-f1-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <path d="M24 4C16.268 4 10 10.268 10 18C10 28 24 44 24 44C24 44 38 28 38 18C38 10.268 31.732 4 24 4Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <circle cx="24" cy="18" r="5" stroke="currentColor" stroke-width="2"/>
+              <path d="M24 9 L25.2 12.4 L28.8 12.4 L26 14.6 L27 18 L24 16.2 L21 18 L22 14.6 L19.2 12.4 L22.8 12.4 Z" fill="currentColor"/>
+            </svg>
+            <h3 class="service-feature__title" id="seo-f1-title">Google te pone en el mapa</h3>
+            <p class="service-feature__body">
+              Configuramos y optimizamos tu ficha de Google Business. Las fotos, la descripción, el horario, los atributos. Lo que hace que pases de invisible a los tres primeros resultados locales.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d1" aria-labelledby="seo-f2-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- 5 estrellas compactas -->
+              <text x="4" y="34" font-size="20" fill="currentColor" font-family="Arial">★★★★★</text>
+            </svg>
+            <h3 class="service-feature__title" id="seo-f2-title">Reseñas que se acumulan solas</h3>
+            <p class="service-feature__body">
+              Configuramos un sistema que pide reseña a cada cliente satisfecho en el momento justo. Sin enviar mensajes a mano cada vez.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d2" aria-labelledby="seo-f3-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <polyline points="6,38 16,26 22,30 30,18 42,20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <polyline points="36,20 42,20 42,26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+            </svg>
+            <h3 class="service-feature__title" id="seo-f3-title">Informe mensual en lenguaje normal</h3>
+            <p class="service-feature__body">
+              Cada mes te decimos cuántas personas te han visto en Google, cuántas han llamado y cuántas han pedido cómo llegar. Sin estadísticas que nadie entiende.
+            </p>
+          </article>
+        </div>
+        <div class="service-cta reveal">
+          <a href="/contacto.html" class="btn btn--primary">Revisar mi presencia en Google</a>
+          <a href="#tarifas" class="btn btn--secondary">Ver tarifas</a>
+        </div>
+        <p class="service-footnote">Sin IVA · Sin permanencia</p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SERVICIO 3 — AUTOMATIZACIONES
+    ========================================= -->
+    <section id="automatizaciones" class="service-section service-section--automatizaciones" aria-labelledby="auto-title">
+      <div class="service-section__tint-bg" aria-hidden="true"></div>
+      <div class="service-section__inner">
+        <div class="service-section__header reveal">
+          <span class="eyebrow eyebrow--mono">03</span>
+          <h2 class="service-section__title" id="auto-title">Automatizaciones.</h2>
+          <p class="service-section__lead">Tareas que haces a mano cada día. Nosotros las automatizamos.</p>
+        </div>
+        <div class="service-features">
+          <article class="service-feature reveal" aria-labelledby="auto-f1-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Flechas circulares -->
+              <path d="M24 8C15.163 8 8 15.163 8 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M8 24C8 32.837 15.163 40 24 40C32.837 40 40 32.837 40 24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <polyline points="4,24 8,20 12,24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <polyline points="44,24 40,28 36,24" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+            <h3 class="service-feature__title" id="auto-f1-title">Respuestas automáticas bien hechas</h3>
+            <p class="service-feature__body">
+              Confirmaciones de cita, recordatorios, seguimientos post-visita. Los configuramos una vez y funcionan solos. No parecen robots porque los escribimos como si los escribieras tú.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d1" aria-labelledby="auto-f2-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Tabla con check -->
+              <rect x="6" y="8" width="36" height="32" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <line x1="6" y1="18" x2="42" y2="18" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="20" y1="8" x2="20" y2="40" stroke="currentColor" stroke-width="1.5"/>
+              <path d="M25 24L27 27L33 21" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M10 24H16M10 30H16M10 36H16" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <h3 class="service-feature__title" id="auto-f2-title">Tu agenda y tus datos conectados</h3>
+            <p class="service-feature__body">
+              Conectamos las herramientas que ya usas — Google Calendar, WhatsApp, tu formulario web — para que la información no se pierda entre aplicaciones.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d2" aria-labelledby="auto-f3-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Reloj con check -->
+              <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <path d="M24 14V24L30 28" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M17 32L21 36L31 26" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="service-feature__title" id="auto-f3-title">Sin mantenimiento constante</h3>
+            <p class="service-feature__body">
+              Una vez configurado, te avisamos si algo falla. No tienes que supervisarlo tú. Es como contratar un empleado administrativo que nunca se va de vacaciones.
+            </p>
+          </article>
+        </div>
+        <blockquote class="service-quote reveal">
+          <p>"En vez de mandar 30 recordatorios al día a mano, los manda el sistema. Yo dedico ese tiempo a cortar pelo."</p>
+          <cite>— Caso de uso típico en peluquería</cite>
+        </blockquote>
+
+        <div class="service-cta reveal">
+          <a href="/contacto.html" class="btn btn--primary">Ver qué podemos automatizar</a>
+          <a href="#tarifas" class="btn btn--secondary">Ver tarifas</a>
+        </div>
+        <p class="service-footnote">Sin IVA · Sin permanencia</p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SERVICIO 4 — BOT WHATSAPP
+    ========================================= -->
+    <section id="whatsapp" class="service-section service-section--whatsapp" aria-labelledby="wa-title">
+      <div class="service-section__tint-bg" aria-hidden="true"></div>
+      <div class="service-section__inner">
+        <div class="service-section__header reveal">
+          <span class="eyebrow eyebrow--mono">04</span>
+          <h2 class="service-section__title" id="wa-title">Bot de WhatsApp.</h2>
+          <p class="service-section__lead">Un asistente que responde por ti, a cualquier hora.</p>
+        </div>
+        <div class="service-features">
+          <article class="service-feature reveal" aria-labelledby="wa-f1-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Burbuja chat + reloj -->
+              <path d="M8 36L10.5 28C8.9 25.3 8 22.2 8 19C8 10.7 14.7 4 24 4C33.3 4 40 10.7 40 19C40 27.3 33.3 34 24 34C21.1 34 18.3 33.2 16 31.8L8 36Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <circle cx="34" cy="38" r="8" fill="var(--c-bg-soft)" stroke="currentColor" stroke-width="2"/>
+              <path d="M34 33V38L37 40" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+            </svg>
+            <h3 class="service-feature__title" id="wa-f1-title">Responde a las 2 de la madrugada</h3>
+            <p class="service-feature__body">
+              Precio, horario, disponibilidad, cómo llegar. El bot responde lo que el cliente necesita saber en el momento en que lo necesita, no cuando tú puedas.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d1" aria-labelledby="wa-f2-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Megáfono -->
+              <path d="M8 18H14V30H8C7.448 30 7 29.552 7 29V19C7 18.448 7.448 18 8 18Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <path d="M14 18L32 10V38L14 30V18Z" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+              <path d="M14 30L16 38H20L18 30" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M36 18C38.209 18 40 20.686 40 24C40 27.314 38.209 30 36 30" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+            </svg>
+            <h3 class="service-feature__title" id="wa-f2-title">Campañas de mensaje directo</h3>
+            <p class="service-feature__body">
+              Enviamos mensajes personalizados a tu lista de clientes: ofertas, recordatorios de temporada, nuevos servicios. Con el permiso correcto y sin parecer spam.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d2" aria-labelledby="wa-f3-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Escudo check -->
+              <path d="M24 4L8 10V24C8 33.941 15.163 43.069 24 44C32.837 43.069 40 33.941 40 24V10L24 4Z" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+              <path d="M17 24L21 28L31 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="service-feature__title" id="wa-f3-title">Cumple la normativa</h3>
+            <p class="service-feature__body">
+              Trabajamos con la API oficial de WhatsApp Business. Nada de métodos que pueden cerrarte la cuenta. Tu número y tu reputación están protegidos.
+            </p>
+          </article>
+        </div>
+        <div class="service-cta reveal">
+          <a href="/contacto.html" class="btn btn--primary">Hablar sobre el bot</a>
+          <a href="#tarifas" class="btn btn--secondary">Ver tarifas</a>
+        </div>
+        <p class="service-footnote">Sin IVA · Sin permanencia</p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SERVICIO 5 — CONTENIDO EN VÍDEO
+    ========================================= -->
+    <section id="video" class="service-section service-section--video" aria-labelledby="video-title">
+      <div class="service-section__tint-bg" aria-hidden="true"></div>
+      <div class="service-section__inner">
+        <div class="service-section__header reveal">
+          <span class="eyebrow eyebrow--mono">05</span>
+          <h2 class="service-section__title" id="video-title">Contenido en vídeo.</h2>
+          <p class="service-section__lead">Tu negocio en redes, publicado cada semana, sin que tengas que grabar nada.</p>
+        </div>
+        <div class="service-features">
+          <article class="service-feature reveal" aria-labelledby="video-f1-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Cámara + estrella -->
+              <rect x="4" y="14" width="32" height="24" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <circle cx="20" cy="26" r="7" stroke="currentColor" stroke-width="2"/>
+              <path d="M36 20L44 16V36L36 32" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <path d="M38 6L39 8.5L41.5 8.5L39.5 10L40.3 12.5L38 11L35.7 12.5L36.5 10L34.5 8.5L37 8.5Z" fill="currentColor"/>
+            </svg>
+            <h3 class="service-feature__title" id="video-f1-title">Producción desde cero</h3>
+            <p class="service-feature__body">
+              Guion, locución, imágenes, subtítulos y edición. Creamos el vídeo completo y lo publicamos en tu nombre. Tú lo revisas antes si quieres.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d1" aria-labelledby="video-f2-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Calendario con play -->
+              <rect x="6" y="10" width="36" height="32" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <line x1="6" y1="20" x2="42" y2="20" stroke="currentColor" stroke-width="1.5"/>
+              <line x1="16" y1="6" x2="16" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <line x1="32" y1="6" x2="32" y2="14" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M19 28L29 33.5L19 39V28Z" fill="currentColor"/>
+            </svg>
+            <h3 class="service-feature__title" id="video-f2-title">Publicación constante</h3>
+            <p class="service-feature__body">
+              Tres vídeos semanales en Instagram o YouTube, sin que tengas que preocuparte de calendarios de contenido ni de qué publicar hoy.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d2" aria-labelledby="video-f3-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Gráfica con ojo -->
+              <polyline points="6,38 16,26 22,30 30,18 42,20" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <ellipse cx="24" cy="36" rx="10" ry="5" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="24" cy="36" r="2.5" fill="currentColor"/>
+            </svg>
+            <h3 class="service-feature__title" id="video-f3-title">Vídeo que vende, no que decora</h3>
+            <p class="service-feature__body">
+              Cada vídeo tiene un objetivo concreto: que el cliente conozca un producto, que llame, que reserve. No producimos contenido por producir.
+            </p>
+          </article>
+        </div>
+        <div class="service-cta reveal">
+          <a href="/contacto.html" class="btn btn--primary">Ver cómo funciona</a>
+          <a href="/casos.html" class="btn btn--secondary">Ver ejemplos</a>
+        </div>
+        <p class="service-footnote">Sin IVA · Sin permanencia</p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         SERVICIO 6 — CAPTACIÓN
+    ========================================= -->
+    <section id="captacion" class="service-section service-section--captacion" aria-labelledby="cap-title">
+      <div class="service-section__tint-bg" aria-hidden="true"></div>
+      <div class="service-section__inner">
+        <div class="service-section__header reveal">
+          <span class="eyebrow eyebrow--mono">06</span>
+          <h2 class="service-section__title" id="cap-title">Captación.</h2>
+          <p class="service-section__lead">Clientes nuevos, de forma sistemática, sin depender del boca a boca.</p>
+        </div>
+        <div class="service-features">
+          <article class="service-feature reveal" aria-labelledby="cap-f1-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Imán -->
+              <path d="M14 8C14 8 8 14 8 24C8 30.627 13.373 36 20 36H20" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <path d="M28 36H28C34.627 36 40 30.627 40 24C40 14 34 8 34 8" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+              <line x1="14" y1="8" x2="20" y2="8" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              <line x1="28" y1="8" x2="34" y2="8" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              <line x1="20" y1="36" x2="20" y2="42" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+              <line x1="28" y1="36" x2="28" y2="42" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+            </svg>
+            <h3 class="service-feature__title" id="cap-f1-title">Prospección local activa</h3>
+            <p class="service-feature__body">
+              Identificamos negocios y personas que pueden ser tus clientes en Jerez y la provincia. Los filtramos por sector, zona y probabilidad de interés.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d1" aria-labelledby="cap-f2-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Sobre con flecha -->
+              <rect x="6" y="12" width="36" height="28" rx="4" stroke="currentColor" stroke-width="2.5" fill="none"/>
+              <path d="M6 16L24 28L42 16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <path d="M32 8L40 8L40 16" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+              <line x1="30" y1="10" x2="40" y2="10" stroke="currentColor" stroke-width="1"/>
+            </svg>
+            <h3 class="service-feature__title" id="cap-f2-title">Primer contacto hecho por nosotros</h3>
+            <p class="service-feature__body">
+              Redactamos y enviamos el mensaje inicial. El tono lo defines tú: más directo o más cálido. Tu teléfono solo suena cuando hay interés real.
+            </p>
+          </article>
+          <article class="service-feature reveal reveal-d2" aria-labelledby="cap-f3-title">
+            <svg class="service-feature__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Embudo -->
+              <path d="M8 8H40L28 24V40L20 36V24L8 8Z" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="service-feature__title" id="cap-f3-title">Sin comprar listas</h3>
+            <p class="service-feature__body">
+              No usamos bases de datos genéricas. Construimos la lista de personas a las que vale la pena contactar, una por una, con criterio.
+            </p>
+          </article>
+        </div>
+        <div class="service-cta reveal">
+          <a href="/contacto.html" class="btn btn--primary">Hablar de captación</a>
+          <a href="#tarifas" class="btn btn--secondary">Ver tarifas</a>
+        </div>
+        <p class="service-footnote">Sin IVA · Sin permanencia</p>
+      </div>
+    </section>
+
+    <!-- ========================================
+         COMPARATIVA DE PAQUETES (TARIFAS)
+    ========================================= -->
+    <section id="tarifas" class="tarifas-section" aria-labelledby="tarifas-title">
+      <div class="container--narrow">
+        <div class="tarifas-section__header reveal">
+          <h2 id="tarifas-title" style="font-size:var(--fs-h1); font-weight:var(--fw-bold); letter-spacing:var(--tk-tightest); color:var(--c-text); margin-bottom:var(--s-3);">Tres niveles de implicación.</h2>
+          <p class="lead text-soft">Elige por dónde quieres empezar. Siempre puedes ampliar.</p>
+        </div>
+      </div>
+      <div class="container reveal">
+        <div class="comparison-wrap">
+          <table class="comparison-table" aria-label="Comparativa de paquetes">
+            <colgroup>
+              <col style="min-width: 180px;">
+              <col>
+              <col class="comparison-table__col--popular">
+              <col>
+            </colgroup>
+            <thead>
+              <tr>
+                <th scope="col"><span class="sr-only">Servicio incluido</span></th>
+
+                <th scope="col">
+                  <span class="comparison-table__name">Presencia básica</span>
+                  <span class="comparison-table__price">Desde 300&nbsp;€</span>
+                  <small style="display:block; font-size:var(--fs-xs); color:var(--c-text-muted); margin-bottom:var(--s-3);">Para empezar</small>
+                  <a href="/contacto.html" class="btn btn--outline comparison-table__col-cta">Contratar</a>
+                </th>
+
+                <th scope="col" class="comparison-table__col--popular">
+                  <span class="badge badge--popular" style="margin-bottom:var(--s-2);">Más popular</span>
+                  <span class="comparison-table__name">Digitalización</span>
+                  <span class="comparison-table__price">497&nbsp;€ + 97&nbsp;€/mes</span>
+                  <small style="display:block; font-size:var(--fs-xs); color:var(--c-text-muted); margin-bottom:var(--s-3);">Recomendado para empezar</small>
+                  <a href="/contacto.html" class="btn btn--primary comparison-table__col-cta">Contratar</a>
+                </th>
+
+                <th scope="col">
+                  <span class="comparison-table__name">Automatización</span>
+                  <span class="comparison-table__price">997&nbsp;€ + 297&nbsp;€/mes</span>
+                  <small style="display:block; font-size:var(--fs-xs); color:var(--c-text-muted); margin-bottom:var(--s-3);">Manos libres</small>
+                  <a href="/contacto.html" class="btn btn--outline comparison-table__col-cta">Contratar</a>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Diseño web</td>
+                <td>Sí</td>
+                <td class="comparison-table__col--popular">Sí</td>
+                <td>Sí</td>
+              </tr>
+              <tr>
+                <td>Ficha Google Business</td>
+                <td>Básica</td>
+                <td class="comparison-table__col--popular">Optimizada</td>
+                <td>Optimizada + gestión mensual</td>
+              </tr>
+              <tr>
+                <td>SEO local</td>
+                <td>—</td>
+                <td class="comparison-table__col--popular">Sí</td>
+                <td>Sí + seguimiento continuo</td>
+              </tr>
+              <tr>
+                <td>Automatizaciones</td>
+                <td>—</td>
+                <td class="comparison-table__col--popular">—</td>
+                <td>Sí</td>
+              </tr>
+              <tr>
+                <td>Bot WhatsApp</td>
+                <td>—</td>
+                <td class="comparison-table__col--popular">Opcional (+)</td>
+                <td>Incluido</td>
+              </tr>
+              <tr>
+                <td>Contenido en vídeo</td>
+                <td>—</td>
+                <td class="comparison-table__col--popular">Opcional (+)</td>
+                <td>Hasta 3 vídeos/semana</td>
+              </tr>
+              <tr>
+                <td>Captación de clientes</td>
+                <td>—</td>
+                <td class="comparison-table__col--popular">—</td>
+                <td>Incluida</td>
+              </tr>
+              <tr>
+                <td>Informes mensuales</td>
+                <td>—</td>
+                <td class="comparison-table__col--popular">Sí</td>
+                <td>Sí, detallado</td>
+              </tr>
+              <tr>
+                <td>Soporte</td>
+                <td>Email 48h</td>
+                <td class="comparison-table__col--popular">Email + WhatsApp</td>
+                <td>Prioritario</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+        <p class="tarifas-footnote">
+          Precios sin IVA. Sin permanencia mínima. Los costes externos (dominio, hosting, herramientas de terceros) se presupuestan aparte.
+        </p>
+        <div class="tarifas-cta reveal">
+          <a href="/contacto.html" class="btn btn--primary btn--lg">¿Cuál me conviene? Pregúntanos</a>
+          <a href="/casos.html" class="btn btn--secondary">Ver casos reales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA FINAL DARK ===== -->
+    <section class="cta-dark" aria-labelledby="servicios-cta-headline">
+      <div class="cta-dark__inner">
+        <div class="reveal">
+          <h2 class="cta-dark__headline" id="servicios-cta-headline">
+            Sin reunión de ventas. Sin presentación de 40 diapositivas.
+          </h2>
+          <p class="cta-dark__sub">
+            30 minutos de revisión gratuita. Te decimos qué tiene sentido para tu negocio y lo que no.
+          </p>
+        </div>
+        <div class="cta-dark__actions reveal reveal-d1">
+          <a href="/contacto.html" class="btn btn--primary btn--lg">Reservar revisión</a>
+          <a href="/casos.html" class="btn btn--outline-light">Ver casos</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="footer__grid">
+      <div class="footer__col-brand">
+        <div class="footer__logo">Automarketing <span class="footer__logo-accent">Digital</span></div>
+        <p class="footer__brand-text">Agencia digital en Jerez de la Frontera. Diseño web, SEO y automatizaciones para negocios locales.</p>
+      </div>
+      <nav aria-label="Servicios">
+        <span class="footer__col-title">Servicios</span>
+        <ul class="footer__links" role="list">
+          <li><a href="/servicios.html#web">Diseño web</a></li>
+          <li><a href="/servicios.html#seo">SEO local</a></li>
+          <li><a href="/servicios.html#automatizaciones">Automatizaciones</a></li>
+          <li><a href="/servicios.html#whatsapp">Bot WhatsApp</a></li>
+          <li><a href="/servicios.html#video">Vídeo</a></li>
+          <li><a href="/servicios.html#captacion">Captación</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Empresa">
+        <span class="footer__col-title">Empresa</span>
+        <ul class="footer__links" role="list">
+          <li><a href="/sobre-nabil.html">Sobre Nabil</a></li>
+          <li><a href="/casos.html">Casos</a></li>
+          <li><a href="/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+      <address style="font-style:normal;">
+        <span class="footer__col-title">Contacto</span>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:nabil@automarketingdigital.es">nabil@automarketingdigital.es</a></li>
+          <li><a href="https://wa.me/34643987371" rel="noopener noreferrer" target="_blank">WhatsApp</a></li>
+          <li><span style="color:var(--c-text-muted);">Jerez de la Frontera, Cádiz</span></li>
+        </ul>
+      </address>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; <span id="year"></span> Automarketing Digital · Jerez de la Frontera</p>
+      <ul class="footer__legal-links" role="list">
+        <li><a href="/aviso-legal.html">Aviso legal</a></li>
+        <li><a href="/privacidad.html">Política de privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Cookies banner -->
+  <div id="cookies-banner" class="cookies-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <p style="margin-bottom: var(--s-4);">
+      Usamos cookies propias para el correcto funcionamiento del sitio.
+      <a href="/privacidad.html" style="color: var(--c-orange); text-decoration: underline;">Más información.</a>
+    </p>
+    <button id="cookies-accept" class="btn btn--primary" style="width:100%;">Entendido</button>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

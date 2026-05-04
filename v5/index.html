@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Automarketing Digital — Agencia digital en Jerez de la Frontera</title>
+  <meta name="description" content="Diseñamos la presencia digital de negocios locales en Jerez y la Bahía. Desde la web hasta el primer cliente que llega por Google. Desde 300€, sin permanencia.">
+  <link rel="canonical" href="https://automarketingdigital.es/">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://automarketingdigital.es/">
+  <meta property="og:title" content="Automarketing Digital — Agencia digital en Jerez de la Frontera">
+  <meta property="og:description" content="Diseñamos la presencia digital de negocios locales. Desde la web hasta el primer cliente que llega por Google.">
+  <meta property="og:image" content="https://automarketingdigital.es/assets/img/og-home.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta property="og:site_name" content="Automarketing Digital">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Automarketing Digital — Agencia digital Jerez">
+  <meta name="twitter:description" content="Diseñamos la presencia digital de negocios locales. Desde 300€, sin permanencia.">
+
+  <!-- Theme -->
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
+  <!-- Page-level styles -->
+  <style>
+    /* Hero dark ambient glow */
+    .hero--dark {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero--dark::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 60% 50% at 50% 60%, rgba(255,107,53,0.08) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Hero grid lines */
+    .hero--dark::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.04) 1px, transparent 1px);
+      background-size: 72px 72px;
+      pointer-events: none;
+    }
+    .hero__inner { position: relative; z-index: 1; }
+
+    /* Service blocks (home — icono navy, franja borde izq opcional) */
+    .service-block {
+      padding-block: var(--s-section);
+      padding-inline: var(--s-5);
+    }
+    .service-block__inner {
+      max-width: 980px;
+      margin-inline: auto;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: var(--s-5);
+    }
+    .service-block__icon {
+      width: 48px;
+      height: 48px;
+      color: var(--c-navy);
+      flex-shrink: 0;
+    }
+    .service-block__name {
+      font-size: var(--fs-h3);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tight);
+      line-height: var(--lh-snug);
+      color: var(--c-text);
+      margin-bottom: var(--s-2);
+    }
+    .service-block__tagline {
+      font-size: var(--fs-body-lg);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+      margin-bottom: var(--s-5);
+    }
+    .service-block__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      align-items: center;
+    }
+
+    /* Case highlight 50/50 */
+    .case-highlight {
+      padding-block: var(--s-section);
+      padding-inline: var(--s-5);
+      background: var(--c-bg-soft);
+    }
+    .case-highlight__inner {
+      max-width: var(--container);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-8);
+      align-items: center;
+    }
+    .case-highlight__text { display: flex; flex-direction: column; gap: var(--s-5); }
+    .case-highlight__headline {
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tighter);
+      line-height: var(--lh-snug);
+      color: var(--c-text);
+    }
+    .case-highlight__body {
+      font-size: var(--fs-body-lg);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+    .case-highlight__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--s-3);
+      align-items: center;
+    }
+    .case-highlight__media {
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      background: var(--c-bg-elevated);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Reasons grid */
+    .reasons-section {
+      padding-block: var(--s-section);
+      padding-inline: var(--s-5);
+      background: var(--c-bg);
+    }
+    .reasons-section__header {
+      text-align: center;
+      max-width: var(--container-xs);
+      margin-inline: auto;
+      margin-bottom: var(--s-8);
+    }
+    .reasons-section__title {
+      font-size: var(--fs-h1);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tightest);
+      color: var(--c-text);
+      margin-bottom: var(--s-3);
+    }
+    .reasons-section__sub {
+      font-size: var(--fs-lead);
+      color: var(--c-text-soft);
+    }
+    .reason-card {
+      background: var(--c-bg-elevated);
+      border: 1px solid var(--c-line-soft);
+      border-radius: var(--radius-xl);
+      padding: var(--s-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+    }
+    .reason-card__icon {
+      width: 32px;
+      height: 32px;
+      color: var(--c-navy);
+      flex-shrink: 0;
+    }
+    .reason-card__title {
+      font-size: var(--fs-body);
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+    }
+    .reason-card__body {
+      font-size: var(--fs-sm);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Stagger delays para reveal */
+    .reveal-d1 { transition-delay: 100ms; }
+    .reveal-d2 { transition-delay: 200ms; }
+    .reveal-d3 { transition-delay: 300ms; }
+    .reveal-d4 { transition-delay: 400ms; }
+
+    /* Price micro */
+    .price-micro {
+      font-size: var(--fs-xs);
+      color: var(--c-text-muted);
+      margin-bottom: var(--s-3);
+    }
+
+    /* CTA footnote */
+    .cta-footnote {
+      font-size: 0.6875rem;
+      color: var(--c-text-muted);
+      margin-top: var(--s-3);
+    }
+
+    @media (min-width: 700px) {
+      .case-highlight__inner {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+
+  <!-- Schema.org Organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Automarketing Digital",
+    "url": "https://automarketingdigital.es",
+    "logo": "https://automarketingdigital.es/assets/img/logo.png",
+    "description": "Agencia digital en Jerez de la Frontera. Diseño web, SEO local, automatizaciones y captación de clientes para negocios locales.",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Jerez de la Frontera",
+      "addressRegion": "Cádiz",
+      "addressCountry": "ES"
+    },
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "email": "nabil@automarketingdigital.es",
+      "contactType": "sales",
+      "availableLanguage": "Spanish"
+    },
+    "sameAs": [
+      "https://automarketingdigital.es"
+    ]
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== NAV STICKY ===== -->
+  <header>
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+      <!-- Logo -->
+      <a href="/" class="nav__logo" aria-label="Automarketing Digital — Inicio">
+        <!-- Logo SVG icon -->
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+          <rect width="28" height="28" rx="7" fill="#FF6B35"/>
+          <text x="14" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="16" fill="#fff">A</text>
+        </svg>
+        <span>Automarketing <span class="nav__logo-accent">Digital</span></span>
+      </a>
+
+      <!-- Desktop links -->
+      <ul class="nav__links" role="list">
+        <li><a href="/servicios.html">Servicios</a></li>
+        <li><a href="/casos.html">Casos</a></li>
+        <li><a href="/sobre-nabil.html">Sobre Nabil</a></li>
+        <li><a href="/contacto.html">Contacto</a></li>
+      </ul>
+
+      <!-- Desktop CTA -->
+      <div class="nav__cta hide-mobile">
+        <a href="/contacto.html" class="btn btn--primary">Hablar con nosotros</a>
+      </div>
+
+      <!-- Burger mobile -->
+      <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </nav>
+
+    <!-- Mobile menu -->
+    <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+      <a href="/servicios.html">Servicios</a>
+      <a href="/casos.html">Casos</a>
+      <a href="/sobre-nabil.html">Sobre Nabil</a>
+      <a href="/contacto.html">Contacto</a>
+      <a href="/contacto.html" class="btn btn--primary mt-4">Hablar con nosotros</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero hero--dark" aria-labelledby="hero-headline">
+      <div class="hero__inner">
+        <span class="hero__eyebrow reveal">Agencia digital &middot; Jerez de la Frontera</span>
+        <h1 class="hero__headline reveal reveal-d1" id="hero-headline">
+          Tu negocio,<br>
+          <span class="hero__title-accent">siempre visible.</span>
+        </h1>
+        <p class="hero__sub reveal reveal-d2">
+          Diseñamos la presencia digital de negocios locales. Desde la web hasta el primer cliente que llega por Google.
+        </p>
+        <div class="hero__actions reveal reveal-d3">
+          <a href="/servicios.html" class="btn btn--primary btn--lg">Ver qué hacemos</a>
+          <a href="/casos.html" class="btn btn--outline-light">Ver casos reales</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIO 1 — Diseño web ===== -->
+    <section class="service-block section--white" aria-labelledby="svc-web-title">
+      <div class="service-block__inner reveal">
+        <svg class="service-block__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+          <rect x="4" y="8" width="40" height="28" rx="3" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <line x1="4" y1="16" x2="44" y2="16" stroke="currentColor" stroke-width="2"/>
+          <circle cx="10" cy="12" r="1.5" fill="currentColor"/>
+          <circle cx="16" cy="12" r="1.5" fill="currentColor"/>
+          <circle cx="22" cy="12" r="1.5" fill="currentColor"/>
+          <line x1="16" y1="36" x2="32" y2="36" stroke="currentColor" stroke-width="2.5"/>
+          <line x1="18" y1="39" x2="30" y2="39" stroke="currentColor" stroke-width="2"/>
+          <!-- cursor -->
+          <path d="M30 24 L34 32 L31.5 31 L30 34 L28.5 31 L26 32 Z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h2 class="service-block__name" id="svc-web-title">Diseño web</h2>
+          <p class="service-block__tagline">Una web que trabaja por ti cuando tú no puedes.</p>
+          <div class="service-block__actions">
+            <a href="/servicios.html#web" class="btn btn--primary">Ver este servicio</a>
+            <a href="/casos.html" class="btn btn--secondary">Ver ejemplo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIO 2 — SEO local ===== -->
+    <section class="service-block section--soft" aria-labelledby="svc-seo-title">
+      <div class="service-block__inner reveal">
+        <svg class="service-block__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+          <path d="M24 4C16.268 4 10 10.268 10 18C10 28 24 44 24 44C24 44 38 28 38 18C38 10.268 31.732 4 24 4Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <circle cx="24" cy="18" r="5" stroke="currentColor" stroke-width="2"/>
+          <!-- estrella -->
+          <path d="M24 10 L25 12.5 L27.8 12.5 L25.6 14.2 L26.5 17 L24 15.5 L21.5 17 L22.4 14.2 L20.2 12.5 L23 12.5 Z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h2 class="service-block__name" id="svc-seo-title">SEO y Google Business</h2>
+          <p class="service-block__tagline">Que te encuentren antes que a la competencia.</p>
+          <div class="service-block__actions">
+            <a href="/servicios.html#seo" class="btn btn--primary">Ver este servicio</a>
+            <a href="/servicios.html#seo" class="btn btn--secondary">Cómo funciona</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIO 3 — Automatizaciones ===== -->
+    <section class="service-block section--white" aria-labelledby="svc-auto-title">
+      <div class="service-block__inner reveal">
+        <svg class="service-block__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+          <circle cx="10" cy="24" r="5" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <circle cx="38" cy="10" r="5" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <circle cx="38" cy="38" r="5" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <line x1="15" y1="21" x2="33" y2="13" stroke="currentColor" stroke-width="2"/>
+          <line x1="15" y1="27" x2="33" y2="35" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <div>
+          <h2 class="service-block__name" id="svc-auto-title">Automatizaciones</h2>
+          <p class="service-block__tagline">Tareas repetitivas que dejan de quitarte tiempo.</p>
+          <div class="service-block__actions">
+            <a href="/servicios.html#automatizaciones" class="btn btn--primary">Ver este servicio</a>
+            <a href="/casos.html" class="btn btn--secondary">Ver ejemplo</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIO 4 — Bot WhatsApp ===== -->
+    <section class="service-block section--soft" aria-labelledby="svc-wa-title">
+      <div class="service-block__inner reveal">
+        <svg class="service-block__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+          <path d="M8 36L10.5 28C8.9 25.3 8 22.2 8 19C8 10.7 14.7 4 24 4C33.3 4 40 10.7 40 19C40 27.3 33.3 34 24 34C21.1 34 18.3 33.2 16 31.8L8 36Z" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <path d="M18 19H30" stroke="currentColor" stroke-width="2"/>
+          <path d="M18 24H26" stroke="currentColor" stroke-width="2"/>
+        </svg>
+        <div>
+          <h2 class="service-block__name" id="svc-wa-title">Bot de WhatsApp</h2>
+          <p class="service-block__tagline">Responde a tus clientes aunque estés cerrado.</p>
+          <div class="service-block__actions">
+            <a href="/servicios.html#whatsapp" class="btn btn--primary">Ver este servicio</a>
+            <a href="/servicios.html#whatsapp" class="btn btn--secondary">Cómo funciona</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIO 5 — Contenido en vídeo ===== -->
+    <section class="service-block section--white" aria-labelledby="svc-vid-title">
+      <div class="service-block__inner reveal">
+        <svg class="service-block__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+          <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2.5" fill="none"/>
+          <path d="M20 17L33 24L20 31V17Z" fill="currentColor"/>
+        </svg>
+        <div>
+          <h2 class="service-block__name" id="svc-vid-title">Contenido en vídeo</h2>
+          <p class="service-block__tagline">Tu negocio en redes, sin que tengas que grabar nada.</p>
+          <div class="service-block__actions">
+            <a href="/servicios.html#video" class="btn btn--primary">Ver este servicio</a>
+            <a href="/casos.html" class="btn btn--secondary">Ver ejemplos</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SERVICIO 6 — Captación ===== -->
+    <section class="service-block section--soft" aria-labelledby="svc-cap-title">
+      <div class="service-block__inner reveal">
+        <svg class="service-block__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+          <!-- imán -->
+          <path d="M14 8C14 8 8 14 8 24C8 30.627 13.373 36 20 36H20C20 36 20 42 24 42C28 42 28 36 28 36H28C34.627 36 40 30.627 40 24C40 14 34 8 34 8" stroke="currentColor" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+          <path d="M14 8H20V20C20 23.314 21.343 24 24 24C26.657 24 28 23.314 28 20V8H34" stroke="currentColor" stroke-width="2.5" fill="none"/>
+        </svg>
+        <div>
+          <h2 class="service-block__name" id="svc-cap-title">Captación de clientes</h2>
+          <p class="service-block__tagline">Leads locales filtrados y listos para contactar.</p>
+          <div class="service-block__actions">
+            <a href="/servicios.html#captacion" class="btn btn--primary">Ver este servicio</a>
+            <a href="/servicios.html#captacion" class="btn btn--secondary">Cómo funciona</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CASO DESTACADO — Carlos Harto ===== -->
+    <section class="case-highlight" aria-labelledby="case-headline">
+      <div class="case-highlight__inner">
+        <!-- Texto izquierda -->
+        <div class="case-highlight__text reveal">
+          <span class="eyebrow">Primer cliente &middot; Abril 2026</span>
+          <h2 class="case-highlight__headline" id="case-headline">
+            Carlos llevaba años con el mismo turista. Ahora le encuentran por Google.
+          </h2>
+          <p class="case-highlight__body">
+            Carlos Harto es guía turístico en Jerez. Tenía 1.700 contactos acumulados y ningún sistema para convertirlos en reservas. Diseñamos su presencia digital desde cero: web, ficha de Google, reseñas.
+          </p>
+          <div class="case-highlight__actions">
+            <a href="/casos.html" class="btn btn--primary">Ver el caso</a>
+            <a href="/contacto.html" class="btn btn--secondary">Hablar con nosotros</a>
+          <p class="case-disclaimer"><em>Caso en curso · Los resultados se publicarán cuando haya datos verificables.</em></p>
+        
+          </div>
+        </div>
+
+        <!-- Mockup derecha — pill texto como fallback (no hay foto del GBP todavía) -->
+        <div class="case-highlight__media reveal reveal-d2" aria-hidden="true">
+          <!-- Placeholder: pill con nombre hasta tener mockup GBP real -->
+          <svg viewBox="0 0 440 540" width="440" height="540" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ficha Google Business de Carlos Harto Tours">
+            <rect width="440" height="540" rx="22" fill="#F5F5F7"/>
+            <!-- Barra status simulada -->
+            <rect x="0" y="0" width="440" height="44" rx="22" fill="#E5E7EB"/>
+            <rect x="0" y="22" width="440" height="22" fill="#E5E7EB"/>
+            <!-- Mapa placeholder -->
+            <rect x="20" y="56" width="400" height="180" rx="12" fill="#D1D5DB"/>
+            <!-- Pin de mapa -->
+            <ellipse cx="220" cy="148" rx="16" ry="16" fill="#FF6B35"/>
+            <path d="M220 120C206.745 120 196 130.745 196 144C196 160 220 180 220 180C220 180 244 160 244 144C244 130.745 233.255 120 220 120Z" fill="#FF6B35"/>
+            <circle cx="220" cy="144" r="6" fill="#fff"/>
+            <!-- Card info -->
+            <rect x="20" y="252" width="400" height="268" rx="12" fill="#fff"/>
+            <!-- Nombre -->
+            <rect x="40" y="276" width="220" height="18" rx="4" fill="#1d1d1f"/>
+            <!-- Categoria -->
+            <rect x="40" y="304" width="140" height="12" rx="3" fill="#6e6e73"/>
+            <!-- Estrellas -->
+            <text x="40" y="336" font-family="Arial" font-size="18" fill="#FF6B35">★★★★★</text>
+            <rect x="160" y="322" width="60" height="12" rx="3" fill="#D1D5DB"/>
+            <!-- Separador -->
+            <line x1="40" y1="352" x2="400" y2="352" stroke="#E5E7EB" stroke-width="1"/>
+            <!-- Botones acciones -->
+            <rect x="40" y="368" width="108" height="36" rx="18" fill="#F0F0F5"/>
+            <rect x="160" y="368" width="108" height="36" rx="18" fill="#F0F0F5"/>
+            <rect x="280" y="368" width="108" height="36" rx="18" fill="#F0F0F5"/>
+            <!-- Pill Carlos Harto Tours -->
+            <rect x="80" y="448" width="280" height="48" rx="24" fill="#FF6B35"/>
+            <text x="220" y="478" text-anchor="middle" font-family="Inter, Arial, sans-serif" font-weight="600" font-size="14" fill="#fff">Carlos Harto Tours · Guía · Jerez</text>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== POR QUÉ NOSOTROS ===== -->
+    <section class="reasons-section" aria-labelledby="reasons-title">
+      <div class="reasons-section__header reveal">
+        <h2 class="reasons-section__title" id="reasons-title">Sin letra pequeña.</h2>
+        <p class="reasons-section__sub">Cuatro cosas que hacemos distintas.</p>
+      </div>
+      <div class="container">
+        <div class="grid-4 gap-md">
+          <!-- Card 1 -->
+          <article class="reason-card reveal" aria-labelledby="reason-1-title">
+            <svg class="reason-card__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+              <rect x="8" y="14" width="16" height="14" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+              <path d="M11 14V10C11 7.239 13.239 5 16 5C18.761 5 21 7.239 21 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              <circle cx="21" cy="22" r="4" fill="currentColor"/>
+              <path d="M19.5 22L20.5 23L22.5 21" stroke="#fff" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <h3 class="reason-card__title" id="reason-1-title">Precio claro desde el primer día</h3>
+            <p class="reason-card__body">Sin costes ocultos. Sin permanencia. El contrato cabe en una página.</p>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="reason-card reveal reveal-d1" aria-labelledby="reason-2-title">
+            <svg class="reason-card__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+              <path d="M16 3C16 3 8 9 8 18C8 22.418 11.582 26 16 26C20.418 26 24 22.418 24 18C24 9 16 3 16 3Z" stroke="currentColor" stroke-width="2" fill="none"/>
+              <circle cx="16" cy="18" r="3" fill="currentColor"/>
+              <line x1="16" y1="26" x2="16" y2="29" stroke="currentColor" stroke-width="2"/>
+            </svg>
+            <h3 class="reason-card__title" id="reason-2-title">Somos de aquí</h3>
+            <p class="reason-card__body">Conocemos los negocios de Jerez y la Bahía. No somos una agencia remota que no ha pisado la zona.</p>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="reason-card reveal reveal-d2" aria-labelledby="reason-3-title">
+            <svg class="reason-card__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+              <polyline points="4,22 10,16 15,19 22,10 28,12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+              <polyline points="22,10 28,10 28,16" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+            </svg>
+            <h3 class="reason-card__title" id="reason-3-title">Resultados comprensibles</h3>
+            <p class="reason-card__body">No te mandamos métricas que no entiendes. Te decimos si tienes más llamadas, más visitas o más reservas.</p>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="reason-card reveal reveal-d3" aria-labelledby="reason-4-title">
+            <svg class="reason-card__icon" viewBox="0 0 32 32" fill="none" aria-hidden="true" focusable="false">
+              <path d="M4 6H28L24 16H8L4 6Z" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <path d="M8 16L10 26H22L24 16" stroke="currentColor" stroke-width="2" fill="none" stroke-linejoin="round"/>
+              <line x1="16" y1="16" x2="16" y2="26" stroke="currentColor" stroke-width="1.5"/>
+            </svg>
+            <h3 class="reason-card__title" id="reason-4-title">Selección limitada de proyectos</h3>
+            <p class="reason-card__body">Trabajamos con pocos negocios a la vez. Así cada uno recibe atención real, no una plantilla.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CTA FINAL DARK ===== -->
+    <section class="cta-dark" aria-labelledby="cta-headline">
+      <div class="cta-dark__inner">
+        <div class="reveal">
+          <h2 class="cta-dark__headline" id="cta-headline">
+            ¿Tu negocio aparece cuando alguien busca en Google?
+          </h2>
+          <p class="cta-dark__sub">
+            Eso es lo primero que revisamos, gratis, en 30 minutos.
+          </p>
+          <p class="price-micro" style="color:var(--c-text-muted); text-align:center; margin-top:var(--s-3);">
+            Desde 300€. Sin permanencia.
+          </p>
+        </div>
+        <div class="cta-dark__actions reveal reveal-d1">
+          <a href="/contacto.html" class="btn btn--primary btn--lg">Reservar revisión gratuita</a>
+          <a href="/servicios.html" class="btn btn--outline-light">Ver los servicios</a>
+        </div>
+        <p class="cta-footnote reveal reveal-d2">*Sin compromiso. 30 min por videollamada o presencial en Jerez.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="footer__grid">
+      <!-- Columna marca -->
+      <div class="footer__col-brand">
+        <div class="footer__logo">
+          Automarketing <span class="footer__logo-accent">Digital</span>
+        </div>
+        <p class="footer__brand-text">
+          Agencia digital en Jerez de la Frontera.
+          Diseño web, SEO y automatizaciones para negocios locales.
+        </p>
+      </div>
+
+      <!-- Columna servicios -->
+      <nav aria-label="Servicios">
+        <span class="footer__col-title">Servicios</span>
+        <ul class="footer__links" role="list">
+          <li><a href="/servicios.html#web">Diseño web</a></li>
+          <li><a href="/servicios.html#seo">SEO local</a></li>
+          <li><a href="/servicios.html#automatizaciones">Automatizaciones</a></li>
+          <li><a href="/servicios.html#whatsapp">Bot WhatsApp</a></li>
+          <li><a href="/servicios.html#video">Vídeo</a></li>
+          <li><a href="/servicios.html#captacion">Captación</a></li>
+        </ul>
+      </nav>
+
+      <!-- Columna empresa -->
+      <nav aria-label="Empresa">
+        <span class="footer__col-title">Empresa</span>
+        <ul class="footer__links" role="list">
+          <li><a href="/sobre-nabil.html">Sobre Nabil</a></li>
+          <li><a href="/casos.html">Casos</a></li>
+          <li><a href="/contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+      <!-- Columna contacto -->
+      <address style="font-style:normal;">
+        <span class="footer__col-title">Contacto</span>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:nabil@automarketingdigital.es">nabil@automarketingdigital.es</a></li>
+          <li><a href="https://wa.me/34643987371" rel="noopener noreferrer" target="_blank">WhatsApp</a></li>
+          <li><span style="color:var(--c-text-muted);">Jerez de la Frontera, Cádiz</span></li>
+        </ul>
+      </address>
+    </div>
+
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; <span id="year"></span> Automarketing Digital · Jerez de la Frontera</p>
+      <ul class="footer__legal-links" role="list">
+        <li><a href="/aviso-legal.html">Aviso legal</a></li>
+        <li><a href="/privacidad.html">Política de privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Cookies banner -->
+  <div id="cookies-banner" class="cookies-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <p style="margin-bottom: var(--s-4);">
+      Usamos cookies propias para el correcto funcionamiento del sitio. No usamos cookies de publicidad ni seguimiento de terceros.
+      <a href="/privacidad.html" style="color: var(--c-orange); text-decoration: underline;">Más información.</a>
+    </p>
+    <button id="cookies-accept" class="btn btn--primary" style="width:100%;">Entendido</button>
+  </div>
+
+  <!-- JS -->
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

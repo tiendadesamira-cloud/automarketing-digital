@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+  <meta charset="UTF-8">
+  <script>document.documentElement.classList.replace('no-js','js');</script>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto — Automarketing Digital · Jerez de la Frontera</title>
+  <meta name="description" content="Habla con Automarketing Digital por WhatsApp, videollamada o email. Revisión gratuita de 30 minutos para tu negocio en Jerez. Respondemos el mismo día.">
+  <link rel="canonical" href="https://automarketingdigital.es/contacto.html">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://automarketingdigital.es/contacto.html">
+  <meta property="og:title" content="Contacto — Automarketing Digital">
+  <meta property="og:description" content="Tres formas de contactar. Respondemos el mismo día en horario de negocio.">
+  <meta property="og:image" content="https://automarketingdigital.es/assets/img/og-contacto.jpg">
+  <meta property="og:locale" content="es_ES">
+  <meta name="theme-color" content="#FFFFFF">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@500&display=swap">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="assets/css/tokens.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/utilities.css">
+
+  <!-- Page styles -->
+  <style>
+    /* Contact options grid */
+    .contact-options {
+      padding-block: var(--s-section);
+      padding-inline: var(--s-5);
+      background: var(--c-bg);
+    }
+    .contact-options__header {
+      text-align: center;
+      margin-bottom: var(--s-8);
+    }
+    .contact-options__title {
+      font-size: var(--fs-h2);
+      font-weight: var(--fw-bold);
+      letter-spacing: var(--tk-tighter);
+      color: var(--c-text);
+    }
+    .contact-options__grid {
+      max-width: var(--container-sm);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+
+    /* Contact card */
+    .contact-card {
+      padding: var(--s-7) var(--s-6);
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-4);
+      border-bottom: 1px solid var(--c-line-soft);
+      position: relative;
+    }
+    .contact-card:last-child {
+      border-bottom: none;
+    }
+    /* Card WA con sombra sutil extra (primera en jerarquía) */
+    .contact-card--wa {
+      box-shadow: var(--shadow-sm);
+      border-radius: var(--radius-xl);
+      border: 1px solid var(--c-line-soft);
+      margin-bottom: var(--s-5);
+    }
+
+    .contact-card__icon-wrap {
+      width: 56px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .contact-card__icon {
+      width: 48px;
+      height: 48px;
+    }
+    .contact-card__title {
+      font-size: var(--fs-h4);
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+    }
+    .contact-card__desc {
+      font-size: var(--fs-body);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+    .contact-card__timing {
+      display: flex;
+      align-items: center;
+      gap: var(--s-2);
+      font-size: var(--fs-xs);
+      font-weight: var(--fw-semi);
+      margin-top: calc(var(--s-1) * -1);
+    }
+    .contact-card__timing--wa   { color: #22C55E; }
+    .contact-card__timing--call { color: var(--c-orange); }
+    .contact-card__timing--mail { color: var(--c-text-muted); }
+    .contact-card__actions {
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-2);
+    }
+    .contact-card__note {
+      font-size: var(--fs-xs);
+      color: var(--c-text-muted);
+    }
+    .contact-card__note a {
+      color: var(--c-text-soft);
+      text-decoration: underline;
+    }
+
+    /* Icono timing (SVG mini inline) */
+    .timing-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: currentColor;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+
+    @media (min-width: 700px) {
+      .contact-options__grid {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 0;
+        border: 1px solid var(--c-line-soft);
+        border-radius: var(--radius-xl);
+        overflow: hidden;
+      }
+      .contact-card {
+        border-bottom: none;
+        border-right: 1px solid var(--c-line-soft);
+      }
+      .contact-card:last-child {
+        border-right: none;
+      }
+      .contact-card--wa {
+        box-shadow: none;
+        border-radius: 0;
+        border: none;
+        border-right: 1px solid var(--c-line-soft);
+        margin-bottom: 0;
+      }
+    }
+
+    /* FAQ */
+    .faq-section {
+      padding-block: var(--s-section);
+      padding-inline: var(--s-5);
+      background: var(--c-bg-soft);
+    }
+    .faq-section__header {
+      text-align: center;
+      margin-bottom: var(--s-7);
+    }
+    .faq-section__title {
+      font-size: var(--fs-h3);
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+    }
+    .faq-list {
+      max-width: 720px;
+      margin-inline: auto;
+    }
+    /* Details/Summary nativo — sin JS requerido */
+    .faq-item {
+      border-bottom: 1px solid var(--c-line-soft);
+    }
+    .faq-item:first-child {
+      border-top: 1px solid var(--c-line-soft);
+    }
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--s-4);
+      padding: var(--s-5) 0;
+      font-size: var(--fs-body);
+      font-weight: var(--fw-semi);
+      color: var(--c-text);
+      cursor: pointer;
+      min-height: 56px;
+      list-style: none;
+      user-select: none;
+      transition: color var(--t-fast);
+    }
+    .faq-item summary::-webkit-details-marker { display: none; }
+    .faq-item summary:hover { color: var(--c-orange); }
+    .faq-item[open] summary { color: var(--c-orange); }
+    .faq-chevron {
+      width: 20px;
+      height: 20px;
+      flex-shrink: 0;
+      color: var(--c-text-muted);
+      transition: transform var(--t-base);
+    }
+    .faq-item[open] .faq-chevron {
+      transform: rotate(180deg);
+      color: var(--c-orange);
+    }
+    .faq-answer {
+      padding-bottom: var(--s-6);
+      font-size: var(--fs-body);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+
+    /* Contact info section */
+    .contact-info {
+      padding-block: var(--s-section-sm);
+      padding-inline: var(--s-5);
+      background: var(--c-bg);
+    }
+    .contact-info__inner {
+      max-width: var(--container-sm);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--s-8);
+    }
+    @media (min-width: 700px) {
+      .contact-info__inner {
+        grid-template-columns: 1fr auto 1fr;
+        align-items: start;
+      }
+    }
+    .contact-info__divider {
+      display: none;
+    }
+    @media (min-width: 700px) {
+      .contact-info__divider {
+        display: block;
+        width: 1px;
+        background: var(--c-line-soft);
+        align-self: stretch;
+      }
+    }
+    .contact-info__title {
+      font-size: var(--fs-body);
+      font-weight: var(--fw-bold);
+      color: var(--c-text);
+      margin-bottom: var(--s-4);
+    }
+    .contact-info__list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: var(--s-3);
+    }
+    .contact-info__list li {
+      font-size: var(--fs-sm);
+      color: var(--c-text-soft);
+    }
+    .contact-info__list a {
+      color: var(--c-text-soft);
+      text-decoration: underline;
+    }
+    .contact-info__list a:hover {
+      color: var(--c-orange);
+    }
+    .contact-info__context p {
+      font-size: var(--fs-sm);
+      color: var(--c-text-soft);
+      line-height: var(--lh-relaxed);
+    }
+  </style>
+
+  <!-- Schema.org ContactPage -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ContactPage",
+    "name": "Contacto — Automarketing Digital",
+    "url": "https://automarketingdigital.es/contacto.html",
+    "description": "Tres formas de contactar con Automarketing Digital: WhatsApp, videollamada o email.",
+    "mainEntity": {
+      "@type": "Organization",
+      "name": "Automarketing Digital",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Jerez de la Frontera",
+        "addressRegion": "Cádiz",
+        "addressCountry": "ES"
+      },
+      "email": "nabil@automarketingdigital.es",
+      "contactPoint": [
+        {
+          "@type": "ContactPoint",
+          "contactType": "sales",
+          "availableLanguage": "Spanish",
+          "email": "nabil@automarketingdigital.es"
+        }
+      ]
+    }
+  }
+  </script>
+</head>
+<body>
+
+  <!-- ===== NAV ===== -->
+  <header>
+    <nav class="nav" id="main-nav" aria-label="Navegación principal">
+      <a href="/" class="nav__logo" aria-label="Automarketing Digital — Inicio">
+        <svg width="28" height="28" viewBox="0 0 28 28" fill="none" aria-hidden="true" focusable="false">
+          <rect width="28" height="28" rx="7" fill="#FF6B35"/>
+          <text x="14" y="20" text-anchor="middle" font-family="Inter, sans-serif" font-weight="800" font-size="16" fill="#fff">A</text>
+        </svg>
+        <span>Automarketing <span class="nav__logo-accent">Digital</span></span>
+      </a>
+      <ul class="nav__links" role="list">
+        <li><a href="/servicios.html">Servicios</a></li>
+        <li><a href="/casos.html">Casos</a></li>
+        <li><a href="/sobre-nabil.html">Sobre Nabil</a></li>
+        <li><a href="/contacto.html" aria-current="page">Contacto</a></li>
+      </ul>
+      <div class="nav__cta hide-mobile">
+        <a href="/contacto.html" class="btn btn--primary" aria-current="page">Hablar con nosotros</a>
+      </div>
+      <button class="nav__burger" id="burger" aria-expanded="false" aria-controls="mobile-menu" aria-label="Abrir menú">
+        <span></span><span></span><span></span>
+      </button>
+    </nav>
+    <nav class="nav__mobile-menu" id="mobile-menu" aria-label="Menú móvil">
+      <a href="/servicios.html">Servicios</a>
+      <a href="/casos.html">Casos</a>
+      <a href="/sobre-nabil.html">Sobre Nabil</a>
+      <a href="/contacto.html" aria-current="page">Contacto</a>
+      <a href="/contacto.html" class="btn btn--primary mt-4">Hablar con nosotros</a>
+    </nav>
+  </header>
+
+  <main id="main-content">
+
+    <!-- ===== HERO CONTACTO ===== -->
+    <section class="hero hero--dark" aria-labelledby="contacto-headline">
+      <div class="hero__inner">
+        <span class="hero__eyebrow">Contacto</span>
+        <h1 class="hero__headline" id="contacto-headline">Hablemos.</h1>
+        <p class="hero__sub">
+          Elige cómo prefieres ponerte en contacto. Respondemos el mismo día en horario de negocio.
+        </p>
+      </div>
+    </section>
+
+    <!-- ===== TRES VÍAS DE CONTACTO ===== -->
+    <section class="contact-options" aria-labelledby="contact-options-title">
+      <div class="contact-options__header reveal">
+        <h2 class="contact-options__title" id="contact-options-title">Tres formas de contactar.</h2>
+      </div>
+
+      <div class="contact-options__grid">
+
+        <!-- Card 1 — WhatsApp (primera en jerarquía) -->
+        <article class="contact-card contact-card--wa reveal" aria-labelledby="wa-contact-title">
+          <div class="contact-card__icon-wrap">
+            <!-- Icono WhatsApp marca oficial, verde #22C55E — icono de plataforma, no tinte de servicio -->
+            <svg class="contact-card__icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="WhatsApp">
+              <circle cx="24" cy="24" r="22" fill="#22C55E"/>
+              <path d="M33.3 14.6C31 12.3 27.9 11 24.7 11C18 11 12.5 16.4 12.5 23.1C12.5 25.3 13.1 27.4 14.3 29.3L12.4 36L19.3 34.2C21.1 35.2 23.2 35.8 25.4 35.8H25.5C32.1 35.8 37.5 30.4 37.5 23.7C37.5 20.5 36.2 17.4 33.9 15.1C33.7 14.9 33.5 14.7 33.3 14.6ZM24.7 33.7C22.8 33.7 20.9 33.1 19.3 32.1L18.9 31.9L15.2 32.8L16.1 29.2L15.8 28.8C14.7 27.1 14.1 25.1 14.1 23C14.1 17.4 18.7 12.7 24.7 12.7C27.5 12.7 30.2 13.9 32.2 15.9C34.2 17.9 35.4 20.6 35.4 23.4C35.4 29.4 30.7 33.7 24.7 33.7ZM30.7 26.1C30.4 25.9 28.8 25.2 28.5 25.1C28.2 25 28 24.9 27.7 25.3C27.5 25.6 27 26.3 26.8 26.5C26.6 26.8 26.4 26.8 26.1 26.7C25.8 26.5 24.8 26.2 23.7 25.1C22.8 24.3 22.2 23.3 22 23C21.8 22.7 21.9 22.5 22.1 22.4C22.3 22.2 22.5 21.9 22.6 21.7C22.7 21.5 22.8 21.3 22.8 21.1C22.9 20.9 22.8 20.7 22.7 20.5C22.6 20.3 22.1 18.8 21.8 18.2C21.6 17.7 21.4 17.7 21.2 17.7H20.8C20.5 17.7 20.2 17.8 19.9 18.1C19.6 18.4 18.9 19.1 18.9 20.5C18.9 21.9 20 23.3 20.1 23.5C20.3 23.7 22.1 26.6 25 27.8C26.4 28.4 27.6 28.7 28.5 28.9C30 29.2 31.4 29.1 32.5 28.9C33.7 28.7 35.2 27.9 35.5 26.9C35.8 25.9 35.8 25.1 35.7 24.9C35.6 24.7 35.4 24.6 35.1 24.5C34.8 24.4 30.9 26.3 30.7 26.1Z" fill="white"/>
+            </svg>
+          </div>
+          <h2 class="contact-card__title" id="wa-contact-title">WhatsApp directo</h2>
+          <p class="contact-card__desc">La forma más rápida. Escribe ahora y te respondemos hoy.</p>
+          <p class="contact-card__timing contact-card__timing--wa">
+            <span class="timing-dot" aria-hidden="true"></span>
+            Respuesta el mismo día
+          </p>
+          <div class="contact-card__actions">
+            <a
+              href="https://wa.me/34643987371?text=Hola%20Nabil%2C%20vi%20tu%20web%20y%20me%20gustar%C3%ADa%20hablar."
+              class="btn btn--primary"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Abrir WhatsApp con Nabil de Automarketing Digital"
+            >
+              Abrir WhatsApp
+            </a>
+          </div>
+          <p class="contact-card__note">
+            También puedes llamar al <a href="tel:+34643987371">+34 643 987 371</a>
+          </p>
+        </article>
+
+        <!-- Card 2 — Videollamada -->
+        <article class="contact-card reveal reveal-d1" aria-labelledby="video-contact-title">
+          <div class="contact-card__icon-wrap">
+            <svg class="contact-card__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Pantalla con persona / videocámara -->
+              <rect x="4" y="12" width="32" height="24" rx="4" stroke="var(--c-orange)" stroke-width="2.5" fill="none"/>
+              <line x1="4" y1="20" x2="36" y2="20" stroke="var(--c-orange)" stroke-width="1.5"/>
+              <circle cx="20" cy="30" r="4" stroke="var(--c-orange)" stroke-width="2" fill="none"/>
+              <path d="M36 20L44 16V32L36 28" stroke="var(--c-orange)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+            </svg>
+          </div>
+          <h2 class="contact-card__title" id="video-contact-title">Revisión gratuita de 30 min</h2>
+          <p class="contact-card__desc">
+            Una videollamada sin compromiso. Revisamos tu negocio, te decimos qué tiene sentido hacer y lo que no.
+          </p>
+          <p class="contact-card__timing contact-card__timing--call">
+            <span class="timing-dot" aria-hidden="true"></span>
+            Confirmas en 24h
+          </p>
+          <div class="contact-card__actions">
+            <a
+              href="https://wa.me/34643987371?text=Hola%20Nabil%2C%20quiero%20reservar%20una%20videollamada%20gratuita%20de%2030%20minutos%20para%20revisar%20mi%20negocio."
+              target="_blank"
+              rel="noopener noreferrer"
+              class="btn btn--primary"
+              aria-label="Reservar videollamada por WhatsApp"
+            >
+              Reservar videollamada
+            </a>
+          </div>
+          <p class="contact-card__note">Por videollamada o presencial en Jerez</p>
+        </article>
+
+        <!-- Card 3 — Email -->
+        <article class="contact-card reveal reveal-d2" aria-labelledby="email-contact-title">
+          <div class="contact-card__icon-wrap">
+            <svg class="contact-card__icon" viewBox="0 0 48 48" fill="none" aria-hidden="true" focusable="false">
+              <!-- Sobre abierto navy -->
+              <rect x="6" y="12" width="36" height="28" rx="4" stroke="var(--c-navy)" stroke-width="2.5" fill="none"/>
+              <path d="M6 16L24 28L42 16" stroke="var(--c-navy)" stroke-width="2" stroke-linecap="round"/>
+              <!-- Flecha apertura -->
+              <path d="M24 12V6M20 10L24 6L28 10" stroke="var(--c-navy)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </div>
+          <h2 class="contact-card__title" id="email-contact-title">Email</h2>
+          <p class="contact-card__desc">
+            Para consultas que prefieren ir por escrito. Respondemos en el mismo día laboral.
+          </p>
+          <p class="contact-card__timing contact-card__timing--mail">
+            <span class="timing-dot" aria-hidden="true"></span>
+            Mismo día laboral
+          </p>
+          <div class="contact-card__actions">
+            <a href="mailto:nabil@automarketingdigital.es" class="btn btn--outline">
+              Escribir email
+            </a>
+          </div>
+          <p class="contact-card__note">
+            <a href="mailto:nabil@automarketingdigital.es">nabil@automarketingdigital.es</a>
+          </p>
+        </article>
+
+      </div>
+    </section>
+
+    <!-- ===== FAQ ===== -->
+    <section class="faq-section" aria-labelledby="faq-title">
+      <div class="faq-section__header reveal">
+        <h2 class="faq-section__title" id="faq-title">Preguntas frecuentes</h2>
+      </div>
+
+      <div class="faq-list reveal">
+
+        <details class="faq-item">
+          <summary>
+            <span>¿Cómo funciona la revisión gratuita?</span>
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            Es una videollamada de 30 minutos. Revisamos tu presencia digital actual — web, Google, redes — y te decimos exactamente qué está fallando y qué arreglaría el problema. Sin presentación de ventas. Sin presión para contratar.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>¿Tengo que firmar un contrato largo?</span>
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            No. Trabajamos con contratos mes a mes. Si en algún momento decides parar, lo paras. Sin penalizaciones ni cláusulas de permanencia.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>¿Cuánto tarda en verse resultados?</span>
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            Depende del punto de partida. En Google Business, los cambios pueden verse en 2-4 semanas. En SEO orgánico, entre 2 y 4 meses. Te lo decimos desde el principio, sin prometer plazos que no podemos garantizar.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>¿Hace falta que yo sepa de informática o de marketing?</span>
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            No. Nuestra forma de trabajar asume que tú tienes un negocio que gestionar, no tiempo para aprender herramientas digitales. Nosotros nos ocupamos de la parte técnica. Tú decides sobre la dirección.
+          </div>
+        </details>
+
+        <details class="faq-item">
+          <summary>
+            <span>¿Trabajan solo con negocios de Jerez?</span>
+            <svg class="faq-chevron" viewBox="0 0 20 20" fill="none" aria-hidden="true" focusable="false">
+              <path d="M5 7.5L10 12.5L15 7.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </summary>
+          <div class="faq-answer">
+            Principalmente sí. Conocemos mejor el mercado local y podemos estar presencialmente si hace falta. Para proyectos de otras ciudades de Cádiz o Andalucía, lo valoramos caso a caso.
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+    <!-- ===== DATOS DE CONTACTO + CONTEXTO ===== -->
+    <section class="contact-info section--bordered" aria-labelledby="info-title">
+      <div class="contact-info__inner reveal">
+        <!-- Columna datos -->
+        <address style="font-style:normal;">
+          <h2 class="contact-info__title" id="info-title">Automarketing Digital</h2>
+          <ul class="contact-info__list" role="list">
+            <li>Jerez de la Frontera, Cádiz</li>
+            <li><a href="mailto:nabil@automarketingdigital.es">nabil@automarketingdigital.es</a></li>
+            <li><a href="tel:+34643987371">+34 643 987 371</a></li>
+            <li>Horario: L-V 9:00&nbsp;–&nbsp;19:00</li>
+          </ul>
+        </address>
+
+        <!-- Separador vertical (desktop) -->
+        <div class="contact-info__divider" aria-hidden="true"></div>
+
+        <!-- Columna contexto -->
+        <div class="contact-info__context">
+          <p>
+            Si prefieres quedar en persona, estamos en Jerez. Trabajamos principalmente online, pero para clientes de la zona una reunión presencial es siempre posible.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" aria-label="Pie de página">
+    <div class="footer__grid">
+      <div class="footer__col-brand">
+        <div class="footer__logo">Automarketing <span class="footer__logo-accent">Digital</span></div>
+        <p class="footer__brand-text">Agencia digital en Jerez de la Frontera. Diseño web, SEO y automatizaciones para negocios locales.</p>
+      </div>
+      <nav aria-label="Servicios">
+        <span class="footer__col-title">Servicios</span>
+        <ul class="footer__links" role="list">
+          <li><a href="/servicios.html#web">Diseño web</a></li>
+          <li><a href="/servicios.html#seo">SEO local</a></li>
+          <li><a href="/servicios.html#automatizaciones">Automatizaciones</a></li>
+          <li><a href="/servicios.html#whatsapp">Bot WhatsApp</a></li>
+          <li><a href="/servicios.html#video">Vídeo</a></li>
+          <li><a href="/servicios.html#captacion">Captación</a></li>
+        </ul>
+      </nav>
+      <nav aria-label="Empresa">
+        <span class="footer__col-title">Empresa</span>
+        <ul class="footer__links" role="list">
+          <li><a href="/sobre-nabil.html">Sobre Nabil</a></li>
+          <li><a href="/casos.html">Casos</a></li>
+          <li><a href="/contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+      <address style="font-style:normal;">
+        <span class="footer__col-title">Contacto</span>
+        <ul class="footer__links" role="list">
+          <li><a href="mailto:nabil@automarketingdigital.es">nabil@automarketingdigital.es</a></li>
+          <li><a href="https://wa.me/34643987371" rel="noopener noreferrer" target="_blank">WhatsApp</a></li>
+          <li><span style="color:var(--c-text-muted);">Jerez de la Frontera, Cádiz</span></li>
+        </ul>
+      </address>
+    </div>
+    <div class="footer__bottom">
+      <p class="footer__copyright">&copy; <span id="year"></span> Automarketing Digital · Jerez de la Frontera</p>
+      <ul class="footer__legal-links" role="list">
+        <li><a href="/aviso-legal.html">Aviso legal</a></li>
+        <li><a href="/privacidad.html">Política de privacidad</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <!-- Cookies banner -->
+  <div id="cookies-banner" class="cookies-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <p style="margin-bottom: var(--s-4);">
+      Usamos cookies propias para el correcto funcionamiento del sitio.
+      <a href="/privacidad.html" style="color: var(--c-orange); text-decoration: underline;">Más información.</a>
+    </p>
+    <button id="cookies-accept" class="btn btn--primary" style="width:100%;">Entendido</button>
+  </div>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
