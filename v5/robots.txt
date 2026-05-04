@@ -1,0 +1,5 @@
+# Automarketing Digital - /v5/ preview (noindex hasta promoción a raíz)
+User-agent: *
+Disallow: /
+
+Sitemap: https://automarketingdigital.es/v5/sitemap.xml

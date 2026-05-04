@@ -227,9 +227,10 @@
   var COOKIE_KEY = 'amk_cookies_ack_v1';
   var banner = document.getElementById('cookies-banner');
   var acceptBtn = document.getElementById('cookies-accept');
+  var rejectBtn = document.getElementById('cookies-reject');
   if (!banner) return;
 
-  // Si ya aceptó, no mostrar nunca
+  // Si ya respondió (aceptado o rechazado), no mostrar nunca
   if (localStorage.getItem(COOKIE_KEY)) return;
 
   setTimeout(function() {
@@ -238,7 +239,14 @@
 
   if (acceptBtn) {
     acceptBtn.addEventListener('click', function() {
-      localStorage.setItem(COOKIE_KEY, '1');
+      localStorage.setItem(COOKIE_KEY, 'accepted');
+      banner.style.display = 'none';
+    });
+  }
+  if (rejectBtn) {
+    rejectBtn.addEventListener('click', function() {
+      // Solo necesarias: persistimos preferencia, NO cargamos analytics ni nada
+      localStorage.setItem(COOKIE_KEY, 'essential-only');
       banner.style.display = 'none';
     });
   }
