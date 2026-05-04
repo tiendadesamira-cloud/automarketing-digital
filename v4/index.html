@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script>document.documentElement.classList.replace('no-js','js');</script>
+<title>Automarketing Digital — Preview Dark Signal (v4)</title>
+<meta name="robots" content="noindex,nofollow">
+<meta name="theme-color" content="#0F1729">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/base.css">
+<link rel="stylesheet" href="assets/css/layout.css">
+</head>
+<body>
+
+<!-- Mesh ambient background -->
+<div class="bg-mesh" aria-hidden="true">
+  <div class="bg-mesh__orb bg-mesh__orb--orange"></div>
+  <div class="bg-mesh__orb bg-mesh__orb--cyan"></div>
+</div>
+
+<!-- NAV -->
+<header class="nav">
+  <div class="nav__inner">
+    <a href="/" class="nav__brand" aria-label="Automarketing Digital">
+      <span class="nav__brand-mark"><span>A</span></span>
+      <span>Automarketing<span class="accent">.</span></span>
+    </a>
+    <nav class="nav__links" aria-label="principal">
+      <a href="#servicios">Servicios</a>
+      <a href="#casos">Casos</a>
+      <a href="#tarifas">Tarifas</a>
+      <a href="#contacto">Contacto</a>
+    </nav>
+    <a href="#contacto" class="btn btn--primary nav__cta" style="min-height:38px;padding:8px 16px;font-size:var(--fs-sm)">Hablemos</a>
+    <button type="button" class="nav__burger" aria-label="Menú">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round">
+        <line x1="3" y1="7" x2="21" y2="7"/>
+        <line x1="3" y1="12" x2="21" y2="12"/>
+        <line x1="3" y1="17" x2="21" y2="17"/>
+      </svg>
+    </button>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero__container">
+    <span class="hero__pulse">Operativos en Jerez · 2 clientes activos</span>
+    <h1 class="hero__title">
+      Tu negocio local funcionando <span class="accent">en automático</span>.
+    </h1>
+    <p class="hero__subtitle">
+      Diseñamos webs, posicionamos en Google, automatizamos avisos y configuramos tu WhatsApp.
+      Una agencia para todos los frentes digitales — con personas detrás cuando algo se rompe.
+    </p>
+    <div class="hero__cta">
+      <a href="https://wa.me/34643987371?text=Hola%2C%20quiero%20pedir%20la%20auditor%C3%ADa%20gratuita" target="_blank" rel="noopener" class="btn btn--primary btn--lg">Hablemos por WhatsApp</a>
+      <a href="#servicios" class="btn btn--ghost btn--lg">Ver qué hacemos</a>
+    </div>
+    <p class="hero__hint">Sin permanencia · Diagnóstico 30 min · Respuesta en 24 h</p>
+
+    <!-- Métricas tipo terminal -->
+    <div class="hero-metrics">
+      <div class="hero-metric">
+        <div class="hero-metric__label">Webs en producción</div>
+        <div class="hero-metric__num">2 <span class="unit">clientes</span></div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric__label">Workflows activos</div>
+        <div class="hero-metric__num">28 <span class="unit">en n8n</span></div>
+      </div>
+      <div class="hero-metric">
+        <div class="hero-metric__label">Mensajes WA / mes</div>
+        <div class="hero-metric__num">+800 <span class="unit">gestionados</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SHOWCASE -->
+<section class="showcase">
+  <div class="showcase__inner reveal">
+    <div class="showcase__media">
+      <picture>
+        <source media="(max-width: 700px)" srcset="assets/img/mockup-samira-mobile.jpg">
+        <img src="assets/img/mockup-samira-desktop.jpg"
+             alt="Web latiendadesamira.cloud diseñada por Automarketing Digital"
+             width="1400" height="875" loading="lazy">
+      </picture>
+    </div>
+    <p class="showcase__caption">
+      Trabajo reciente · <a href="https://latiendadesamira.cloud" target="_blank" rel="noopener">latiendadesamira.cloud</a>
+    </p>
+  </div>
+</section>
+
+<!-- Footer placeholder solo para preview -->
+<footer style="padding-block:var(--s-5); border-top:1px solid var(--c-line); text-align:center; color: var(--c-text-muted); font-size: var(--fs-sm)">
+  Preview /v4/ · Dark Signal · Solo hero + showcase para validar dirección estética
+</footer>
+
+<script>
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function(es){
+      es.forEach(function(e){
+        if (e.isIntersecting) { e.target.classList.add('is-visible'); io.unobserve(e.target); }
+      });
+    }, { rootMargin: '0px 0px -10% 0px', threshold: 0.05 });
+    document.querySelectorAll('.reveal').forEach(function(el){ io.observe(el); });
+  } else {
+    document.querySelectorAll('.reveal').forEach(function(el){ el.classList.add('is-visible'); });
+  }
+</script>
+</body>
+</html>
